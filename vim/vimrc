@@ -1,0 +1,384 @@
+" ####################################################################################
+" hzlu's vim config file
+" step1: Set up Vundle
+"   $git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" step2: Install Plugins and enjoy
+"   $vim +PluginInstall +qall
+" ####################################################################################
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/vundle'
+" ======颜色主题======
+Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'morhetz/gruvbox'
+" ======语法相关======
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'JulesWang/css.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 'othree/html5.vim'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'plasticboy/vim-markdown'
+" ======目录导航======
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sandeepcr529/Buffet.vim'
+Plugin 'moll/vim-bbye'
+" ======GIT管理=======
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+" ======补全格式化====
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-endwise' " 自动补end插件
+Plugin 'Raimondi/delimitMate' " 自动补全括号插件
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular' " 格式化
+Plugin 'vim-scripts/tComment' " 注释
+Plugin 'terryma/vim-multiple-cursors' " 多处编辑
+Plugin 'ervandew/supertab'
+Plugin 'mattn/emmet-vim'
+Plugin 'terryma/vim-expand-region'
+" ======其他======
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'rking/ag.vim'
+Plugin 'christoomey/vim-run-interactive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'nathanaelkane/vim-indent-guides'
+call vundle#end()
+filetype plugin indent on
+syntax enable " 开启语法高亮功能
+syntax on " 允许用指定语法高亮配色方案替换默认方案
+
+let mapleader = ","
+set timeoutlen=1000
+set history=200
+set completeopt=longest,menu
+set shell=/bin/zsh
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set autowrite     " Automatically :write before running commands
+set autoread      " 文件在vim外修改过，自动重新读入
+set confirm       " Need confrimation while exit
+set wildmenu
+set wildmode=list:longest,list:full
+set matchpairs+=<:>
+set omnifunc=syntaxcomplete#Complete
+" 颜色主题显示相关
+set t_Co=256
+set guifont=Literation_Mono_Powerline:h12
+set background=dark
+" colorscheme Monokai
+" colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+" colorscheme hybrid
+" Allow to trigger background
+function! ToggleBG()
+  let s:tbg = &background
+  if s:tbg == "dark"
+    set background=light
+  else
+    set background=dark
+  endif
+endfunction
+noremap <leader>bg :call ToggleBG()<CR>
+
+set cursorline
+set cursorcolumn
+set showtabline=1 "显示标签页
+set textwidth=80
+set number numberwidth=4
+set linespace=0
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+" tab转化为2个空格"
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set shiftround "连按两次>或<可以移动缩进整行"
+set backspace=indent,eol,start
+set autoindent
+" 折叠
+set foldmethod=indent
+" set foldmethod=syntax
+set nofoldenable
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+" 语言编码
+set langmenu=zh_cn
+set helplang=cn
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,gb18030,gbk,big5,gb2312
+" 匹配高亮
+set incsearch "关闭显示查找匹配过程
+set hlsearch "高亮显示搜索的内容
+set ignorecase "搜索忽略大小写
+set smartcase "智能大小写搜索
+set splitbelow "新分割窗口在下边
+set splitright "新分割窗口在右边
+" 改变光标形状
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+if has("gui_running")
+  set anti "开启抗锯齿渲染
+  set imdisable " 自动关闭输入法
+  set guitablabel=%N/\ %t\ %M
+  set lines=57
+  set columns=237
+  " set nowrap " 图形界面下不折行
+  set guioptions-=b " 隐藏水平滚动条
+  set guioptions-=r " 隐藏右边滚动框
+  set guioptions-=L " 隐藏左边滚动框
+  set guioptions-=m " 隐藏菜单栏
+  set guioptions-=T " 隐藏工具栏
+  colorscheme solarized
+  set guifont=Literation_Mono_Powerline:h14
+endif
+
+if has("gui_macvim")
+  let s:lines=&lines
+  let s:columns=&columns " 使用 macvim 原生的全屏幕功能
+  func! Fullscreenenter()
+      set lines=999 columns=999
+      set fu
+  endf
+  func! Fullscreenleave()
+      let &lines=s:lines
+      let &columns=s:columns
+      set nofu
+  endf
+  func! Fullscreentoggle()
+      if &fullscreen
+          call Fullscreenleave()
+      else
+          call Fullscreenenter()
+      endif
+  endf
+  nmap \\ :call Fullscreentoggle()<cr>
+endif
+
+nmap -hl :nohlsearch<cr>
+nmap +hl :set hlsearch<cr>
+map <space> viw
+" nmap <Up> <PageUp>
+" nmap <Down> <PageDown>
+nnoremap <Left> :bp<cr>
+nnoremap <Right> :bn<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader><leader> <c-^>
+inoremap jk <esc>
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+imap <leader>= <%=  %><Esc>hhi
+imap <leader>- <% end %>
+
+" 语法检查 映射到F9上
+autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <leader>c :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+highlight ExtraWhitespace ctermbg=red guibg=#e41863
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+" 去掉结尾空格
+function! TrimWhiteSpace()
+  %s/\s\+$//e
+endfunction
+autocmd BufWritePre * :call TrimWhiteSpace()
+
+if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gl :Glog<CR>
+endif
+
+" 格式化对齐插件
+if isdirectory(expand("~/.vim/bundle/tabular"))
+  nmap <Leader>a& :Tabularize /&<CR>
+  vmap <Leader>a& :Tabularize /&<CR>
+  nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  nmap <Leader>a=> :Tabularize /=><CR>
+  vmap <Leader>a=> :Tabularize /=><CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+  nmap <Leader>a:: :Tabularize /:\zs<CR>
+  vmap <Leader>a:: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,<CR>
+  vmap <Leader>a, :Tabularize /,<CR>
+  nmap <Leader>a,, :Tabularize /,\zs<CR>
+  vmap <Leader>a,, :Tabularize /,\zs<CR>
+  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+endif
+
+" Nerd Tree
+nmap nt :NERDTreeToggle<cr>
+let NERDChristmasTree=1
+let NERDTreeChDirMode=2
+let NERDTreeShowHidden=1 " 显示隐藏文件
+let NERDTreeShowBookmarks=1 " 显示书签
+let NERDTreeMinimalUI=1 " 不显示冗余的帮助信息
+let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'r'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|log)|(optimized|compiled|node_modules)$'
+map <c-o> :CtrlPBuffer<CR>
+
+" Ag! 搜索
+let g:ag_prg="ag --vimgrep --smart-case --ignore '*.log' --nocolor"
+let g:ag_highlight=1
+let g:ag_working_path_mode='r'
+let g:ctrlp_user_command = 'ag %s -i --hidden
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore .log
+    \ -g ""'
+let g:ctrlp_use_caching = 0
+ca Ag Ag!
+
+" vim-rspec mappings
+" nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+" nnoremap <Leader>s :call RunNearestSpec()<CR>
+" nnoremap <Leader>l :call RunLastSpec()<CR>
+
+" 执行命令行
+nnoremap <Leader>r :RunInInteractiveShell<space>
+" tagbar
+nnoremap <leader>tb :TagbarToggle<CR>
+let g:tagbar_compact=1
+" let g:tagbar_left=1
+" Bbye
+set runtimepath^=~/.vim/bundle/bbye
+nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>ba :bufdo :Bdelete<CR>
+" Buffet
+nnoremap <Leader>bl :Bufferlist<CR>
+
+" ctags
+map <Leader>ct :!ctags -f ~/.hzlutags/tags -R --verbose --languages=ruby --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets $(pwd) $(bundle list --paths)<CR>
+set tags+=~/.hzlutags/tags
+
+" Supertab
+" let g:SuperTabRetainCompletionType=2 " 记住上次的补全方式,直到按ESC退出插入模式为止
+" let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+let g:SuperTabDefaultCompletionType = "<c-p>"
+" 自动完成使用TAB键
+function! InsertTabWrapper()
+    let col=col('.')-1
+    if !col || getline('.')[col-1] !~ '\k'
+        return "\<TAB>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+"将InsertTabWrapper映射到TAB上
+inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+
+" YouCompleteMe
+" let g:ycm_min_num_of_chars_for_completion=3
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_complete_in_comments=1
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+" let g:ycm_key_list_select_completion=['<tab>', '<c-n>', '<Down>']
+" let g:ycm_key_list_previous_completion=['<c-p>', '<Up>']
+" let g:ycm_confirm_extra_conf=0
+
+augroup vimrcEx
+  autocmd!
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+  autocmd BufNewFile,BufRead *.scss set filetype=scss
+  autocmd BufNewFile,BufRead *.sass set filetype=sass
+  autocmd BufNewFile,BufReadPost *.sass,*.scss setl foldmethod=indent nofoldenable
+  autocmd BufNewFile,BufRead *.slim set filetype=slim
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType html       set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType css        set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
+  autocmd FileType css,scss,slim,html,eruby,coffee,javascript setlocal iskeyword+=-
+augroup END
+
+" Emmet
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+let g:user_emmet_mode='a'
+let g:user_emmet_expandabbr_key = '<Tab>'
+let g:use_emmet_complete_tag = 1
+let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
+
+" airline
+set laststatus=2  " Always display the status line
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1 " enable tabline
+" let g:airline_theme='bubblegum'
+" let g:airline#extensions#tabline#left_sep=' ' " set left separator
+" let g:airline#extensions#tabline#left_alt_sep='|' " set left separator which are not editting
+" let g:airline#extensions#tabline#buffer_nr_show=1 " show buffer number
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup=1 " 随 vim 自启动
+let g:indent_guides_start_level=2 " 从第二层开始可视化显示缩进
+let g:indent_guides_guide_size=1 " 色块宽度
+" 快捷键 i 开/关缩进可视化
+:nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+
