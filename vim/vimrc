@@ -101,7 +101,7 @@ noremap <leader>bg :call ToggleBG()<CR>
 set cursorline
 set cursorcolumn
 set showtabline=1 "显示标签页
-set textwidth=80
+" set textwidth=80
 set number numberwidth=4
 set linespace=0
 set ruler         " show the cursor position all the time
