@@ -1,11 +1,18 @@
 
 [[ -r "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
+[[ -r "$HOME/.bash_profile" ]] && source "$HOME/.bash_profile"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export MANPATH=/usr/local/man
+export EDITOR=vim
+
 export ZSH=$HOME/.oh-my-zsh
 
 # 主题设置，更多主题查看 ~/.oh-my-zsh/themes/，随机主题设置 "random"
 ZSH_THEME="agnoster"
 # ZSH_THEME="bullet-train"
+# ZSH_THEME="pure"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,7 +95,6 @@ alias clr="clear"
 alias ll="ls -alh"
 alias rs="rails s"
 alias rc="rails c"
-alias sshhb="ssh deploy@hb.dan-che.com"
 alias cdbike="cd ~/Bestapp/bike-ticket/"
 
 DEFAULT_USER="luhaozhao"

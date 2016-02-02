@@ -80,13 +80,12 @@ set omnifunc=syntaxcomplete#Complete
 set t_Co=256
 set guifont=Literation_Mono_Powerline:h12
 set background=dark
+
 " colorscheme Monokai
-" colorscheme molokai
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-" colorscheme hybrid
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
 " Allow to trigger background
 function! ToggleBG()
   let s:tbg = &background
@@ -198,7 +197,7 @@ imap <leader>- <% end %>
 
 " 语法检查 映射到F9上
 autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
-" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <leader>c :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 set statusline+=%#warningmsg#
