@@ -55,6 +55,7 @@ Plugin 'rking/ag.vim'
 Plugin 'christoomey/vim-run-interactive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 filetype plugin indent on
@@ -81,10 +82,10 @@ set t_Co=256
 set guifont=Literation_Mono_Powerline:h12
 set background=dark
 
-" colorscheme Monokai
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
+colorscheme Monokai
+" colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
 
 " Allow to trigger background
 function! ToggleBG()
@@ -369,7 +370,7 @@ let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags t
 set laststatus=2  " Always display the status line
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1 " enable tabline
-" let g:airline_theme='bubblegum'
+let g:airline_theme='base16'
 " let g:airline#extensions#tabline#left_sep=' ' " set left separator
 " let g:airline#extensions#tabline#left_alt_sep='|' " set left separator which are not editting
 " let g:airline#extensions#tabline#buffer_nr_show=1 " show buffer number

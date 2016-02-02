@@ -96,6 +96,8 @@ alias ll="ls -alh"
 alias rs="rails s"
 alias rc="rails c"
 alias cdbike="cd ~/Bestapp/bike-ticket/"
+alias cdeasytally="cd /Users/luhaozhao/MyProjects/MyGits/easytally"
+alias cddotfiles="cd /Users/luhaozhao/Dropbox/dotfiles"
 
 DEFAULT_USER="luhaozhao"
 source $ZSH/oh-my-zsh.sh
