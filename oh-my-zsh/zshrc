@@ -12,7 +12,10 @@ export ZSH=$HOME/.oh-my-zsh
 # 主题设置，更多主题查看 ~/.oh-my-zsh/themes/，随机主题设置 "random"
 ZSH_THEME="agnoster"
 # ZSH_THEME="bullet-train"
-# ZSH_THEME="pure"
+# ZSH_THEME="miloshadzic"
+# ZSH_THEME="sorin"
+# ZSH_THEME="simple"
+# ZSH_THEME="nebirhos"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -98,6 +101,7 @@ alias rc="rails c"
 alias cdbike="cd ~/Bestapp/bike-ticket/"
 alias cdeasytally="cd /Users/luhaozhao/MyProjects/MyGits/easytally"
 alias cddotfiles="cd /Users/luhaozhao/Dropbox/dotfiles"
+alias cdpractices="cd /Users/luhaozhao/MyProjects/practices"
 
 DEFAULT_USER="luhaozhao"
 source $ZSH/oh-my-zsh.sh
