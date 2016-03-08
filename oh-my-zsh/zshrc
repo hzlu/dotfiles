@@ -16,6 +16,7 @@ ZSH_THEME="agnoster"
 # ZSH_THEME="sorin"
 # ZSH_THEME="simple"
 # ZSH_THEME="nebirhos"
+# ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

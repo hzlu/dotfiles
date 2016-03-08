@@ -1,8 +1,8 @@
 # use the powerline patched font variant of the theme, possible values are:
 #   - default
 #   - powerline
-# tmux_conf_theme=default
-tmux_conf_theme=powerline
+tmux_conf_theme=default
+# tmux_conf_theme=powerline
 
 # display an indicator in the status line when the prefix key has been pressed,
 # possible values are:
@@ -59,16 +59,16 @@ tmux_conf_theme_date=enabled
 #   - enabled
 #   - disabled
 #   - ssh
-tmux_conf_theme_username=enabled
+# tmux_conf_theme_username=enabled
 # tmux_conf_theme_username=disabled
-# tmux_conf_theme_username=ssh
+tmux_conf_theme_username=ssh
 
 # display the hostname in the status line, possible values are:
 #   - enabled
 #   - disabled
 #   - ssh
-tmux_conf_theme_hostname=enabled
-# tmux_conf_theme_hostname=disabled
+# tmux_conf_theme_hostname=enabled
+tmux_conf_theme_hostname=disabled
 # tmux_conf_theme_hostname=ssh
 
 # should new windows retain current path, possible values are:

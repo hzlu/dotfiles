@@ -79,7 +79,6 @@ set matchpairs+=<:>
 set omnifunc=syntaxcomplete#Complete
 " 颜色主题显示相关
 set t_Co=256
-set guifont=Literation_Mono_Powerline:h12
 set background=dark
 
 colorscheme Monokai
@@ -149,8 +148,8 @@ if has("gui_running")
   set guioptions-=L " 隐藏左边滚动框
   set guioptions-=m " 隐藏菜单栏
   set guioptions-=T " 隐藏工具栏
-  colorscheme solarized
-  set guifont=Literation_Mono_Powerline:h14
+  " colorscheme solarized
+  set guifont=DejaVu\ Sans\ Mono\ Bold\ Oblique\ for\ Powerline:h14
 endif
 
 if has("gui_macvim")
