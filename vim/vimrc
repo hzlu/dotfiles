@@ -1,1 +1,501 @@
-/Users/luhaozhao/.vimrc
+" ####################################################################################
+" hzlu's vimrc file
+" 第一步：安装Vundle
+" $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" 第二步：打开Vim执行安装命令 :PluginInstall
+" (或在命令行运行：$ vim +PluginInstall +qall)
+" ####################################################################################
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" ======颜色主题======
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tomasr/molokai'
+" ======语法相关======
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-bundler'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'slim-template/vim-slim'
+Plugin 'othree/html5.vim'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'plasticboy/vim-markdown'
+" ======目录导航======
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'lukaszkorecki/CoffeeTags'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sandeepcr529/Buffet.vim'
+Plugin 'moll/vim-bbye'
+" ======GIT管理=======
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+" ======补全格式化====
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'tpope/vim-endwise' " 自动补end插件
+Plugin 'Raimondi/delimitMate' " 自动补全括号插件
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular' " 格式化
+Plugin 'vim-scripts/tComment' " 注释
+Plugin 'terryma/vim-multiple-cursors' " 多处编辑
+Plugin 'ervandew/supertab'
+Plugin 'mattn/emmet-vim'
+Plugin 'terryma/vim-expand-region'
+" ======其他======
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'rking/ag.vim'
+Plugin 'christoomey/vim-run-interactive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'nathanaelkane/vim-indent-guides'
+call vundle#end()
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+filetype plugin indent on
+syntax enable " 开启Vim提供的语法高亮功能
+syntax on " 允许用指定语法高亮配色方案替换默认方案
+let mapleader = ","
+set timeoutlen=1000
+set history=200
+set completeopt=longest,menu
+set shell=/bin/zsh
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set autowrite     " Automatically :write before running commands
+set autoread      " 文件在vim外修改过，自动重新读入
+set confirm       " Need confrimation while exit
+set wildmenu
+set wildmode=list:longest,list:full
+set matchpairs+=<:>
+set omnifunc=syntaxcomplete#Complete
+" 颜色主题显示相关
+set t_Co=256
+set background=dark
+colorscheme Monokai
+function! ToggleBG()
+  let s:tbg = &background
+  if s:tbg == "dark"
+    set background=light
+  else
+    set background=dark
+  endif
+endfunction
+nnoremap <leader>bg :call ToggleBG()<CR>
+set cursorline
+set cursorcolumn
+set showtabline=1 " 显示标签页
+set textwidth=80
+set number numberwidth=4
+set linespace=0
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+" tab转化为2个空格"
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set shiftround "连按两次>或<可以移动缩进整行"
+set backspace=indent,eol,start
+set autoindent
+" 折叠
+set foldmethod=indent
+" set foldmethod=syntax
+set nofoldenable
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+" 语言编码
+set langmenu=zh_cn
+set helplang=cn
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,gb18030,gbk,big5,gb2312
+" 匹配高亮
+set incsearch "关闭显示查找匹配过程
+set hlsearch "高亮显示搜索的内容
+set ignorecase "搜索忽略大小写
+set smartcase "智能大小写搜索
+set splitbelow "新分割窗口在下边
+set splitright "新分割窗口在右边
+" 改变光标形状
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+augroup vimrcEx
+  autocmd!
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+\   if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+\     exe "normal g`\"" |
+\   endif
+  autocmd BufRead,BufNewFile Appraisals    set filetype=ruby
+  autocmd BufRead,BufNewFile *.jbuilder    set filetype=ruby
+  autocmd BufRead,BufNewFile *.axlsx       set filetype=ruby
+  autocmd BufRead,BufNewFile *.eco         set filetype=html
+  autocmd BufRead,BufNewFile *.md          set filetype=markdown
+  autocmd BufRead,BufNewFile *.coffee      set filetype=coffee
+  autocmd BufRead,BufNewFile *.slim        set filetype=slim
+  autocmd BufRead,BufNewFile *.sass,*.scss set foldmethod=indent nofoldenable
+  autocmd BufRead,BufNewFile *.coffee      set foldmethod=indent nofoldenable
+  autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
+  autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown           set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType xml                     set omnifunc=xmlcomplete#CompleteTags
+  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
+  autocmd FileType css,scss,slim,html,eruby,coffee,javascript set iskeyword+=-
+  autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
+  autocmd BufRead,BufWritePre *.html :normal gg=G
+augroup END
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+if has("gui_running")
+  set anti "开启抗锯齿渲染
+  set imdisable " 自动关闭输入法
+  set guitablabel=%N/\ %t\ %M
+  set lines=57
+  set columns=237
+  " set nowrap " 图形界面下不折行
+  set guioptions-=b " 隐藏水平滚动条
+  set guioptions-=r " 隐藏右边滚动框
+  set guioptions-=L " 隐藏左边滚动框
+  set guioptions-=m " 隐藏菜单栏
+  set guioptions-=T " 隐藏工具栏
+  set guifont=DejaVu\ Sans\ Mono\ Bold\ Oblique\ for\ Powerline:h14
+endif
+if has("gui_macvim")
+  let s:lines=&lines
+  let s:columns=&columns " 使用 macvim 原生的全屏幕功能
+  func! Fullscreenenter()
+      set lines=999 columns=999
+      set fu
+  endf
+  func! Fullscreenleave()
+      let &lines=s:lines
+      let &columns=s:columns
+      set nofu
+  endf
+  func! Fullscreentoggle()
+      if &fullscreen
+          call Fullscreenleave()
+      else
+          call Fullscreenenter()
+      endif
+  endf
+  nnoremap \\ :call Fullscreentoggle()<cr>
+endif
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+nnoremap -hl :nohlsearch<cr>
+nnoremap +hl :set hlsearch<cr>
+nnoremap <space> viw
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
+nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader><Leader> <C-^>
+inoremap jk <Esc>
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+augroup erbAbbrev
+  autocmd FileType eruby :iabbrev if <% if %><CR><% end %><Esc>k$hhi
+  autocmd FileType eruby :iabbrev elsif <% elsif %><Esc>hhi
+  autocmd FileType eruby :iabbrev else <% else %><CR>
+  autocmd FileType eruby :iabbrev do <%  %><CR><% end %><Esc>k$hhi
+augroup END
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+nnoremap <leader>c :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+set list listchars=tab:»·,trail:·
+highlight ExtraWhitespace ctermbg=gray guibg=#e41863
+function! TrimWhiteSpace()
+  %s/\s\+$//e
+endfunction
+augroup extraSpace
+  autocmd!
+  autocmd BufWinEnter * :match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * :match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * :match ExtraWhitespace /\s\+$/
+  autocmd BufWritePre * :retab
+  autocmd BufWritePre * :call  TrimWhiteSpace()
+  autocmd BufWinLeave * :call  clearmatches()
+augroup END
+" ###################################################################
+" ###################################################### vim-fugitive
+" ###################################################################
+if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gl :Glog<CR>
+endif
+" ###################################################################
+" ####################################################### tabular对齐
+" ###################################################################
+if isdirectory(expand("~/.vim/bundle/tabular"))
+  nmap <Leader>a& :Tabularize /&<CR>
+  vmap <Leader>a& :Tabularize /&<CR>
+  nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
+  nmap <Leader>a=> :Tabularize /=><CR>
+  vmap <Leader>a=> :Tabularize /=><CR>
+  nmap <Leader>a: :Tabularize /:<CR>
+  vmap <Leader>a: :Tabularize /:<CR>
+  nmap <Leader>a:: :Tabularize /:\zs<CR>
+  vmap <Leader>a:: :Tabularize /:\zs<CR>
+  nmap <Leader>a, :Tabularize /,<CR>
+  vmap <Leader>a, :Tabularize /,<CR>
+  nmap <Leader>a,, :Tabularize /,\zs<CR>
+  vmap <Leader>a,, :Tabularize /,\zs<CR>
+  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+endif
+" ###################################################################
+" ######################################################### Nerd Tree
+" ###################################################################
+nnoremap nt :NERDTreeToggle<cr>
+let NERDChristmasTree=1
+let NERDTreeChDirMode=2
+let NERDTreeShowHidden=1 " 显示隐藏文件
+let NERDTreeShowBookmarks=1 " 显示书签
+let NERDTreeMinimalUI=1 " 不显示冗余的帮助信息
+let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
+" ###################################################################
+" ############################################################# CtrlP
+" ###################################################################
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_height=15
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
+" let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|log)|(optimized|compiled|node_modules)$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+nnoremap <leader>f :CtrlPMRU<CR>
+" ###################################################################
+" ################################ Ag! 搜索 [基于the_silver_searcher]
+" ###################################################################
+let g:ag_prg="ag --vimgrep --smart-case --ignore '*.log' --nocolor"
+let g:ag_highlight=1
+let g:ag_working_path_mode='r'
+let g:ctrlp_user_command = 'ag %s -i --hidden
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore .log
+    \ -g ""'
+let g:ctrlp_use_caching = 0
+ca Ag Ag!
+" ====== 操作方式 ======
+" e    to open file and close the quickfix window
+" o    to open (same as enter)
+" go   to preview file (open but maintain focus on ag.vim results)
+" t    to open in new tab
+" T    to open in new tab silently
+" h    to open in horizontal split
+" H    to open in horizontal split silently
+" v    to open in vertical split
+" gv   to open in vertical split silently
+" q    to close the quickfix window
+" ###################################################################
+" ############################################### vim-rspec mappings
+" ###################################################################
+" nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+" nnoremap <Leader>s :call RunNearestSpec()<CR>
+" nnoremap <Leader>l :call RunLastSpec()<CR>
+" ###################################################################
+" ######################################################## 执行命令行
+" ###################################################################
+nnoremap <Leader>r :RunInInteractiveShell<space>
+" ###################################################################
+" ############################################ tagbar [安装依赖ctags]
+" ###################################################################
+nnoremap <leader>tb :TagbarToggle<CR>
+let g:tagbar_compact= 1 " 不显示帮助提示
+let g:tagbar_left= 0 " 右侧打开
+let g:tagbar_vertical = 0
+let g:tagbar_width = 40
+let g:tagbar_zoomwidth = 0
+let g:tagbar_autofocus = 0 " 打开默认不聚焦
+let g:tagbar_sort = 1 " 按名字排序
+let g:tagbar_show_visibility = 1
+let g:tagbar_autopreview = 0
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+        \ ]
+    \ }
+" ###################################################################
+" ######################################################## CoffeeTags
+" ###################################################################
+let g:CoffeeAutoTagDisabled=0     " Disables autotaging on save
+let g:CoffeeAutoTagFile='/Users/luhaozhao/.hzlutags/lige_coffee_tags'
+let g:CoffeeAutoTagIncludeVars=0  " Includes variables
+let g:CoffeeAutoTagTagRelative=1  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
+" ###################################################################
+" ############################################################# Bbye
+" ###################################################################
+set runtimepath^=~/.vim/bundle/bbye
+nnoremap <Leader>bd :Bdelete<CR>
+nnoremap <Leader>ba :bufdo :Bdelete<CR>
+" ###################################################################
+" ############################################################ Buffet
+" ###################################################################
+nnoremap <Leader>bl :Bufferlist<CR>
+" ###################################################################
+" ############################################################# ctags
+" ###################################################################
+function! CreateAllTags()
+  exe 'silent !echo "...正在生成ctags文件..."'
+  exe 'silent !ctags -f ~/.hzlutags/lige_tags -R
+        \ --verbose=no --languages=ruby
+        \ --exclude=.git --exclude=tmp --exclude=public
+        \ --exclude=app/assets $(pwd) $(bundle list --paths) > /dev/null'
+  exe 'silent !coffeetags -R -f ~/.hzlutags/lige_coffee_tags > /dev/null'
+  :!echo '===== ctags文件已生成 ====='
+endfunction
+nnoremap <Leader>ct :call CreateAllTags()<CR>
+set tags+=~/.hzlutags/lige_tags
+set tags+=~/.hzlutags/lige_coffee_tags
+set tags+=~/.hzlutags/lige_javascript_tags
+" ###################################################################
+" ########################################################## Supertab
+" ###################################################################
+" let g:SuperTabRetainCompletionType=2 " 记住上次的补全方式,直到按ESC退出插入模式为止
+" let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+let g:SuperTabDefaultCompletionType = "<c-p>"
+" 自动完成使用TAB键
+function! InsertTabWrapper()
+    let col=col('.')-1
+    if !col || getline('.')[col-1] !~ '\k'
+        return "\<TAB>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+"将InsertTabWrapper映射到TAB上
+inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
+" ###################################################################
+" ####################################################### neocomplete
+" ###################################################################
+let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
+let g:neocomplete#enable_at_startup = 1 " Use neocomplete.
+let g:neocomplete#enable_smart_case = 1 " Use smartcase.
+let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+" Recommended key-mappings.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" ###################################################################
+" ############################################################# Emmet
+" ###################################################################
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+let g:user_emmet_mode='a'
+let g:user_emmet_expandabbr_key = '<Tab>'
+let g:use_emmet_complete_tag = 1
+let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
+" ###################################################################
+" ########################################################### airline
+" ###################################################################
+set laststatus=2  " Always display the status line
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1 " enable tabline
+let g:airline_theme='raven'
+" let g:airline#extensions#tabline#left_sep=' ' " set left separator
+" let g:airline#extensions#tabline#left_alt_sep='|' " set left separator which are not editting
+" let g:airline#extensions#tabline#buffer_nr_show=1 " show buffer number
+" ###################################################################
+" ################################################# vim-indent-guides
+" ###################################################################
+let g:indent_guides_enable_on_vim_startup=0 " 随 vim 自启动
+let g:indent_guides_start_level=2 " 从第二层开始可视化显示缩进
+let g:indent_guides_guide_size=1 " 色块宽度
+nnoremap <silent> <Leader>i <Plug>IndentGuidesToggle
+" 快捷键 i 开/关缩进可视化
+" ###################################################################
+" ################################################## multiple-cursors
+" ###################################################################
+" Default mapping 选中后使用a/c/x进行增/换/删操作
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+
