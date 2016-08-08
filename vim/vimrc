@@ -1,9 +1,9 @@
 " ####################################################################################
 " hzlu's vimrc file
 " 第一步：安装Vundle
-" $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" $git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " 第二步：打开Vim执行安装命令 :PluginInstall
-" (或在命令行运行：$ vim +PluginInstall +qall)
+" (或在命令行运行：$vim +PluginInstall +qall)
 " ####################################################################################
 set nocompatible
 filetype off
@@ -30,8 +30,6 @@ Plugin 'plasticboy/vim-markdown'
 " ======目录导航======
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'lukaszkorecki/CoffeeTags'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sandeepcr529/Buffet.vim'
 Plugin 'moll/vim-bbye'
@@ -51,6 +49,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-expand-region'
 " ======其他======
 Plugin 'vim-scripts/ctags.vim'
+Plugin 'lukaszkorecki/CoffeeTags'
+Plugin 'ternjs/tern_for_vim'
 Plugin 'rking/ag.vim'
 Plugin 'christoomey/vim-run-interactive'
 Plugin 'Lokaltog/vim-easymotion'
@@ -265,25 +265,28 @@ if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
   nnoremap <leader>gs :Gstatus<CR>
   nnoremap <leader>gd :Gdiff<CR>
   nnoremap <leader>gl :Glog<CR>
+  nnoremap <leader>gb :Gblame<CR>
+  nnoremap <leader>gc :Gcommit<CR>
 endif
+" ###################################################################
+" ##################################################### vim-gitgutter
+" ###################################################################
+set updatetime=250
+nmap <Leader>] <Plug>GitGutterNextHunk|" 跳到下一个修改处
+nmap <Leader>[ <Plug>GitGutterPrevHunk|" 跳到前一个修改处
+nmap <Leader>hs <Plug>GitGutterStageHunk|" 暂存该处修改
+nmap <Leader>hu <Plug>GitGutterUndoHunk|" 取消修改暂存
+nmap <Leader>hp <Plug>GitGutterPreviewHunk|" 修改预览
 " ###################################################################
 " ####################################################### tabular对齐
 " ###################################################################
 if isdirectory(expand("~/.vim/bundle/tabular"))
-  nmap <Leader>a& :Tabularize /&<CR>
-  vmap <Leader>a& :Tabularize /&<CR>
-  nmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-  vmap <Leader>a= :Tabularize /^[^=]*\zs=<CR>
-  nmap <Leader>a=> :Tabularize /=><CR>
-  vmap <Leader>a=> :Tabularize /=><CR>
-  nmap <Leader>a: :Tabularize /:<CR>
-  vmap <Leader>a: :Tabularize /:<CR>
-  nmap <Leader>a:: :Tabularize /:\zs<CR>
-  vmap <Leader>a:: :Tabularize /:\zs<CR>
-  nmap <Leader>a, :Tabularize /,<CR>
-  vmap <Leader>a, :Tabularize /,<CR>
-  nmap <Leader>a,, :Tabularize /,\zs<CR>
-  vmap <Leader>a,, :Tabularize /,\zs<CR>
+  nmap <Leader>a=     :Tabularize /^[^=]*\zs=<CR>
+  vmap <Leader>a=     :Tabularize /^[^=]*\zs=<CR>
+  nmap <Leader>a=>    :Tabularize /=><CR>
+  vmap <Leader>a=>    :Tabularize /=><CR>
+  nmap <Leader>a:     :Tabularize /:\zs<CR>
+  vmap <Leader>a:     :Tabularize /:\zs<CR>
   nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
   vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 endif
