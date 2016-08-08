@@ -1,0 +1,5 @@
+# 系统启动或远程登录时会进行login shell，即加载文件/etc/profile
+# 上述文件加载后将加载用户HOME目录下的此文件，按顺序读取.bash_profile  .bash_login  .profile只读第一个文件。
+
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+
