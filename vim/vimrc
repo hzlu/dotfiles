@@ -110,9 +110,8 @@ set backspace=indent,eol,start
 set autoindent
 " 折叠
 set foldmethod=indent
-" set foldmethod=syntax
+set foldlevel=1
 set nofoldenable
-" highlight Folded  guibg=#0A0A0A guifg=#9090D0
 " 语言编码
 set langmenu=zh_cn
 set helplang=cn
@@ -149,8 +148,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md          set filetype=markdown
   autocmd BufRead,BufNewFile *.coffee      set filetype=coffee
   autocmd BufRead,BufNewFile *.slim        set filetype=slim
-  autocmd BufRead,BufNewFile *.sass,*.scss set foldmethod=indent nofoldenable
-  autocmd BufRead,BufNewFile *.coffee      set foldmethod=indent nofoldenable
+  autocmd BufRead,BufNewFile *.sass,*.scss,*.coffee,*.erb,*.eco set foldmethod=indent
   autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
   autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
@@ -209,6 +207,9 @@ endif
 nnoremap -hl :nohlsearch<cr>
 nnoremap +hl :set hlsearch<cr>
 nnoremap <space> viw
+nnoremap <space><space> za
+nnoremap <space>o zR
+nnoremap <space>c zM
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
 nnoremap <Leader>ev :e $MYVIMRC<CR>
@@ -227,6 +228,7 @@ augroup erbAbbrev
   autocmd FileType eruby :iabbrev elsif <% elsif %><Esc>hhi
   autocmd FileType eruby :iabbrev else <% else %><CR>
   autocmd FileType eruby :iabbrev do <%  %><CR><% end %><Esc>k$hhi
+  autocmd FileType eruby :iabbrev render <%= render '' %><Esc>$hhhi
 augroup END
 " ###################################################################
 " ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
