@@ -66,13 +66,23 @@ alias clr="clear"
 alias ll="ls -alh"
 alias rs="rvm use 2.3.0@rails4 && bundle exec rails s -b127.0.0.1"
 alias sk="rvm use 2.3.0@rails4 && bundle exec sidekiq"
-alias rc="rails c"
+alias rc="rvm use 2.3.0@rails4 && bundle exec rails c"
 alias cdcellar="/Users/luhaozhao/Ligeit/cellar"
 alias cdbike="cd ~/Bestapp/bike-ticket/"
 alias cdmygits="cd /Users/luhaozhao/MyProjects/MyGits/"
 alias cddotfiles="cd /Users/luhaozhao/Dropbox/dotfiles/"
 alias cdpractices="cd /Users/luhaozhao/MyProjects/practices/"
+alias cdvagrant="cd /Users/luhaozhao/vagrant/"
 alias cdh="dirs -v"
+alias tabtospace="find . -name '*.rb'\
+  -or -name '*.erb'\
+  -or -name '*.eco'\
+  -or -name '*.coffee'\
+  -or -name '*.scss'\
+  -or -name '*.sass'\
+  -or -name '*.jbuilder'\
+  -or -name '*.rake'\
+  -type f | xargs sed -i '' -e 's/	/  /g'"
 ###################################################################
 ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
 ###################################################################
