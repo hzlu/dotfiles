@@ -73,7 +73,7 @@ alias cdmygits="cd /Users/luhaozhao/MyProjects/MyGits/"
 alias cddotfiles="cd /Users/luhaozhao/Dropbox/dotfiles/"
 alias cdpractices="cd /Users/luhaozhao/MyProjects/practices/"
 alias cdvagrant="cd /Users/luhaozhao/vagrant/"
-alias cdh="dirs -v"
+alias dirs="dirs -v" # cd -N 或者 cd +N
 alias tabtospace="find . -name '*.rb'\
   -or -name '*.erb'\
   -or -name '*.eco'\
