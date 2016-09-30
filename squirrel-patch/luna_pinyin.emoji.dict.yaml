@@ -1,0 +1,4806 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Luna Pinyin Extended Dictionary(emoji) - 明月拼音擴充詞庫（表情）
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+# 於重新部署後生效
+# no comment
+
+---
+name: luna_pinyin.emoji
+version: "2016.6.15"
+sort: by_weight
+use_preset_vocabulary: true
+...
+
+
+〰️	bo lang	20000
+〰️	bo lang xian	20000
+〰️	bo lang xing po zhe hao	20000
+‼️	fu hao	20000
+‼️	hong se shuang gan tan hao	20000
+‼️	jing tan	20000
+‼️	jing ya	20000
+‼️	shuang gan tan hao	20000
+‼️	shuang jing tan hao	20000
+⁉️	fu hao	20000
+⁉️	gan tan hao jia wen hao	20000
+⁉️	jing tan hao jia wen hao	20000
+⁉️	jing wen	20000
+⁉️	jing ya huai yi	20000
+〽️	chang ge fu hao	20000
+〽️	ge ji hao	20000
+〽️	ge yao kai shi ji hao	20000
+〽️	zhong ri han biao dian	20000
+°	degree	20000
+°	du	20000
+℃	degreec	20000
+℃	she shi du	20000
+℉	degreef	20000
+℉	hua shi du	20000
+©	ban quan	20000
+©️	ban quan fu hao	20000
+®	quan r	20000
+®	zhu ce	20000
+®️	zhu ce biao ji	20000
+®️	zhu ce shang biao	20000
+←	jian tou	20000
+←	left	20000
+←	zuo jian tou	20000
+→	jian tou	20000
+→	right	20000
+→	you jian tou	20000
+↑	jian tou	20000
+↑	xiang shang	20000
+↓	jian tou	20000
+↓	xiang xia	20000
+↔️	jian tou	20000
+↔️	zuo you	20000
+↔️	zuo you jian tou	20000
+↕️	jian tou	20000
+↕️	shang xia	20000
+↕️	shang xia jian tou	20000
+↖	jian tou	20000
+↖️	xi bei zhi xiang de jian tou	20000
+↖	zuo shang	20000
+↖️	zuo shang jian tou	20000
+↗	jian tou	20000
+↗	you shang	20000
+↗️	you shang jian tou	20000
+↘️	dong nan zhi xiang de jian tou	20000
+↘	jian tou	20000
+↘	you xia	20000
+↘️	you xia jian tou	20000
+↙	jian tou	20000
+↙️	xi nan zhi xiang de jian tou	20000
+↙	zuo xia	20000
+↙️	zuo xia jian tou	20000
+↩️	xiang zuo hui zhuan	20000
+↩️	zuo hui zhuan	20000
+↪️	xiang you hui zhuan	20000
+↪️	you hui zhuan	20000
+↵	return	20000
+↹	tab	20000
+⇌	jian tou	20000
+⇌	shuang xiang	20000
+⇞	pgup	20000
+⇟	pgdn	20000
+⇤	tab left	20000
+⇥	tab riht	20000
+⇧	shift	20000
+⇧⌃⌥⌘	dian nao	20000
+⇧⌃⌥⌘	zu he jian	20000
+⇪	caps	20000
+⇪	capslock	20000
+∑	qiu he	20000
+∑	shu xue fu hao	20000
+∑	sum	10000
+±	jia jian	20000
+±	zheng fu	20000
+＜	shu xue fu hao	20000
+＜	xiao yu	20000
+≠	bu deng yu	20000
+≠	shu xue fu hao	20000
+＞	da yu	20000
+＞	shu xue fu hao	20000
+∞	infty	10000
+∞	shu xue fu hao	20000
+∞	wu qiong	20000
+∞	wu qiong da	20000
+∞	wu xian	10000
+∴	suo yi	10000
+∵	yin wei	10000
+≤	bu da yu	20000
+≤	shu xue fu hao	20000
+≥	bu xiao yu	20000
+≥	shu xue fu hao	20000
+⌃	control	20000
+⌃	ctl	20000
+⌅	enter	20000
+⌘	cmd	20000
+⌘	command	20000
+⌚️	biao	20000
+⌚️	biao pan	20000
+⌚️	ji xie biao	20000
+⌚️	ming biao	20000
+⌚️	nv biao	20000
+⌚️	shi jian	20000
+⌚️	shi ying biao	20000
+⌚️	shou biao	20000
+⌚️	wan biao	20000
+⌛️	deng dai	20000
+⌛️	ji shi	20000
+⌛️	sha lou	20000
+⌛️	shi jian	20000
+⌥	alt	20000
+⌥	opt	20000
+⌥	option	20000
+⌦	del forward	20000
+⌨️	jian pan	20000
+⌫	del	20000
+⎋	esc	20000
+⎋	power	20000
+⏏	eject	20000
+⏩	jia su	20000
+⏩	kuai jin	20000
+⏩	kuai jin jian	20000
+⏩	xiang you fu hao	20000
+⏩	you shuang san jiao	20000
+⏪	dao tui jian	20000
+⏪	jian su	20000
+⏪	kuai tui	20000
+⏪	xiang zuo fu hao	20000
+⏫	shang chuan	20000
+⏫	xiang shang fu hao	20000
+⏬	xia zai	20000
+⏬	xiang xia fu hao	20000
+⏭️	kuai jin jian	20000
+⏮️	dao tui jian	20000
+⏯️	bo fang zan ting jian	20000
+⏰	nao ling	20000
+⏰	nao zhong	20000
+⏰	ti xing	20000
+⏱️	miao biao	20000
+⏲️	ding shi qi shi zhong	20000
+⏲️	shi zhong	20000
+⏳	sha lou	20000
+⏸️	zan ting	20000
+⏸️	zan ting lu zhi	20000
+⏹️	ting zhi lu zhi	20000
+⏹️	ting zhi mei ti fu hao	20000
+⏺️	lu zhi	20000
+␣	space	20000
+▪️	hei dian	20000
+▶️	bo fang jian	20000
+▶	san jiao	20000
+▶️	xia yi ge	20000
+▶️	xiang you	20000
+▶️	you san jiao	20000
+▼	xia san jiao	20000
+◀	san jiao	20000
+◀️	shang yi ge	20000
+◀️	xiang zuo	20000
+◽️	bai se fang kuai	20000
+◾️	hei fang kuai	20000
+☀️	qing lang	20000
+☀	qing tian	20000
+☀️	ri shi	20000
+☀	tai yang	20000
+☀️	tai yang she xian	20000
+☀	tian qi	20000
+☀️	yang guang	20000
+☁	duo yun	20000
+☁️	fu yun	20000
+☁	tian qi	20000
+☁️	wu yun	20000
+☁️	yin tian	20000
+☁️	yun	20000
+☁️	yun cai	20000
+☁️	yun duan	20000
+☁️	yun duo	20000
+☂️	bao hu san	20000
+☂️	san	20000
+☂️	yu san	20000
+☃️	dui xue ren	20000
+☃️	xue	20000
+☃️	xue ren	20000
+☄️	ha lei hui xing	20000
+☄️	hui xing	20000
+☄️	sao ba xing	20000
+☄️	sao zhou xing	20000
+☎️	da dian hua	20000
+☎️	dian hua	20000
+☎️	lai dian	20000
+☎	shang wu	20000
+☎️	zhi dian	20000
+☎️	zuo ji	20000
+☑️	da gou	20000
+☑️	fu hao	20000
+☑️	fu xuan kuang	20000
+☑️	gou xuan	20000
+☑️	que ding	20000
+☑️	xuan zhong	20000
+☑️	yi gou xuan	20000
+☔️	cheng san	20000
+☔️	da san	20000
+☔️	san	20000
+☔	tian qi	20000
+☔️	xia yu	20000
+☔️	xia yu tian	20000
+☔️	yu	20000
+☔️	yu di	20000
+☔	yu san	20000
+☔️	yu shui	20000
+☔️	yu tian	20000
+☔	zhou yu	20000
+☕️	can yin	20000
+☕	cha	20000
+☕️	he ka fei	20000
+☕️	hong cha	20000
+☕️	ka bu qi nuo	20000
+☕	ka fei	20000
+☕️	ka fei bei	20000
+☕️	ka fei dian	20000
+☕️	mo ka	20000
+☕️	nai cha	20000
+☕️	re yin	20000
+☕️	re yin liao	20000
+☕️	xia wu cha	20000
+☕️	yin liao	20000
+☘️	san ye cao	20000
+☘️	xing yun cao	20000
+☝️	di yi	20000
+☝	shi zhi	20000
+☝	shou shi	20000
+☝️	yi ge	20000
+☟	shi zhi xiang xia	20000
+☠️	ju du	20000
+☠️	ku lou	20000
+☠️	ku lou tou	20000
+☢️	fang she xing	20000
+☢️	fang she xing biao zhi	20000
+☢️	fu she	20000
+☣️	sheng wu wei hai	20000
+☣️	sheng wu wei hai biao zhi	20000
+☦️	dong zheng jiao shi zi jia	20000
+☦️	zheng jiao hui shi zi	20000
+☪️	xing yue	20000
+☪️	xing yue biao zhi	20000
+☮️	fan zhan	20000
+☮️	fan zhan biao zhi	20000
+☮️	he ping biao zhi	20000
+☯️	tai ji	20000
+☯	yin yang	20000
+☸️	fa lun	20000
+☹️	bu gao xing	20000
+☹️	bu gao xing de lian	20000
+☹️	bu kai xin	20000
+☹️	ku nao	20000
+☹️	sheng qi de lian	20000
+☺️	biao qing	20000
+☺️	de yi	20000
+☺️	kai xin	20000
+☺️	wei xiao	20000
+☺️	xiao	20000
+☺️	xiao lian	20000
+♀	fu hao	20000
+♀	nv xing	20000
+♂	fu hao	20000
+♂	nan xing	20000
+♈	bai yang zuo	20000
+♈️	mu yang zuo	20000
+♈	xing zuo	20000
+♉	jin niu zuo	20000
+♉	xing zuo	20000
+♊	shuang zi zuo	20000
+♊	xing zuo	20000
+♋	ju xie zuo	20000
+♋	xing zuo	20000
+♌	shi zi zuo	20000
+♌	xing zuo	20000
+♍	chu nv zuo	20000
+♍	xing zuo	20000
+♎️	tian cheng zuo	20000
+♎	tian ping zuo	20000
+♎	xing zuo	20000
+♏	tian xie zuo	20000
+♏	xing zuo	20000
+♐	she shou zuo	20000
+♐	xing zuo	20000
+♑	mo jie zuo	20000
+♑	xing zuo	20000
+♒	shui ping zuo	20000
+♒	xing zuo	20000
+♓	shuang yu zuo	20000
+♓	xing zuo	20000
+♠	hei tao	20000
+♠	pu ke	20000
+♣️	cao hua	20000
+♣️	hei mei hua	20000
+♣	mei hua	20000
+♣	pu ke	20000
+♥	hong tao	20000
+♥️	hong xin	20000
+♥	pu ke	20000
+♥️	tao xin	20000
+♦	fang kuai	20000
+♦️	fang pian	20000
+♦️	hong fang kuai	20000
+♦	pu ke	20000
+♨️	pao tang	20000
+♨️	re shui	20000
+♨️	re tang	20000
+♨	wen quan	20000
+♨️	xiu xi	20000
+♻️	fu hao	20000
+♻️	huan bao	20000
+♻️	hui shou	20000
+♻︎	xun huan	20000
+♿	biao zhi	20000
+♿️	can ji fu hao	20000
+♿️	can zhang	20000
+♿️	can zhang ren shi	20000
+♿	lun yi	20000
+⚒️	chui zi he gao	20000
+⚒️	chui zi he hao	20000
+⚓️	chuan mao	20000
+⚓️	du lun	20000
+⚓️	fu hao	20000
+⚓️	gang kou	20000
+⚓️	hai yun	20000
+⚓️	mao	20000
+⚔️	jiao cha de jian	20000
+⚔️	jue dou	20000
+⚖️	gong ping cheng	20000
+⚖️	tian cheng	20000
+⚖️	tian ping	20000
+⚗️	zheng liu qi	20000
+⚙	chi lun	20000
+⚙️	ji xie	20000
+⚛️	wu li	20000
+⚛️	yuan zi fu hao	20000
+⚜️	jin bai he	20000
+⚜️	xiang gen yuan wei	20000
+⚜️	yuan wei	20000
+⚜️	yuan wei hua	20000
+⚠️	biao zhi	20000
+⚠️	jin ji tong zhi	20000
+⚠️	jing gao	20000
+⚠️	jing shi	20000
+⚠️	wei xian	20000
+⚠️	zhu yi	20000
+⚠️	zhu yi shi xiang	20000
+⚡️	biao zhi	20000
+⚡️	gao ya fu hao	20000
+⚡️	shan dian	20000
+⚡️	shou cheng shan dian	20000
+⚢	nv nv	20000
+⚣	nan nan	20000
+⚪️	bai se yuan quan	20000
+⚫️	hei se yuan quan	20000
+⚰️	guan cai	20000
+⚰️	guan guo	20000
+⚰️	ling jiu	20000
+⚱️	gu hui guan	20000
+⚱️	gu hui he	20000
+⚱️	gu hui tan	20000
+⚽️	guo zu	20000
+⚽️	ti qiu	20000
+⚽	yun dong	20000
+⚽	zu qiu	20000
+⚽️	zu qiu dui	20000
+⚽️	zu qiu sai	20000
+⚾	bang qiu	20000
+⚾	yun dong	20000
+⛄️	dui xue ren	20000
+⛄	tian qi	20000
+⛄️	xue	20000
+⛄	xue ren	20000
+⛅️	duo yun	20000
+⛅️	duo yun zhuan qing	20000
+⛅️	qing jian duo yun	20000
+⛅️	tian qi	20000
+⛅️	yin tian	20000
+⛈️	bao yu	20000
+⛈️	dian shan lei ming	20000
+⛈️	lei yu jiao jia	20000
+⛈️	lei yu yun	20000
+⛈️	yu	20000
+⛎	she fu zuo	20000
+⛎	xing zuo	20000
+⛏️	chu tou	20000
+⛏️	tie gao	20000
+⛏️	tie hao	20000
+⛑️	an quan mao	20000
+⛑️	jiu sheng an quan mao	20000
+⛓️	lian tiao	20000
+⛔️	biao zhi	20000
+⛔️	jin xing	20000
+⛔️	jin zhi	20000
+⛔️	jin zhi jin ru	20000
+⛔️	jin zhi shi ru	20000
+⛩️	ri ben shen she	20000
+⛩️	shen she	20000
+⛪	jian zhu	20000
+⛪	jiao tang	20000
+⛪️	jie hun	20000
+⛪️	li bai tang	20000
+⛪️	sheng tang	20000
+⛪️	zuo li bai	20000
+⛰️	gao shan	20000
+⛰️	shan feng	20000
+⛱️	du jia	20000
+⛱️	san	20000
+⛱️	tai yang san	20000
+⛱️	zhe yang san	20000
+⛲	gong yuan	20000
+⛲	huo dong	20000
+⛲️	pen quan	20000
+⛲️	pen shui chi	20000
+⛳️	da gao er fu	20000
+⛳	gao er fu	20000
+⛳️	gao er fu qiu	20000
+⛳️	gao er fu qiu dong	20000
+⛳	yun dong	20000
+⛴️	du chuan	20000
+⛴️	du lun	20000
+⛴️	shui shang ba shi	20000
+⛵	fan chuan	20000
+⛵️	hai shang huo dong	20000
+⛵	ma tou	20000
+⛵️	you ting	20000
+⛷️	hua xue	20000
+⛷️	hua xue yun dong yuan	20000
+⛷️	shuang ban	20000
+⛸️	bing dao xie	20000
+⛸	hua bing	20000
+⛸	liu bing	20000
+⛸️	liu bing xie	20000
+⛹️	da lan qiu	20000
+⛹️	lan qiu	20000
+⛹️	lan qiu bi sai	20000
+⛹	nan lan yun dong yuan	20000
+⛹️	yun dong	20000
+⛹️	zai yun qiu de ren	20000
+⛹️‍♀️	da lan qiu	20000
+⛹️‍♀️	lan qiu bi sai	20000
+⛹️‍♀️	nv lan yun dong yuan	20000
+⛹️‍♀️	yun dong	20000
+⛹️‍♀️	zai yun qiu de ren	20000
+⛺	huo dong	20000
+⛺	lu ying	20000
+⛺	ye ying	20000
+⛺	zhang peng	20000
+⛽	huo dong	20000
+⛽	jia you	20000
+⛽	jia you zhan	20000
+⛽	ran liao	20000
+⛽️	ran liao beng	20000
+⛽️	xiu xi qu	20000
+🇦🇨	a sen song dao	20000
+🇦🇩	an dao er	20000
+🇦🇩	an dao er gong he guo	20000
+🇦🇪	a la bo lian he da gong guo	20000
+🇦🇪	a la bo lian he qiu zhang guo	20000
+🇦🇪	a lian qiu	20000
+🇦🇫	a fu han	20000
+🇦🇬	an de ka ji ba bu da	20000
+🇦🇬	an ti gua he ba bu da	20000
+🇦🇮	an gui la	20000
+🇦🇱	a er ba ni ya	20000
+🇦🇲	ya mei ni ya	20000
+🇦🇴	an ge la	20000
+🇦🇶	nan ji zhou	20000
+🇦🇷	a gen ting	20000
+🇦🇷	nan mei tan ge	20000
+🇦🇸	mei shu sa mo ya	20000
+🇦🇹	ao di li	20000
+🇦🇹	yin yue zhi bang	20000
+🇦🇺	ao da li ya	20000
+🇦🇺	dai shu guo	20000
+🇦🇼	a lu ba	20000
+🇦🇽	ao lan qun dao	20000
+🇦🇿	a sai bai jiang	20000
+🇦🇿	ya sai bai ran	20000
+🇧🇦	bo shi ni ya	20000
+🇧🇦	bo si ni ya	20000
+🇧🇦	bo si ni ya he hei sai ge wei	20000
+🇧🇧	ba ba duo si	20000
+🇧🇧	ba bei duo	20000
+🇧🇩	meng jia la	20000
+🇧🇩	meng jia la guo	20000
+🇧🇪	bi li shi	20000
+🇧🇫	bu ji na fa suo	20000
+🇧🇬	bao jia li ya	20000
+🇧🇬	mei gui wang guo	20000
+🇧🇭	ba lin	20000
+🇧🇮	bu long di	20000
+🇧🇮	pu long de	20000
+🇧🇯	bei nan	20000
+🇧🇯	bei ning	20000
+🇧🇯	you zong zhi guo	20000
+🇧🇱	sheng ba tai lei mi dao	20000
+🇧🇲	bai mu da	20000
+🇧🇳	wen lai	20000
+🇧🇴	bo li wei ya	20000
+🇧🇶	he lan jia lei bi qu	20000
+🇧🇷	ba xi	20000
+🇧🇷	sang ba wu zhe	20000
+🇧🇷	sen ba wu zhe	20000
+🇧🇸	ba ha ma	20000
+🇧🇹	bu dan	20000
+🇧🇻	bu wei dao	20000
+🇧🇼	bo ci wa na	20000
+🇧🇼	bo zha na	20000
+🇧🇼	bo zi wa na	20000
+🇧🇾	bai e luo si	20000
+🇧🇿	bei li si	20000
+🇧🇿	bo li zi	20000
+🇨🇦	feng ye zhi guo	20000
+🇨🇦	jia na da	20000
+🇨🇩	gang guo min zhu gong he guo	20000
+🇨🇫	zhong fei gong he guo	20000
+🇨🇬	gang guo gong he guo	20000
+🇨🇭	rui shi	20000
+🇨🇮	ke te di wa	20000
+🇨🇮	xiang ya hai an	20000
+🇨🇰	ku ke qun dao	20000
+🇨🇱	zhi li	20000
+🇨🇲	ka mai long	20000
+🇨🇳	wu xing hong qi	20000
+🇨🇳	zhong guo	20000
+🇨🇳	zhong guo guo qi	20000
+🇨🇳	zhong hua ren min gong he guo	20000
+🇨🇳	zhong hua ren min gong he guo guo qi	20000
+🇨🇴	ge lun bi ya	20000
+🇨🇵	ke li po dun dao	20000
+🇨🇷	ge si da li jia	20000
+🇨🇺	gu ba	20000
+🇨🇻	fu de jiao	20000
+🇨🇻	wei de jiao	20000
+🇨🇼	ku la suo	20000
+🇨🇽	sheng dan dao	20000
+🇨🇾	sai pu lei si	20000
+🇨🇾	sai pu lu si	20000
+🇨🇿	jie ke	20000
+🇨🇿	jie ke gong he guo	20000
+🇩🇪	de guo	20000
+🇩🇪	de guo guo qi	20000
+🇩🇪	ri er man zhan che	20000
+🇩🇬	di ge jia xi ya dao	20000
+🇩🇯	ji bu de	20000
+🇩🇯	ji bu ti	20000
+🇩🇰	dan mai	20000
+🇩🇲	duo mi ni ke	20000
+🇩🇴	duo mi ni jia gong he guo	20000
+🇩🇴	duo ming ni jia gong he guo	20000
+🇩🇿	a er ji li ya	20000
+🇪🇦	xiu da he mei li li ya	20000
+🇪🇨	e gua duo er	20000
+🇪🇪	ai sha ni ya	20000
+🇪🇬	ai ji	20000
+🇪🇭	xi sa ha la	20000
+🇪🇷	e li chui ya	20000
+🇪🇷	e li te li ya	20000
+🇪🇸	xi ban ya	20000
+🇪🇸	xi ban ya guo qi	20000
+🇪🇹	ai sai e bi ya	20000
+🇪🇹	yi suo bi ya	20000
+🇪🇺	ou meng	20000
+🇫🇮	fen lan	20000
+🇫🇮	he lan	20000
+🇫🇯	fei ji	20000
+🇫🇰	fu ke lan qun dao	20000
+🇫🇲	mi ke luo ni xi ya	20000
+🇫🇴	fa luo qun dao	20000
+🇫🇷	fa guo	20000
+🇫🇷	fa guo guo qi	20000
+🇫🇷	gao lu xiong ji	20000
+🇬🇦	jia peng	20000
+🇬🇧	bu lie dian	20000
+🇬🇧	da bu lie dian	20000
+🇬🇧	mi zi qi	20000
+🇬🇧	ying guo	20000
+🇬🇧	ying guo guo qi	20000
+🇬🇩	ge lin na da	20000
+🇬🇩	ge rui na da	20000
+🇬🇪	ge lu ji ya	20000
+🇬🇪	qiao zhi ya gong he guo	20000
+🇬🇫	fa shu gui ya na	20000
+🇬🇬	ge en xi dao	20000
+🇬🇭	jia na	20000
+🇬🇮	zhi bu luo tuo	20000
+🇬🇱	ge ling lan	20000
+🇬🇲	gan bi ya	20000
+🇬🇲	gang bi ya	20000
+🇬🇳	ji nei ya	20000
+🇬🇵	gua de luo pu	20000
+🇬🇵	gua de luo pu dao	20000
+🇬🇶	chi dao ji nei ya	20000
+🇬🇷	xi la	20000
+🇬🇸	nan qiao zhi ya dao he nan sang wei qi qun dao	20000
+🇬🇹	gua de ma la	20000
+🇬🇹	wei de ma la	20000
+🇬🇺	guan dao	20000
+🇬🇼	ji nei ya bi shao	20000
+🇬🇼	ji nei ya bi suo	20000
+🇬🇾	gai ya na	20000
+🇬🇾	gui ya na	20000
+🇭🇰	xiang gang	20000
+🇭🇰	zhong guo xiang gang te bie xing zheng qu	20000
+🇭🇰	zi jing hua qi	20000
+🇭🇲	he de dao he mai ke tang na qun dao	20000
+🇭🇳	hong dou la si	20000
+🇭🇷	ge zi jun	20000
+🇭🇷	ke luo ai xi ya	20000
+🇭🇷	ke luo de ya	20000
+🇭🇹	hai de	20000
+🇭🇹	hai di	20000
+🇭🇺	xiong ya li	20000
+🇮🇨	jia na li qun dao	20000
+🇮🇩	yin du ni xi ya	20000
+🇮🇩	yin ni	20000
+🇮🇪	ai er lan	20000
+🇮🇱	yi se lie	20000
+🇮🇲	man en dao	20000
+🇮🇳	kong que zhi guo	20000
+🇮🇳	yin du	20000
+🇮🇴	ying shu yin du yang ling di	20000
+🇮🇶	yi la ke	20000
+🇮🇷	yi lang	20000
+🇮🇸	bing dao	20000
+🇮🇹	yi da li	20000
+🇮🇹	yi da li guo qi	20000
+🇯🇪	ze xi dao	20000
+🇯🇲	ya mai jia	20000
+🇯🇴	yue dan	20000
+🇯🇵	ri ben	20000
+🇯🇵	ri ben guo qi	20000
+🇯🇵	ri zhang qi	20000
+🇯🇵	ying hua zhi guo	20000
+🇰🇪	ken ni ya	20000
+🇰🇪	ken ya	20000
+🇰🇬	ji er ji si	20000
+🇰🇬	ji er ji si si tan	20000
+🇰🇬	ji er ji si tan	20000
+🇰🇭	jian bu zhai	20000
+🇰🇮	ji li ba si	20000
+🇰🇲	ge mo	20000
+🇰🇲	ke mo luo	20000
+🇰🇲	xiang dao	20000
+🇰🇳	sheng ji ci he ni wei si	20000
+🇰🇳	sheng ke li si duo fu ji ni wei si	20000
+🇰🇵	bei han	20000
+🇰🇵	chao xian	20000
+🇰🇷	han guo	20000
+🇰🇷	han guo guo qi	20000
+🇰🇷	nan han	20000
+🇰🇷	tai ji hu	20000
+🇰🇷	tai ji qi	20000
+🇰🇼	ke wei te	20000
+🇰🇾	kai man qun dao	20000
+🇰🇿	ha sa ke	20000
+🇰🇿	ha sa ke si tan	20000
+🇱🇦	lao wo	20000
+🇱🇦	liao guo	20000
+🇱🇧	li ba nen	20000
+🇱🇨	sheng lu xi ya	20000
+🇱🇮	lie zhi dun shi deng	20000
+🇱🇮	lie zhi dun si deng	20000
+🇱🇰	si li lan ka	20000
+🇱🇷	lai bi rui ya	20000
+🇱🇷	li bi li ya	20000
+🇱🇸	lai suo tuo	20000
+🇱🇹	li tao wan	20000
+🇱🇺	lu sen bao	20000
+🇱🇻	la tuo wei ya	20000
+🇱🇾	li bi ya	20000
+🇲🇦	mo luo ge	20000
+🇲🇨	mo na ge	20000
+🇲🇩	mo er duo wa	20000
+🇲🇪	hei shan	20000
+🇲🇫	sheng ma ding	20000
+🇲🇬	ma da jia si jia	20000
+🇲🇭	ma shao er qun dao	20000
+🇲🇰	ma qi dun	20000
+🇲🇱	ma li	20000
+🇲🇲	mian dian	20000
+🇲🇳	meng gu	20000
+🇲🇴	ao men	20000
+🇲🇴	zhong guo ao men te bie xing zheng qu	20000
+🇲🇵	bei ma li ya na qun dao	20000
+🇲🇶	ma ding ni ke	20000
+🇲🇶	ma ti ni ke	20000
+🇲🇷	mao li ta ni ya	20000
+🇲🇸	meng te sai la te	20000
+🇲🇸	meng te sai la te dao	20000
+🇲🇸	meng te se la te dao	20000
+🇲🇹	ma er ta	20000
+🇲🇺	mao li qiu si	20000
+🇲🇻	ma er dai fu	20000
+🇲🇻	ma er de fu	20000
+🇲🇼	ma la wei	20000
+🇲🇽	gao yuan xiong ying	20000
+🇲🇽	mo xi ge	20000
+🇲🇾	ma lai xi ya	20000
+🇲🇾	xi he xiang jiao wang guo	20000
+🇲🇿	mo san bi ke	20000
+🇲🇿	mo sang bi ke	20000
+🇳🇦	na mi bi ya	20000
+🇳🇨	xin ka li duo ni ya	20000
+🇳🇨	xin ka li duo ni ya qun dao	20000
+🇳🇪	ni ri er	20000
+🇳🇪	sha zhong zhi guo	20000
+🇳🇫	nuo fu ke dao	20000
+🇳🇬	fei zhou xiong ying	20000
+🇳🇬	nai ji li ya	20000
+🇳🇬	ni ri li ya	20000
+🇳🇮	ni jia la gua	20000
+🇳🇱	feng che zhi guo	20000
+🇳🇱	he lan	20000
+🇳🇴	nuo wei	20000
+🇳🇴	wan dao guo	20000
+🇳🇵	ni po er	20000
+🇳🇵	si miao zhi guo	20000
+🇳🇷	nao lu	20000
+🇳🇺	niu ai	20000
+🇳🇿	niu xi lan	20000
+🇳🇿	xin xi lan	20000
+🇴🇲	a man	20000
+🇵🇦	ba na ma	20000
+🇵🇪	bi lu	20000
+🇵🇪	mi lu	20000
+🇵🇫	fa shu bo li ni xi ya	20000
+🇵🇬	ba bu ya niu ji nei ya	20000
+🇵🇬	ba bu ya xin ji nei ya	20000
+🇵🇭	fei lv bin	20000
+🇵🇰	ba ji si tan	20000
+🇵🇱	bo lan	20000
+🇵🇲	sheng pi ai er he mi ke long	20000
+🇵🇳	pi te ke en	20000
+🇵🇷	bo duo li ge	20000
+🇵🇸	ba le si tan	20000
+🇵🇸	ba lei si tan	20000
+🇵🇹	pu tao ya	20000
+🇵🇼	bo liu	20000
+🇵🇼	pa lao	20000
+🇵🇾	ba la gui	20000
+🇶🇦	ka da	20000
+🇶🇦	ka ta er	20000
+🇷🇪	liu ni wang	20000
+🇷🇪	liu ni wang dao	20000
+🇷🇴	luo ma ni ya	20000
+🇷🇸	sai er wei ya	20000
+🇷🇺	e guo	20000
+🇷🇺	e guo guo qi	20000
+🇷🇺	e luo si	20000
+🇷🇼	lu an da	20000
+🇷🇼	lu wang da	20000
+🇸🇦	sha te a la bo	20000
+🇸🇦	sha wu de a la bo	20000
+🇸🇧	suo luo men qun dao	20000
+🇸🇨	sai she er	20000
+🇸🇨	sai xi er	20000
+🇸🇩	huo lu guo	20000
+🇸🇩	su dan	20000
+🇸🇪	rui dian	20000
+🇸🇬	shi cheng	20000
+🇸🇬	xin jia po	20000
+🇸🇭	sheng he lei na	20000
+🇸🇮	si luo wei ni ya	20000
+🇸🇮	si luo wen ni ya	20000
+🇸🇯	si wa er ba te he yang ma yan qun dao	20000
+🇸🇰	si luo fa ke	20000
+🇸🇱	sai la li ang	20000
+🇸🇲	sheng ma li nuo	20000
+🇸🇳	sai nei jia er	20000
+🇸🇴	fei zhou zhi jiao	20000
+🇸🇴	suo ma li	20000
+🇸🇴	suo ma li ya	20000
+🇸🇷	su li nan	20000
+🇸🇸	nan su dan	20000
+🇸🇸	nan su dan gong he guo	20000
+🇸🇹	sheng duo mei he pu lin xi bi	20000
+🇸🇹	sheng duo mei ji pu lin xi bi	20000
+🇸🇻	sa er wa duo	20000
+🇸🇻	sa er wa duo gong he guo	20000
+🇸🇽	he shu sheng ma ding	20000
+🇸🇽	sheng ma ding dao	20000
+🇸🇾	xu li ya	20000
+🇸🇿	shi wa ji lan	20000
+🇸🇿	si wei shi lan	20000
+🇹🇦	te li si tan da ku ni ya	20000
+🇹🇨	te ke si he kai ke si qun dao	20000
+🇹🇨	tu ke si ji kai ke si qun dao	20000
+🇹🇩	zha de	20000
+🇹🇫	fa shu nan bu ling di	20000
+🇹🇬	duo ge	20000
+🇹🇭	tai guo	20000
+🇹🇭	wan fu zhi guo	20000
+🇹🇯	ta ji ke	20000
+🇹🇯	ta ji ke si tan	20000
+🇹🇰	tuo ke lao	20000
+🇹🇱	dong di wen	20000
+🇹🇲	tu ku man	20000
+🇹🇲	tu ku man si tan	20000
+🇹🇳	gan lan zhi guo	20000
+🇹🇳	tu ni si	20000
+🇹🇳	tu ni xi ya	20000
+🇹🇴	dong jia	20000
+🇹🇴	tang jia	20000
+🇹🇷	tu er qi	20000
+🇹🇷	xing yue qi	20000
+🇹🇹	qian li da ji tuo ba ge	20000
+🇹🇹	te li ni da he duo ba ge	20000
+🇹🇻	tu wa lu	20000
+🇹🇼	tai wan	20000
+🇹🇿	tan sang ni ya	20000
+🇹🇿	tan shang ni ya	20000
+🇺🇦	wu ke lan	20000
+🇺🇬	wu gan da	20000
+🇺🇲	mei guo ben tu wai xiao dao yu	20000
+🇺🇸	mei guo	20000
+🇺🇸	mei guo guo qi	20000
+🇺🇸	shan mu da shu	20000
+🇺🇸	xing tiao qi	20000
+🇺🇾	wu la gui	20000
+🇺🇿	wu zi bie ke	20000
+🇺🇿	wu zi bie ke si tan	20000
+🇻🇦	fan di gang	20000
+🇻🇦	luo ma jiao ting	20000
+🇻🇨	sheng wen sen	20000
+🇻🇨	sheng wen sen te	20000
+🇻🇨	sheng wen sen te he ge lin na ding si	20000
+🇻🇪	wei nei rui la	20000
+🇻🇬	ying shu wei er jing qun dao	20000
+🇻🇬	ying shu wei jing qun dao	20000
+🇻🇮	mei shu wei er jing qun dao	20000
+🇻🇮	mei shu wei jing qun dao	20000
+🇻🇳	yue nan	20000
+🇻🇺	wa nu a tu	20000
+🇻🇺	wan na du	20000
+🇼🇫	wa li si he fu tu na qun dao	20000
+🇼🇸	sa mo ya	20000
+🇼🇸	sa mo ya qun dao	20000
+🇼🇸	tai wan	20000
+🇽🇰	ke suo wo	20000
+🇾🇪	ye men	20000
+🇾🇹	ma yue te dao	20000
+🇿🇦	nan fei	20000
+🇿🇲	shang bi ya	20000
+🇿🇲	zan bi ya	20000
+🇿🇼	jin ba bu wei	20000
+🇿🇼	xin ba wei	20000
+✂	gong ju	20000
+✂	jian dao	20000
+✂	jian zi	20000
+✂️	xiu jian	20000
+✅	gou hao	20000
+✅	que ding	20000
+✅	wan cheng	20000
+✅	yun xu	20000
+✅	zheng que	20000
+✈	fei ji	20000
+✈️	fei wang	20000
+✈️	fei xing	20000
+✈️	guo hang	20000
+✈️	hang kong	20000
+✈️	ji chang	20000
+✈	jiao tong	20000
+✈️	lv xing	20000
+✉️	shang wu	20000
+✉️	xie xin	20000
+✉️	xin feng	20000
+✉️	xin jian	20000
+✉️	xun xi	20000
+✉️	you jian	20000
+✊	jian chi	20000
+✊	jian chi xia qu	20000
+✊	quan tou	20000
+✊	shi tou	20000
+✊	shou shi	20000
+✊	wo quan	20000
+✊	xuan shi	20000
+✋	bu xing	20000
+✋	ji zhang	20000
+✋	ju shou	20000
+✋	ru lai shen zhang	20000
+✋	shou shi	20000
+✋	shou zhang	20000
+✋	zhang	20000
+✌️	jian dao	20000
+✌️	jian dao shou	20000
+✌	sheng li	20000
+✌	shou shi	20000
+✌️	ye	20000
+✌️	ying le	20000
+✍️	shu xie	20000
+✍️	xie zi	20000
+✏️	qian bi	20000
+✏️	xie zuo	20000
+✒️	gang bi	20000
+✓	dui gou	20000
+✓	right	20000
+✔️	da gou	20000
+✔️	fu hao	20000
+✔️	gou hao	20000
+✔️	zheng que	20000
+✖️	cheng	20000
+✖️	cheng hao	20000
+✖️	cuo wu	20000
+✖️	da cha	20000
+✖️	fu hao	20000
+✗	cha cha	20000
+✗	cha zi	20000
+✗	shan chu	20000
+✗	wrong	20000
+✝️	ji du jiao	20000
+✝️	shi zi jia	20000
+✡️	da wei zhi xing	20000
+✡️	liu mang xing	20000
+✡️	suo luo men feng yin	20000
+✡️	you tai xing	20000
+✡️	you tai xing hui	20000
+✨	liang jing jing	20000
+✨	shan liang	20000
+✨	shan liang de	20000
+✨	shan shuo de xing xing	20000
+✨	tian wen	20000
+✨	xing xing	20000
+✳️	lv xing hao	20000
+✳	xing hao	20000
+✳️	xing xing fu hao	20000
+✴️	ba jiao xing	20000
+✴️	da cha fu hao	20000
+✴	xing hao	20000
+❄️	chu xue	20000
+❄️	di yi chang xue	20000
+❄️	jiang xue	20000
+❄️	rui xue	20000
+❄️	tian qi	20000
+❄️	xia xue	20000
+❄️	xue	20000
+❄️	xue hua	20000
+❇️	mi zi fu hao	20000
+❇️	qing zhu	20000
+❇️	tiao fu xing	20000
+❌	cuo	20000
+❌	cuo wu	20000
+❌	fu hao	20000
+❌	hong cha	20000
+❌	jin zhi	20000
+❌	ju jue	20000
+❎	bu yun xu	20000
+❎	cha hao	20000
+❎	da cha fu hao	20000
+❎	fu hao	20000
+❎	wei wan cheng	20000
+❓	fu hao	20000
+❓	hong se wen hao	20000
+❓	wen hao	20000
+❓	yi wen	20000
+❔	bai se wen hao	20000
+❔	fu hao	20000
+❔	wen hao	20000
+❔	yi wen	20000
+❕	bai se gan tan hao	20000
+❕	fu hao	20000
+❕	gan tan hao	20000
+❕	jing tan	20000
+❕	jing tan hao	20000
+❕	jing ya	20000
+❗️	fu hao	20000
+❗	gan tan hao	20000
+❗️	hong se gan tan hao	20000
+❗️	jing tan	20000
+❗️	jing tan hao	20000
+❗️	jing ya	20000
+❣️	xin qing gan tan hao	20000
+❤️	ai	20000
+❤️	ai xin	20000
+❤️	hong se de xin	20000
+❤	hong xin	20000
+❤️	re qing	20000
+❤️	tao xin	20000
+❤️	xi huan	20000
+❤	xin	20000
+➕	jia	20000
+➕	jia hao	20000
+➖	jian	20000
+➖	jian hao	20000
+➗	chu	20000
+➗	chu hao	20000
+➡	jian tou	20000
+➡️	xiang you	20000
+➡️	xiang you jian tou	20000
+➡️	you	20000
+➡	you jian tou	20000
+➡️	you zhuan	20000
+➤	jian tou	20000
+➰	fu hao	20000
+➰	juan qu huan	20000
+➰	wan qu xian	20000
+➿	fu hao	20000
+➿	shuang juan qu huan	20000
+➿	shuang wan qu xian	20000
+⤴️	zhuan xiang qian fang	20000
+⤵️	zhuan xiang hou fang	20000
+⥯	jian tou	20000
+⥯	shuang xiang	20000
+⬅	jian tou	20000
+⬅️	xiang zuo	20000
+⬅️	xiang zuo jian tou	20000
+⬅️	zuo	20000
+⬅	zuo jian tou	20000
+⬅️	zuo zhuan	20000
+⬆	jian tou	20000
+⬆️	shang	20000
+⬆	shang jian tou	20000
+⬆️	xiang shang	20000
+⬆️	xiang shang jian tou	20000
+⬇	jian tou	20000
+⬇️	xia	20000
+⬇	xia jian tou	20000
+⬇️	xiang xia	20000
+⬇️	xiang xia jian tou	20000
+⬛️	hei xian da fang kuang	20000
+⬜️	bai xian da fang kuang	20000
+⭐️	dan huang xing xing	20000
+⭐️	fu hao	20000
+⭐	wu jiao xing	20000
+⭐	wu xing	20000
+⭐️	xing xing	20000
+⭕️	fu hao	20000
+⭕	hong quan	20000
+⭕️	hong se yuan quan	20000
+⭕️	quan quan	20000
+⭕	yuan quan	20000
+⭕️	yuan xing	20000
+⭕️	zheng que	20000
+☰	qian gua	20000
+☱	dui gua	20000
+☲	li gua	20000
+☳	zhen gua	20000
+☴	xun gua	20000
+☵	kan gua	20000
+☶	gen gua	20000
+☷	kun gua	20000
+🀄	hong zhong	20000
+🀄️	huo dong	20000
+🀄	ma jiang	20000
+🀄️	zhong	20000
+🃏	huo dong	20000
+🃏	pu ke pai	20000
+🃏	wan pai	20000
+🃏	wang pai	20000
+🃏	xiao chou	20000
+🃏	xiao wang	20000
+🃏	zhi pai	20000
+🌀	long juan feng	20000
+🌀	tai feng	20000
+🌀	tian qi	20000
+🌀	xuan wo	20000
+🌁	tian qi	20000
+🌁	wu mai	20000
+🌁	wu meng meng	20000
+🌁	wu qi	20000
+🌁	wu suo jin men	20000
+🌂	san	20000
+🌂	tian qi	20000
+🌂	yu san	20000
+🌃	wan shang	20000
+🌃	xing kong	20000
+🌃	xing ye	20000
+🌃	ye jing	20000
+🌃	ye se	20000
+🌃	zi ran	20000
+🌄	ri chu	20000
+🌄	ri chu feng	20000
+🌄	ri luo	20000
+🌄	ri luo shan gu	20000
+🌄	shan jian ri chu	20000
+🌄	zi ran	20000
+🌅	hai shang ri chu	20000
+🌅	ri chu	20000
+🌅	zi ran	20000
+🌆	bang wan	20000
+🌆	du shi	20000
+🌆	huang hun	20000
+🌆	mu se	20000
+🌆	xi yang	20000
+🌆	zi ran	20000
+🌇	huang hun	20000
+🌇	xi yang	20000
+🌇	xi yang xi xia	20000
+🌇	zi ran	20000
+🌈	cai hong	20000
+🌈	hong	20000
+🌈	zi ran	20000
+🌉	da qiao	20000
+🌉	ye jing	20000
+🌉	zi ran	20000
+🌊	bo lang	20000
+🌊	chao xi	20000
+🌊	hai lang	20000
+🌊	hai shui	20000
+🌊	ju lang	20000
+🌊	lang	20000
+🌊	lang hua	20000
+🌊	zi ran	20000
+🌋	huo huo shan	20000
+🌋	huo shan	20000
+🌋	huo shan pen fa	20000
+🌋	zi ran	20000
+🌌	hei ye	20000
+🌌	tian wen	20000
+🌌	yin he	20000
+🌌	yin he xi	20000
+🌌	zi ran	20000
+🌍	di qiu	20000
+🌍	fei zhou	20000
+🌍	fei zhou da lu	20000
+🌍	jia yuan	20000
+🌍	ou zhou fei zhou	20000
+🌍	xing qiu	20000
+🌎	bei ban qiu	20000
+🌎	di qiu	20000
+🌎	mei zhou	20000
+🌏	di qiu	20000
+🌏	dong ban qiu	20000
+🌏	ya zhou	20000
+🌏	ya zhou ao zhou	20000
+🌐	di qiu	20000
+🌐	zi wu xian	20000
+🌑	tian wen	20000
+🌑	xin yue	20000
+🌒	mei yue	20000
+🌒	tian wen	20000
+🌓	shang xian yue	20000
+🌓	tian wen	20000
+🌔	tian wen	20000
+🌔	ying tu yue	20000
+🌕	man yue	20000
+🌕	tian wen	20000
+🌖	kui tu yue	20000
+🌖	tian wen	20000
+🌗	tian wen	20000
+🌗	xia xian yue	20000
+🌘	can yue	20000
+🌘	tian wen	20000
+🌙	can yue	20000
+🌙	e mei yue	20000
+🌙	tian wen	20000
+🌙	xin yue	20000
+🌙	yue liang	20000
+🌙	yue ya	20000
+🌚	tian wen	20000
+🌚	xin yue	20000
+🌚🌝	gan ga	20000
+🌛	shang xian yue	20000
+🌛	tian wen	20000
+🌛	yue liang	20000
+🌜	tian wen	20000
+🌜	xia xian yue	20000
+🌜	yue liang	20000
+🌝	man yue	20000
+🌝	tian wen	20000
+🌝	yue liang	20000
+🌞	nuan yang yang	20000
+🌞	shai tai yang	20000
+🌞	tai yang	20000
+🌞	tai yang shen	20000
+🌞	tian wen	20000
+🌟	shan yao de xing xing	20000
+🌟	tian wen	20000
+🌟	xing	20000
+🌟	xing guang	20000
+🌟	xing mang	20000
+🌟	xing xing	20000
+🌠	hui xing	20000
+🌠	liu xing	20000
+🌠	tian wen	20000
+🌡	wen du ji	20000
+🌤️	duo yun	20000
+🌥️	yin tian	20000
+🌦️	tai yang yu	20000
+🌦️	yu	20000
+🌦️	zhen yu	20000
+🌧️	xia yu	20000
+🌧️	yu	20000
+🌨️	xia xue	20000
+🌩️	shan dian	20000
+🌪️	long juan feng	20000
+🌫️	wu	20000
+🌫️	wu mai	20000
+🌬️	chui qi	20000
+🌭️	re gou	20000
+🌮️	mo xi ge juan	20000
+🌮️	ta ke	20000
+🌯️	mo xi ge juan bing	20000
+🌰	ban li	20000
+🌰	jian guo	20000
+🌰	li zi	20000
+🌰	song zi	20000
+🌰	zhen zi	20000
+🌰	zhi wu	20000
+🌱	chun tian	20000
+🌱	miao miao	20000
+🌱	qing miao	20000
+🌱	xiao shu miao	20000
+🌱	you miao	20000
+🌱	zhi wu	20000
+🌲	chang lv qiao mu	20000
+🌲	chang qing shu	20000
+🌲	shu	20000
+🌲	shu mu	20000
+🌲	song shu	20000
+🌲	xiao shu	20000
+🌲	yi ke shu	20000
+🌲	zhi wu	20000
+🌳	da shu	20000
+🌳	luo ye qiao mu	20000
+🌳	luo ye shu	20000
+🌳	shu	20000
+🌳	zhi wu	20000
+🌴	shu	20000
+🌴	ye zi shu	20000
+🌴	zhi wu	20000
+🌴	zong lv	20000
+🌴	zong lv shu	20000
+🌵	xian ren zhang	20000
+🌵	zhi wu	20000
+🌶️	hong la jiao	20000
+🌶️	la jiao	20000
+🌷	hu die lan	20000
+🌷	hua	20000
+🌷	yu jin xiang	20000
+🌷	zhi wu	20000
+🌸	hua	20000
+🌸	ying hua	20000
+🌸	zhi wu	20000
+🌹	hua	20000
+🌹	lang man	20000
+🌹	mei gui	20000
+🌹	mei gui hua	20000
+🌹	yue ji	20000
+🌹	zhi wu	20000
+🌺	fu rong	20000
+🌺	fu sang hua	20000
+🌺	hua	20000
+🌺	hua duo	20000
+🌺	zhi wu	20000
+🌻	kui hua	20000
+🌻	xiang ri kui	20000
+🌻	xiao kui	20000
+🌻	zhi wu	20000
+🌼	chu ju	20000
+🌼	feng xin zi	20000
+🌼	hua	20000
+🌼	hua duo	20000
+🌼	kai hua	20000
+🌼	qun hua	20000
+🌼	zhi wu	20000
+🌽	yu mi	20000
+🌽	yu mi sui	20000
+🌽	zhi wu	20000
+🌾	dao sui	20000
+🌾	shui dao	20000
+🌾	zhi wu	20000
+🌿	cao yao	20000
+🌿	shu zhi	20000
+🌿	xiang cao	20000
+🌿	zhi wu	20000
+🌿	zhong yao	20000
+🍀	hao yun	20000
+🍀	si ye cao	20000
+🍀	xing yun	20000
+🍀	xing yun cao	20000
+🍀	zhi wu	20000
+🍁	feng ye	20000
+🍁	hong ye	20000
+🍁	zhi wu	20000
+🍂	huang ye	20000
+🍂	ku ye	20000
+🍂	luo ye	20000
+🍂	qiu tian	20000
+🍂	shu ye	20000
+🍂	zhi wu	20000
+🍃	feng chui luo ye	20000
+🍃	luo ye	20000
+🍃	lv ye	20000
+🍃	ye pian	20000
+🍃	ye zi	20000
+🍃	zhi wu	20000
+🍄	mo gu	20000
+🍄	xun lei	20000
+🍄	zhi wu	20000
+🍅	fan jia	20000
+🍅	fan qie	20000
+🍅	shui guo	20000
+🍅	xi hong shi	20000
+🍆	jia	20000
+🍆	jia zi	20000
+🍆	qie zi	20000
+🍆	shu cai	20000
+🍆	shui guo	20000
+🍇	pu tao	20000
+🍇	shui guo	20000
+🍇	ti zi	20000
+🍈	ha mi gua	20000
+🍈	shui guo	20000
+🍈	tian gua	20000
+🍉	gua gua	20000
+🍉	shui guo	20000
+🍉	xi gua	20000
+🍊	cheng	20000
+🍊	cheng zi	20000
+🍊	gan ju	20000
+🍊	hong ju	20000
+🍊	jin ju	20000
+🍊	ju	20000
+🍊	ju zi	20000
+🍊	mi ju	20000
+🍊	shui guo	20000
+🍊	tian cheng	20000
+🍊	tian mi ju	20000
+🍊	xiang cheng	20000
+🍋	ning meng	20000
+🍋	shui guo	20000
+🍌	shui guo	20000
+🍌	xiang jiao	20000
+🍍	bo luo	20000
+🍍	feng li	20000
+🍍	shui guo	20000
+🍎	hong fu shi	20000
+🍎	hong ping guo	20000
+🍎	ping an guo	20000
+🍎	ping guo	20000
+🍎	she guo	20000
+🍎	shui guo	20000
+🍏	da qing guo	20000
+🍏	ping guo	20000
+🍏	qing guo	20000
+🍏	qing ping guo	20000
+🍏	shui guo	20000
+🍐	li	20000
+🍐	li zi	20000
+🍐	shui guo	20000
+🍐	xiang li	20000
+🍐	xue li	20000
+🍐	ya li	20000
+🍑	mi tao	20000
+🍑	shui guo	20000
+🍑	shui mi tao	20000
+🍑	tao	20000
+🍑	tao zi	20000
+🍒	guo shi	20000
+🍒	shui guo	20000
+🍒	ying tao	20000
+🍓	cao mei	20000
+🍓	hong mei	20000
+🍓	jiang guo	20000
+🍓	shui guo	20000
+🍔	han bao	20000
+🍔	han bao bao	20000
+🍔	han pu bao	20000
+🍔	mai dang lao	20000
+🍔	shi wu	20000
+🍔	su shi dian	20000
+🍕	bi sa	20000
+🍕	bi sa pian	20000
+🍕	chi pi sa	20000
+🍕	pi sa	20000
+🍕	pi sa bing	20000
+🍕	pi sa pian	20000
+🍕	shi wu	20000
+🍖	gu tou rou	20000
+🍖	rou chuan	20000
+🍖	rou gu	20000
+🍖	rou gu tou	20000
+🍖	shi wu	20000
+🍗	ji tui	20000
+🍗	shi wu	20000
+🍗	zha ji	20000
+🍘	mi bing	20000
+🍘	mi guo	20000
+🍘	shi wu	20000
+🍙	fan tuan	20000
+🍙	shi wu	20000
+🍚	bai mi fan	20000
+🍚	mi fan	20000
+🍚	shi wu	20000
+🍛	ga li	20000
+🍛	ga li fan	20000
+🍛	ka li fan	20000
+🍛	shi wu	20000
+🍜	ban mian	20000
+🍜	chi mian	20000
+🍜	fang bian mian	20000
+🍜	ji dan mian	20000
+🍜	la mian	20000
+🍜	leng mian	20000
+🍜	mi xian	20000
+🍜	mian tiao	20000
+🍜	pao mian	20000
+🍜	shi wu	20000
+🍜	tang mian	20000
+🍜	wan mian	20000
+🍜	yi wan mian tiao	20000
+🍜	zheng wan	20000
+🍝	mian tiao	20000
+🍝	shi wu	20000
+🍝	yi da li mian	20000
+🍝	yi da li mian tiao	20000
+🍝	yi mian	20000
+🍞	mian bao	20000
+🍞	shi wu	20000
+🍞	tu si	20000
+🍟	ken de ji	20000
+🍟	shi wu	20000
+🍟	shu tiao	20000
+🍠	di gua	20000
+🍠	fan shu	20000
+🍠	hong shu	20000
+🍠	kao di gua	20000
+🍠	kao hong shu	20000
+🍠	shi wu	20000
+🍠	shu	20000
+🍠	zi shu	20000
+🍡	nuo mi tuan	20000
+🍡	rou wan	20000
+🍡	shi wu	20000
+🍡	tuan zi	20000
+🍡	wan zi	20000
+🍡	xiao wan zi	20000
+🍢	chuan chuan	20000
+🍢	guan dong zhu	20000
+🍢	shi wu	20000
+🍣	san wen yu	20000
+🍣	shi wu	20000
+🍣	shou si	20000
+🍤	chao xia	20000
+🍤	da xia	20000
+🍤	shi wu	20000
+🍤	tian fu luo	20000
+🍤	xia ren	20000
+🍤	zha xia	20000
+🍥	niu er bing	20000
+🍥	shi wu	20000
+🍥	xue bing	20000
+🍥	yu ban	20000
+🍦	bing ji ling	20000
+🍦	bing qi lin	20000
+🍦	ha gen da si	20000
+🍦	sheng dai	20000
+🍦	shi wu	20000
+🍦	shuang qi lin	20000
+🍦	tian tong	20000
+🍦	xue gao	20000
+🍧	bao bing	20000
+🍧	pao bing	20000
+🍧	shi wu	20000
+🍨	bing ji ling	20000
+🍨	bing qi lin	20000
+🍨	shi wu	20000
+🍨	xue gao	20000
+🍩	mian bao quan	20000
+🍩	shi wu	20000
+🍩	tian tian quan	20000
+🍪	ao li ao	20000
+🍪	bing gan	20000
+🍪	qu qi	20000
+🍪	qu qi bing	20000
+🍪	shi wu	20000
+🍪	su bing	20000
+🍫	de fu	20000
+🍫	mai li su	20000
+🍫	qiao ke li	20000
+🍫	shi wu	20000
+🍬	mi tang	20000
+🍬	nai tang	20000
+🍬	niu ya tang	20000
+🍬	shi wu	20000
+🍬	tang	20000
+🍬	tang guo	20000
+🍭	bang bang tang	20000
+🍭	bang tang	20000
+🍭	shi wu	20000
+🍮	bu ding	20000
+🍮	jiao tang bu ding	20000
+🍮	shi wu	20000
+🍮	tian dian	20000
+🍮	tian pin	20000
+🍯	feng mi guan	20000
+🍯	mi guan	20000
+🍯	shi wu	20000
+🍰	cao mei dan gao	20000
+🍰	dan gao	20000
+🍰	dan gao dian	20000
+🍰	mu si	20000
+🍰	ru lao	20000
+🍰	shi wu	20000
+🍰	tian shi	20000
+🍱	bian dang	20000
+🍱	he fan	20000
+🍱	jian can	20000
+🍱	kuai can	20000
+🍱	shi wu	20000
+🍲	bao tang	20000
+🍲	chi huo guo	20000
+🍲	dong tian chi huo guo	20000
+🍲	huo guo	20000
+🍲	nong tang	20000
+🍲	re qi teng teng	20000
+🍲	re tang	20000
+🍲	shi wu	20000
+🍳	jian dan	20000
+🍳	jian ji dan	20000
+🍳	peng ren	20000
+🍳	ping di guo	20000
+🍳	shi wu	20000
+🍴	can ju	20000
+🍴	can ting	20000
+🍴	dao cha	20000
+🍴	shi wu	20000
+🍴	xi can	20000
+🍴	yong can	20000
+🍵	cha	20000
+🍵	cha bei	20000
+🍵	cha dao	20000
+🍵	cha shui	20000
+🍵	cha tang	20000
+🍵	cha wei	20000
+🍵	cha yi	20000
+🍵	he cha	20000
+🍵	lv cha	20000
+🍵	mo cha	20000
+🍵	pin cha	20000
+🍵	re cha	20000
+🍶	bai jiu	20000
+🍶	jiu ping he jiu bei	20000
+🍶	qing jiu	20000
+🍷	gan hong	20000
+🍷	hong jiu	20000
+🍷	hong jiu bei	20000
+🍷	jiu bei	20000
+🍷	mei jiu	20000
+🍷	pin jiu	20000
+🍷	pu tao jiu	20000
+🍸	ji wei jiu	20000
+🍸	ji wei jiu bei	20000
+🍸	ji wei jiu jiu bei	20000
+🍸	jiu bei	20000
+🍸	yin liao	20000
+🍹	guo zhi	20000
+🍹	leng yin	20000
+🍹	re dai yin pin	20000
+🍹	xian zha	20000
+🍹	yin liao	20000
+🍺	gan bei	20000
+🍺	he pi jiu	20000
+🍺	he yi bei	20000
+🍺	pi jiu	20000
+🍺	pi jiu bei	20000
+🍻	bu zui bu gui	20000
+🍻	gan bei	20000
+🍻	jing jiu	20000
+🍻	ju bei	20000
+🍻	peng bei	20000
+🍻	pi jiu	20000
+🍻	pi jiu bei	20000
+🍻	su zui	20000
+🍻	yin jiu	20000
+🍼	nai ping	20000
+🍼	wei nai	20000
+🍽️	dao cha he can pan	20000
+🍽️	xi shi can ju	20000
+🍾️	ruan mu sai ping	20000
+🍾️	xiang bin jiu	20000
+🍿️	bao mi hua	20000
+🎀	duan dai	20000
+🎀	hu die jie	20000
+🎀	qing zhu	20000
+🎀	si dai	20000
+🎁	hui li	20000
+🎁	li he	20000
+🎁	li pin	20000
+🎁	li wu	20000
+🎁	qing zhu	20000
+🎁	sheng dan li wu	20000
+🎁	shou dao li wu	20000
+🎁	zhan yi	20000
+🎂	cao mei dan gao	20000
+🎂	da shou	20000
+🎂	dan gao	20000
+🎂	mei wei dan gao	20000
+🎂	qing zhu	20000
+🎂	sheng kuai	20000
+🎂	sheng ri	20000
+🎂	sheng ri dan gao	20000
+🎂	sheng ri kuai le	20000
+🎂	sheng ri pa	20000
+🎃	nan gua	20000
+🎃	nan gua deng	20000
+🎃	nan gua deng long	20000
+🎃	qing zhu	20000
+🎃	wan sheng jie	20000
+🎄	qing zhu	20000
+🎄	sheng dan	20000
+🎄	sheng dan jie	20000
+🎄	sheng dan shu	20000
+🎄	sheng dan ye	20000
+🎅	ping an ye	20000
+🎅	qing zhu	20000
+🎅	sheng dan kuai le	20000
+🎅	sheng dan lao gong gong	20000
+🎅	sheng dan lao ren	20000
+🎅	sheng dan lao ye ye	20000
+🎆	ji dian	20000
+🎆	li hua	20000
+🎆	qing zhu	20000
+🎆	xuan lan	20000
+🎆	yan hua	20000
+🎆	yan huo	20000
+🎇	qing zhu	20000
+🎇	xian nv bang	20000
+🎇	yan hua	20000
+🎇	yan huo	20000
+🎈	qi qiu	20000
+🎈	qing dian	20000
+🎈	qing zhu	20000
+🎉	gou wu kuang huan jie	20000
+🎉	kuang huan	20000
+🎉	kuang huan jie	20000
+🎉	la pao	20000
+🎉	li bin hua	20000
+🎉	pai dui	20000
+🎉	pai dui li bin hua	20000
+🎉	party	20000
+🎉	qing dian	20000
+🎉	qing zhu	20000
+🎊	cai se sui zhi	20000
+🎊	qing zhu	20000
+🎊	sui hua cai qiu	20000
+🎊	tang guo qiu	20000
+🎋	qi xi	20000
+🎋	qi xi jie	20000
+🎋	qi xi shu	20000
+🎋	qing zhu	20000
+🎋	xu yuan	20000
+🎍	men song	20000
+🎍	pen zai	20000
+🎍	ri ben xin nian	20000
+🎍	zhi wu	20000
+🎍	zhu jie	20000
+🎍	zhu shi	20000
+🎍	zhu shi pin	20000
+🎎	fu fu	20000
+🎎	fu qi	20000
+🎎	hun li	20000
+🎎	hun qing	20000
+🎎	jie hun	20000
+🎎	qing zhu	20000
+🎎	ri ben nv er jie	20000
+🎎	ri ben wa wa	20000
+🎎	ri shi ren ou	20000
+🎎	xin hun fu fu	20000
+🎎	yong yuan xing fu	20000
+🎏	li yu qi	20000
+🎏	nan hai jie	20000
+🎏	qing zhu	20000
+🎏	ri ben nan er jie	20000
+🎐	feng ling	20000
+🎐	feng ling jie	20000
+🎐	qing zhu	20000
+🎑	qing zhu	20000
+🎑	zhong qiu	20000
+🎑	zhong qiu jie	20000
+🎒	bei bao	20000
+🎒	shang xue	20000
+🎒	shi ye shi	20000
+🎒	shu bao	20000
+🎒	shuang jian bao	20000
+🎓	bi ye	20000
+🎓	bi ye mao	20000
+🎓	bi ye sheng	20000
+🎓	bi ye zhao	20000
+🎓	jie ye shi	20000
+🎓	qing zhu	20000
+🎖️	jun gong xun zhang	20000
+🎖️	jun gong zhang	20000
+🎗️	huang si dai	20000
+🎗️	ti xing dai	20000
+🎙️	hua tong	20000
+🎙️	mai ke feng	20000
+🎚️	dian ping hua kuai	20000
+🎚️	shui ping hua kuai	20000
+🎛️	kong zhi xuan niu	20000
+🎞️	dian ying jiao juan hua mian	20000
+🎞️	jiao pian	20000
+🎟	ru chang quan	20000
+🎠	er tong le yuan	20000
+🎠	huo dong	20000
+🎠	xuan mu	20000
+🎠	xuan zhuan mu ma	20000
+🎠	you le chang	20000
+🎠	you le yuan	20000
+🎡	huo dong	20000
+🎡	mo tian lun	20000
+🎡	you le chang	20000
+🎢	guo shan che	20000
+🎢	huo dong	20000
+🎢	yu le	20000
+🎢	yun xiao fei che	20000
+🎣	diao gan	20000
+🎣	diao yu	20000
+🎣	diao yu chang	20000
+🎣	huo dong	20000
+🎣	yun dong	20000
+🎤	chang ge	20000
+🎤	huo dong	20000
+🎤	mai ke feng	20000
+🎤	yin yue	20000
+🎤	yu le	20000
+🎥	dian ying	20000
+🎥	fang ying	20000
+🎥	huo dong	20000
+🎥	she xiang ji	20000
+🎥	she ying ji	20000
+🎦	dian ying yuan	20000
+🎦	fang ying shi	20000
+🎦	kan dian ying	20000
+🎦	ying yuan	20000
+🎧	er ji	20000
+🎧	yin yue	20000
+🎨	diao se ban	20000
+🎨	hui hua	20000
+🎨	huo dong	20000
+🎨	mei shu	20000
+🎨	shang se	20000
+🎨	tiao se ban	20000
+🎨	yan liao	20000
+🎨	yi shu	20000
+🎩	fu zhuang	20000
+🎩	li mao	20000
+🎩	mao	20000
+🎩	mao zi	20000
+🎩	xi ju	20000
+🎪	huo dong	20000
+🎪	ma xi tuan	20000
+🎫	huo dong	20000
+🎫	men piao	20000
+🎫	piao	20000
+🎫	piao ju	20000
+🎫	ru chang quan	20000
+🎬	chang ji ban	20000
+🎬	dian ying	20000
+🎬	dian ying da ban	20000
+🎬	huo dong	20000
+🎬	ju zu	20000
+🎬	pai she	20000
+🎬	shi pin	20000
+🎭	biao yan yi shu	20000
+🎭	jia mian	20000
+🎭	jue se	20000
+🎭	mian ju	20000
+🎭	shuang huang	20000
+🎭	tou xiang	20000
+🎭	xiang sheng	20000
+🎮	da you xi	20000
+🎮	dian shi you le qi	20000
+🎮	shi pin you xi	20000
+🎮	shou bing	20000
+🎮	wan you xi	20000
+🎮	yao gan	20000
+🎮	you xi	20000
+🎮	you xi ji	20000
+🎮	you xi shou bing	20000
+🎯	ba xin	20000
+🎯	biao ba	20000
+🎯	ming zhong	20000
+🎯	zheng zhong	20000
+🎯	zheng zhong hong xin	20000
+🎯	zhi jie ming zhong	20000
+🎰	chi jiao zi lao hu	20000
+🎰	du chang	20000
+🎰	lao hu ji	20000
+🎰	you xi	20000
+🎱	tai qiu	20000
+🎱	zhuang qiu	20000
+🎱	zhuo qiu	20000
+🎲	du bo	20000
+🎲	shai zi	20000
+🎲	tou zi	20000
+🎲	you xi	20000
+🎳	bao ling qiu	20000
+🎴	hua pu ke pai	20000
+🎴	hua zha pai	20000
+🎴	pu ke pai	20000
+🎴	zhi pai	20000
+🎵	bei jing yin yue	20000
+🎵	bo fang qi	20000
+🎵	qu mu	20000
+🎵	xiao ye qu	20000
+🎵	yin fu	20000
+🎵	yin yue	20000
+🎵	yin yue ju	20000
+🎵	yin yue ke	20000
+🎶	xuan lv	20000
+🎶	yin fu	20000
+🎶	yin yue	20000
+🎷	sa ke si	20000
+🎷	sa ke si feng	20000
+🎷	sa ke si guan	20000
+🎷	yin yue	20000
+🎸	ji ta	20000
+🎸	yin yue	20000
+🎹	dan gang qin	20000
+🎹	dian zi qin	20000
+🎹	gang qin	20000
+🎹	jian pan	20000
+🎹	qin	20000
+🎹	qin jian	20000
+🎹	yin yue	20000
+🎹	yin yue jian pan	20000
+🎺	la ba	20000
+🎺	xiao hao	20000
+🎺	yin yue	20000
+🎻	xiao ti qin	20000
+🎻	yin yue	20000
+🎼	yin yue	20000
+🎼	yin yue hui	20000
+🎼	yue pu	20000
+🎽	bei xin	20000
+🎽	wang qiu shan	20000
+🎽	yun dong bei xin	20000
+🎽	yun dong shan	20000
+🎾	wang qiu	20000
+🎾	yun dong	20000
+🎿	hua bing	20000
+🎿	hua xue	20000
+🎿	hua xue chang	20000
+🎿	hua xue xie	20000
+🎿	shuang ban	20000
+🎿	yun dong	20000
+🏀	da qiu	20000
+🏀	kou lan	20000
+🏀	lan qiu	20000
+🏀	lan qiu sai	20000
+🏀	nan lan	20000
+🏀	qiu sai	20000
+🏀	yun dong	20000
+🏁	ge zi qi	20000
+🏁	sai che	20000
+🏁	zhong dian	20000
+🏂	dan ban	20000
+🏂	dan ban hua xue	20000
+🏂	hua xue	20000
+🏂	hua xue ban	20000
+🏂	xue ban	20000
+🏂	xue de hua ban	20000
+🏂	yun dong	20000
+🏃	ben pao	20000
+🏃	chen pao	20000
+🏃	kai pao	20000
+🏃	ma la song	20000
+🏃	nan pao bu zhe	20000
+🏃	pao bu	20000
+🏃	pao bu zhe	20000
+🏃	sai pao	20000
+🏃	yun dong	20000
+🏃‍♀️	ben pao	20000
+🏃‍♀️	chen pao	20000
+🏃‍♀️	kai pao	20000
+🏃‍♀️	ma la song	20000
+🏃‍♀️	nv pao bu zhe	20000
+🏃‍♀️	pao bu	20000
+🏃‍♀️	pao bu zhe	20000
+🏃‍♀️	sai pao	20000
+🏃‍♀️	yun dong	20000
+🏄	chong lang	20000
+🏄	chong lang zhe	20000
+🏄	nan chong lang zhe	20000
+🏄	yun dong	20000
+🏄‍♀️	chong lang	20000
+🏄‍♀️	chong lang zhe	20000
+🏄‍♀️	nv chong lang zhe	20000
+🏄‍♀️	yun dong	20000
+🏅️	jin pai	20000
+🏅️	yun dong hui jiang pai	20000
+🏅️	yun dong jiang pai	20000
+🏆	duo guan	20000
+🏆	guan jun	20000
+🏆	huo jiang	20000
+🏆	jiang bei	20000
+🏇	sai ma	20000
+🏇	sai ma qi shi	20000
+🏇	yun dong	20000
+🏈	gan lan qiu	20000
+🏈	mei shi gan lan qiu	20000
+🏈	mei shi zu qiu	20000
+🏈	yun dong	20000
+🏉	gan lan qiu	20000
+🏉	yun dong	20000
+🏊	nan yong zhe	20000
+🏊	nan you yong zhe	20000
+🏊	you shui	20000
+🏊	you yong	20000
+🏊	you yong chi	20000
+🏊	you yong guan	20000
+🏊	you yong zhe	20000
+🏊	yun dong	20000
+🏊‍♀️	nv yong zhe	20000
+🏊‍♀️	nv you yong zhe	20000
+🏊‍♀️	you shui	20000
+🏊‍♀️	you yong	20000
+🏊‍♀️	you yong chi	20000
+🏊‍♀️	you yong guan	20000
+🏊‍♀️	you yong zhe	20000
+🏊‍♀️	yun dong	20000
+🏋️	ju zhong yuan	20000
+🏋️	ju zhong zhe	20000
+🏋️	nan ju zhong yuan	20000
+🏋️	nan ju zhong zhe	20000
+🏋️‍♀️	ju zhong yuan	20000
+🏋️‍♀️	ju zhong zhe	20000
+🏋️‍♀️	nv ju zhong yuan	20000
+🏋️‍♀️	nv ju zhong zhe	20000
+🏌️	da gao er fu	20000
+🏌️	gao er fu	20000
+🏌️	gao er fu qiu shou	20000
+🏌️	nan gao er fu qiu shou	20000
+🏌️	yun dong	20000
+🏌️‍♀️	da gao er fu	20000
+🏌️‍♀️	gao er fu qiu shou	20000
+🏌️‍♀️	nv gao er fu qiu shou	20000
+🏍️	mo tuo che	20000
+🏎️	sai che	20000
+🏏	ban qiu	20000
+🏏	yun dong	20000
+🏐	pai qiu	20000
+🏐	yun dong	20000
+🏑️	qu gun qiu	20000
+🏒️	bing qiu	20000
+🏒️	bing shang qu gun qiu	20000
+🏓	ping pang	20000
+🏓	ping pang qiu	20000
+🏓	yun dong	20000
+🏔️	xue shan	20000
+🏕️	lu ying	20000
+🏕️	lu ying hua ka	20000
+🏖️	hai bin	20000
+🏖️	sha tan	20000
+🏗️	fang wu gou zao	20000
+🏘️	zhu zhai jian zhu	20000
+🏙️	cheng shi feng guang	20000
+🏙️	cheng shi hua ka	20000
+🏙️	dou shi feng guang	20000
+🏙️	du shi feng guang	20000
+🏚️	fei qi jian zhu	20000
+🏚️	wei fang	20000
+🏛️	gu dian jian zhu	20000
+🏜️	sha mo	20000
+🏜️	sha mo hua ka	20000
+🏝️	huang dao	20000
+🏝️	huang dao hua ka	20000
+🏝️	wu ren dao	20000
+🏞️	guo jia gong yuan	20000
+🏟️	ti yu chang	20000
+🏠	bie shu	20000
+🏠	fang wu	20000
+🏠	fang zi	20000
+🏠	jia	20000
+🏠	jian zhu	20000
+🏠	zhu zhai	20000
+🏠	zhu zhai lou	20000
+🏡	bie shu	20000
+🏡	fang wu	20000
+🏡	fang zi	20000
+🏡	jia	20000
+🏡	jian zhu	20000
+🏡	mu wu	20000
+🏡	ting yuan	20000
+🏡	yang fang	20000
+🏡	zhu jia	20000
+🏡	zhu zhai	20000
+🏢	ban gong da lou	20000
+🏢	ban gong lou	20000
+🏢	jian zhu	20000
+🏣	jian zhu	20000
+🏣	ri ben you ju	20000
+🏣	you ju	20000
+🏤	jian zhu	20000
+🏤	ou zhou you ju	20000
+🏤	you ju	20000
+🏥	jian zhu	20000
+🏥	kan bing	20000
+🏥	yi yuan	20000
+🏦	jian zhu	20000
+🏦	yin hang	20000
+🏦	yin xing	20000
+🏧	atm	20000
+🏧	qu kuan ji	20000
+🏧	ti kuan ji	20000
+🏧	zi dong gui yuan ji	20000
+🏧	zi dong qu kuan ji	20000
+🏨	bin guan	20000
+🏨	fan dian	20000
+🏨	jian zhu	20000
+🏨	jiu dian	20000
+🏨	lv guan	20000
+🏩	ai qing lv guan	20000
+🏩	bin guan	20000
+🏩	jian zhu	20000
+🏩	lian ai lv guan	20000
+🏩	lv guan	20000
+🏩	qing ren jiu dian	20000
+🏪	bian li dian	20000
+🏪	bian li shang dian	20000
+🏪	jian zhu	20000
+🏪	shi duo dian	20000
+🏫	jian zhu	20000
+🏫	xue xiao	20000
+🏬	bai huo da lou	20000
+🏬	bai huo gong si	20000
+🏬	bai huo shang dian	20000
+🏬	jian zhu	20000
+🏭	gong chang	20000
+🏭	gong ye qu	20000
+🏭	jian zhu	20000
+🏮	deng long	20000
+🏮	jiu guan	20000
+🏮	ju jiu wu	20000
+🏮	qing zhu	20000
+🏯	cheng bao	20000
+🏯	jian zhu	20000
+🏯	ri ben cheng bao	20000
+🏰	cheng bao	20000
+🏰	jian zhu	20000
+🏰	ou zhou cheng bao	20000
+🏳️	bai se qi zhi	20000
+🏳️	ju bai qi	20000
+🏳	qi zhi	20000
+🏳️	tou xiang	20000
+🏳️‍🌈	cai hong qi	20000
+🏴️	hei se qi zhi	20000
+🏴️	ju hei qi	20000
+🏴️	piao yang de hai dao qi	20000
+🏴	qi zhi	20000
+🏴️	si wang zhi qi	20000
+🏵️	mei gui hua jie	20000
+🏵️	qiang wei hua shi	20000
+🏵️	yuan hua shi	20000
+🏷️	biao qian	20000
+🏸	yu mao qiu	20000
+🏸	yun dong	20000
+🏹️	gong jian	20000
+🏹️	gong nu	20000
+🏺️	liang er xi jing guan	20000
+🏺️	shuang er ping	20000
+🏺️	shuang er xi jing tuo yuan tu guan	20000
+🏻	qian fu se	20000
+🏻	qian se	20000
+🏼	fu se	20000
+🏼	rou se	20000
+🏽	shen rou se	20000
+🏾	zong he fu se	20000
+🏾	zong se	20000
+🏿	shen se	20000
+🏿	shen zong se	20000
+🐀	dong wu	20000
+🐀	lao shu	20000
+🐁	bai lao shu	20000
+🐁	bai shu	20000
+🐁	dong wu	20000
+🐁	lao shu	20000
+🐁	xiao bai shu	20000
+🐂	dong wu	20000
+🐂	gong niu	20000
+🐂	niu	20000
+🐃	dong wu	20000
+🐃	niu	20000
+🐃	shui niu	20000
+🐄	dong wu	20000
+🐄	mu niu	20000
+🐄	nai niu	20000
+🐄	niu	20000
+🐄	ru niu	20000
+🐅	dong wu	20000
+🐅	lao hu	20000
+🐆	bao	20000
+🐆	dong wu	20000
+🐆	hua bao	20000
+🐇	dong wu	20000
+🐇	tu zi	20000
+🐈	dong wu	20000
+🐈	jia mao	20000
+🐈	mao	20000
+🐈	mao mi	20000
+🐉	dong wu	20000
+🐉	long	20000
+🐉	qing long	20000
+🐊	dong wu	20000
+🐊	e yu	20000
+🐋	dong wu	20000
+🐋	jing yu	20000
+🐋	mo xiang jing	20000
+🐌	dong wu	20000
+🐌	wo niu	20000
+🐍	da mang	20000
+🐍	dong wu	20000
+🐍	mang	20000
+🐍	she	20000
+🐎	dong wu	20000
+🐎	ma	20000
+🐎	ma er	20000
+🐎	sai ma	20000
+🐎	shen ma	20000
+🐎	xiao ma	20000
+🐏	dong wu	20000
+🐏	gong yang	20000
+🐐	dong wu	20000
+🐐	shan yang	20000
+🐐	yang	20000
+🐑	dong wu	20000
+🐑	fang yang	20000
+🐑	gao	20000
+🐑	jin yang	20000
+🐑	mian yang	20000
+🐑	mie mie	20000
+🐑	yang	20000
+🐑	yang gao	20000
+🐑	yang yang	20000
+🐒	dong wu	20000
+🐒	hou	20000
+🐒	hou er	20000
+🐒	hou wang	20000
+🐒	hou zi	20000
+🐓	da ming	20000
+🐓	dong wu	20000
+🐓	gong ji	20000
+🐔	dong wu	20000
+🐔	ji	20000
+🐔	mu ji	20000
+🐔	xiao ji	20000
+🐔	xiao ji tou	20000
+🐕	dong wu	20000
+🐕	gou	20000
+🐖	dong wu	20000
+🐖	zhu	20000
+🐗	dong wu	20000
+🐗	gong zhu	20000
+🐗	ye zhu	20000
+🐗	ye zhu tou	20000
+🐗	zhu	20000
+🐗	zhu tou	20000
+🐘	da xiang	20000
+🐘	dong wu	20000
+🐘	xiang	20000
+🐘	xiao xiang	20000
+🐙	ba zhao yu	20000
+🐙	dong wu	20000
+🐙	you yu	20000
+🐙	zhang yu	20000
+🐚	bei ke	20000
+🐚	dong wu	20000
+🐚	hai bei	20000
+🐚	hai luo	20000
+🐚	shan bei	20000
+🐛	chong	20000
+🐛	chong zi	20000
+🐛	dong wu	20000
+🐛	mao chong	20000
+🐛	mao mao chong	20000
+🐛	qing chong	20000
+🐛	tang bao	20000
+🐜	chong zi	20000
+🐜	dong wu	20000
+🐜	ma yi	20000
+🐝	dong wu	20000
+🐝	mi feng	20000
+🐝	qin lao de mi feng	20000
+🐞	dong wu	20000
+🐞	jia ke chong	20000
+🐞	jia qiao chong	20000
+🐞	piao chong	20000
+🐟	dong wu	20000
+🐟	yu	20000
+🐟	yu er	20000
+🐠	dong wu	20000
+🐠	hai yu	20000
+🐠	re dai yu	20000
+🐠	xiao yu er	20000
+🐠	yu	20000
+🐠	yu er	20000
+🐡	dong wu	20000
+🐡	he tun	20000
+🐢	dong wu	20000
+🐢	gui	20000
+🐢	shen gui	20000
+🐢	wu gui	20000
+🐣	chu sheng	20000
+🐣	dong wu	20000
+🐣	fu xiao ji	20000
+🐣	po ke	20000
+🐣	po ke er chu	20000
+🐣	tuo ke er chu	20000
+🐣	tuo qiao er chu	20000
+🐣	xiao ji	20000
+🐤	dong wu	20000
+🐤	ji bao bao	20000
+🐤	ji zi lian	20000
+🐤	xi ao ji	20000
+🐤	xiao ji	20000
+🐤	xiao ji bao bao	20000
+🐥	dong wu	20000
+🐥	xiao ji	20000
+🐥	zheng mian de ji bao bao	20000
+🐥	zheng mian de xiao ji	20000
+🐥	zheng mian de xiao ji bao bao	20000
+🐦	dong wu	20000
+🐦	ge zi	20000
+🐦	niao	20000
+🐦	niao er	20000
+🐦	xiao niao	20000
+🐧	dong wu	20000
+🐧	qi e	20000
+🐧	qi e lian	20000
+🐨	dong wu	20000
+🐨	kao la	20000
+🐨	ke la xiong	20000
+🐨	shu dai xiong	20000
+🐨	wu wei xiong	20000
+🐩	dong wu	20000
+🐩	gou	20000
+🐩	gui bin gou	20000
+🐩	gui fu quan	20000
+🐩	juan mao gou	20000
+🐩	juan mao shi zi gou	20000
+🐩	quan	20000
+🐩	shi zi gou	20000
+🐪	dan feng luo tuo	20000
+🐪	dan feng tuo	20000
+🐪	dong wu	20000
+🐪	luo tuo	20000
+🐫	dong wu	20000
+🐫	luo tuo	20000
+🐫	shuang feng luo tuo	20000
+🐫	shuang feng tuo	20000
+🐬	dong wu	20000
+🐬	hai tun	20000
+🐭	dong wu	20000
+🐭	hao zi	20000
+🐭	lao shu	20000
+🐭	lao shu lian	20000
+🐭	shu	20000
+🐭	shu lian	20000
+🐮	da niu	20000
+🐮	dong wu	20000
+🐮	dong wu biao qing	20000
+🐮	mu niu	20000
+🐮	niu	20000
+🐮	niu lian	20000
+🐮	niu niu	20000
+🐯	dong wu	20000
+🐯	hu	20000
+🐯	hu lian	20000
+🐯	hu tou	20000
+🐯	lao hu	20000
+🐯	lao hu lian	20000
+🐯	xiao hu	20000
+🐰	bai tu	20000
+🐰	da bai tu	20000
+🐰	dong wu	20000
+🐰	tu	20000
+🐰	tu lian	20000
+🐰	tu tu	20000
+🐰	tu zi	20000
+🐰	tu zi lian	20000
+🐰	xiao bai tu	20000
+🐰	yang tu zi	20000
+🐱	da lian mao	20000
+🐱	dong wu	20000
+🐱	jia fei mao	20000
+🐱	mao	20000
+🐱	mao er	20000
+🐱	mao lian	20000
+🐱	mao mao	20000
+🐱	miao	20000
+🐱	miao miao	20000
+🐱	miao wu	20000
+🐱	miao xing ren	20000
+🐱	yang mao	20000
+🐲	dong wu	20000
+🐲	long	20000
+🐲	long tou	20000
+🐲	long wang	20000
+🐲	zhong guo long	20000
+🐳	dong wu	20000
+🐳	jing	20000
+🐳	jing yu	20000
+🐳	pen shui	20000
+🐳	pen shui jing yu	20000
+🐴	dong wu	20000
+🐴	ma	20000
+🐴	ma tou	20000
+🐴	shen ma	20000
+🐵	dong wu	20000
+🐵	hou	20000
+🐵	hou lian	20000
+🐵	hou zi	20000
+🐵	hou zi lian	20000
+🐶	a gou	20000
+🐶	ai quan	20000
+🐶	dong wu	20000
+🐶	fei	20000
+🐶	gong gou	20000
+🐶	gou	20000
+🐶	gou er	20000
+🐶	gou gai bu le chi shi	20000
+🐶	gou lian	20000
+🐶	huang gou	20000
+🐶	ji wa wa	20000
+🐶	kan men gou	20000
+🐶	ke ai	20000
+🐶	la bu la duo	20000
+🐶	mai meng	20000
+🐶	wang wang	20000
+🐶	xiao gou	20000
+🐶	yang gou	20000
+🐶	you quan	20000
+🐷	ba jie	20000
+🐷	da zhu	20000
+🐷	dong wu	20000
+🐷	hong zhu	20000
+🐷	lan zhu	20000
+🐷	mai dou	20000
+🐷	mu zhu	20000
+🐷	pang cheng zhu	20000
+🐷	xiao zhu	20000
+🐷	zhu	20000
+🐷	zhu lian	20000
+🐷	zhu tou	20000
+🐷	zhu yi yang de dui you	20000
+🐷	zhu zhu	20000
+🐸	dong wu	20000
+🐸	dong wu biao qing	20000
+🐸	qing wa	20000
+🐸	qing wa lian	20000
+🐸	wa	20000
+🐸	xiao qing wa	20000
+🐹	cang shu	20000
+🐹	cang shu lian	20000
+🐹	dong wu	20000
+🐺	dong wu	20000
+🐺	lang	20000
+🐺	lang lian	20000
+🐻	da xiong	20000
+🐻	dong wu	20000
+🐻	gou xiong	20000
+🐻	tai di	20000
+🐻	xiao xiong	20000
+🐻	xiong	20000
+🐻	xiong lian	20000
+🐻	xiong xiong	20000
+🐻	xiong yang	20000
+🐼	da xiong mao	20000
+🐼	dong wu	20000
+🐼	guo bao	20000
+🐼	mao xiong	20000
+🐼	xiao xiong mao	20000
+🐼	xiong mao	20000
+🐼	xiong mao lian	20000
+🐽	dong wu	20000
+🐽	zhu bi	20000
+🐾	dong wu	20000
+🐾	dong wu zu yin	20000
+🐾	zhang yin	20000
+🐾	zhao yin	20000
+🐿️	hua li shu	20000
+🐿️	jin hua shu	20000
+🐿️	jin li shu	20000
+🐿️	song shu	20000
+👀	ca liang yan jing	20000
+👀	deng yan	20000
+👀	hei yan quan	20000
+👀	kan	20000
+👀	mu	20000
+👀	yan	20000
+👀	yan jing	20000
+👀	zheng kai yan	20000
+👁️	yan jing	20000
+👂	er	20000
+👂	er dong	20000
+👂	er duo	20000
+👂	lian bu qi guan	20000
+👂	long	20000
+👂	qing ting	20000
+👂	ting	20000
+👃	bi	20000
+👃	bi kong	20000
+👃	bi liang	20000
+👃	bi sai	20000
+👃	bi tou	20000
+👃	bi yan	20000
+👃	bi yi	20000
+👃	bi zi	20000
+👃	hu xi	20000
+👃	long bi	20000
+👃	wen	20000
+👄	chun	20000
+👄	hong chun	20000
+👄	lian bu qi guan	20000
+👄	qin zui	20000
+👄	shuo hua	20000
+👄	xiang wen	20000
+👄	zui	20000
+👄	zui ba	20000
+👄	zui chun	20000
+👅	chang	20000
+👅	she tou	20000
+👆	shang mian	20000
+👆	shi zhi	20000
+👆	shou shi	20000
+👆	xiang shang	20000
+👆	xiang shang shou shi	20000
+👇	chuo	20000
+👇	shou shi	20000
+👇	xia mian	20000
+👇	xiang xia	20000
+👇	xiang xia shou shi	20000
+👈	shou shi	20000
+👈	xiang zuo	20000
+👈	xiang zuo shou shi	20000
+👈	zuo bian	20000
+👉	shou shi	20000
+👉	xiang you	20000
+👉	xiang you shou shi	20000
+👉	you bian	20000
+👊	da ji	20000
+👊	hui quan	20000
+👊	quan tou	20000
+👊	quan tou shou shi	20000
+👊	shou shi	20000
+👊	ying zhan	20000
+👋	bai bai	20000
+👋	hui shou	20000
+👋	shou	20000
+👋	shou shi	20000
+👋	zai jian	20000
+👋	zhao shou	20000
+👌	hao	20000
+👌	mei wen ti	20000
+👌	ok	20000
+👌	que ren shou shi	20000
+👌	shou shi	20000
+👍	biao yang	20000
+👍	cheng zan	20000
+👍	dian zan	20000
+👍	ding gu gu	20000
+👍	ding gua gua	20000
+👍	fei chang hao	20000
+👍	shen de ren xin	20000
+👍	shou shi	20000
+👍	shu mu zhi	20000
+👍	shu qi mu zhi	20000
+👍	te zan	20000
+👍	ting zan	20000
+👍	yi bai ge zan	20000
+👍	zan	20000
+👎	bi shi	20000
+👎	bu hao	20000
+👎	cai	20000
+👎	cha jin	20000
+👎	chao feng	20000
+👎	mu zhi chao xia	20000
+👎	qie	20000
+👎	shou shi	20000
+👏	ci chu ying you zhang sheng	20000
+👏	ci wai ying you zhang sheng	20000
+👏	gu gu zhang	20000
+👏	gu zhang	20000
+👏	huan ying	20000
+👏	pai shou	20000
+👏	shou shi	20000
+👏	zhang sheng	20000
+👐	mei ban fa	20000
+👐	shou	20000
+👐	shou shi	20000
+👐	shuang shou zhang kai	20000
+👐	shuang zhang	20000
+👐	tan kai shou	20000
+👐	wu neng wei li	20000
+👐	zhang kai shuang shou	20000
+👑	fu zhuang	20000
+👑	huang gu an	20000
+👑	huang guan	20000
+👑	huang zu	20000
+👑	wang guan	20000
+👒	fu zhuang	20000
+👒	li mao	20000
+👒	mao	20000
+👒	mao zi	20000
+👒	nv mao	20000
+👒	nv shi mao	20000
+👒	shi nv mao	20000
+👓	fu zhuang	20000
+👓	jin shi	20000
+👓	jing kuang	20000
+👓	yan jing	20000
+👔	chen shan	20000
+👔	chen shan ling dai	20000
+👔	fu zhuang	20000
+👔	ling dai	20000
+👔	yi fu	20000
+👔	zheng zhuang	20000
+👕	chen shan	20000
+👕	fu zhuang	20000
+👕	shan	20000
+👕	shang yi	20000
+👕	xiu xian zhuang	20000
+👕	yuan ling shan	20000
+👖	chang ku	20000
+👖	fu zhuang	20000
+👖	ku	20000
+👖	ku zi	20000
+👖	niu zai ku	20000
+👖	niu zi ku	20000
+👖	zhang ku	20000
+👗	fu zhuang	20000
+👗	lian yi qun	20000
+👗	qun zi	20000
+👗	yang zhuang	20000
+👗	yi fu	20000
+👘	fu zhuang	20000
+👘	he fu	20000
+👘	ri shi fu zhuang	20000
+👘	yu yi	20000
+👙	bi ji ni	20000
+👙	fu zhuang	20000
+👙	nei yi	20000
+👙	san dian shi	20000
+👙	yong zhuang	20000
+👚	fu zhuang	20000
+👚	nv shi chen shan	20000
+👚	nv shi fu zhuang	20000
+👚	nv zhuang	20000
+👚	shang yi	20000
+👛	fu zhuang	20000
+👛	ling qian bao	20000
+👛	qian bao	20000
+👜	fu zhuang	20000
+👜	kua bao	20000
+👜	shou ti bao	20000
+👜	ti bao	20000
+👝	fu zhuang	20000
+👝	he bao	20000
+👝	pi bao	20000
+👝	qian bao	20000
+👝	xiao bao bao	20000
+👞	fu zhuang	20000
+👞	nan shi xie	20000
+👞	nan xie	20000
+👞	pi xie	20000
+👟	chao xie	20000
+👟	fu zhuang	20000
+👟	xi e	20000
+👟	xie	20000
+👟	xiu xian xie	20000
+👟	yun dong xie	20000
+👠	fu zhuang	20000
+👠	gao gen	20000
+👠	gao gen xie	20000
+👠	nv xie	20000
+👠	xi e	20000
+👠	xie	20000
+👡	fu zhuang	20000
+👡	liang xie	20000
+👡	nv liang tuo	20000
+👢	fu zhuang	20000
+👢	nv shi xue zi	20000
+👢	xue	20000
+👢	xue zi	20000
+👢	zhang xue	20000
+👣	jiao bu	20000
+👣	jiao yin	20000
+👣	shuang jiao	20000
+👣	zu ji	20000
+👣	zu yin	20000
+👤	ban shen xiang	20000
+👤	dan ren	20000
+👤	ge ren	20000
+👤	ge ren zhang hu	20000
+👤	ren wu jian ying	20000
+👤	tou xiang	20000
+👥	duo ren	20000
+👥	shuang ren	20000
+👥	tou xiang	20000
+👦	er zi	20000
+👦	nan hai	20000
+👦	nan hai zi	20000
+👦	tou xiang	20000
+👧	nv er	20000
+👧	nv hai	20000
+👧	nv hai zi	20000
+👧	tou xiang	20000
+👧	xiao luo li	20000
+👨	fu qin	20000
+👨	lao die	20000
+👨	nan ren	20000
+👨	tou xiang	20000
+👨‍❤️‍👨	nan ren ai nan ren	20000
+👨‍❤️‍👨	xiong di qing shen	20000
+👨‍❤️‍💋‍👨	nan ren jie wen	20000
+👨‍❤️‍💋‍👨	qin wen	20000
+👨‍👨‍👦	liang ba yi wa	20000
+👨‍👨‍👦	yi jia san kou	20000
+👨‍👨‍👦‍👦	liang ba liang er	20000
+👨‍👨‍👦‍👦	yi jia si kou	20000
+👨‍👨‍👧	liang ba yi wa	20000
+👨‍👨‍👧	yi jia san kou	20000
+👨‍👨‍👧‍👦	yi jia si kou	20000
+👨‍👨‍👧‍👧	liang ge ba ba he liang ge nv er	20000
+👨‍👨‍👧‍👧	yi jia si kou	20000
+👨‍👩‍👦	yi jia san kou	20000
+👨‍👩‍👦	yi suo de nan	20000
+👨‍👩‍👦‍👦	ba ba ma ma he liang ge er zi	20000
+👨‍👩‍👦‍👦	shuang long zhi jia	20000
+👨‍👩‍👦‍👦	yi jia si kou	20000
+👨‍👩‍👧	yi jia san kou	20000
+👨‍👩‍👧‍👦	er nv shuang quan	20000
+👨‍👩‍👧‍👦	jia you er nv	20000
+👨‍👩‍👧‍👦	yi jia si kou	20000
+👨‍👩‍👧‍👦	you er you nv	20000
+👨‍👩‍👧‍👧	ba ma he liang ge nv er	20000
+👨‍👩‍👧‍👧	shuang feng zhi jia	20000
+👨‍👩‍👧‍👧	yi jia ren	20000
+👨‍👩‍👧‍👧	yi jia si kou	20000
+👩	mu qin	20000
+👩	nv ren	20000
+👩	tou xiang	20000
+👩‍❤️‍👩	gui mi qing yi	20000
+👩‍❤️‍👩	jie mei qing shen	20000
+👩‍❤️‍👩	la la	20000
+👩‍❤️‍👩	nv ren ai nv ren	20000
+👩‍❤️‍💋‍👩	la la zhi wen	20000
+👩‍❤️‍💋‍👩	nv ren jie wen	20000
+👩‍❤️‍💋‍👩	qin wen	20000
+👩‍👩‍👦	liang ge ma ma he er zi	20000
+👩‍👩‍👦	yi jia san kou	20000
+👩‍👩‍👦‍👦	liang ma liang wa	20000
+👩‍👩‍👦‍👦	yi jia si kou	20000
+👩‍👩‍👧	liang ma yi wa	20000
+👩‍👩‍👧	yi jia san kou	20000
+👩‍👩‍👧‍👦	liang ma liang wa	20000
+👩‍👩‍👧‍👦	yi jia si kou	20000
+👩‍👩‍👧‍👧	liang ma liang nv er	20000
+👩‍👩‍👧‍👧	yi jia si kou	20000
+👪	fu mu yu er zi	20000
+👪	jia ren	20000
+👪	jia ting	20000
+👪	quan jia fu	20000
+👪	tuan ju	20000
+👪	tuan yuan	20000
+👪	xing fu jia ting	20000
+👪	yi jia ren	20000
+👪	yi jia san kou	20000
+👫	jia ren	20000
+👫	qian shou	20000
+👫	qing lv	20000
+👬	ge lia	20000
+👬	hao ji you	20000
+👬	jia ren	20000
+👬	peng you	20000
+👬	qian shou	20000
+👬	xiong di	20000
+👬	you hao	20000
+👬	you qing	20000
+👭	gui mi	20000
+👭	hao gui mi	20000
+👭	hao peng you	20000
+👭	jia ren	20000
+👭	jie mei	20000
+👭	lia jie mei	20000
+👭	peng you	20000
+👭	qian shou	20000
+👭	you qing	20000
+👮	jing cha	20000
+👮	jing cha ge ge	20000
+👮	jing cha shu shu	20000
+👮	jing guan	20000
+👮	min jing	20000
+👮	nan jing cha	20000
+👮	nan jing guan	20000
+👮	nan min jing	20000
+👮	tou xiang	20000
+👮‍♀️	jing cha	20000
+👮‍♀️	jing cha a yi	20000
+👮‍♀️	jing cha jie jie	20000
+👮‍♀️	jing guan	20000
+👮‍♀️	min jing	20000
+👮‍♀️	nv jing cha	20000
+👮‍♀️	nv jing guan	20000
+👮‍♀️	nv min jing	20000
+👮‍♀️	tou xiang	20000
+👯	tiao wu de tu nv lang	20000
+👯	tou xiang	20000
+👯	tu nv lang	20000
+👯‍♂️	tiao wu de tu nan lang	20000
+👯‍♂️	tou xiang	20000
+👯‍♂️	tu nan lang	20000
+👰	hun sha	20000
+👰	jie hun	20000
+👰	niang zi	20000
+👰	tou xiang	20000
+👰	xin niang	20000
+👱	jin fa	20000
+👱	jin fa de nan ren	20000
+👱	jin fa de ren	20000
+👱	jin fa nan zi	20000
+👱	nian qing ren	20000
+👱	tou xiang	20000
+👱	xi fang nan ren	20000
+👱	xi fang ren	20000
+👱‍♀️	jin fa	20000
+👱‍♀️	jin fa de nv ren	20000
+👱‍♀️	jin fa de ren	20000
+👱‍♀️	jin fa nv lang	20000
+👱‍♀️	nian qing ren	20000
+👱‍♀️	tou xiang	20000
+👱‍♀️	xi fang nv ren	20000
+👱‍♀️	xi fang ren	20000
+👲	gua pi mao	20000
+👲	lei feng shu shu	20000
+👲	tou xiang	20000
+👳	bao tou jin	20000
+👳	bao tou jin de nan ren	20000
+👳	tou jin	20000
+👳	tou xiang	20000
+👳‍♀️	bao tou jin	20000
+👳‍♀️	bao tou jin de nv ren	20000
+👳‍♀️	tou jin	20000
+👳‍♀️	tou xiang	20000
+👴	lao nian	20000
+👴	lao ren	20000
+👴	lao tou	20000
+👴	lao tou zi	20000
+👴	lao ye ye	20000
+👴	tou xiang	20000
+👴	ye ye	20000
+👴	zhang bei	20000
+👴	zu fu	20000
+👵	lao ban	20000
+👵	lao fu ren	20000
+👵	lao nai nai	20000
+👵	lao tai tai	20000
+👵	nai nai	20000
+👵	tou xiang	20000
+👵	wai po	20000
+👵	zu mu	20000
+👶	bao bao	20000
+👶	guai bao bao	20000
+👶	tou xiang	20000
+👶	xin sheng er	20000
+👶	ying er	20000
+👶	ying you er	20000
+👶	you er	20000
+👶	yu er	20000
+👷	gong ren	20000
+👷	jian zhu gong ren	20000
+👷	nan gong ren	20000
+👷	nan jian zhu gong ren	20000
+👷	shi gong	20000
+👷	tou xiang	20000
+👷‍♀️	gong ren	20000
+👷‍♀️	jian zhu gong ren	20000
+👷‍♀️	nv gong ren	20000
+👷‍♀️	nv jian zhu gong ren	20000
+👷‍♀️	shi gong	20000
+👷‍♀️	tou xiang	20000
+👸	bai xue gong zhu	20000
+👸	gong zhu	20000
+👸	hui gu niang	20000
+👸	tong hua	20000
+👸	tou xiang	20000
+👹	e gui	20000
+👹	guai wu	20000
+👹	gui guai	20000
+👹	mo gui	20000
+👹	shi ren mo mian ju	20000
+👹	tou xiang	20000
+👺	tian gou	20000
+👺	tou xiang	20000
+👺	yao guai	20000
+👻	gui hun	20000
+👻	gui lian	20000
+👻	tou xiang	20000
+👻	yao guai	20000
+👻	you ling	20000
+👼	tian shi	20000
+👼	tian shi bao bao	20000
+👼	tou xiang	20000
+👽	tou xiang	20000
+👽	wai xing ren	20000
+👾	guai shou	20000
+👾	tou xiang	20000
+👾	xiao jing ling	20000
+👿	e mo	20000
+👿	mao huo	20000
+👿	tong hua	20000
+👿	tou xiang	20000
+👿	xiao e mo	20000
+💀	ku lou	20000
+💀	ku lou tou	20000
+💀	si wang	20000
+💀	tou gu	20000
+💀	tou xiang	20000
+💁	chan pin ming xing	20000
+💁	fu wu yuan	20000
+💁	ke fu	20000
+💁	nv fu wu yuan	20000
+💁	nv ke fu	20000
+💁	tou xiang	20000
+💁‍♂️	chan pin ming xing	20000
+💁‍♂️	fu wu yuan	20000
+💁‍♂️	ke fu	20000
+💁‍♂️	nan fu wu yuan	20000
+💁‍♂️	nan ke fu	20000
+💁‍♂️	tou xiang	20000
+💂	nan wei bing	20000
+💂	nan wei shi	20000
+💂	tou xiang	20000
+💂	wei bing	20000
+💂	wei shi	20000
+💂‍♀️	nv wei bing	20000
+💂‍♀️	nv wei shi	20000
+💂‍♀️	tou xiang	20000
+💂‍♀️	wei bing	20000
+💂‍♀️	wei shi	20000
+💃	jiao se	20000
+💃	jue se	20000
+💃	tan ge	20000
+💃	tiao wu	20000
+💃	tiao wu zhe	20000
+💃	tou xiang	20000
+💃	wu dao jia	20000
+💃	wu nv	20000
+💃	wu xie	20000
+💃	wu zhe	20000
+💄	bian se chun gao	20000
+💄	chun cai	20000
+💄	chun gao	20000
+💄	chun mi	20000
+💄	chun zhuang	20000
+💄	kou hong	20000
+💅	mei jia	20000
+💅	mo zhi jia you	20000
+💅	zhi jia you	20000
+💆	an mo	20000
+💆	mei rong	20000
+💆	tou bu an mo	20000
+💆	tou xiang	20000
+💆‍♂️	an mo	20000
+💆‍♂️	mei rong	20000
+💆‍♂️	tou bu an mo	20000
+💆‍♂️	tou xiang	20000
+💇	chang fa	20000
+💇	jian fa	20000
+💇	jian liu hai	20000
+💇	jian tou	20000
+💇	jian tou fa	20000
+💇	li fa	20000
+💇	li fa shi	20000
+💇	ti tou	20000
+💇	tou xiang	20000
+💇	zhang fa	20000
+💇‍♂️	chang fa	20000
+💇‍♂️	jian fa	20000
+💇‍♂️	jian liu hai	20000
+💇‍♂️	jian tou	20000
+💇‍♂️	jian tou fa	20000
+💇‍♂️	li fa	20000
+💇‍♂️	li fa shi	20000
+💇‍♂️	ti tou	20000
+💇‍♂️	tou xiang	20000
+💇‍♂️	zhang fa	20000
+💈	fa lang	20000
+💈	huo dong	20000
+💈	li fa	20000
+💈	li fa dian	20000
+💉	chou xue	20000
+💉	da zhen	20000
+💉	yi liao	20000
+💉	zhen ji	20000
+💉	zhen tong	20000
+💉	zhu she	20000
+💉	zhu she qi	20000
+💊	chi yao	20000
+💊	jiao nang	20000
+💊	yao	20000
+💊	yao wan	20000
+💊	yi liao	20000
+💋	chun yin	20000
+💋	hong chun	20000
+💋	jie wen	20000
+💋	lang man	20000
+💋	qin yi kou	20000
+💋	qin zui	20000
+💋	wen	20000
+💌	lang man	20000
+💌	qing shu	20000
+💌	yi wen feng zhen	20000
+💍	hun jie	20000
+💍	jie zhi	20000
+💍	ke la	20000
+💍	lang man	20000
+💍	shou shi	20000
+💍	zhi huan	20000
+💍	zuan jie	20000
+💎	bao shi	20000
+💎	lang man	20000
+💎	zhu bao	20000
+💎	zuan shi	20000
+💏	ai qing tian mi	20000
+💏	jie wen	20000
+💏	lang man	20000
+💏	nan nv qin wen	20000
+💏	qin wen	20000
+💐	cha hua	20000
+💐	hua	20000
+💐	hua shu	20000
+💐	hua yi	20000
+💐	lang man	20000
+💐	peng hua	20000
+💐	xian hua	20000
+💑	ai qing	20000
+💑	ai qing tian mi	20000
+💑	fu fu	20000
+💑	lang man	20000
+💑	lian ren	20000
+💑	nan ren ai nv ren	20000
+💑	qing lv	20000
+💑	tian chang di jiu	20000
+💑	tian mi ai qing	20000
+💑	tian zhang de jiu	20000
+💑	xiang xin ai qing	20000
+💒	hun li	20000
+💒	jiao tang	20000
+💒	lang man	20000
+💓	ai	20000
+💓	ai qing	20000
+💓	lang man	20000
+💓	tiao dong de xin	20000
+💓	xi huan	20000
+💓	xin dong	20000
+💓	xin tiao	20000
+💔	shang xin	20000
+💔	shi lian	20000
+💔	xin sui	20000
+💕	lang man	20000
+💕	liang ke xin	20000
+💕	xin	20000
+💕	xin xin xiang yin	20000
+💖	lang man	20000
+💖	shan liang de xin	20000
+💖	shan yao de xin	20000
+💖	xin	20000
+💗	ai	20000
+💗	ai xin	20000
+💗	jin zhang	20000
+💗	lang man	20000
+💗	xin dong	20000
+💗	xin tiao	20000
+💗	yue dong de xin	20000
+💘	lang man	20000
+💘	yi jian chuan xin	20000
+💘	yi jian zhong qing	20000
+💙	cai xin	20000
+💙	lan se de xin	20000
+💙	lan se xin xing	20000
+💙	lan xin	20000
+💚	cai xin	20000
+💚	lv se de xin	20000
+💚	lv se xin xing	20000
+💚	lv xin	20000
+💛	cai xin	20000
+💛	huang se de xin	20000
+💛	huang se xin xing	20000
+💛	huang xin	20000
+💜	cai xin	20000
+💜	zi se de xin	20000
+💜	zi se xin xing	20000
+💜	zi xin	20000
+💝	ai xin li wu	20000
+💝	bang shang duan dai de xin	20000
+💝	lang man	20000
+💝	shi yi si dai de xin	20000
+💞	lang man	20000
+💞	wu dong de xin	20000
+💞	xin xin xiang yin	20000
+💞	xuan zhuan de xin	20000
+💞	xuan zhuan de xin xing	20000
+💟	lang man	20000
+💟	xin xing zhuang shi	20000
+💠	zuan shi	20000
+💡	deng pao	20000
+💡	dian deng	20000
+💡	dian deng pao	20000
+💡	dian zi	20000
+💡	xiang fa	20000
+💢	fen nu	20000
+💢	qi fen	20000
+💢	qing jin	20000
+💢	sheng qi	20000
+💢	xin qing bu hao	20000
+💣	hong	20000
+💣	zha dan	20000
+💤	chen shui	20000
+💤	han sheng	20000
+💤	han shui	20000
+💤	shu shui	20000
+💤	shui jiao	20000
+💤	shui jue	20000
+💤	shui mian	20000
+💤	wan an	20000
+💥	bao zha	20000
+💥	peng zhuang	20000
+💥	xin qing	20000
+💦	bu shui	20000
+💦	chao qiang bu shui	20000
+💦	han	20000
+💦	han shui	20000
+💦	hui han ru yu	20000
+💦	liu han	20000
+💦	shui di	20000
+💦	shui zhu	20000
+💦	xin ku	20000
+💦	xin qing	20000
+💧	han di	20000
+💧	han yan	20000
+💧	shui di	20000
+💧	tian shi zhi lei	20000
+💧	xiao di	20000
+💧	xin qing	20000
+💧	yan lei	20000
+💨	ji pao	20000
+💨	kuai pao	20000
+💨	tao li	20000
+💨	tao pao	20000
+💨	xin qing	20000
+💨	zhen feng	20000
+💩	ba	20000
+💩	bian bian	20000
+💩	chou wei	20000
+💩	da bian	20000
+💩	fen bian	20000
+💩	gou shi	20000
+💩	la du zi	20000
+💩	la shi	20000
+💩	la xi	20000
+💩	pai bian	20000
+💩	shi	20000
+💩	su bian	20000
+💩	xin qing	20000
+💪	er tou ji	20000
+💪	ji rou	20000
+💪	jia you	20000
+💪	nu li	20000
+💪	qiang zhuang	20000
+💪	shou bi	20000
+💪	xin qing	20000
+💪	xiu ji rou	20000
+💫	liu xing	20000
+💫	tou yun mu xuan	20000
+💫	xin qing	20000
+💫	yun tou zhuan xiang	20000
+💫	yun xuan	20000
+💬	dui hua qi pao	20000
+💬	fa yan	20000
+💬	fa yan qi qiu	20000
+💬	fa yan zhong	20000
+💬	shuo hua	20000
+💬	xin qing	20000
+💭	kao lv	20000
+💭	si kao	20000
+💭	si kao zhong	20000
+💭	xiang fa	20000
+💭	xiang xiang zhong	20000
+💯	bai dian	20000
+💯	man fen	20000
+💯	xin qing	20000
+💯	yi bai fen	20000
+💰	jin qian	20000
+💰	jin ri te jia	20000
+💰	ling qian	20000
+💰	qi an	20000
+💰	qian	20000
+💰	qian dai	20000
+💰	xian yi	20000
+💰	yin zi	20000
+💱	huo bi dui huan	20000
+💱	shang wu	20000
+💲	jin qian	20000
+💲	mei jin	20000
+💲	mei yuan	20000
+💲	mei yuan fu hao	20000
+💳	jin qian	20000
+💳	xin yong ka	20000
+💴	jin qian	20000
+💴	ri yuan	20000
+💴	yi die ri yuan	20000
+💵	jin qian	20000
+💵	mei yuan	20000
+💵	yi die mei yuan	20000
+💶	jin qian	20000
+💶	ou yuan	20000
+💶	yi die ou yuan	20000
+💷	jin qian	20000
+💷	ying bang	20000
+💸	jin qian	20000
+💸	kui sun	20000
+💸	po cai	20000
+💸	po chan	20000
+💸	qian fei le	20000
+💹	zhang	20000
+💺	fei ji zuo yi	20000
+💺	yi zi	20000
+💺	zuo wei	20000
+💺	zuo yi	20000
+💻	bi ji ben dian nao	20000
+💻	dian nao	20000
+💻	ge ren dian nao	20000
+💻	ge ren ji suan ji	20000
+💻	xin xi	20000
+💻	ying mu	20000
+💼	gong shi bao	20000
+💼	gong wen bao	20000
+💼	shang ban	20000
+💼	shang wu	20000
+💼	xin xi	20000
+💽	die pian	20000
+💽	guang die	20000
+💽	mi ni guang die	20000
+💽	xin xi	20000
+💽	zhuan ji	20000
+💾	ruan die	20000
+💾	ruan pan	20000
+💾	xin xi	20000
+💾	zi liao	20000
+💿	guang die	20000
+💿	guang pan	20000
+💿	xin xi	20000
+📀	guang die	20000
+📀	guang pan	20000
+📀	xin xi	20000
+📁	guan wen jian jia	20000
+📁	shang wu	20000
+📁	wen jian jia	20000
+📁	zi liao jia	20000
+📂	kai qi zi liao jia	20000
+📂	kai wen jian jia	20000
+📂	shang wu	20000
+📂	wen jian jia	20000
+📃	dang an	20000
+📃	shang wu	20000
+📃	wen jian	20000
+📃	wen shu	20000
+📃	xin zhi	20000
+📃	ye mian	20000
+📃	zi liao	20000
+📄	dang an	20000
+📄	shang wu	20000
+📄	wen jian	20000
+📄	xin zhi	20000
+📄	ye mian	20000
+📄	zheng shu	20000
+📄	zhi	20000
+📄	zi liao	20000
+📅	ri li	20000
+📅	ri qi	20000
+📅	shang wu	20000
+📇	ka pian suo yin	20000
+📇	ming pian	20000
+📇	ming pian jia	20000
+📇	ming pian zhi zuo	20000
+📇	shang wu	20000
+📇	suo yin ka	20000
+📈	qu xian	20000
+📈	shang sheng	20000
+📈	shang wu	20000
+📈	shou yi bao biao	20000
+📈	tu biao	20000
+📈	xiang shang qu shi tu	20000
+📈	ye ji shang zhang	20000
+📈	zhang	20000
+📈	zhang shi	20000
+📉	die	20000
+📉	die shi	20000
+📉	kui sun bao biao	20000
+📉	qu xian	20000
+📉	shang wu	20000
+📉	tu biao	20000
+📉	xia jiang	20000
+📉	xiang xia qu shi tu	20000
+📉	ye ji xia hua	20000
+📊	chang tiao tu	20000
+📊	shang wu	20000
+📊	tiao xing tu	20000
+📊	zhang tiao tu	20000
+📊	zhi fang tu	20000
+📋	jian qie ban	20000
+📋	jian tie ban	20000
+📋	shang wu	20000
+📋	zhan tie ban	20000
+📋	zhu yi shi xiang	20000
+📌	shang wu	20000
+📌	tu ding	20000
+📍	da tou ding	20000
+📍	shang wu	20000
+📍	tu ding	20000
+📍	yuan tu ding	20000
+📎	fu jian	20000
+📎	hui wen zhen	20000
+📎	hui xing zhen	20000
+📎	qu bie zhen	20000
+📎	shang wu	20000
+📏	shang wu	20000
+📏	zhi chi	20000
+📐	san jiao chi	20000
+📐	shang wu	20000
+📑	biao qian ye	20000
+📑	shang wu	20000
+📑	shu qian	20000
+📑	shu qian biao qian	20000
+📒	ben zi	20000
+📒	bi ji	20000
+📒	ji shi bu	20000
+📒	shang wu	20000
+📒	zhang ben	20000
+📓	bi ji ben	20000
+📓	shang wu	20000
+📓	ying ke bi ji ben	20000
+📔	bi ji ben	20000
+📔	huang pi bi ji ben	20000
+📔	shang wu	20000
+📕	bei wang lu	20000
+📕	hong pi shu	20000
+📕	hong se shu ben	20000
+📕	shang wu	20000
+📖	cha xun	20000
+📖	da kai de shu ben	20000
+📖	fan shu	20000
+📖	shang wu	20000
+📖	shu	20000
+📖	shu ben	20000
+📖	tu shu	20000
+📗	jiao ke shu	20000
+📗	lv se shu ben	20000
+📗	shang wu	20000
+📘	lan pi shu	20000
+📘	lan se shu ben	20000
+📘	shang wu	20000
+📙	bi ji ben	20000
+📙	cheng pi shu	20000
+📙	ju se shu ben	20000
+📙	shang wu	20000
+📚	shang wu	20000
+📚	shu ben	20000
+📚	shu dui	20000
+📚	shu ji	20000
+📛	ming pai	20000
+📛	xing ming pai	20000
+📜	juan zhou	20000
+📜	juan zong	20000
+📜	shang wu	20000
+📜	yang pi zhi juan	20000
+📝	bei wang	20000
+📝	bei wang lu	20000
+📝	bi lu	20000
+📝	ji lu	20000
+📝	ji shi	20000
+📝	xin xi	20000
+📞	dian hua	20000
+📞	dian hua ting tong	20000
+📞	shang wu	20000
+📞	ting tong	20000
+📞	tong xun	20000
+📟	chuan hu ji	20000
+📟	hu ji	20000
+📟	shang wu	20000
+📠	chuan zhen	20000
+📠	chuan zhen ji	20000
+📠	xin xi	20000
+📡	tong xun	20000
+📡	wei xing	20000
+📡	wei xing tian xian	20000
+📡	wei xing tong xun	20000
+📡	xin xi	20000
+📢	guang bo	20000
+📢	kuo yin la ba	20000
+📢	kuo yin qi	20000
+📢	la ba	20000
+📢	xin xi	20000
+📣	chuan bo	20000
+📣	chuan sheng tong	20000
+📣	da la ba	20000
+📣	da sheng gong	20000
+📣	jia you	20000
+📣	la ba	20000
+📣	la ba tong	20000
+📣	la la dui	20000
+📣	xin xi	20000
+📤	fa jian xiang	20000
+📤	shang wu	20000
+📥	shang wu	20000
+📥	shou jian xiang	20000
+📦	bao guo	20000
+📦	da bao	20000
+📦	feng zhuang	20000
+📦	huo wu	20000
+📦	kuai di	20000
+📦	xiang zi	20000
+📦	zhi xiang	20000
+📧	dian you	20000
+📧	dian zi you jian	20000
+📧	email	20000
+📧	shang wu	20000
+📧	you jian	20000
+📨	lai xin	20000
+📨	shang wu	20000
+📨	shou jian xia	20000
+📨	yue du you jian	20000
+📩	dian zi you jian	20000
+📩	fa song you jian	20000
+📩	fa you jian	20000
+📩	xin xi	20000
+📩	you jian	20000
+📪	shang wu	20000
+📪	shou xin	20000
+📪	xin xiang	20000
+📪	you xiang	20000
+📫	ji xin	20000
+📫	xin xi	20000
+📫	xin xiang	20000
+📫	you xiang	20000
+📫	you xin ji chu	20000
+📬	shang wu	20000
+📬	you lai xin	20000
+📬	you xiang	20000
+📭	da kai de you xiang	20000
+📭	mei you lai xin	20000
+📭	shang wu	20000
+📭	you xiang	20000
+📮	xin xi	20000
+📮	you tong	20000
+📮	you xiang	20000
+📯	hao jiao	20000
+📯	yin yue	20000
+📯	you zheng hao jiao	20000
+📯	you zheng la ba	20000
+📰	bao kan	20000
+📰	bao zhi	20000
+📰	xin wen	20000
+📰	xin xi	20000
+📱	shou ji	20000
+📱	shou ji ke	20000
+📱	xin xi	20000
+📱	xing dong dian hua	20000
+📱	yi dong dian hua	20000
+📱	zhi neng ji	20000
+📲	da dian hua	20000
+📲	dian hua	20000
+📲	jie dian hua	20000
+📲	xin xi	20000
+📳	xin xi	20000
+📳	zhen dong	20000
+📳	zhen dong mo shi	20000
+📴	dian hua guan ji	20000
+📴	guan ji	20000
+📴	guan ji mo shi	20000
+📴	off	20000
+📴	shou ji guan ji	20000
+📴	xin xi	20000
+📴	yi dong dian hua guan ji	20000
+📵	biao zhi	20000
+📵	jin yong shou ji	20000
+📵	jin zhi tong hua	20000
+📶	shou xun	20000
+📶	xin hao	20000
+📶	xin hao qiang du	20000
+📶	xin hao zhuang kuang	20000
+📶	xin xi	20000
+📷	dan fan	20000
+📷	pai zhao	20000
+📷	xiang ji	20000
+📷	xin xi	20000
+📷	zhao xiang	20000
+📷	zhao xiang ji	20000
+📸️	shan guang deng	20000
+📸️	xiang ji shan guang deng	20000
+📹	lu xiang	20000
+📹	lu ying	20000
+📹	she xiang	20000
+📹	she xiang ji	20000
+📹	she ying	20000
+📹	she ying ji	20000
+📹	xin xi	20000
+📺	dian shi	20000
+📺	dian shi ji	20000
+📺	mei ti	20000
+📺	xin xi	20000
+📻	guang bo	20000
+📻	mei ti	20000
+📻	shou yin ji	20000
+📻	ting guang bo	20000
+📻	xin xi	20000
+📼	lu xiang dai	20000
+📼	lu ying dai	20000
+📼	xin xi	20000
+📽️	dian ying fang ying ji	20000
+📿️	nian zhu	20000
+🔀	fu hao	20000
+🔀	sui ji bo fang	20000
+🔁	dan qu bo fang	20000
+🔁	fu hao	20000
+🔁	xun huan	20000
+🔁	xun huan bo fang	20000
+🔂	bo fang yi ci	20000
+🔂	dan qu xun huan	20000
+🔂	fu hao	20000
+🔃	chong xin bo fang	20000
+🔃	chong xin du qu	20000
+🔃	chong xin zai ru	20000
+🔃	chong zai	20000
+🔃	xun huan	20000
+🔄	chong xin zheng li	20000
+🔄	fu hao	20000
+🔄	lie biao xun huan	20000
+🔄	xun huan	20000
+🔅	di liang du	20000
+🔆	gao liang du	20000
+🔇	jing yin	20000
+🔈	di yin liang yang sheng qi	20000
+🔉	yang sheng qi	20000
+🔊	gao yin la ba	20000
+🔊	sheng yin	20000
+🔊	xin xi	20000
+🔊	yang sheng qi	20000
+🔊	yin liang	20000
+🔋	chong dian	20000
+🔋	dian chi	20000
+🔋	dian liang	20000
+🔋	gong ju	20000
+🔌	cha tou	20000
+🔌	dian cha tou	20000
+🔌	dian yuan	20000
+🔌	gong ju	20000
+🔍	cha xun	20000
+🔍	fang da jing	20000
+🔍	gong ju	20000
+🔍	sou suo	20000
+🔍	sou xun	20000
+🔎	fang da jing	20000
+🔎	gong ju	20000
+🔏	yin mi	20000
+🔏	yin si	20000
+🔐	an quan	20000
+🔐	gong ju	20000
+🔐	jia mi	20000
+🔑	gong ju	20000
+🔑	jin yao shi	20000
+🔑	yao shi	20000
+🔒	gong ju	20000
+🔒	shang suo	20000
+🔒	suo	20000
+🔒	suo ding	20000
+🔒	suo tou	20000
+🔓	gong ju	20000
+🔓	jie suo	20000
+🔓	kai suo	20000
+🔔	ding	20000
+🔔	gong ju	20000
+🔔	ling dang	20000
+🔔	ti xing	20000
+🔔	xiang ling	20000
+🔔	zhong sheng	20000
+🔕	jin zhi xiang ling	20000
+🔖	gong ju	20000
+🔖	shu qian	20000
+🔗	gong ju	20000
+🔗	huan kou	20000
+🔗	lian jie	20000
+🔗	tie suo	20000
+🔘	an niu	20000
+🔘	dan xuan an niu	20000
+🔘	yuan xing an niu	20000
+🔙	back	20000
+🔙	fan hui	20000
+🔙	fu hao	20000
+🔙	hou tui	20000
+🔙	tui hui	20000
+🔚	end	20000
+🔚	fu hao	20000
+🔚	jie shu	20000
+🔚	mo wei	20000
+🔚	zhi ban	20000
+🔛	fu hao	20000
+🔛	kai qi	20000
+🔛	qi yong	20000
+🔜	fu hao	20000
+🔜	kuai jin	20000
+🔜	kuai su	20000
+🔝	fu hao	20000
+🔝	shang fang	20000
+🔝	shang sheng	20000
+🔝	top	20000
+🔝	zhi ding	20000
+🔞	biao zhi	20000
+🔞	cheng ren	20000
+🔞	cheng ren jie mu	20000
+🔞	shao er bu yi	20000
+🔞	shi ba jin	20000
+🔞	wei cheng nian	20000
+🔞	wei cheng nian jin zhi	20000
+🔟	shi	20000
+🔠	da xie zi mu	20000
+🔠	fu hao	20000
+🔠	ying wen da xie	20000
+🔡	fu hao	20000
+🔡	xiao xie zi mu	20000
+🔡	ying wen xiao xie	20000
+🔢	fu hao	20000
+🔢	shu zi	20000
+🔣	fu hao	20000
+🔣	te shu fu hao	20000
+🔤	fu hao	20000
+🔤	qie huan shu ru	20000
+🔤	ying wen shu ru fa	20000
+🔥	chai huo	20000
+🔥	dian huo	20000
+🔥	dian ran	20000
+🔥	huo	20000
+🔥	huo miao	20000
+🔥	huo re	20000
+🔥	huo yan	20000
+🔥	huo zhong	20000
+🔥	lie huo	20000
+🔥	ran shao	20000
+🔥	shi huo	20000
+🔥	ye huo	20000
+🔥	zi ran	20000
+🔦	gong ju	20000
+🔦	shou dian tong	20000
+🔦	zhao ming	20000
+🔧	ban shou	20000
+🔧	gong ju	20000
+🔧	xiu li	20000
+🔨	chui zi	20000
+🔨	gong ju	20000
+🔨	qiao da	20000
+🔨	tie chui	20000
+🔩	gong ju	20000
+🔩	luo mu ji luo shuan	20000
+🔩	luo shuan tao jian	20000
+🔩	luo si	20000
+🔪	cai dao	20000
+🔪	dao	20000
+🔪	gong ju	20000
+🔪	kan	20000
+🔪	qie	20000
+🔪	qie rou dao	20000
+🔪	shui guo dao	20000
+🔪	xiao dao	20000
+🔫	qiang	20000
+🔫	qiang xie	20000
+🔫	she ji	20000
+🔫	shou qiang	20000
+🔫	shui qiang	20000
+🔬	gong ju	20000
+🔬	ke xue	20000
+🔬	xian wei jing	20000
+🔬	zuo shi yan	20000
+🔭	gong ju	20000
+🔭	tian wen	20000
+🔭	tian wen guan cha	20000
+🔭	wang yuan jing	20000
+🔮	shui jing qiu	20000
+🔮	zhan bo	20000
+🔮	zhan bu	20000
+🔮	zi shui jing	20000
+🔯	liu jiao xing	20000
+🔯	liu mang xing	20000
+🔰	chu xin zhe	20000
+🔰	dun pai	20000
+🔱	hai wang ji	20000
+🔱	san cha ji	20000
+🔲	hei xian fang kuang	20000
+🔳	bai xian fang kuang	20000
+🔴	hong se yuan quan	20000
+🔵	lan se yuan quan	20000
+🔷	lan se da ling xing	20000
+🔹	lan se xiao ling xing	20000
+🔼	xiang shang	20000
+🔽	xiang xia	20000
+🕉️	ao mu fu hao	20000
+🕉️	fan wen fu hao	20000
+🕊️	ge zi	20000
+🕊️	he ping ge	20000
+🕋️	ka ba sheng tang	20000
+🕋️	ke er bai	20000
+🕌️	hui jiao tang	20000
+🕌️	qing zhen si	20000
+🕍️	you tai jiao tang	20000
+🕎️	duo lian deng zhu tai	20000
+🕎️	you tai jiao deng tai	20000
+🕎️	you tai jiao jiu deng zhu tai	20000
+🕐	shi jian	20000
+🕐	yi dian	20000
+🕐	yi dian zhong	20000
+🕑	liang dian	20000
+🕑	liang dian zhong	20000
+🕑	shi jian	20000
+🕒	san dian	20000
+🕒	san dian zhong	20000
+🕒	shi jian	20000
+🕓	shi jian	20000
+🕓	si dian	20000
+🕓	si dian zhong	20000
+🕔	shi jian	20000
+🕔	wu dian	20000
+🕔	wu dian zhong	20000
+🕕	liu dian	20000
+🕕	liu dian zhong	20000
+🕕	shi jian	20000
+🕖	qi dian	20000
+🕖	qi dian zhong	20000
+🕖	shi jian	20000
+🕗	ba dian	20000
+🕗	ba dian zhong	20000
+🕗	shi jian	20000
+🕘	jiu dian	20000
+🕘	jiu dian zhong	20000
+🕘	shi jian	20000
+🕙	shi dian	20000
+🕙	shi dian zhong	20000
+🕙	shi jian	20000
+🕙	zhong biao	20000
+🕚	shi jian	20000
+🕚	shi yi dian	20000
+🕚	shi yi dian zhong	20000
+🕛	ling chen	20000
+🕛	shi er dian	20000
+🕛	shi er dian zhong	20000
+🕛	shi jian	20000
+🕜	yi dian ban	20000
+🕝	er dian ban	20000
+🕝	liang dian ban	20000
+🕞	san dian ban	20000
+🕟	si dian ban	20000
+🕠	wu dian ban	20000
+🕡	liu dian ban	20000
+🕢	qi dian ban	20000
+🕣	ba dian ban	20000
+🕤	jiu dian ban	20000
+🕤	shi zhong	20000
+🕥	shi dian ban	20000
+🕦	shi yi dian ban	20000
+🕧	shi er dian ban	20000
+🕯️	la zhu	20000
+🕯️	zhu guang	20000
+🕰️	bi lu zhong	20000
+🕰️	tai zhong	20000
+🕳️	di dong	20000
+🕳️	dong	20000
+🕴️	xi zhuang nan	20000
+🕵️	nan zhen tan	20000
+🕵️	zhen tan	20000
+🕵️‍♀️	nv zhen tan	20000
+🕵️‍♀️	zhen tan	20000
+🕶️	hei chao	20000
+🕶️	hei se tai yang jing	20000
+🕶️	mo jing	20000
+🕶️	tai yang jing	20000
+🕷️	zhi zhu	20000
+🕸️	zhi zhu wang	20000
+🕹️	cao zong gan	20000
+🕹️	you xi cao zong gan	20000
+🕹️	you xi gan	20000
+🖇️	hui xing zhen	20000
+🖇️	lian jie de hui xing zhen	20000
+🖊️	yuan zhu bi	20000
+🖋️	gang bi	20000
+🖌️	hua bi	20000
+🖍️	la bi	20000
+🖐️	ju qi shou bing shen wu zhi	20000
+🖐️	shou zhang	20000
+🖕️	shu zhong zhi	20000
+🖖	shi bo ke	20000
+🖖	shou shi	20000
+🖖	wa ken	20000
+🖖	wa ken ju shou li	20000
+🖖	wa ken shou shi	20000
+🖥️	tai shi dian nao	20000
+🖥️	tai shi ji	20000
+🖥️	zhuo shang xing dian nao	20000
+🖨️	da yin ji	20000
+🖨️	yin biao ji	20000
+🖱️	dian nao shu biao	20000
+🖱️	san jian shu biao	20000
+🖱️	shu biao	20000
+🖲️	gui ji qiu	20000
+🖼️	xiang kuang	20000
+🗂️	ka pian suo yin qi	20000
+🗃️	ka pian cun dang he	20000
+🗃️	ka pian wen jian he	20000
+🗄️	dang an gui	20000
+🗄️	wen jian gui	20000
+🗑️	fei zhi lou	20000
+🗒️	ji shi ben	20000
+🗒️	luo xuan xian quan bi ji ben	20000
+🗒️	xian quan bi ji ben	20000
+🗓️	luo xuan xian quan ri li	20000
+🗓️	ri li	20000
+🗓️	xian quan ri li	20000
+🗜️	jia qian	20000
+🗜️	ya suo	20000
+🗝️	gu lao de yao shi	20000
+🗝️	jiu yao shi	20000
+🗞️	juan qi de bao zhi	20000
+🗡️	bi shou	20000
+🗡️	duan dao	20000
+🗡️	duan jian	20000
+🗣️	da sheng rang rang	20000
+🗣️	da sheng shuo hua	20000
+🗣️	shuo hua de lun kuo	20000
+🗯️	you ce fen nu qi pao kuang	20000
+🗳️	tou piao xiang	20000
+🗺	di tu	20000
+🗺️	shi jie de tu	20000
+🗻	fu shi shan	20000
+🗼	dian shi ta	20000
+🗼	fa she ta	20000
+🗼	tie ta	20000
+🗽	mei guo	20000
+🗽	zi you nv shen	20000
+🗾	ri ben	20000
+🗿	diao xiang	20000
+🗿	fu huo jie dao shi xiang	20000
+🗿	shi xiang	20000
+🤐️	bi zui	20000
+🤐️	biao qing	20000
+🤐️	la lian kou biao qing	20000
+🤑️	biao qing	20000
+🤑️	jian qian yan kai	20000
+🤒️	biao qing	20000
+🤒️	fa shao	20000
+🤒️	liang ti wen	20000
+🤓️	biao qing	20000
+🤓️	shu dai zi	20000
+🤓️	yan jing nan	20000
+🤔️	biao qing	20000
+🤔️	si kao yi xia	20000
+🤔️	wo xiang xiang	20000
+🤔️	xiang yi xiang	20000
+🤕️	biao qing	20000
+🤕️	shou shang	20000
+🤕️	tou bu shou shang	20000
+🤕️	tou shou shang da bang dai	20000
+🤖️	ji qi ren	20000
+🤗️	ai de bao bao	20000
+🤗️	biao qing	20000
+🤗️	bu yue	20000
+🤗️	gei ni yi ge yong bao	20000
+🤗️	gei wo yi ge yong bao	20000
+🤘️	e mo zhi jiao	20000
+🤘️	shu qi shi zhi yu xiao zhi	20000
+🤘️	shu shi zhi yu xiao zhi	20000
+🦀️	pang xie	20000
+🦁️	shi zi	20000
+🦂️	xie zi	20000
+🦃️	huo ji	20000
+🦃️	tu shou ji	20000
+🦄️	du jiao shou	20000
+🧀️	nai lao	20000
+🧀️	qi si	20000
+😀	biao zhun xiao	20000
+😀	kai kou xiao	20000
+😀	lu chi xiao	20000
+😁	biao qing	20000
+😁	hei hei	20000
+😁	kai xin	20000
+😁	ku xiao	20000
+😁	lie zui xiao	20000
+😁	lu chi da xiao	20000
+😁	lu chi er xiao	20000
+😁	lu chi xiao	20000
+😁	wei xiao	20000
+😁	xi xi	20000
+😁	xiao	20000
+😂	biao qing	20000
+😂	da xiao	20000
+😂	ku xiao	20000
+😂	lei mu	20000
+😂	po ti wei xiao	20000
+😂	xi ji er qi	20000
+😂	xiao bu ke yi	20000
+😂	xiao chu yan lei	20000
+😂	xiao ku	20000
+😃	biao qing	20000
+😃	da xiao	20000
+😃	gao xing	20000
+😃	kai huai da xiao	20000
+😃	kai xin	20000
+😃	wei xiao	20000
+😃	wu fang	20000
+😃	xiao	20000
+😃	xiao lian	20000
+😃	xiao rong	20000
+😃	zhang zui xiao	20000
+😄	biao qing	20000
+😄	gao xing	20000
+😄	ha ha	20000
+😄	ha ha ha	20000
+😄	ha ha ha ha	20000
+😄	he he	20000
+😄	kai xin	20000
+😄	mi mi xiao	20000
+😄	mi yan xiao	20000
+😄	wei xiao	20000
+😄	xi ao	20000
+😄	xi xi	20000
+😄	xiao	20000
+😄	xiao lian	20000
+😄	xiao yan	20000
+😄	zhen gao xiao	20000
+😅	biao qing	20000
+😅	gan ga	20000
+😅	han	20000
+😅	han yan	20000
+😅	leng han	20000
+😅	liu han	20000
+😅	mao leng han	20000
+😆	biao qing	20000
+😆	da xiao	20000
+😆	kai huai da xiao	20000
+😆	kai xin	20000
+😆	mi yan xiao	20000
+😆	sha xiao	20000
+😆	xiao	20000
+😆	xiao bu jian yan	20000
+😇	biao qing	20000
+😇	chun jie	20000
+😇	tian shi	20000
+😇	tian shi de wei xiao	20000
+😈	biao qing	20000
+😈	e mo	20000
+😈	xiao e mo	20000
+😈	xie e	20000
+😉	biao qing	20000
+😉	qing song	20000
+😉	shi yan se	20000
+😉	zha yan	20000
+😊	biao qing	20000
+😊	gao xing	20000
+😊	hai xiu	20000
+😊	ke ai	20000
+😊	mi yan wei xiao	20000
+😊	wei xiao	20000
+😊	xiao	20000
+😊	xiao lian	20000
+😊	xiao rong	20000
+😋	biao qing	20000
+😋	hao chi	20000
+😋	tu she tou	20000
+😋	yan chan	20000
+😋	zui chan	20000
+😌	biao qing	20000
+😌	fang song	20000
+😌	shi ran	20000
+😌	shu fu	20000
+😍	ai	20000
+😍	ai ni	20000
+😍	biao qing	20000
+😍	xi huan	20000
+😍	xin xin yan	20000
+😍	zhao mi	20000
+😎	ban ku	20000
+😎	biao qing	20000
+😎	de yi	20000
+😎	ku	20000
+😎	mo jing	20000
+😎	xiao lian	20000
+😏	biao qing	20000
+😏	chi xiao	20000
+😏	de yi de xiao	20000
+😏	jia xiao	20000
+😏	leng xiao	20000
+😏	tou xiao	20000
+😏	zui jiao shang yang	20000
+😐	biao qing	20000
+😐	dai ran	20000
+😐	dan mo	20000
+😐	mo ran	20000
+😐	ping jing	20000
+😐	wu biao qing	20000
+😑	mian wu biao qing	20000
+😒	ba bu de	20000
+😒	bi shi	20000
+😒	biao qing	20000
+😒	bu gao xing	20000
+😒	bu kai xin	20000
+😒	chou mei ku lian	20000
+😒	leng mo	20000
+😒	yu men	20000
+😓	biao qing	20000
+😓	chu leng han	20000
+😓	dan xin	20000
+😓	dao mei	20000
+😓	du nang	20000
+😓	han	20000
+😓	han yan	20000
+😓	jin zhang	20000
+😓	leng han	20000
+😓	wu yu	20000
+😔	biao qing	20000
+😔	bu kai xin	20000
+😔	bu ru yi	20000
+😔	chen si	20000
+😔	dan you	20000
+😔	hao xin suan	20000
+😔	hao xin teng	20000
+😔	mei you dong li	20000
+😔	nan guo	20000
+😔	shen shang	20000
+😔	shen si	20000
+😔	si kao	20000
+😔	xin suan	20000
+😔	you lv	20000
+😔	you shang	20000
+😔	you yu	20000
+😔	zhen de hao lei	20000
+😕	biao qing	20000
+😕	bu shuang	20000
+😕	bu xie	20000
+😕	kun huo	20000
+😕	pie zui	20000
+😖	biao qing	20000
+😖	ku nao	20000
+😖	kun huo	20000
+😖	tong ku	20000
+😖	yi wen	20000
+😗	qin wen	20000
+😘	ai	20000
+😘	ai ni	20000
+😘	biao qing	20000
+😘	chuan qing	20000
+😘	fei wen	20000
+😘	qin qin	20000
+😘	shi ai	20000
+😙	qin qin	20000
+😚	biao qing	20000
+😚	du zui	20000
+😚	qin qin	20000
+😚	qin wen	20000
+😚	qin yi kou	20000
+😛	mai meng	20000
+😛	tu she	20000
+😜	ban gui lian	20000
+😜	biao qing	20000
+😜	gui lian	20000
+😜	jian xiao	20000
+😜	mai meng	20000
+😜	shi yan se	20000
+😜	xi xi	20000
+😜	zha yan	20000
+😜	zuo gui lian	20000
+😝	bi yan	20000
+😝	biao qing	20000
+😝	chao nong	20000
+😝	chao xiao	20000
+😝	diao pi	20000
+😝	kai wan xiao	20000
+😝	tiao pi	20000
+😝	tu she	20000
+😞	biao qing	20000
+😞	bu kai xin	20000
+😞	di luo	20000
+😞	di luo de xin qing	20000
+😞	nan guo	20000
+😞	shi wang	20000
+😞	yi yu zheng	20000
+😟	dan you	20000
+😠	bi zui	20000
+😠	biao qing	20000
+😠	bu gao xing	20000
+😠	bu kai xin	20000
+😠	jue zui	20000
+😠	nao xin	20000
+😠	qi fen	20000
+😠	re wo sheng qi	20000
+😠	sheng qi	20000
+😠	yan su	20000
+😠	zhou mei	20000
+😡	biao qing	20000
+😡	fan	20000
+😡	fan si	20000
+😡	fen nu	20000
+😡	jue zui	20000
+😡	nu qi	20000
+😡	qi fen	20000
+😡	qi ren	20000
+😡	qi si le	20000
+😡	qi si ren	20000
+😡	ren rang	20000
+😡	sheng qi	20000
+😡	wo huo	20000
+😡	zhen shi gou le	20000
+😢	bei shang	20000
+😢	bei tong	20000
+😢	biao qing	20000
+😢	chuai qi	20000
+😢	ku	20000
+😢	ku qi	20000
+😢	liu lei	20000
+😢	shang xin	20000
+😣	biao qing	20000
+😣	fu zui gan	20000
+😣	jian ren	20000
+😣	nan shou	20000
+😣	ren nai	20000
+😣	shang xin	20000
+😣	zhao ji	20000
+😤	biao qing	20000
+😤	de yi	20000
+😤	qi si wo le	20000
+😤	sheng qi	20000
+😥	biao qing	20000
+😥	han	20000
+😥	shi ran	20000
+😥	shi wang	20000
+😦	jing ya	20000
+😦	ju sang	20000
+😧	jing e	20000
+😨	biao qing	20000
+😨	hai pa	20000
+😨	jing kong	20000
+😨	ke pa	20000
+😩	biao qing	20000
+😩	pi juan	20000
+😩	yan juan	20000
+😩	zhua kuang	20000
+😪	biao qing	20000
+😪	da ke shui	20000
+😪	fan kun	20000
+😪	han shui	20000
+😪	kun juan	20000
+😪	kun kun	20000
+😪	pi lao	20000
+😪	shui jiao	20000
+😪	shui jue	20000
+😪	wan an	20000
+😫	biao qing	20000
+😫	nan guo	20000
+😫	nao huo	20000
+😫	pi bei	20000
+😫	zhua kuang	20000
+😬	gui lian	20000
+😭	bei shang	20000
+😭	biao qing	20000
+😭	da ku	20000
+😭	ku	20000
+😭	ku qi	20000
+😭	lei liu man mian	20000
+😭	lei ru yu xia	20000
+😭	liu lei	20000
+😮	jing ya	20000
+😯	tiao mei jing ya	20000
+😯	yi wai	20000
+😰	biao qing	20000
+😰	han	20000
+😰	jiao ji	20000
+😰	jing hun	20000
+😰	leng han	20000
+😰	mao leng han	20000
+😱	biao qing	20000
+😱	chi jing	20000
+😱	hai pa	20000
+😱	jing kong	20000
+😱	ke pa	20000
+😱	kong bu	20000
+😱	kong ju	20000
+😱	pa pa	20000
+😱	xia niao	20000
+😲	biao qing	20000
+😲	chi jing	20000
+😲	tong ku	20000
+😳	biao qing	20000
+😳	gan ga	20000
+😳	hai sao	20000
+😳	hai xiu	20000
+😳	hong lian	20000
+😳	hu che	20000
+😳	jiong	20000
+😳	lian hong	20000
+😳	xiu kui	20000
+😴	kun juan	20000
+😴	wan an	20000
+😵	biao qing	20000
+😵	tou yun yan hua	20000
+😵	yan mao jin xing	20000
+😶	biao qing	20000
+😶	bu ke shuo	20000
+😶	wu hua ke shuo	20000
+😶	wu kou	20000
+😶	wu yu	20000
+😷	ai bo la	20000
+😷	bi sai	20000
+😷	biao qing	20000
+😷	bing dao	20000
+😷	chuan ran gan mao	20000
+😷	dai kou zhao	20000
+😷	gan mao	20000
+😷	gan mao liu bi ti	20000
+😷	kou zhao	20000
+😷	liu gan	20000
+😷	meng mian	20000
+😷	pen ti	20000
+😷	sang zi teng	20000
+😷	sheng bing	20000
+😷	yan zhong gan mao	20000
+😷	yun	20000
+😷	zhong gan mao	20000
+😸	kai xin mao	20000
+😺	kai xin mao	20000
+😺	mao	20000
+😼	ku mao	20000
+😼	mao lian	20000
+😽	qin qin mao	20000
+🙀	mao lian	20000
+🙁️	biao qing	20000
+🙁️	nan guo	20000
+🙂️	biao qing	20000
+🙂️	wei xiao	20000
+🙂️	xiao	20000
+🙃	biao qing	20000
+🙃	dian dao	20000
+🙃️	wo dao	20000
+🙄️	bai yan	20000
+🙄️	biao qing	20000
+🙄️	yan jing gun dong biao qing	20000
+🙅	biao yi bu hao	20000
+🙅	bu ke	20000
+🙅	bu xing	20000
+🙅	cuo wu	20000
+🙅	fan dui	20000
+🙅	fou jue	20000
+🙅	mei ke neng	20000
+🙅	mei men	20000
+🙅	tou xiang	20000
+🙅	wu de	20000
+🙅‍♂️	biao yi bu hao	20000
+🙅‍♂️	bu ke	20000
+🙅‍♂️	bu xing	20000
+🙅‍♂️	cuo wu	20000
+🙅‍♂️	fan dui	20000
+🙅‍♂️	fou jue	20000
+🙅‍♂️	mei ke neng	20000
+🙅‍♂️	mei men	20000
+🙅‍♂️	tou xiang	20000
+🙅‍♂️	wu de	20000
+🙆	bao tou	20000
+🙆	biao yi hao	20000
+🙆	ken ding	20000
+🙆	tong yi	20000
+🙆	tou xiang	20000
+🙆	zheng que	20000
+🙆	zhun xu	20000
+🙆‍♂️	bao tou	20000
+🙆‍♂️	biao yi hao	20000
+🙆‍♂️	ken ding	20000
+🙆‍♂️	tong yi	20000
+🙆‍♂️	tou xiang	20000
+🙆‍♂️	zheng que	20000
+🙆‍♂️	zhun xu	20000
+🙇	dao qian	20000
+🙇	ju gong	20000
+🙇	ken qiu	20000
+🙇	shen ju gong de nan ren	20000
+🙇	shen ju gong de ren	20000
+🙇	tou xiang	20000
+🙇‍♀️	dao qian	20000
+🙇‍♀️	ju gong	20000
+🙇‍♀️	ken qiu	20000
+🙇‍♀️	shen ju gong de nv ren	20000
+🙇‍♀️	shen ju gong de ren	20000
+🙇‍♀️	tou xiang	20000
+🙈	bu kan	20000
+🙈	fei li wu shi	20000
+🙈	kan bu jian	20000
+🙈	mao yan di	20000
+🙈	wu yan	20000
+🙉	bu ting	20000
+🙉	fei li wu ting	20000
+🙉	shen ting	20000
+🙉	ting bu dao	20000
+🙊	bi zui	20000
+🙊	bu gan shuo	20000
+🙊	bu neng shuo	20000
+🙊	bu shuo	20000
+🙊	bu shuo hua	20000
+🙊	fei li wu yan	20000
+🙊	hao xiao	20000
+🙊	jin yan	20000
+🙋	da zhao hu	20000
+🙋	hui shou	20000
+🙋	ju shou	20000
+🙋	tou xiang	20000
+🙋	zhao shou	20000
+🙋‍♂️	da zhao hu	20000
+🙋‍♂️	hui shou	20000
+🙋‍♂️	ju shou	20000
+🙋‍♂️	tou xiang	20000
+🙋‍♂️	zhao shou	20000
+🙌	shou shi	20000
+🙌	ting zhi	20000
+🙌	yang shou huan hu	20000
+🙍	di luo	20000
+🙍	ju sang	20000
+🙍	qi nei	20000
+🙍	shi wang	20000
+🙍	tou xiang	20000
+🙍‍♂️	di luo	20000
+🙍‍♂️	ju sang	20000
+🙍‍♂️	qi nei	20000
+🙍‍♂️	shi wang	20000
+🙍‍♂️	tou xiang	20000
+🙎	dan mo	20000
+🙎	du zui	20000
+🙎	tou xiang	20000
+🙎‍♂️	dan mo	20000
+🙎‍♂️	du zui	20000
+🙎‍♂️	tou xiang	20000
+🙏	bai tuo	20000
+🙏	bao en	20000
+🙏	bao you	20000
+🙏	chao bai	20000
+🙏	chao du	20000
+🙏	duo xie	20000
+🙏	gan xie	20000
+🙏	gong de wu liang	20000
+🙏	huan yuan	20000
+🙏	ji bai	20000
+🙏	ken qiu	20000
+🙏	kou bai	20000
+🙏	nian fo	20000
+🙏	nian zhou	20000
+🙏	qiu gao zhi	20000
+🙏	shi zhe an xi	20000
+🙏	shuang shou he shi	20000
+🙏	wan fen gan ji	20000
+🙏	xie xie	20000
+🙏	zha xi de lei	20000
+🙏	zhi xie	20000
+🚀	huo jian	20000
+🚁	jiao tong	20000
+🚁	zhi sheng ji	20000
+🚂	huo che	20000
+🚂	jiao tong	20000
+🚂	zheng qi huo che	20000
+🚂	zheng qi ji che	20000
+🚃	dian che	20000
+🚃	jiao tong	20000
+🚃	tie dao che	20000
+🚃	you gui dian che	20000
+🚄	dong che	20000
+🚄	gao su lie che	20000
+🚄	gao tie	20000
+🚄	huo che	20000
+🚄	jiao tong	20000
+🚄	jiao tong gong ju	20000
+🚄	lie che	20000
+🚄	xiao huo che	20000
+🚄	zi dan tou	20000
+🚅	gao su lie che	20000
+🚅	gao tie	20000
+🚅	he xie hao	20000
+🚅	huo che	20000
+🚅	jiao tong	20000
+🚅	zi dan lie che	20000
+🚆	huo che tou	20000
+🚇	che xiang	20000
+🚇	di tie	20000
+🚇	di tie biao ji	20000
+🚇	jiao tong	20000
+🚇	jie yun	20000
+🚇	zuo di tie	20000
+🚈	di tie	20000
+🚈	jiao tong	20000
+🚈	qing gui dian che	20000
+🚉	che zhan	20000
+🚉	di tie zhan	20000
+🚉	huo che	20000
+🚉	huo che zhan	20000
+🚉	jiao tong	20000
+🚉	zhan tai	20000
+🚊	dian che	20000
+🚊	huo che	20000
+🚊	jiao tong	20000
+🚊	xin gan xian	20000
+🚋	you gui dian che	20000
+🚌	ba shi	20000
+🚌	ban che	20000
+🚌	che shang	20000
+🚌	da ba	20000
+🚌	gong che	20000
+🚌	gong gong qi che	20000
+🚌	gong jiao	20000
+🚌	gong jiao che	20000
+🚌	jiao tong	20000
+🚌	jiao tong gong ju	20000
+🚍	ba shi	20000
+🚍	da ba che	20000
+🚍	gong che	20000
+🚍	gong gong qi che	20000
+🚍	jiao tong	20000
+🚎	ba shi	20000
+🚎	dian che	20000
+🚎	ding ding	20000
+🚎	gong che	20000
+🚎	gong gong qi che	20000
+🚎	jiao tong	20000
+🚎	wu gui dian che	20000
+🚎	you gui dian che	20000
+🚏	gong che zhan	20000
+🚏	gong gong qi che zhan	20000
+🚏	gong jiao che zhan	20000
+🚐	ba shi	20000
+🚐	gong che	20000
+🚐	gong gong qi che	20000
+🚐	gong gong xiao ba	20000
+🚐	jiao tong	20000
+🚐	mian bao che	20000
+🚐	xiao ba	20000
+🚐	xiao ba shi	20000
+🚑	ji jiu che	20000
+🚑	jiao tong	20000
+🚑	jiu hu che	20000
+🚑	yi liao che	20000
+🚒	jiao tong	20000
+🚒	xiao fang che	20000
+🚓	jiao tong	20000
+🚓	jing che	20000
+🚔	bao jing	20000
+🚔	jiao tong	20000
+🚔	jing cha	20000
+🚔	jing che	20000
+🚕	chu zu che	20000
+🚕	di shi	20000
+🚕	ji cheng che	20000
+🚕	jiao tong	20000
+🚖	chu zu che	20000
+🚖	da che	20000
+🚖	da di	20000
+🚖	di shi	20000
+🚖	ji cheng che	20000
+🚖	jiao tong	20000
+🚗	che	20000
+🚗	che liang	20000
+🚗	che zi	20000
+🚗	jiao che	20000
+🚗	jiao tong	20000
+🚗	qi che	20000
+🚗	si jia che	20000
+🚗	xiao che	20000
+🚗	xiao jiao che	20000
+🚗	xiao qi che	20000
+🚘	che	20000
+🚘	che zi	20000
+🚘	jiao che	20000
+🚘	jiao tong	20000
+🚘	qi che	20000
+🚘	si jia che	20000
+🚘	xiao jiao che	20000
+🚙	jiao tong	20000
+🚙	xiu lu che	20000
+🚙	xiu xian che	20000
+🚙	yue ye che	20000
+🚚	huo che	20000
+🚚	jiao tong	20000
+🚜	huo gui che	20000
+🚜	jiao tong	20000
+🚜	tuo la ji	20000
+🚝	ci xuan fu lie che	20000
+🚝	dan gui dian che	20000
+🚝	dan gui lie che	20000
+🚝	jiao tong	20000
+🚞	deng shan lie che	20000
+🚞	huo che	20000
+🚞	jiao tong	20000
+🚞	tie lu	20000
+🚟	guan guang lie che	20000
+🚟	jiao tong	20000
+🚟	kong zhong tie lu	20000
+🚟	xuan fu lie che	20000
+🚠	gao shan suo dao	20000
+🚠	jiao tong	20000
+🚠	lan che	20000
+🚠	shan ding lan che	20000
+🚡	jiao tong	20000
+🚡	kong zhong lan che	20000
+🚡	lan che	20000
+🚢	chu hai	20000
+🚢	chuan	20000
+🚢	hai yun	20000
+🚢	jiao tong	20000
+🚢	lun chuan	20000
+🚢	you lun	20000
+🚣	fan zhou	20000
+🚣	hua chuan	20000
+🚣	hua ting	20000
+🚣	nan ren hua chuan	20000
+🚣	nan ren hua ting	20000
+🚣	xiao chuan	20000
+🚣	yun dong	20000
+🚣‍♀️	fan zhou	20000
+🚣‍♀️	hua chuan	20000
+🚣‍♀️	hua ting	20000
+🚣‍♀️	nv ren hua chuan	20000
+🚣‍♀️	nv ren hua ting	20000
+🚣‍♀️	xiao chuan	20000
+🚤	kuai ting	20000
+🚤	qi ting	20000
+🚤	sai ting	20000
+🚥	hong lv deng	20000
+🚥	jiao tong biao zhi	20000
+🚥	jiao tong deng	20000
+🚥	jiao tong hao zhi	20000
+🚥	jiao tong xin hao deng	20000
+🚥	xin hao deng	20000
+🚦	hong lv deng	20000
+🚦	jiao tong biao zhi	20000
+🚦	jiao tong deng	20000
+🚦	jiao tong xin hao deng	20000
+🚦	xin hao deng	20000
+🚧	dao lu shi gong	20000
+🚧	jiao tong biao zhi	20000
+🚧	lu zhang	20000
+🚧	shi gong	20000
+🚨	jing che deng	20000
+🚨	jing deng	20000
+🚨	jing shi deng	20000
+🚩	hong qi	20000
+🚩	qi biao	20000
+🚩	qi gan	20000
+🚩	qi zhi	20000
+🚩	san jiao qi	20000
+🚩	zhong dian	20000
+🚪	men	20000
+🚫	biao zhi	20000
+🚫	bu de ru nei	20000
+🚫	bu ke yong	20000
+🚫	jin zhi	20000
+🚫	xian zhi	20000
+🚬	biao zhi	20000
+🚬	chou yan	20000
+🚬	xi yan	20000
+🚬	xi yan qu	20000
+🚬	xiang yan	20000
+🚬	yan	20000
+🚭	biao zhi	20000
+🚭	jin yan	20000
+🚭	jin zhi xi yan	20000
+🚭	wu yan qu	20000
+🚮	biao zhi	20000
+🚮	la ji ru lou	20000
+🚮	la ji tong	20000
+🚮	reng la ji	20000
+🚯	biao zhi	20000
+🚯	jin diu la ji	20000
+🚯	qing wu luan reng	20000
+🚰	biao zhi	20000
+🚰	shui long tou	20000
+🚰	yin shui qu	20000
+🚰	yin yong shui	20000
+🚱	biao zhi	20000
+🚱	fei yin yong shui	20000
+🚱	jin zhi yin shui	20000
+🚲	dan che	20000
+🚲	jiao ta che	20000
+🚲	jiao tong	20000
+🚲	zi xing che	20000
+🚳	biao zhi	20000
+🚳	jin xing dan che	20000
+🚳	jin zhi qi che	20000
+🚴	dan che	20000
+🚴	jiao ta che	20000
+🚴	jiao tong	20000
+🚴	nan zi xing che shou	20000
+🚴‍	qi che	20000
+🚴	shan de che	20000
+🚴	shan di che	20000
+🚴‍	yun dong	20000
+🚴	zi xing che	20000
+🚴	zi xing che shou	20000
+🚴‍♀️	dan che	20000
+🚴‍♀️	jiao ta che	20000
+🚴‍♀️	jiao tong	20000
+🚴‍♀️	nv zi xing che shou	20000
+🚴‍♀️	shan de che	20000
+🚴‍♀️	shan di che	20000
+🚴‍♀️	zi xing che	20000
+🚴‍♀️	zi xing che shou	20000
+🚵	dan che	20000
+🚵	deng shan zi xing che shou	20000
+🚵	jiao ta che	20000
+🚵	nan deng shan zi xing che shou	20000
+🚵	qi che deng shan	20000
+🚵	yun dong	20000
+🚵	zi xing che	20000
+🚵‍♀️	dan che	20000
+🚵‍♀️	deng shan zi xing che shou	20000
+🚵‍♀️	jiao ta che	20000
+🚵‍♀️	nv deng shan zi xing che shou	20000
+🚵‍♀️	qi che deng shan	20000
+🚵‍♀️	yun dong	20000
+🚵‍♀️	zi xing che	20000
+🚶	jiao tong	20000
+🚶	lu ren	20000
+🚶	nan lu ren	20000
+🚶	nan ren san bu	20000
+🚶	nan xing ren	20000
+🚶	san bu	20000
+🚶	xing ren	20000
+🚶‍♀️	jiao tong	20000
+🚶‍♀️	lu ren	20000
+🚶‍♀️	nv lu ren	20000
+🚶‍♀️	nv ren san bu	20000
+🚶‍♀️	nv xing ren	20000
+🚶‍♀️	san bu	20000
+🚶‍♀️	xing ren	20000
+🚷	biao zhi	20000
+🚷	jin zhi xing ren	20000
+🚸	biao zhi	20000
+🚸	dang xin er tong	20000
+🚸	xue tong guo jie	20000
+🚸	zhu yi er tong	20000
+🚹	biao zhi	20000
+🚹	nan ce	20000
+🚹	nan shi	20000
+🚹	nan xing	20000
+🚺	biao zhi	20000
+🚺	nv ce	20000
+🚺	nv shi	20000
+🚺	nv xing	20000
+🚻	biao zhi	20000
+🚻	guan xi jian	20000
+🚻	guan xi shi	20000
+🚻	hua zhuang shi	20000
+🚻	wei sheng jian	20000
+🚻	xi shou jian	20000
+🚼	bao bao	20000
+🚼	biao zhi	20000
+🚼	mu ying shi	20000
+🚼	ying er	20000
+🚽	ce suo	20000
+🚽	chou shui ma tong	20000
+🚽	ma tong	20000
+🚽	wei sheng jian	20000
+🚾	biao zhi	20000
+🚾	ce suo	20000
+🚾	guan xi jian	20000
+🚾	wc	20000
+🚾	wei sheng jian	20000
+🚾	xi shou jian	20000
+🚿	chong liang	20000
+🚿	chong zao	20000
+🚿	hua sa	20000
+🚿	lian peng tou	20000
+🚿	lin yu	20000
+🚿	lin yu tou	20000
+🚿	xi zao	20000
+🛀	pao ge zao	20000
+🛀	pao zao	20000
+🛀	xi zao	20000
+🛀	yu gang	20000
+🛀	yu shi	20000
+🛁	xi zao	20000
+🛁	yu chi	20000
+🛁	yu gang	20000
+🛁	zao	20000
+🛂	an jian	20000
+🛂	an jian chu	20000
+🛂	biao zhi	20000
+🛂	cha zheng	20000
+🛂	tong guan jian cha	20000
+🛂	zheng jian jian cha	20000
+🛃	biao zhi	20000
+🛃	cha bao	20000
+🛃	cha xing li	20000
+🛃	hai guan	20000
+🛃	xing li jian cha	20000
+🛄	biao zhi	20000
+🛄	cha xing li	20000
+🛄	ti qu xing li	20000
+🛄	xing li guo ji	20000
+🛄	xing li ling qu chu	20000
+🛄	xing li tong cha	20000
+🛅	biao zhi	20000
+🛅	chu fang xing li	20000
+🛅	cun bao	20000
+🛅	ji cun	20000
+🛅	xing li ji cun chu	20000
+🛅	xing li tuo guan	20000
+🛋️	sha fa he deng	20000
+🛌	shui jiao	20000
+🛌️	wo pu	20000
+🛌	xiu xi	20000
+🛍	gou wu	20000
+🛍️	gou wu dai	20000
+🛍	mai mai mai	20000
+🛎️	fu wu ling	20000
+🛎️	fu wu yuan ling dang	20000
+🛏️	chuang	20000
+🛐️	zong jiao chang suo	20000
+🛠️	chui zi he ban shou	20000
+🛡️	dun pai	20000
+🛢️	you tong	20000
+🛣️	gao su gong lu	20000
+🛣️	gao su lu	20000
+🛤️	tie gui	20000
+🛤️	tie lu gui dao	20000
+🛥️	kuai ting	20000
+🛥️	mo tuo ting	20000
+🛥️	you ting	20000
+🛩️	xiao xing fei ji	20000
+🛫️	fei ji qi fei	20000
+🛫️	ke ji qi fei	20000
+🛬️	fei ji dao da	20000
+🛬️	fei ji di da	20000
+🛬️	fei ji zhuo lu	20000
+🛬️	ke ji di da	20000
+🛰️	ren zao wei xing	20000
+🛰️	wei xing	20000
+🛳️	ke chuan	20000
+🛳️	ke lun	20000
+①	quan yi	20000
+⑩	quan shi	20000
+②	quan er	20000
+③	quan san	20000
+④	quan si	20000
+⑤	quan wu	20000
+⑥	quan liu	20000
+⑦	quan qi	20000
+⑧	quan ba	20000
+⑨	quan jiu	20000
+🉐️	de	20000
+🉐️	huo de	20000
+🉐️	shou yi	20000
+🉐️	te jia	20000
+🈹️	da zhe	20000
+🈹️	ge	20000
+🈹️	ge rou	20000
+🈹️	kuang ge	20000
+🈹️	rang li	20000
+🈴️	he	20000
+🈴️	he ge	20000
+🈴️	shi he	20000
+🈲️	jin	20000
+🈲️	jin zhi	20000
+🉑️	jie shou	20000
+🉑️	ke	20000
+🉑️	xu ke	20000
+🈳️	kaung kong	20000
+🈳️	kong	20000
+🈳️	kong wei	20000
+🈳️	you kong wei	20000
+🈵️	kuang man	20000
+🈵️	man	20000
+🈵️	yi man	20000
+㊙️	mi	20000
+㊙️	mi fang	20000
+㊙️	mi mi	20000
+㊙️	yin si	20000
+🈸️	kuang shen	20000
+🈸️	shen	20000
+🈸️	shen qing	20000
+🈚️	kuang wu	20000
+🈚️	mei you	20000
+🈚️	mian fei	20000
+🈚️	wu	20000
+🈺️	kuang ying	20000
+🈺️	ying	20000
+🈺️	ying ye	20000
+🈺️	ying ye zhong	20000
+🈶️	kuang you	20000
+🈶️	shou fei	20000
+🈶️	you	20000
+🈷️	kuang yue	20000
+🈷️	yue	20000
+🈷️	yue fei	20000
+🈷️	yue fen	20000
+🈯️	kuang zhi	20000
+🈯️	yu ding	20000
+🈯️	zhi	20000
+🈯️	zhi ding	20000
+㊟	bei zhu	20000
+㊟	quan zhu	20000
+㊗️	gong he	20000
+㊗️	qing zhu	20000
+㊗️	quan zhu	20000
+㊗️	zhu	20000
+㊗️	zhu an kang	20000
+㊗️	zhu fu	20000
+㊗️	zhu he	20000
+🅰	biao zhi	20000
+🅰️	xue xing	20000
+🆎	a b	20000
+🆎	xue xing	20000
+🅱	biao zhi	20000
+🅱️	xue xing	20000
+capslock	caps	20000
+🆑	c l	20000
+🆑	fu hao	20000
+🆑	qing chu	20000
+🆑	qing ling	20000
+🆑	qing ling jian	20000
+command	cmd	20000
+control	ctl	20000
+🆒	cool	20000
+🆒	fu hao	20000
+🆒	ku	20000
+🆒	qing liang	20000
+🆓	free	20000
+🆓	fu hao	20000
+🆓	mian fei	20000
+🆓	zi you	20000
+ℹ️	fu hao	20000
+ⓘ	info	20000
+ℹ️	xin xi	20000
+ℹ️	zi xun	20000
+🆔	fu hao	20000
+🆔	id	20000
+🆔	shen fen	20000
+🆔	shen fen zheng	20000
+Ⓜ️	di tie	20000
+Ⓜ️	fu hao	20000
+🆕	fu hao	20000
+🆕	new	20000
+🆕	xin	20000
+🆕	xin jian	20000
+🆖	bu gan	20000
+🆖	bu hao	20000
+🆖	bu xing	20000
+🆖	fu hao	20000
+🆖	ng	20000
+🅾	biao zhi	20000
+🅾️	xue xing	20000
+🆗	fu hao	20000
+🆗	hao	20000
+🆗	mei wen ti	20000
+OK	ok	20000
+option	alt	20000
+🅿	biao zhi	20000
+🅿️	ting che	20000
+🅿️	ting che chang	20000
+shift	shift	20000
+🆘	fu hao	20000
+🆘	hu jiu	20000
+🆘	jiu ming	20000
+🆘	qiu jiu	20000
+🆘	sos	20000
+™️	fu hao	20000
+™	shang biao	20000
+🆙	ding	20000
+🆙	fu hao	20000
+🆙	up	20000
+🆚	bi	20000
+🆚	bi sai	20000
+🆚	dui bi	20000
+🆚	dui kang	20000
+🆚	fu hao	20000
+🆚	vs	20000
+🈂️	xiao fei	20000
+	ping guo	20000
