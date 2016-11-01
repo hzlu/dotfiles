@@ -3,3 +3,6 @@
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
+export PATH=/usr/local/bin:$PATH
+
+

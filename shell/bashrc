@@ -1,2 +1,4 @@
 # non-login shell 环境加载此文件
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
