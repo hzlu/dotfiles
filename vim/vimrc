@@ -95,7 +95,7 @@ nnoremap <leader>bg :call ToggleBG()<CR>
 set cursorline
 set cursorcolumn
 set showtabline=1 " 显示标签页
-set textwidth=80
+" set textwidth=80
 set number numberwidth=4
 set linespace=0
 set ruler         " show the cursor position all the time
@@ -402,7 +402,7 @@ let g:tagbar_type_ruby = {
 " ######################################################## CoffeeTags
 " ###################################################################
 let g:CoffeeAutoTagDisabled=0     " Disables autotaging on save
-let g:CoffeeAutoTagFile='/Users/luhaozhao/.hzlutags/lige_coffee_tags'
+let g:CoffeeAutoTagFile='/Users/luhaozhao/.hzlutags/kingene_coffee_tags'
 let g:CoffeeAutoTagIncludeVars=0  " Includes variables
 let g:CoffeeAutoTagTagRelative=1  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
 " ###################################################################
@@ -420,17 +420,15 @@ nnoremap <Leader>bl :Bufferlist<CR>
 " ###################################################################
 function! CreateAllTags()
   exe 'silent !echo "...正在生成ctags文件..."'
-  exe 'silent !ctags -f ~/.hzlutags/lige_tags -R
-        \ --verbose=no --languages=ruby
+  exe 'silent !ctags -f ~/.hzlutags/kingene_tags -R
+        \ --languages=ruby
         \ --exclude=.git --exclude=tmp --exclude=public
         \ --exclude=app/assets $(pwd) $(bundle list --paths) > /dev/null'
-  exe 'silent !coffeetags -R -f ~/.hzlutags/lige_coffee_tags > /dev/null'
+  " exe 'silent !coffeetags -R -f ~/.hzlutags/kingene_coffee_tags > /dev/null'
   :!echo '===== ctags文件已生成 ====='
 endfunction
 nnoremap <Leader>ct :call CreateAllTags()<CR>
-set tags+=~/.hzlutags/lige_tags
-set tags+=~/.hzlutags/lige_coffee_tags
-set tags+=~/.hzlutags/lige_javascript_tags
+set tags+=~/.hzlutags/kingene_tags
 " ###################################################################
 " ########################################################## Supertab
 " ###################################################################

@@ -6,15 +6,13 @@
 ###################################################################
 ########################################################## NVM 设置
 ###################################################################
-export NVM_DIR="/Users/luhaozhao/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 ###################################################################
 #################################################### GOLANG环境设置
 ###################################################################
-export GOROOT="/usr/local/Cellar/go/1.5.1"
-export GOPATH=$HOME/golib:$HOME/goproject:$HOME/goc2p
-export GOBIN=$HOME/gobin
-export PATH=$PATH:$GOBIN
+export GOPATH=$HOME/goworkspace
+export PATH=$PATH:$GOPATH/bin
 ###################################################################
 ########################################################## RVM 设置
 ###################################################################
@@ -25,7 +23,7 @@ export PATH=$PATH:$GOBIN
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR=vim
-export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
+# export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
 export UPDATE_ZSH_DAYS=7
 export LIVERELOAD=0
 DEFAULT_USER="luhaozhao"
@@ -64,17 +62,15 @@ alias gcontinue="git rebase --continue"
 alias gabort="git rebase --abort"
 alias clr="clear"
 alias ll="ls -alh"
-alias rs="rvm use 2.3.0@rails4 && bundle exec rails s -b127.0.0.1"
-alias sk="rvm use 2.3.0@rails4 && bundle exec sidekiq"
-alias rc="rvm use 2.3.0@rails4 && bundle exec rails c"
-alias cdcellar="/Users/luhaozhao/Ligeit/cellar"
-alias cdbike="cd ~/Bestapp/bike-ticket/"
-alias cdmygits="cd /Users/luhaozhao/MyProjects/MyGits/"
+alias rs="bundle exec rails s"
+alias sk="bundle exec sidekiq"
+alias rc="bundle exec rails c"
 alias cddotfiles="cd /Users/luhaozhao/Dropbox/dotfiles/"
-alias cdpractices="cd /Users/luhaozhao/MyProjects/practices/"
 alias cdvagrant="cd /Users/luhaozhao/vagrant/"
 alias cdprojects="cd /Users/luhaozhao/Projects/"
-alias cdprojects="cd /Users/luhaozhao/Dropbox/"
+alias cddropbox="cd /Users/luhaozhao/Dropbox/"
+alias cdwork="cd /Users/luhaozhao/Projects/Kingene-AI"
+alias gemset="rvm gemset"
 alias dirs="dirs -v" # cd -N 或者 cd +N
 alias tabtospace="find . -name '*.rb'\
   -or -name '*.erb'\
