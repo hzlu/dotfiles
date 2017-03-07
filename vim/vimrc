@@ -27,7 +27,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'othree/html5.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'posva/vim-vue'
+Plugin 'posva/vim-vue' " 安装vue语法高亮插件后，需要npm i -g eslint eslint-plugin-vue
 " ======目录导航======
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
