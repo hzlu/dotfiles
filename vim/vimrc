@@ -27,6 +27,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'othree/html5.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'posva/vim-vue'
 " ======目录导航======
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
