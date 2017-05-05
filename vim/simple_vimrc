@@ -16,7 +16,6 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/tComment' " 注释
-Plugin 'Lokaltog/vim-easymotion'
 call vundle#end()
 " ###################################################################
 " ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
@@ -37,10 +36,6 @@ set confirm       " Need confrimation while exit
 set wildmenu
 set wildmode=list:longest,list:full
 set matchpairs+=<:>
-set omnifunc=syntaxcomplete#Complete
-" 颜色主题显示相关
-set t_Co=256
-set background=dark
 set cursorline
 set cursorcolumn
 set showtabline=1 " 显示标签页
