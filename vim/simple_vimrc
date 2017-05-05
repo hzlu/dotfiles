@@ -1,0 +1,174 @@
+" ####################################################################################
+" hzlu's vimrc file
+" 第一步：安装Vundle
+" $git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" 第二步：打开Vim执行安装命令 :PluginInstall
+" (或在命令行运行：$vim +PluginInstall +qall)
+" ####################################################################################
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/tComment' " 注释
+Plugin 'Lokaltog/vim-easymotion'
+call vundle#end()
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+filetype plugin indent on
+syntax enable " 开启Vim提供的语法高亮功能
+syntax on " 允许用指定语法高亮配色方案替换默认方案
+let mapleader = ","
+set timeoutlen=1000
+set history=200
+set completeopt=longest,menu
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set autowrite     " Automatically :write before running commands
+set autoread      " 文件在vim外修改过，自动重新读入
+set confirm       " Need confrimation while exit
+set wildmenu
+set wildmode=list:longest,list:full
+set matchpairs+=<:>
+set omnifunc=syntaxcomplete#Complete
+" 颜色主题显示相关
+set t_Co=256
+set background=dark
+set cursorline
+set cursorcolumn
+set showtabline=1 " 显示标签页
+" set textwidth=80
+set number numberwidth=4
+set linespace=0
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+" tab转化为2个空格"
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set shiftround "连按两次>或<可以移动缩进整行"
+set backspace=indent,eol,start
+set autoindent
+" 折叠
+set foldmethod=indent
+set foldlevel=1
+set nofoldenable
+" 语言编码
+set langmenu=zh_cn
+set helplang=cn
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,gb18030,gbk,big5,gb2312
+" 匹配高亮
+set wrapscan " 循环搜索开头
+set incsearch "显示查找匹配过程
+set hlsearch "高亮显示搜索的内容
+set ignorecase "搜索忽略大小写
+set smartcase "智能大小写搜索
+set splitbelow "新分割窗口在下边
+set splitright "新分割窗口在右边
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+nnoremap -hl :nohlsearch<cr>
+nnoremap +hl :set hlsearch<cr>
+nnoremap <space> viw
+nnoremap <space><space> za
+nnoremap <space>o zR
+nnoremap <space>c zM
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
+nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader><Leader> <C-^>
+inoremap jk <Esc>
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+inoremap <leader>= <%=  %><ESC>hhi
+inoremap <leader>- <% end %><CR>
+augroup erbAbbrev
+  " autocmd FileType eruby :iabbrev render <%= render '' %><Esc>$hhhi
+augroup END
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+nnoremap <leader>c :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+" ###################################################################
+" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
+" ###################################################################
+set list listchars=tab:»·,trail:·
+highlight ExtraWhitespace ctermbg=gray guibg=#e41863
+function! TrimWhiteSpace()
+  %s/\s\+$//e
+endfunction
+augroup extraSpace
+  autocmd!
+  autocmd BufWinEnter * :match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * :match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * :match ExtraWhitespace /\s\+$/
+  " autocmd BufWritePre * :retab
+  autocmd BufWritePre * :call  TrimWhiteSpace()
+  autocmd BufWinLeave * :call  clearmatches()
+augroup END
+" ###################################################################
+" ######################################################### Nerd Tree
+" ###################################################################
+nnoremap nt :NERDTreeToggle<cr>
+let NERDChristmasTree=1
+let NERDTreeChDirMode=2
+let NERDTreeShowHidden=1 " 显示隐藏文件
+let NERDTreeShowBookmarks=1 " 显示书签
+let NERDTreeMinimalUI=1 " 不显示冗余的帮助信息
+let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
+" ###################################################################
+" ############################################################# CtrlP
+" ###################################################################
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_max_height=15
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
+" let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|log)|(optimized|compiled|node_modules)$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
+nnoremap <leader>f :CtrlPMRU<CR>
+" ====== 操作方式 ======
+" e    to open file and close the quickfix window
+" o    to open (same as enter)
+" go   to preview file (open but maintain focus on ag.vim results)
+" t    to open in new tab
+" T    to open in new tab silently
+" h    to open in horizontal split
+" H    to open in horizontal split silently
+" v    to open in vertical split
+" gv   to open in vertical split silently
+" q    to close the quickfix window
