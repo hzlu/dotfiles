@@ -27,6 +27,8 @@ export EDITOR=vim
 export UPDATE_ZSH_DAYS=7
 export LIVERELOAD=0
 export HZLU_WKHTMLTOPDF_VERSION=0.12.3.1
+export LANG="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
 DEFAULT_USER="luhaozhao"
 ZSH_THEME="agnoster"
 CASE_SENSITIVE="false"
@@ -75,6 +77,8 @@ alias cdwork="cd /Users/luhaozhao/Projects/Kingene-AI"
 alias cdwork2="cd /Users/luhaozhao/Projects/ecommerce"
 alias gemset="rvm gemset"
 alias dirs="dirs -v" # cd -N 或者 cd +N
+alias weather="curl http://wttr.in/Guangzhou"
+eval $(thefuck --alias)
 alias tabtospace="find . -name '*.rb'\
   -or -name '*.erb'\
   -or -name '*.eco'\

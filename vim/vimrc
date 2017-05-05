@@ -120,7 +120,8 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,gb18030,gbk,big5,gb2312
 " 匹配高亮
-set incsearch "关闭显示查找匹配过程
+set wrapscan " 循环搜索开头
+set incsearch "显示查找匹配过程
 set hlsearch "高亮显示搜索的内容
 set ignorecase "搜索忽略大小写
 set smartcase "智能大小写搜索
