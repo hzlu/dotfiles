@@ -66,8 +66,9 @@ filetype plugin indent on
 syntax enable " 开启Vim提供的语法高亮功能
 syntax on " 允许用指定语法高亮配色方案替换默认方案
 let mapleader = ","
+let g:mapleader = ","
 set timeoutlen=1000
-set history=200
+set history=500
 set completeopt=longest,menu
 set shell=/bin/zsh
 set nobackup
@@ -84,15 +85,6 @@ set omnifunc=syntaxcomplete#Complete
 set t_Co=256
 set background=dark
 colorscheme Monokai
-function! ToggleBG()
-  let s:tbg = &background
-  if s:tbg == "dark"
-    set background=light
-  else
-    set background=dark
-  endif
-endfunction
-nnoremap <leader>bg :call ToggleBG()<CR>
 set cursorline
 set cursorcolumn
 set showtabline=1 " 显示标签页
@@ -168,44 +160,6 @@ augroup END
 " ###################################################################
 " ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
 " ###################################################################
-if has("gui_running")
-  set anti "开启抗锯齿渲染
-  set imdisable " 自动关闭输入法
-  set guitablabel=%N/\ %t\ %M
-  set lines=57
-  set columns=237
-  " set nowrap " 图形界面下不折行
-  set guioptions-=b " 隐藏水平滚动条
-  set guioptions-=r " 隐藏右边滚动框
-  set guioptions-=L " 隐藏左边滚动框
-  set guioptions-=m " 隐藏菜单栏
-  set guioptions-=T " 隐藏工具栏
-  set guifont=DejaVu\ Sans\ Mono\ Bold\ Oblique\ for\ Powerline:h14
-endif
-if has("gui_macvim")
-  let s:lines=&lines
-  let s:columns=&columns " 使用 macvim 原生的全屏幕功能
-  func! Fullscreenenter()
-      set lines=999 columns=999
-      set fu
-  endf
-  func! Fullscreenleave()
-      let &lines=s:lines
-      let &columns=s:columns
-      set nofu
-  endf
-  func! Fullscreentoggle()
-      if &fullscreen
-          call Fullscreenleave()
-      else
-          call Fullscreenenter()
-      endif
-  endf
-  nnoremap \\ :call Fullscreentoggle()<cr>
-endif
-" ###################################################################
-" ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
-" ###################################################################
 nnoremap -hl :nohlsearch<cr>
 nnoremap +hl :set hlsearch<cr>
 nnoremap <space> viw
@@ -225,6 +179,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+command W w !sudo tee % > /dev/null
 inoremap <leader>= <%=  %><ESC>hhi
 inoremap <leader>- <% end %><CR>
 augroup erbAbbrev
