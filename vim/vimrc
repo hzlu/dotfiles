@@ -163,8 +163,11 @@ augroup END
 nnoremap -hl :nohlsearch<cr>
 nnoremap +hl :set hlsearch<cr>
 nnoremap <space> viw
+" toggle indent
 nnoremap <space><space> za
+" open all indent
 nnoremap <space>o zR
+" close all indent
 nnoremap <space>c zM
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
@@ -177,11 +180,42 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 command W w !sudo tee % > /dev/null
+
 inoremap <leader>= <%=  %><ESC>hhi
 inoremap <leader>- <% end %><CR>
+
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
+
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Specify the behavior when switching between buffers
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
 augroup erbAbbrev
   " autocmd FileType eruby :iabbrev render <%= render '' %><Esc>$hhhi
 augroup END
