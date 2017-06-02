@@ -312,6 +312,9 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '
 " ###################################################################
 " ############################################################# CtrlP
 " ###################################################################
+" c-r switch to regexp mode
+" c-f c-b to cycle between modes
+" Most Recently Used
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_max_height=15
@@ -326,7 +329,9 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
     \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
-nnoremap <leader>f :CtrlPMRU<CR>
+nnoremap <leader>cp :CtrlP<CR>
+nnoremap <leader>cm :CtrlPMRU<CR>
+nnoremap <leader>cb :CtrlPBuffer<CR>
 " ###################################################################
 " ################################ Ag! 搜索 [基于the_silver_searcher]
 " ###################################################################
