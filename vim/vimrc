@@ -10,6 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasr/molokai'
+Plugin 'dracula/vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
@@ -74,7 +76,10 @@ set matchpairs+=<:>
 " Appearance
 set t_Co=256
 set background=dark
-colorscheme Monokai
+" colorscheme Monokai
+colorscheme dracula
+" colorscheme solarized
+" colorscheme molokai
 set cursorline
 set cursorcolumn
 set showtabline=1 " 显示标签页
@@ -127,10 +132,14 @@ nnoremap <space>o zR
 nnoremap <space>c zM
 
 inoremap jk <Esc>
-inoremap JK <Esc> nnoremap <space> viw
+inoremap JK <Esc>
+nnoremap <space> viw
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
+vnoremap <space>y "+y
+inoremap <space>p <ESC>"+pa
+nnoremap <space>p "+p
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
 nnoremap <Leader><Leader> <C-^>
