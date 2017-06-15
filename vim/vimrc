@@ -76,10 +76,12 @@ set matchpairs+=<:>
 " Appearance
 set t_Co=256
 set background=dark
-" colorscheme Monokai
 colorscheme dracula
 " colorscheme solarized
 " colorscheme molokai
+" let g:molokai_original=1
+" let g:rehash256=1
+" colorscheme Monokai
 set cursorline
 set cursorcolumn
 set showtabline=1 " 显示标签页
