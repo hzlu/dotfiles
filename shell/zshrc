@@ -88,6 +88,10 @@ alias tabtospace="find . -name '*.rb'\
   -or -name '*.jbuilder'\
   -or -name '*.rake'\
   -type f | xargs sed -i '' -e 's/	/  /g'"
+alias createctags="ctags -f ~/.hzlutags/kingene_tags -R\
+  --languages=ruby --verbose=no\
+  --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets\
+  $(pwd) $(bundle list --paths)"
 ###################################################################
 ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
 ###################################################################
