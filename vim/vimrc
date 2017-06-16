@@ -140,7 +140,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
 vnoremap <space>y "+y
-inoremap <space>p <ESC>"+pa
+" inoremap <space>p <ESC>"+pa
 nnoremap <space>p "+p
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
