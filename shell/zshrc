@@ -62,12 +62,14 @@ alias cddeepchina="cd /Users/luhaozhao/Projects/deep-china"
 alias cddropbox="cd /Users/luhaozhao/Dropbox/"
 alias cdwork="cd /Users/luhaozhao/Projects/Kingene-AI"
 alias cdwork2="cd /Users/luhaozhao/Projects/ecommerce"
+alias cdyoutiao="cd /Users/luhaozhao/Projects/youtiao"
 alias gemset="rvm gemset"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias dirs="dirs -v" # cd -N 或者 cd +N
 alias weather="curl http://wttr.in/Guangzhou"
+alias showssh="cat ~/.ssh/config"
 eval $(thefuck --alias)
 alias tabtospace="find . -name '*.rb'\
   -or -name '*.erb'\
