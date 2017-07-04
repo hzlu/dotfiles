@@ -159,8 +159,8 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " ERB file shortcut
-inoremap <leader>= <%=  %><ESC>hhi
-inoremap <leader>- <% end %><CR>
+" inoremap <leader>= <%=  %><ESC>hhi
+" inoremap <leader>- <% end %><CR>
 
 " tab
 map <leader>tn :tabnew<cr>

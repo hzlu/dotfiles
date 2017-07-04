@@ -30,6 +30,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 # plugins=(git brew bundle gem osx rails ruby rvm sublime)
+plugins=(zsh-autosuggestions)
 # export LANG=en_US.UTF-8
 # export ARCHFLAGS="-arch x86_64"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -70,6 +71,7 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias dirs="dirs -v" # cd -N 或者 cd +N
 alias weather="curl http://wttr.in/Guangzhou"
 alias showssh="cat ~/.ssh/config"
+alias cat="ccat"
 eval $(thefuck --alias)
 alias tabtospace="find . -name '*.rb'\
   -or -name '*.erb'\
