@@ -53,7 +53,7 @@ alias gcontinue="git rebase --continue"
 alias gabort="git rebase --abort"
 alias clr="clear"
 alias ll="ls -alh"
-alias rs="bin/rails s"
+alias rs="bin/rails s -p 3333"
 alias sk="bundle exec sidekiq"
 alias rc="bin/rails c"
 alias cddotfiles="cd /Users/luhaozhao/Dropbox/dotfiles/"
@@ -66,10 +66,11 @@ alias cdwork2="cd /Users/luhaozhao/Projects/ecommerce"
 alias cdyoutiao="cd /Users/luhaozhao/Projects/youtiao"
 alias gemset="rvm gemset"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias externalIP="curl ipinfo.io"
 alias localip="ipconfig getifaddr en0"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias dirs="dirs -v" # cd -N 或者 cd +N
-alias weather="curl http://wttr.in/Guangzhou"
+alias weather="curl http://wttr.in/Guangzhou\?m"
 alias showssh="cat ~/.ssh/config"
 alias cat="ccat"
 eval $(thefuck --alias)
@@ -86,6 +87,18 @@ alias tabtospace="find . -name '*.rb'\
 #   --languages=ruby --verbose=no\
 #   --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets\
 #   $(pwd) $(bundle list --paths)"
+
+# use transfer.sh for upload file via curl
+transfer() {
+    # write to output to tmpfile because of progress bar
+    tmpfile=$( mktemp -t transferXXX )
+    curl --progress-bar --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+    cat $tmpfile;
+    rm -f $tmpfile;
+}
+
+alias transfer=transfer
+
 ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
 prepend()
 {
@@ -95,3 +108,4 @@ prepend()
 source $ZSH/oh-my-zsh.sh
 ######### 分割线 --- 分割线 --- 分割线 --- 分割线 --- 分割线 ######
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+

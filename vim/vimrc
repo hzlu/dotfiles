@@ -24,7 +24,9 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'slim-template/vim-slim'
 Plugin 'othree/html5.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'godlygeek/tabular' " 格式化
+Plugin 'plasticboy/vim-markdown' " tabular plugin must come before vim-markdown
+Plugin 'suan/vim-instant-markdown' " markdown instantly preview
 Plugin 'posva/vim-vue' " requires: npm i -g eslint eslint-plugin-vue
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -37,7 +39,6 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-endwise' " 自动补end插件
 Plugin 'Raimondi/delimitMate' " 自动补全括号插件
 Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular' " 格式化
 Plugin 'vim-scripts/tComment' " 注释
 Plugin 'terryma/vim-multiple-cursors' " 多处编辑
 Plugin 'ervandew/supertab'
@@ -225,6 +226,8 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.coffee      set filetype=coffee
   autocmd BufRead,BufNewFile *.slim        set filetype=slim
   autocmd BufRead,BufNewFile *.sass,*.scss,*.coffee,*.erb,*.eco set foldmethod=indent
+  autocmd BufNewFile,BufRead *.ejs         set filetype=html
+  autocmd BufNewFile,BufRead *.styl         set filetype=sass
   autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
   autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
@@ -277,9 +280,9 @@ if executable('ag')
 endif
 
 if isdirectory(expand('~/.vim/bundle/syntastic'))
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
+  " set statusline+=%#warningmsg#
+  " set statusline+=%{SyntasticStatuslineFlag()}
+  " set statusline+=%*
   let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
   let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
   let g:syntastic_always_populate_loc_list = 1
@@ -315,6 +318,26 @@ if isdirectory(expand("~/.vim/bundle/tabular"))
   vmap <Leader>a:     :Tabularize /:\zs<CR>
   nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
   vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+endif
+
+if isdirectory(expand("~/.vim/bundle/vim-markdown"))
+  let g:vim_markdown_folding_disabled=1
+  let g:vim_markdown_folding_level=6
+  let g:vim_markdown_folding_style_pythonic=1
+  let g:vim_markdown_no_default_key_mappings=1
+  let g:vim_markdown_toc_autofit=1
+  let g:vim_markdown_emphasis_multiline=0
+  let g:vim_markdown_conceal=0
+  " let g:vim_markdown_fenced_languages=[]
+  let g:vim_markdown_new_list_item_indent=2
+  let g:vim_markdown_autowrite=1
+  let g:vim_markdown_frontmatter=1
+  let g:vim_markdown_no_extensions_in_markdown=1
+endif
+
+if isdirectory(expand("~/.vim/bundle/vim-instant-markdown"))
+  let g:instant_markdown_slow=0
+  let g:instant_markdown_autostart=1 " manually trigger preview via the command :InstantMarkdownPreview
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
