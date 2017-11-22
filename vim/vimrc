@@ -280,10 +280,10 @@ if executable('ag')
 endif
 
 if isdirectory(expand('~/.vim/bundle/syntastic'))
-  " set statusline+=%#warningmsg#
-  " set statusline+=%{SyntasticStatuslineFlag()}
-  " set statusline+=%*
-  let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript'],'passive_filetypes': [] }
   let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
