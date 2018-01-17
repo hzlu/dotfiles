@@ -66,6 +66,7 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias dirs="dirs -v" # cd -N 或者 cd +N
 alias weather="curl http://wttr.in/Guangzhou\?m"
 alias showssh="cat ~/.ssh/config"
+alias sshec2="ssh -i ~/Dropbox/forVPN.pem ubuntu@ec2-18-217-235-95.us-east-2.compute.amazonaws.com"
 alias cat="ccat"
 eval $(thefuck --alias)
 alias tabtospace="find . -name '*.rb'\
