@@ -24,10 +24,10 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'slim-template/vim-slim'
 Plugin 'othree/html5.vim'
 Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'godlygeek/tabular'                " 格式化
-Plugin 'plasticboy/vim-markdown'          " tabular plugin must come before vim-markdown
-Plugin 'suan/vim-instant-markdown'        " markdown instantly preview
-Plugin 'posva/vim-vue'                    " 前置安装 npm i -g eslint eslint-plugin-vue
+Plugin 'godlygeek/tabular'                      " 格式化
+Plugin 'plasticboy/vim-markdown'                " tabular plugin must come before vim-markdown
+Plugin 'suan/vim-instant-markdown'              " markdown instantly preview
+Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
@@ -36,11 +36,11 @@ Plugin 'moll/vim-bbye'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'tpope/vim-endwise'            " 补 end
-Plugin 'Raimondi/delimitMate'         " 补全括号
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/tComment'         " 注释
-Plugin 'terryma/vim-multiple-cursors' " 多处编辑
+Plugin 'tpope/vim-endwise'                      " 补 end
+Plugin 'Raimondi/delimitMate'                   " 补全括号
+Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
+Plugin 'vim-scripts/tComment'                   " 注释
+Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-expand-region'
@@ -55,7 +55,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 
-let mapleader=","                               " 定义 <Leader>
+let mapleader=','                               " 定义 <Leader>
 filetype on                                     " 开启文件类型侦测
 filetype plugin on                              " 根据侦测到不同类型加载对应插件
 syntax enable                                   " 开启语法高亮
@@ -476,6 +476,17 @@ if isdirectory(expand('~/.vim/bundle/vim-indent-guides'))
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
+  function! Multiple_cursors_before()
+    if exists(':NeoCompleteLock')==2
+      exe 'NeoCompleteLock'
+    endif
+  endfunction
+
+  function! Multiple_cursors_after()
+    if exists(':NeoCompleteUnlock')==2
+      exe 'NeoCompleteUnlock'
+    endif
+  endfunction
   " Default mapping 选中后使用a/c/x进行增/换/删操作
   let g:multi_cursor_use_default_mapping=0
   let g:multi_cursor_next_key='<C-m>'
