@@ -233,22 +233,8 @@ augroup vimrcEx
   " inoremap <leader>- <% end %><CR>
 augroup END
 
-if executable('ag')
-  " Requires the_silver_searcher
-  let g:ag_prg="ag --vimgrep --smart-case --ignore '*.log' --ignore-dir dist --nocolor"
-  let g:ag_highlight=1
-  let g:ag_working_path_mode='r'
-  let g:ctrlp_user_command = 'ag %s -i --hidden
-      \ --ignore .git
-      \ --ignore .svn
-      \ --ignore .hg
-      \ --ignore .DS_Store
-      \ --ignore .log
-      \ --ignore dist/
-      \ -g ""'
-  let g:ctrlp_use_caching = 0
-  nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
-  nnoremap \ :Ag!<SPACE>
+if executable('ag') " Requires the_silver_searcher
+  " RUNING :Ag [options] {pattern} [{directory}]
   " e    to open file and close the quickfix window
   " o    to open (same as enter)
   " go   to preview file (open but maintain focus on ag.vim results)
@@ -259,19 +245,45 @@ if executable('ag')
   " v    to open in vertical split
   " gv   to open in vertical split silently
   " q    to close the quickfix window
+  let g:ag_highlight=1
+  let g:ag_working_path_mode='r'
+  let g:ag_prg='ag --vimgrep --smart-case --silent --stats
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore .log
+    \ --ignore node_modules/
+    \ --ignore tmp/
+    \ --ignore log/
+    \ --ignore vendor/
+    \ --ignore dist/'
+  let g:ctrlp_user_command = 'ag %s -i --hidden
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore .log
+    \ --ignore dist/
+    \ -g ""'
+  let g:ctrlp_use_caching = 0
+  nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  nnoremap \ :Ag!<SPACE>
 endif
 
 if isdirectory(expand('~/.vim/bundle/syntastic'))
   set statusline+=%#warningmsg#
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
-  let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'js'],'passive_filetypes': [] }
-  let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
   let g:syntastic_always_populate_loc_list = 1
   let g:syntastic_auto_loc_list = 1
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
-  nnoremap <leader>c :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+  let g:syntastic_auto_jump = 1 " 自动跳转到错误处
+  let g:syntastic_mode_map = {
+    \ 'mode': 'active',
+    \ 'active_filetypes': ['ruby', 'js', 'css', 'sass', 'scss'],
+    \ 'passive_filetypes': [] }
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
