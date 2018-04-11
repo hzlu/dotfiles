@@ -44,7 +44,6 @@ Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'vim-scripts/ctags.vim'
-Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'rking/ag.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -161,20 +160,6 @@ autocmd TabLeave * let g:lasttab = tabpagenr()
 " 用新的 tab 来打开当前 buffer 路径下的文件
 map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
-" Return to last edit position when opening files
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-set tags+=~/.hzlutags/kingene_tags
-function! CreateAllTags()
-  execute '!ctags -f ~/.hzlutags/kingene_tags
-\   -R
-\   --languages=ruby
-\   --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets
-\   $(pwd) $(bundle list --paths)'
-endfunction
-" 快捷方式：生成 ctags
-nnoremap <Leader>ct :call CreateAllTags()<CR>
-
 " 处理行末空白字符
 set list listchars=tab:»·,trail:·
 highlight ExtraWhitespace ctermbg=gray
@@ -200,9 +185,9 @@ augroup vimrcEx
   " inside an event handler (happens when dropping a file on gvim).
   autocmd!
   autocmd BufReadPost *
-\   if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-\     exe "normal g`\"" |
-\   endif
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
   autocmd BufRead,BufNewFile Appraisals    set filetype=ruby
   autocmd BufRead,BufNewFile *.jbuilder    set filetype=ruby
   autocmd BufRead,BufNewFile *.axlsx       set filetype=ruby
@@ -228,9 +213,6 @@ augroup vimrcEx
   autocmd FileType css,scss,slim,html,eruby,coffee,javascript set iskeyword+=-
   autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
   autocmd BufRead,BufWritePre *.html :normal gg=G
-  " ERB file shortcut
-  " inoremap <leader>= <%=  %><ESC>hhi
-  " inoremap <leader>- <% end %><CR>
 augroup END
 
 if executable('ag') " Requires the_silver_searcher
@@ -410,14 +392,23 @@ if isdirectory(expand('~/.vim/bundle/tagbar'))
   let g:tagbar_left=0            " 右侧打开
   let g:tagbar_vertical=0
   let g:tagbar_show_visibility=1
-  let g:tagbar_width=32
+  let g:tagbar_width=50
   let g:tagbar_zoomwidth=0
   let g:tagbar_autofocus=1       " 打开聚焦
   let g:tagbar_sort=0            " 不排序
   let g:tagbar_autopreview=1     " 显示预览
+
   " Requirements Universal Ctags
   " brew tap universal-ctags/universal-ctags
   " brew install --HEAD universal-ctags
+  set tags+=~/.tags/ruby_tags
+  function! CreateRubyTags()
+    execute '!ctags -f ~/.tags/ruby_tags
+    \ -R
+    \ --languages=ruby
+    \ --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets
+    \ $(pwd) $(bundle list --paths)'
+  endfunction
   let g:tagbar_type_ruby = {
     \ 'kinds': [
       \ 'm:modules',
@@ -428,6 +419,7 @@ if isdirectory(expand('~/.vim/bundle/tagbar'))
       \ 'F:singleton methods'
     \ ]
   \ }
+
   " Requirements Universal Ctags
   let g:tagbar_type_css = {
   \ 'ctagstype': 'Css',
@@ -437,17 +429,35 @@ if isdirectory(expand('~/.vim/bundle/tagbar'))
         \ 'i:identities'
     \ ]
   \ }
+
+  " Install tern_for_vim
+  " Navigate to the tern folder and execute in the shell, the following command: npm install
+  " Install ramitos/jsctags
+  " npm install -g git+https://github.com/ramitos/jsctags.git
+  " find . -type f -iregex '.*\.js$' -not -path './node_modules/*' -exec jsctags {} -f \; | sed '/^$/d' | sort > js_tags
+  set tags+=~/.tags/js_tags
+  function! CreateJSTags()
+    execute '!find . -type f -iregex ".*\.js$"
+    \ -not -path "./node_modules/*"
+    \ -exec jsctags {} -f \; | sed "/^$/d" | sort > ~/.tags/js_tags '
+  endfunction
+
+  let g:tagbar_type_coffee = {
+    \ 'ctagstype': 'coffee',
+    \ 'kinds': [
+      \ 'c:classes',
+      \ 'm:methods',
+      \ 'f:functions',
+      \ 'v:variables',
+      \ 'f:fields',
+    \ ]
+  \ }
+  set tags+=~/.tags/coffee_tags
+
   nnoremap <leader>tb :TagbarToggle<CR>
 endif
 
-if isdirectory(expand('~/.vim/bundle/CoffeeTags'))
-  let g:CoffeeAutoTagDisabled=0     " Disables autotaging on save
-  let g:CoffeeAutoTagFile='/Users/luhaozhao/.hzlutags/kingene_coffee_tags'
-  let g:CoffeeAutoTagIncludeVars=0  " Includes variables
-  let g:CoffeeAutoTagTagRelative=1  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
-endif
-
-if isdirectory(expand('~/.vim/bundle/supertab'))
+if isdirectory(expand('~/.vim/bundle/supertab')) " Tab 补全
   " let g:SuperTabRetainCompletionType=2 " 记住上次的补全方式,直到按ESC退出插入模式为止
   " let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
   let g:SuperTabDefaultCompletionType = "<c-p>"
