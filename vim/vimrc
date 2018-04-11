@@ -16,7 +16,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-bundler'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -28,6 +27,7 @@ Plugin 'godlygeek/tabular'                      " 格式化
 Plugin 'plasticboy/vim-markdown'                " tabular plugin must come before vim-markdown
 Plugin 'suan/vim-instant-markdown'              " markdown instantly preview
 Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
@@ -39,7 +39,6 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-endwise'                      " 补 end
 Plugin 'Raimondi/delimitMate'                   " 补全括号
 Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
-Plugin 'vim-scripts/tComment'                   " 注释
 Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
 Plugin 'ervandew/supertab'
 Plugin 'mattn/emmet-vim'
@@ -48,7 +47,6 @@ Plugin 'vim-scripts/ctags.vim'
 Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'rking/ag.vim'
-Plugin 'christoomey/vim-run-interactive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -235,14 +233,6 @@ augroup vimrcEx
   " inoremap <leader>- <% end %><CR>
 augroup END
 
-if isdirectory(expand('~/.vim/bundle/Buffet.vim'))
-  nnoremap <Leader>bl :Bufferlist<CR>
-endif
-
-if isdirectory(expand("~/.vim/bundle/vim-run-interactive"))
-  nnoremap <Leader>r :RunInInteractiveShell<space>
-endif
-
 if executable('ag')
   " Requires the_silver_searcher
   let g:ag_prg="ag --vimgrep --smart-case --ignore '*.log' --ignore-dir dist --nocolor"
@@ -294,14 +284,14 @@ endif
 
 if isdirectory(expand("~/.vim/bundle/vim-gitgutter/"))
   set updatetime=250
-  nmap <Leader>] <Plug>GitGutterNextHunk
-  nmap <Leader>[ <Plug>GitGutterPrevHunk
+  nmap ]h <Plug>GitGutterNextHunk
+  nmap [h <Plug>GitGutterPrevHunk
   nmap <Leader>hs <Plug>GitGutterStageHunk
   nmap <Leader>hu <Plug>GitGutterUndoHunk
-  nmap <Leader>hp <Plug>GitGutterPreviewHunk
+  nmap <Leader>hv <Plug>GitGutterPreviewHunk
 endif
 
-if isdirectory(expand("~/.vim/bundle/tabular"))
+if isdirectory(expand("~/.vim/bundle/tabular")) " 代码格式化
   nmap <Leader>a=     :Tabularize /^[^=]*\zs=<CR>
   vmap <Leader>a=     :Tabularize /^[^=]*\zs=<CR>
   nmap <Leader>a>     :Tabularize /=><CR>
@@ -330,6 +320,22 @@ endif
 if isdirectory(expand("~/.vim/bundle/vim-instant-markdown"))
   let g:instant_markdown_slow=0
   let g:instant_markdown_autostart=1 " manually trigger preview via the command :InstantMarkdownPreview
+endif
+
+if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
+  " 用法：[注释行数]<Leader> cc: comment out the current line
+  " c<space>: toggle comment
+  " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
+  " c$: EOL comment
+  " cA: append comment
+  " cu: uncomment
+  let g:NERDSpaceDelims = 1                                             " 在注释符默认添加空格
+  let g:NERDCompactSexyComs = 1                                         " 使用紧凑语法美化多行注释
+  let g:NERDDefaultAlign = 'left'                                       " 将行注释符左对齐而不是下面的代码缩进
+  let g:NERDAltDelims_java = 1                                          " 设置语言默认使用备用定界符
+  let g:NERDCommentEmptyLines = 1                                       " 允许注释和转换空行（注释区域时有用）
+  let g:NERDTrimTrailingWhitespace = 1                                  " 启用时修整尾随空格注释
+  let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
@@ -363,9 +369,7 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
   let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
-if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
-  " c-r switch to regexp mode
-  " c-f c-b to cycle between modes
+if isdirectory(expand("~/.vim/bundle/ctrlp.vim")) " C-f C-b 模式切换 C-r 正则匹配模式
   let g:ctrlp_map = '<c-p>'
   let g:ctrlp_cmd = 'CtrlP'
   let g:ctrlp_max_height=15
@@ -374,25 +378,24 @@ if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
   let g:ctrlp_match_window_bottom=1
   let g:ctrlp_working_path_mode = 'r'
   let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
-  " let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|log)|(optimized|compiled|node_modules)$'
   let g:ctrlp_custom_ignore = {
         \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
         \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
         \ }
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux"
-  nnoremap <leader>cp :CtrlP<CR>
-  nnoremap <leader>cm :CtrlPMRU<CR>
-  nnoremap <leader>cb :CtrlPBuffer<CR>
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-rspec'))
-  " nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-  " nnoremap <Leader>s :call RunNearestSpec()<CR>
-  " nnoremap <Leader>l :call RunLastSpec()<CR>
+if isdirectory(expand('~/.vim/bundle/Buffet.vim'))
+  nnoremap <Leader>bl :Bufferlist<CR>
+endif
+
+if isdirectory(expand('~/.vim/bundle/vim-bbye'))
+  set runtimepath^=~/.vim/bundle/bbye
+  nnoremap <Leader>bd :Bdelete<CR>
+  nnoremap <Leader>ba :bufdo :Bdelete<CR>
 endif
 
 if isdirectory(expand('~/.vim/bundle/tagbar'))
-  " Requires ctags
   nnoremap <leader>tb :TagbarToggle<CR>
   let g:tagbar_compact= 1 " 不显示帮助提示
   let g:tagbar_left= 0 " 右侧打开
@@ -422,12 +425,6 @@ if isdirectory(expand('~/.vim/bundle/CoffeeTags'))
   let g:CoffeeAutoTagTagRelative=1  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-bbye'))
-  set runtimepath^=~/.vim/bundle/bbye
-  nnoremap <Leader>bd :Bdelete<CR>
-  nnoremap <Leader>ba :bufdo :Bdelete<CR>
-endif
-
 if isdirectory(expand('~/.vim/bundle/supertab'))
   " let g:SuperTabRetainCompletionType=2 " 记住上次的补全方式,直到按ESC退出插入模式为止
   " let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
@@ -446,9 +443,9 @@ if isdirectory(expand('~/.vim/bundle/supertab'))
 endif
 
 if isdirectory(expand('~/.vim/bundle/neocomplete.vim'))
-  let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
-  let g:neocomplete#enable_at_startup = 1 " Use neocomplete.
-  let g:neocomplete#enable_smart_case = 1 " Use smartcase.
+  let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
+  let g:neocomplete#enable_at_startup = 1                 " Use neocomplete.
+  let g:neocomplete#enable_smart_case = 1                 " Use smartcase.
   let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
   let g:neocomplete#sources#dictionary#dictionaries = {
@@ -472,27 +469,25 @@ if isdirectory(expand('~/.vim/bundle/neocomplete.vim'))
 endif
 
 if isdirectory(expand('~/.vim/bundle/emmet-vim'))
-  " let g:user_emmet_install_global = 0
-  " autocmd FileType html,css EmmetInstall
-  let g:user_emmet_mode='a'
-  let g:user_emmet_expandabbr_key = '<Tab>'
-  let g:use_emmet_complete_tag = 1
-  let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
+  let g:user_emmet_mode='n'                                 " 只在普通模式下启用
+  let g:user_emmet_expandabbr_key='<Tab>'
+  let g:use_emmet_complete_tag=1
+  let g:html_indent_tags='li\|p'                            " Treat <li> and <p> tags like the block tags they are
+  let g:user_emmet_install_global = 0
+  autocmd FileType html,css,erb,sass,scss,slim EmmetInstall
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-airline'))
-  set laststatus=2  " Always display the status line
+  set laststatus=2                                          " Always display the status line
   let g:airline_powerline_fonts=1
-  let g:airline#extensions#tabline#enabled=1 " enable tabline
+  let g:airline#extensions#tabline#enabled=1                " enable tabline
   let g:airline_theme='raven'
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-indent-guides'))
-  let g:indent_guides_enable_on_vim_startup=0
-  let g:indent_guides_start_level=2 " 从第二层开始可视化显示缩进
-  let g:indent_guides_guide_size=1 " 色块宽度
-  " 快捷键 i 开/关缩进可视化
-  nnoremap <silent> <Leader>i <Plug>IndentGuidesToggle
+if isdirectory(expand('~/.vim/bundle/vim-indent-guides'))   " 缩进向导
+  let g:indent_guides_enable_on_vim_startup=1               " 启动 vim 时打开标记
+  let g:indent_guides_start_level=2                         " 从第二层开始可视化显示缩进
+  let g:indent_guides_guide_size=1                          " 色块宽度
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
@@ -507,10 +502,14 @@ if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
       exe 'NeoCompleteUnlock'
     endif
   endfunction
-  " Default mapping 选中后使用a/c/x进行增/换/删操作
-  let g:multi_cursor_use_default_mapping=0
-  let g:multi_cursor_next_key='<C-m>'
-  let g:multi_cursor_prev_key='<C-p>'
-  let g:multi_cursor_skip_key='<C-x>'
-  let g:multi_cursor_quit_key='<Esc>'
+  let g:multi_cursor_use_default_mapping=1 " 默认映射
+  let g:multi_cursor_start_word_key      = '<C-n>'
+  let g:multi_cursor_select_all_word_key = '<C-m><C-n>'
+  let g:multi_cursor_start_key           = 'g<C-n>'
+  let g:multi_cursor_select_all_key      = 'g<C-m><C-n>'
+  let g:multi_cursor_next_key            = '<C-n>'
+  let g:multi_cursor_prev_key            = '<C-p>'
+  let g:multi_cursor_skip_key            = '<C-x>'
+  let g:multi_cursor_quit_key            = '<Esc>'
 endif
+
