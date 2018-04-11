@@ -274,7 +274,7 @@ if isdirectory(expand('~/.vim/bundle/syntastic'))
   nnoremap <leader>c :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 endif
 
-if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
   nnoremap <leader>gs :Gstatus<CR>
   nnoremap <leader>gd :Gdiff<CR>
   nnoremap <leader>gl :Glog<CR>
@@ -282,7 +282,7 @@ if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
   nnoremap <leader>gc :Gcommit<CR>
 endif
 
-if isdirectory(expand("~/.vim/bundle/vim-gitgutter/"))
+if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
   set updatetime=250
   nmap ]h <Plug>GitGutterNextHunk
   nmap [h <Plug>GitGutterPrevHunk
@@ -292,14 +292,12 @@ if isdirectory(expand("~/.vim/bundle/vim-gitgutter/"))
 endif
 
 if isdirectory(expand("~/.vim/bundle/tabular")) " 代码格式化
-  nmap <Leader>a=     :Tabularize /^[^=]*\zs=<CR>
-  vmap <Leader>a=     :Tabularize /^[^=]*\zs=<CR>
-  nmap <Leader>a>     :Tabularize /=><CR>
-  vmap <Leader>a>     :Tabularize /=><CR>
+  " Running :Tab /= 或 :Tab /=\zs
+  " Running :Tab /: 或 :Tab /:\zs
+  nmap <Leader>a=     :Tabularize /=<CR>
+  vmap <Leader>a=     :Tabularize /=<CR>
   nmap <Leader>a:     :Tabularize /:\zs<CR>
   vmap <Leader>a:     :Tabularize /:\zs<CR>
-  nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-  vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-markdown"))
