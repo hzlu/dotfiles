@@ -263,7 +263,7 @@ if isdirectory(expand('~/.vim/bundle/syntastic'))
   let g:syntastic_check_on_wq = 0
   let g:syntastic_auto_jump = 1 " 自动跳转到错误处
   let g:syntastic_mode_map = {
-    \ 'mode': 'active',
+    \ 'mode': 'passive',
     \ 'active_filetypes': ['ruby', 'js', 'css', 'sass', 'scss'],
     \ 'passive_filetypes': [] }
 endif
@@ -396,7 +396,7 @@ if isdirectory(expand('~/.vim/bundle/tagbar'))
   let g:tagbar_zoomwidth=0
   let g:tagbar_autofocus=1       " 打开聚焦
   let g:tagbar_sort=0            " 不排序
-  let g:tagbar_autopreview=1     " 显示预览
+  " let g:tagbar_autopreview=1   " 显示预览
 
   " Requirements Universal Ctags
   " brew tap universal-ctags/universal-ctags
@@ -452,7 +452,6 @@ if isdirectory(expand('~/.vim/bundle/tagbar'))
       \ 'f:fields',
     \ ]
   \ }
-  set tags+=~/.tags/coffee_tags
 
   nnoremap <leader>tb :TagbarToggle<CR>
 endif
