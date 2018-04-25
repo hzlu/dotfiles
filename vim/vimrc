@@ -267,7 +267,7 @@ if isdirectory(expand('~/.vim/bundle/syntastic'))
   let g:syntastic_mode_map = {
     \ 'mode': 'passive',
     \ 'active_filetypes': ['ruby', 'js', 'css', 'sass', 'scss'],
-    \ 'passive_filetypes': [] }
+    \ 'passive_filetypes': ['html'] }
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
@@ -329,7 +329,7 @@ if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
   let g:NERDAltDelims_java = 1                                          " 设置语言默认使用备用定界符
   let g:NERDCommentEmptyLines = 1                                       " 允许注释和转换空行（注释区域时有用）
   let g:NERDTrimTrailingWhitespace = 1                                  " 启用时修整尾随空格注释
-  let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
+  let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
