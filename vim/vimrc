@@ -8,11 +8,27 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'tomasr/molokai'
-Plugin 'dracula/vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
 Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
+Plugin 'godlygeek/tabular'                      " 格式化
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'honza/vim-snippets'
+Plugin 'mattn/emmet-vim'
+Plugin 'ervandew/supertab'
+Plugin 'Lokaltog/vim-easymotion'
+
+Plugin 'flazz/vim-colorschemes'
+Plugin 'dracula/vim'
+
+Plugin 'moll/vim-bbye'
+
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-bundler'
@@ -22,36 +38,17 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'slim-template/vim-slim'
 Plugin 'othree/html5.vim'
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'godlygeek/tabular'                      " 格式化
-Plugin 'plasticboy/vim-markdown'                " tabular plugin must come before vim-markdown
-Plugin 'suan/vim-instant-markdown'              " markdown instantly preview
 Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'sandeepcr529/Buffet.vim'
-Plugin 'moll/vim-bbye'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'tpope/vim-endwise'                      " 补 end
-Plugin 'Raimondi/delimitMate'                   " 补全括号
-Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
-Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
-Plugin 'ervandew/supertab'
-Plugin 'mattn/emmet-vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'vim-scripts/ctags.vim'
 Plugin 'ternjs/tern_for_vim'
-Plugin 'rking/ag.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nathanaelkane/vim-indent-guides'
+
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-endwise'                      " 补 end
+Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
+Plugin 'terryma/vim-expand-region'
+Plugin 'rking/ag.vim'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'Raimondi/delimitMate'                   " 补全括号
+Plugin 'Shougo/neocomplete.vim'
 call vundle#end()
 
 let mapleader=','                               " 定义 <Leader>
@@ -194,7 +191,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.jbuilder    set filetype=ruby
   autocmd BufRead,BufNewFile *.axlsx       set filetype=ruby
   autocmd BufRead,BufNewFile *.eco         set filetype=html
-  autocmd BufRead,BufNewFile *.md          set filetype=markdown
   autocmd BufRead,BufNewFile *.coffee      set filetype=coffee
   autocmd BufRead,BufNewFile *.slim        set filetype=slim
   autocmd BufRead,BufNewFile *.sass,*.scss set foldmethod=indent
@@ -205,7 +201,7 @@ augroup vimrcEx
   autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
   autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown           set omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType html                    set omnifunc=htmlcomplete#CompleteTags
   autocmd FileType xml                     set omnifunc=xmlcomplete#CompleteTags
   autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
   autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -267,7 +263,7 @@ if isdirectory(expand('~/.vim/bundle/syntastic'))
   let g:syntastic_mode_map = {
     \ 'mode': 'passive',
     \ 'active_filetypes': ['ruby', 'js', 'css', 'sass', 'scss'],
-    \ 'passive_filetypes': [] }
+    \ 'passive_filetypes': ['html'] }
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
@@ -296,26 +292,6 @@ if isdirectory(expand("~/.vim/bundle/tabular")) " 代码格式化
   vmap <Leader>a:     :Tabularize /:\zs<CR>
 endif
 
-if isdirectory(expand("~/.vim/bundle/vim-markdown"))
-  let g:vim_markdown_folding_disabled=1
-  let g:vim_markdown_folding_level=6
-  let g:vim_markdown_folding_style_pythonic=1
-  let g:vim_markdown_no_default_key_mappings=1
-  let g:vim_markdown_toc_autofit=1
-  let g:vim_markdown_emphasis_multiline=0
-  let g:vim_markdown_conceal=0
-  " let g:vim_markdown_fenced_languages=[]
-  let g:vim_markdown_new_list_item_indent=2
-  let g:vim_markdown_autowrite=1
-  let g:vim_markdown_frontmatter=1
-  let g:vim_markdown_no_extensions_in_markdown=1
-endif
-
-if isdirectory(expand("~/.vim/bundle/vim-instant-markdown"))
-  let g:instant_markdown_slow=0
-  let g:instant_markdown_autostart=1 " manually trigger preview via the command :InstantMarkdownPreview
-endif
-
 if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
   " 用法：[注释行数]<Leader> cc: comment out the current line
   " c<space>: toggle comment
@@ -329,7 +305,7 @@ if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
   let g:NERDAltDelims_java = 1                                          " 设置语言默认使用备用定界符
   let g:NERDCommentEmptyLines = 1                                       " 允许注释和转换空行（注释区域时有用）
   let g:NERDTrimTrailingWhitespace = 1                                  " 启用时修整尾随空格注释
-  let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
+  let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
@@ -377,10 +353,6 @@ if isdirectory(expand("~/.vim/bundle/ctrlp.vim")) " C-f C-b 模式切换 C-r 正
         \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
         \ }
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
-endif
-
-if isdirectory(expand('~/.vim/bundle/Buffet.vim'))
-  nnoremap <Leader>bl :Bufferlist<CR>
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-bbye'))
@@ -517,12 +489,6 @@ if isdirectory(expand('~/.vim/bundle/vim-airline'))
   let g:airline_theme='raven'
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-indent-guides'))   " 缩进向导
-  let g:indent_guides_enable_on_vim_startup=1               " 启动 vim 时打开标记
-  let g:indent_guides_start_level=2                         " 从第二层开始可视化显示缩进
-  let g:indent_guides_guide_size=1                          " 色块宽度
-endif
-
 if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
   function! Multiple_cursors_before()
     if exists(':NeoCompleteLock')==2
@@ -545,4 +511,3 @@ if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
   let g:multi_cursor_skip_key            = '<C-x>'
   let g:multi_cursor_quit_key            = '<Esc>'
 endif
-
