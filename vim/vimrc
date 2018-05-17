@@ -8,27 +8,35 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'dracula/vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
 Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
-Plugin 'godlygeek/tabular'                      " 格式化
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'godlygeek/tabular'                      " 格式化
 Plugin 'mattn/emmet-vim'
+" Plugin 'tpope/vim-repeat'
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
-
-Plugin 'flazz/vim-colorschemes'
-Plugin 'dracula/vim'
-
+Plugin 'tpope/vim-endwise'                      " 补 end
+Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
+Plugin 'terryma/vim-expand-region'
+Plugin 'rking/ag.vim'
+Plugin 'vim-scripts/ctags.vim'
+Plugin 'Raimondi/delimitMate'                   " 补全括号
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'moll/vim-bbye'
-
+" 语言相关
+" Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-bundler'
@@ -40,474 +48,69 @@ Plugin 'slim-template/vim-slim'
 Plugin 'othree/html5.vim'
 Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'ternjs/tern_for_vim'
-
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-endwise'                      " 补 end
-Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
-Plugin 'terryma/vim-expand-region'
-Plugin 'rking/ag.vim'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'Raimondi/delimitMate'                   " 补全括号
-Plugin 'Shougo/neocomplete.vim'
 call vundle#end()
 
-let mapleader=','                               " 定义 <Leader>
-filetype on                                     " 开启文件类型侦测
-filetype plugin on                              " 根据侦测到不同类型加载对应插件
-syntax enable                                   " 开启语法高亮
-syntax on                                       " 允许用指定语法高亮配色方案替换默认方案
-set timeoutlen=1000                             " <Leader> 键响应时间
-set history=500                                 " history 选项必须在 nocompatible 选项后；history 文件记录行数
-set completeopt=longest,menu
-set shell=/bin/zsh
-set nobackup                                    " 不要备份文件
-set nowritebackup
-set noswapfile                                  " 不要生成 swap 文件
-set autowrite                                   " 执行命令前自动保存
-set autoread                                    " 文件在vim外修改过，自动重新读入
-set confirm                                     " 处理未保存或只读文件时弹出确认
-set wildmenu                                    " 在命令模式下使用 <Tab> 自动补全使用一个漂亮的单行菜单显示
-set wildmode=list:longest,list:full
-set matchpairs+=<:>,《:》,“:”,‘:’               " 匹配符号之间跳转，使用 % 跳转
-colorscheme dracula                             " 外观配置
-" 光标形状
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-set t_Co=256                                    " terminal color 开启 256 色支持
-set background=dark
-set cursorline
-set cursorcolumn
-set showtabline=1                               " 显示标签页
-set textwidth=80                                " 每行最大字符数
-set number numberwidth=4                        " 显示行号，行号宽度
-set linespace=0
-set scrolloff=10                                " 光标编辑行距离顶部或底部的保留行数
-set ruler                                       " 在屏幕下方显示标尺
-set tabstop=2                                   " 两空格代替 Tab
-set softtabstop=2
-set expandtab                                   " 插入空格代替 Tab
-set shiftwidth=2
-set shiftround                                  " 按住 shift 再连按两次 > 或 < 可以整行缩进
-set showcmd                                     " 屏幕右下角显示未完成的指令输入
-set splitbelow                                  " 新分割窗口在下边
-set splitright                                  " 新分割窗口在右边
-set langmenu=zh_cn                              " 语言编码相关
-set helplang=cn
-set encoding=utf-8
-set termencoding=utf-8
-set fileencodings=utf-8,gb18030,gbk,big5,gb2312
-set backspace=indent,eol,start
-set incsearch                                   " 开启实时搜索功能
-set wrapscan                                    " 循环搜索开头
-set hlsearch                                    " 高亮显示搜索的内容
-set ignorecase                                  " 搜索忽略大小写
-set smartcase                                   " 智能大小写搜索
-set omnifunc=syntaxcomplete#Complete
-
-filetype indent on                              " 缩进
-set autoindent
-set foldmethod=indent
-set foldlevel=1
-set nofoldenable                                " 启动 vim 时关闭折叠代码
-
-nnoremap <space><space> za
-nnoremap <space>o zR
-nnoremap <space>c zM
-" 快捷方式：窗口跳转
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-" buffer 保存关闭
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
-nnoremap <space> viw
-" 快捷方式：从剪切板粘贴
-nnoremap <space>p "+p
-" 快捷方式：复制到剪切板
-vnoremap <space>y "+y
-" inoremap <space>p <ESC>"+pa
-nnoremap <Left> :bp<CR>
-nnoremap <Right> :bn<CR>
-nnoremap <Leader><Leader> <C-^>
-" 关闭匹配高亮
-nnoremap -hl :nohlsearch<cr>
-" 打开匹配高亮
-nnoremap +hl :set hlsearch<cr>
-inoremap jk <Esc>
-inoremap JK <Esc>
-" 快捷方式：<Leader>ev 编辑配置文件
-nnoremap <Leader>ev :e $MYVIMRC<CR>
-" 快捷方式：<Leader>sv 使配置生效
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-autocmd BufWritePost $MYVIMRC source $MYVIMRC " 让配置更改立即生效
-" 快捷方式切换当前工作路径到打开 buffer 的目录下
-nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Tab 操作
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>t<leader> :tabnext
-" Let 'tl' toggle between this and the last accessed tab
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-autocmd TabLeave * let g:lasttab = tabpagenr()
-" 用新的 tab 来打开当前 buffer 路径下的文件
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-" 处理行末空白字符
-set list listchars=tab:»·,trail:·
-highlight ExtraWhitespace ctermbg=gray
-function! TrimWhiteSpace()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :%s/\s\+$//e
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
-endfunction
-augroup extraSpace
-  autocmd!
-  autocmd BufWinEnter * :match ExtraWhitespace /\s\+$/
-  autocmd InsertEnter * :match ExtraWhitespace /\s\+\%#\@<!$/
-  autocmd InsertLeave * :match ExtraWhitespace /\s\+$/
-  autocmd BufWritePre * :call  TrimWhiteSpace()
-  autocmd BufWinLeave * :call  clearmatches()
-augroup END
-
-augroup vimrcEx
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd!
-  autocmd BufReadPost *
-  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
-  autocmd BufRead,BufNewFile Appraisals    set filetype=ruby
-  autocmd BufRead,BufNewFile *.jbuilder    set filetype=ruby
-  autocmd BufRead,BufNewFile *.axlsx       set filetype=ruby
-  autocmd BufRead,BufNewFile *.eco         set filetype=html
-  autocmd BufRead,BufNewFile *.coffee      set filetype=coffee
-  autocmd BufRead,BufNewFile *.slim        set filetype=slim
-  autocmd BufRead,BufNewFile *.sass,*.scss set foldmethod=indent
-  autocmd BufRead,BufNewFile *.coffee      set foldmethod=indent
-  autocmd BufRead,BufNewFile *.erb,*.eco   set foldmethod=indent
-  autocmd BufNewFile,BufRead *.ejs         set filetype=html
-  autocmd BufNewFile,BufRead *.styl        set filetype=sass
-  autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
-  autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html                    set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType xml                     set omnifunc=xmlcomplete#CompleteTags
-  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
-  autocmd FileType css,scss,slim,html,eruby,coffee,javascript set iskeyword+=-
-  autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
-  autocmd BufRead,BufWritePre *.html :normal gg=G
-augroup END
-
-if executable('ag') " Requires the_silver_searcher
-  " RUNING :Ag [options] {pattern} [{directory}]
-  " e    to open file and close the quickfix window
-  " o    to open (same as enter)
-  " go   to preview file (open but maintain focus on ag.vim results)
-  " t    to open in new tab
-  " T    to open in new tab silently
-  " h    to open in horizontal split
-  " H    to open in horizontal split silently
-  " v    to open in vertical split
-  " gv   to open in vertical split silently
-  " q    to close the quickfix window
-  let g:ag_highlight=1
-  let g:ag_working_path_mode='r'
-  let g:ag_prg='ag --vimgrep --smart-case --silent --stats
-    \ --ignore .git
-    \ --ignore .svn
-    \ --ignore .hg
-    \ --ignore .DS_Store
-    \ --ignore .log
-    \ --ignore node_modules/
-    \ --ignore tmp/
-    \ --ignore log/
-    \ --ignore vendor/
-    \ --ignore dist/'
-  let g:ctrlp_user_command = 'ag %s -i --hidden
-    \ --ignore .git
-    \ --ignore .svn
-    \ --ignore .hg
-    \ --ignore .DS_Store
-    \ --ignore .log
-    \ --ignore dist/
-    \ -g ""'
-  let g:ctrlp_use_caching = 0
-  nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
-  nnoremap \ :Ag!<SPACE>
-endif
-
-if isdirectory(expand('~/.vim/bundle/syntastic'))
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_auto_jump = 1 " 自动跳转到错误处
-  let g:syntastic_mode_map = {
-    \ 'mode': 'passive',
-    \ 'active_filetypes': ['ruby', 'js', 'css', 'sass', 'scss'],
-    \ 'passive_filetypes': ['html'] }
-endif
+source $VIM_CONFIG_PATH/general.vimrc
+source $VIM_CONFIG_PATH/keysmap.vimrc
+source $VIM_CONFIG_PATH/ftypes.vimrc
 
 if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
-  nnoremap <leader>gs :Gstatus<CR>
-  nnoremap <leader>gd :Gdiff<CR>
-  nnoremap <leader>gl :Glog<CR>
-  nnoremap <leader>gb :Gblame<CR>
-  nnoremap <leader>gc :Gcommit<CR>
-endif
-
-if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
-  set updatetime=250
-  nmap ]h <Plug>GitGutterNextHunk
-  nmap [h <Plug>GitGutterPrevHunk
-  nmap <Leader>hs <Plug>GitGutterStageHunk
-  nmap <Leader>hu <Plug>GitGutterUndoHunk
-  nmap <Leader>hv <Plug>GitGutterPreviewHunk
-endif
-
-if isdirectory(expand("~/.vim/bundle/tabular")) " 代码格式化
-  " Running :Tab /= 或 :Tab /=\zs
-  " Running :Tab /: 或 :Tab /:\zs
-  nmap <Leader>a=     :Tabularize /=<CR>
-  vmap <Leader>a=     :Tabularize /=<CR>
-  nmap <Leader>a:     :Tabularize /:\zs<CR>
-  vmap <Leader>a:     :Tabularize /:\zs<CR>
-endif
-
-if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
-  " 用法：[注释行数]<Leader> cc: comment out the current line
-  " c<space>: toggle comment
-  " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
-  " c$: EOL comment
-  " cA: append comment
-  " cu: uncomment
-  let g:NERDSpaceDelims = 1                                             " 在注释符默认添加空格
-  let g:NERDCompactSexyComs = 1                                         " 使用紧凑语法美化多行注释
-  let g:NERDDefaultAlign = 'left'                                       " 将行注释符左对齐而不是下面的代码缩进
-  let g:NERDAltDelims_java = 1                                          " 设置语言默认使用备用定界符
-  let g:NERDCommentEmptyLines = 1                                       " 允许注释和转换空行（注释区域时有用）
-  let g:NERDTrimTrailingWhitespace = 1                                  " 启用时修整尾随空格注释
-  let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
+  source $VIM_CONFIG_PATH/fugitive.vimrc
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
-  nnoremap nt :NERDTreeToggle<CR>
-  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-  endfunction
-  call NERDTreeHighlightFile('jade'   , 'green'   , 'none' , 'green'   , '#151515')
-  call NERDTreeHighlightFile('md'     , 'blue'    , 'none' , '#3366FF' , '#151515')
-  call NERDTreeHighlightFile('yml'    , 'magenta' , 'none' , 'yellow'  , '#E70350')
-  call NERDTreeHighlightFile('config' , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('conf'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('json'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('html'   , 'green'   , 'none' , 'green'   , '#04E703')
-  call NERDTreeHighlightFile('styl'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('css'    , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('sass'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('scss'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515')
-  call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
-  call NERDTreeHighlightFile('vue'    , 'Red'     , 'none' , '#ffa500' , '#151515')
-  call NERDTreeHighlightFile('rb'     , 'Magenta' , 'none' , '#ff00ff' , '#151515')
-  let NERDTreeWinSize=32         " 设置 NERDTree 子窗口宽度
-  let NERDTreeChDirMode=2        " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
-  let NERDTreeMinimalUI=1        " 不显示帮助信息
-  let NERDTreeShowHidden=1       " 显示隐藏文件
-  let NERDTreeShowBookmarks=0    " 不显示书签
-  let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
-  let NERDTreeWinPos='left'      " 子窗口位置
-  let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
+  source $VIM_CONFIG_PATH/nerdtree.vimrc
 endif
 
-if isdirectory(expand("~/.vim/bundle/ctrlp.vim")) " C-f C-b 模式切换 C-r 正则匹配模式
-  let g:ctrlp_map = '<c-p>'
-  let g:ctrlp_cmd = 'CtrlP'
-  let g:ctrlp_max_height=15
-  let g:ctrlp_mruf_max=500
-  let g:ctrlp_follow_symlinks=1
-  let g:ctrlp_match_window_bottom=1
-  let g:ctrlp_working_path_mode = 'r'
-  let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
-  let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-        \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-        \ }
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
+if isdirectory(expand('~/.vim/bundle/syntastic'))
+  source $VIM_CONFIG_PATH/syntastic.vimrc
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-bbye'))
-  set runtimepath^=~/.vim/bundle/bbye
-  nnoremap <Leader>bd :Bdelete<CR>
-  nnoremap <Leader>ba :bufdo :Bdelete<CR>
+if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
+  source $VIM_CONFIG_PATH/ctrlp.vimrc
+endif
+
+if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
+  source $VIM_CONFIG_PATH/gitgutter.vimrc
 endif
 
 if isdirectory(expand('~/.vim/bundle/tagbar'))
-  let g:tagbar_compact=1         " 不显示帮助提示
-  let g:tagbar_left=0            " 右侧打开
-  let g:tagbar_vertical=0
-  let g:tagbar_show_visibility=1
-  let g:tagbar_width=50
-  let g:tagbar_zoomwidth=0
-  let g:tagbar_autofocus=1       " 打开聚焦
-  let g:tagbar_sort=0            " 不排序
-  " let g:tagbar_autopreview=1   " 显示预览
-
-  " Requirements Universal Ctags
-  " brew tap universal-ctags/universal-ctags
-  " brew install --HEAD universal-ctags
-  set tags+=~/.tags/ruby_tags
-  function! CreateRubyTags()
-    execute '!ctags -f ~/.tags/ruby_tags
-    \ -R
-    \ --languages=ruby
-    \ --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets
-    \ $(pwd) $(bundle list --paths)'
-  endfunction
-  let g:tagbar_type_ruby = {
-    \ 'kinds': [
-      \ 'm:modules',
-      \ 'c:classes',
-      \ 'd:describes',
-      \ 'C:contexts',
-      \ 'f:methods',
-      \ 'F:singleton methods'
-    \ ]
-  \ }
-
-  " Requirements Universal Ctags
-  let g:tagbar_type_css = {
-  \ 'ctagstype': 'Css',
-    \ 'kinds': [
-        \ 'c:classes',
-        \ 's:selectors',
-        \ 'i:identities'
-    \ ]
-  \ }
-
-  " Install tern_for_vim
-  " Navigate to the tern folder and execute in the shell, the following command: npm install
-  " Install ramitos/jsctags
-  " npm install -g git+https://github.com/ramitos/jsctags.git
-  " find . -type f -iregex '.*\.js$' -not -path './node_modules/*' -exec jsctags {} -f \; | sed '/^$/d' | sort > js_tags
-  set tags+=~/.tags/js_tags
-  function! CreateJSTags()
-    execute '!find . -type f -iregex ".*\.js$"
-    \ -not -path "./node_modules/*"
-    \ -exec jsctags {} -f \; | sed "/^$/d" | sort > ~/.tags/js_tags '
-  endfunction
-
-  let g:tagbar_type_coffee = {
-    \ 'ctagstype': 'coffee',
-    \ 'kinds': [
-      \ 'c:classes',
-      \ 'm:methods',
-      \ 'f:functions',
-      \ 'v:variables',
-      \ 'f:fields',
-    \ ]
-  \ }
-
-  nnoremap <leader>tb :TagbarToggle<CR>
+  source $VIM_CONFIG_PATH/tagbar.vimrc
 endif
 
-if isdirectory(expand('~/.vim/bundle/supertab')) " Tab 补全
-  " let g:SuperTabRetainCompletionType=2 " 记住上次的补全方式,直到按ESC退出插入模式为止
-  " let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
-  let g:SuperTabDefaultCompletionType = "<c-p>"
-  " 自动完成使用TAB键
-  function! InsertTabWrapper()
-    let col=col('.')-1
-    if !col || getline('.')[col-1] !~ '\k'
-      return "\<TAB>"
-    else
-      return "\<c-p>"
-    endif
-  endfunction
-  "将InsertTabWrapper映射到TAB上
-  inoremap <TAB> <C-R>=InsertTabWrapper()<CR>
-endif
-
-if isdirectory(expand('~/.vim/bundle/neocomplete.vim'))
-  let g:acp_enableAtStartup = 0                           " Disable AutoComplPop.
-  let g:neocomplete#enable_at_startup = 1                 " Use neocomplete.
-  let g:neocomplete#enable_smart_case = 1                 " Use smartcase.
-  let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
-  let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-  let g:neocomplete#sources#dictionary#dictionaries = {
-        \ 'default' : '',
-        \ 'vimshell' : $HOME.'/.vimshell_hist',
-        \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-  if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-  function! s:my_cr_function()
-    return pumvisible() ? "\<C-y>" : "\<CR>"
-  endfunction
-  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-g> neocomplete#undo_completion()
-  inoremap <expr><C-l> neocomplete#complete_common_string()
-endif
-
-if isdirectory(expand('~/.vim/bundle/emmet-vim'))
-  let g:user_emmet_mode='n'                                 " 只在普通模式下启用
-  let g:user_emmet_expandabbr_key='<Tab>'
-  let g:use_emmet_complete_tag=1
-  let g:html_indent_tags='li\|p'                            " Treat <li> and <p> tags like the block tags they are
-  let g:user_emmet_install_global = 0
-  autocmd FileType html,css,erb,sass,scss,slim EmmetInstall
+if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
+  source $VIM_CONFIG_PATH/nerdcommenter.vimrc
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-airline'))
-  set laststatus=2                                          " Always display the status line
-  let g:airline_powerline_fonts=1
-  let g:airline#extensions#tabline#enabled=1                " enable tabline
-  let g:airline_theme='raven'
+  source $VIM_CONFIG_PATH/airline.vimrc
+endif
+
+if isdirectory(expand("~/.vim/bundle/tabular"))
+  source $VIM_CONFIG_PATH/tabular.vimrc
+endif
+
+if isdirectory(expand('~/.vim/bundle/emmet-vim'))
+  source $VIM_CONFIG_PATH/emmet.vimrc
+endif
+
+if isdirectory(expand('~/.vim/bundle/supertab'))
+  source $VIM_CONFIG_PATH/supertab.vimrc
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
-  function! Multiple_cursors_before()
-    if exists(':NeoCompleteLock')==2
-      exe 'NeoCompleteLock'
-    endif
-  endfunction
-
-  function! Multiple_cursors_after()
-    if exists(':NeoCompleteUnlock')==2
-      exe 'NeoCompleteUnlock'
-    endif
-  endfunction
-  let g:multi_cursor_use_default_mapping=1 " 默认映射
-  let g:multi_cursor_start_word_key      = '<C-n>'
-  let g:multi_cursor_select_all_word_key = '<C-m><C-n>'
-  let g:multi_cursor_start_key           = 'g<C-n>'
-  let g:multi_cursor_select_all_key      = 'g<C-m><C-n>'
-  let g:multi_cursor_next_key            = '<C-n>'
-  let g:multi_cursor_prev_key            = '<C-p>'
-  let g:multi_cursor_skip_key            = '<C-x>'
-  let g:multi_cursor_quit_key            = '<Esc>'
+  source $VIM_CONFIG_PATH/multiple-cursors.vimrc
 endif
+
+if executable('ag')
+  source $VIM_CONFIG_PATH/ag.vimrc
+endif
+
+if isdirectory(expand('~/.vim/bundle/neocomplete.vim'))
+  source $VIM_CONFIG_PATH/neocomplete.vimrc
+endif
+
+if isdirectory(expand('~/.vim/bundle/vim-bbye'))
+  source $VIM_CONFIG_PATH/bbye.vimrc
+endif
+
