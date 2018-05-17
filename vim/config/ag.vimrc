@@ -32,5 +32,5 @@ let g:ctrlp_user_command = 'ag %s -i --hidden
   \ --ignore dist/
   \ -g ""'
 let g:ctrlp_use_caching = 0
-nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap \ :Ag!<SPACE>
+nnoremap AG :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap ag :Ag!<SPACE>
