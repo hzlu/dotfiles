@@ -35,6 +35,7 @@ Plugin 'vim-scripts/ctags.vim'
 Plugin 'Raimondi/delimitMate'                   " 补全括号
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'moll/vim-bbye'
+Plugin 'junegunn/gv.vim'
 " 语言相关
 " Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-rails'

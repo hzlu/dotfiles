@@ -11,7 +11,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
-nnoremap <space> viw
 " 快捷方式：从剪切板粘贴
 nnoremap <space>p "+p
 " 快捷方式：复制到剪切板
