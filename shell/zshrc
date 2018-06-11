@@ -64,7 +64,6 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias externalIP="curl ipinfo.io"
 alias localip="ipconfig getifaddr en0"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-alias dirs="dirs -v" # cd -N 或者 cd +N
 alias weather="curl http://wttr.in/Guangzhou\?m"
 alias showssh="cat ~/.ssh/config"
 alias sshec2="ssh -i ~/Dropbox/forVPN.pem ubuntu@ec2-13-58-104-247.us-east-2.compute.amazonaws.com"

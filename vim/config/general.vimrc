@@ -1,6 +1,6 @@
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
 syntax enable                                   " 开启语法高亮
-colorscheme railscasts                          " 外观配置
+colorscheme dracula                             " 外观配置
 set t_Co=256                                    " terminal color 开启 256 色支持
 set background=dark
 " 光标形状
