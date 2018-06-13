@@ -33,8 +33,8 @@ augroup vimrcEx
   autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
   autocmd BufRead,BufWritePre *.html :normal gg=G
   autocmd FileType vue syntax sync fromstart
-  autocmd BufEnter * colorscheme dracula
-  autocmd BufEnter *.rb colorscheme railscasts
-  autocmd BufEnter *.vue,*.js colorscheme monokai
+  " autocmd BufEnter * colorscheme dracula
+  " autocmd BufEnter *.rb colorscheme railscasts
+  " autocmd BufEnter *.vue,*.js colorscheme monokai
 augroup END
 

@@ -18,10 +18,12 @@ let g:ag_prg='ag --vimgrep --smart-case --silent --stats
   \ --ignore .hg
   \ --ignore .DS_Store
   \ --ignore .log
+  \ --ignore .min.js
   \ --ignore node_modules/
   \ --ignore tmp/
   \ --ignore log/
   \ --ignore vendor/
+  \ --ignore public/
   \ --ignore dist/'
 let g:ctrlp_user_command = 'ag %s -i --hidden
   \ --ignore .git
@@ -29,6 +31,8 @@ let g:ctrlp_user_command = 'ag %s -i --hidden
   \ --ignore .hg
   \ --ignore .DS_Store
   \ --ignore .log
+  \ --ignore .min.js
+  \ --ignore public/
   \ --ignore dist/
   \ -g ""'
 let g:ctrlp_use_caching = 0
