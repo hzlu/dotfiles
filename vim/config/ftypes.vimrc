@@ -13,6 +13,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.axlsx       set filetype=ruby
   autocmd BufRead,BufNewFile *.eco         set filetype=html
   autocmd BufRead,BufNewFile *.coffee      set filetype=coffee
+  autocmd BufRead,BufNewFile *.ts          set filetype=javascript
   autocmd BufRead,BufNewFile *.slim        set filetype=slim
   autocmd BufRead,BufNewFile *.sass,*.scss set foldmethod=indent
   autocmd BufRead,BufNewFile *.coffee      set foldmethod=indent
