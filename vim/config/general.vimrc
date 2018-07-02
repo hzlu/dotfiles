@@ -1,6 +1,6 @@
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
 syntax enable                                   " 开启语法高亮
-colorscheme dracula                             " 外观配置
+colorscheme monokai                             " 外观配置
 set t_Co=256                                    " terminal color 开启 256 色支持
 set background=dark
 " 光标形状
@@ -19,18 +19,19 @@ set autoread                                    " 文件在vim外修改过，自
 set confirm                                     " 处理未保存或只读文件时弹出确认
 set cursorline
 set cursorcolumn
-set showtabline=1                               " 显示标签页
 set textwidth=100                               " 每行最大字符数
+let &colorcolumn="80,".join(range(100,999),",")
+set showtabline=1                               " 显示标签页
 set number numberwidth=4                        " 显示行号，行号宽度
 set linespace=0
 set scrolloff=10                                " 光标编辑行距离顶部或底部的保留行数
 set ruler                                       " 在屏幕下方显示标尺
+set showcmd                                     " 屏幕右下角显示未完成的指令输入
 set tabstop=2                                   " 两空格代替 Tab
 set softtabstop=2
 set expandtab                                   " 插入空格代替 Tab
 set shiftwidth=2
 set shiftround                                  " 按住 shift 再连按两次 > 或 < 可以整行缩进
-set showcmd                                     " 屏幕右下角显示未完成的指令输入
 set splitbelow                                  " 新分割窗口在下边
 set splitright                                  " 新分割窗口在右边
 " 语言编码相关
