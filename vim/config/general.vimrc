@@ -56,7 +56,7 @@ set matchpairs+=<:>,《:》,“:”,‘:’               " 匹配符号之间�
 set wildmenu                                    " 在命令模式下使用 <Tab> 自动补全使用一个漂亮的单行菜单显示
 set wildmode=list:longest,list:full
 set completeopt=longest,menu
-set omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete            " Omni 补全
 " 处理行末空白字符
 set list listchars=tab:»·,trail:·
 highlight ExtraWhitespace ctermbg=gray

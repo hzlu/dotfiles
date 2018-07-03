@@ -33,7 +33,8 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'Raimondi/delimitMate'                   " 补全括号
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Shougo/neocomplete.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'junegunn/gv.vim'
 " 语言相关
@@ -109,6 +110,10 @@ endif
 
 if isdirectory(expand('~/.vim/bundle/neocomplete.vim'))
   source $VIM_CONFIG_PATH/neocomplete.vimrc
+endif
+
+if isdirectory(expand('~/.vim/bundle/YouCompleteMe.vim'))
+  source $VIM_CONFIG_PATH/youcompleteme.vimrc
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-bbye'))
