@@ -1,8 +1,24 @@
-# 系统启动或远程登录时会进行login shell，即加载文件/etc/profile
-# 上述文件加载后将加载用户HOME目录下的此文件，按顺序读取.bash_profile  .bash_login  .profile只读第一个文件。
+# 登录 shell，加载文件 /etc/profile
+# 上述文件加载后将到用户 HOME 目录下按顺序读取
+# .bash_profile
+# .bash_login
+# .profile
+# 只读第一个文件
 
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
+if [[ -d "$HOME/bin" ]]; then
+    echo "添加PATH $HOME/bin"
+    PATH=$HOME/bin:$PATH
+fi
 
-export PATH=/usr/local/bin:$PATH
+if [[ -d "$HOME/.rvm/bin" ]]; then
+    echo "添加PATH $HOME/.rvm/bin"
+    PATH=$HOME/.rvm/bin:$PATH
+fi
 
+if [[ -d "/usr/local/bin" ]]; then
+    echo "添加PATH /usr/local/bin"
+    PATH=/usr/local/bin:$PATH
+fi
+
+export PATH
 
