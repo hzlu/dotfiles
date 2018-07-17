@@ -80,8 +80,6 @@ alias showssh="cat ~/.ssh/config"
 alias weather="curl http://wttr.in/广州"
 # 计时器
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-# aws 登录
-alias sshec2="ssh -i ~/Dropbox/forVPN.pem ubuntu@ec2-13-58-104-247.us-east-2.compute.amazonaws.com"
 
 source $ZSH/oh-my-zsh.sh
 
