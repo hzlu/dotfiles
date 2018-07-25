@@ -16,8 +16,10 @@ nnoremap <space>p "+p
 " 快捷方式：复制到剪切板
 vnoremap <space>y "+y
 " buffer 切换
-nnoremap <Left> :bp<CR>
-nnoremap <Right> :bn<CR>
+nnoremap H :bp<CR>
+nnoremap L :bn<CR>
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
 nnoremap <Leader><Leader> <C-^>
 " 关闭匹配高亮
 nnoremap -hl :nohlsearch<cr>

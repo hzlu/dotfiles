@@ -24,6 +24,7 @@ set autowrite                                   " 执行命令前自动保存
 set autoread                                    " 文件在vim外修改过，自动重新读入
 set confirm                                     " 处理未保存或只读文件时弹出确认
 set cursorline
+hi cursorline term=bold cterm=bold
 set cursorcolumn
 set textwidth=100                               " 每行最大字符数
 let &colorcolumn="80,".join(range(100,999),",")
@@ -51,6 +52,7 @@ set backspace=indent,eol,start
 set incsearch                                   " 开启实时搜索功能
 set wrapscan                                    " 循环搜索开头
 set hlsearch                                    " 高亮显示搜索的内容
+hi Search cterm=NONE ctermfg=white ctermbg=red
 set smartcase                                   " 智能大小写搜索
 " 缩进折叠
 set autoindent

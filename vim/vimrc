@@ -51,6 +51,7 @@ Plugin 'othree/html5.vim'
 Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'digitaltoad/vim-pug'
 call vundle#end()
 
 source $VIM_CONFIG_PATH/general.vimrc
