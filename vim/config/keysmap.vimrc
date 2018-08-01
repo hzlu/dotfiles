@@ -20,6 +20,7 @@ nnoremap H :bp<CR>
 nnoremap L :bn<CR>
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
+nnoremap K :bn<CR>
 nnoremap <Leader><Leader> <C-^>
 " 关闭匹配高亮
 nnoremap -hl :nohlsearch<cr>

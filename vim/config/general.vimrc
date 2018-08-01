@@ -66,8 +66,8 @@ set wildmode=list:longest,list:full
 set completeopt=longest,menu
 set omnifunc=syntaxcomplete#Complete            " Omni 补全
 " 处理行末空白字符
-set list listchars=tab:»·,trail:·
-highlight ExtraWhitespace ctermbg=gray
+set list listchars=tab:~~,trail:·
+highlight ExtraWhitespace ctermbg=black
 
 function! TrimWhiteSpace()
   let save_cursor = getpos(".")

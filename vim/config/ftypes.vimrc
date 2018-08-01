@@ -17,6 +17,9 @@ augroup vimrcEx
   " autocmd FileType css,scss,slim,html,eruby,coffee,javascript set iskeyword+=-
   " autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
   " autocmd BufRead,BufWritePre *.html :normal gg=G
+  autocmd BufNewFile,BufRead *.wxml set filetype=html
+  autocmd BufNewFile,BufRead *.pug set filetype=html
+  autocmd BufNewFile,BufRead *.wxss set filetype=css
   autocmd FileType vue syntax sync fromstart
   " autocmd BufEnter * colorscheme dracula
   " autocmd BufEnter *.rb colorscheme railscasts
