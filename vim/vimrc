@@ -13,7 +13,7 @@ Plugin 'dracula/vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
@@ -33,25 +33,22 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'Raimondi/delimitMate'                   " 补全括号
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " Plugin 'Shougo/neocomplete.vim'
 Plugin 'moll/vim-bbye'
 Plugin 'junegunn/gv.vim'
 " 语言相关
-" Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 " Plugin 'tpope/vim-rails'
 " Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-bundler'
-" Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'kchmck/vim-coffee-script'
 " Plugin 'cakebaker/scss-syntax.vim'
 " Plugin 'hail2u/vim-css3-syntax'
 " Plugin 'slim-template/vim-slim'
 " Plugin 'othree/html5.vim'
 Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'plasticboy/vim-markdown'
-" Plugin 'ternjs/tern_for_vim'
-" Plugin 'digitaltoad/vim-pug'
+Plugin 'ternjs/tern_for_vim'
 call vundle#end()
 
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
@@ -111,7 +108,7 @@ set backspace=indent,eol,start
 set incsearch                                   " 开启实时搜索功能
 set wrapscan                                    " 循环搜索开头
 set hlsearch                                    " 高亮显示搜索的内容
-hi Search cterm=NONE ctermfg=white ctermbg=red
+hi Search cterm=NONE ctermfg=white ctermbg=red guifg=white guibg=red
 set smartcase                                   " 智能大小写搜索
 " 缩进折叠
 set autoindent
@@ -426,8 +423,8 @@ if isdirectory(expand('~/.vim/bundle/supertab'))
 " Tab 补全
 let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
@@ -505,8 +502,8 @@ endif
 if isdirectory(expand('~/.vim/bundle/YouCompleteMe.vim'))
   " source $VIM_CONFIG_PATH/youcompleteme.vimrc
 " 自动补全配置
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<s-tab>', '<Up>']
 let g:ycm_min_num_of_chars_for_completion=2
 endif
 
@@ -517,3 +514,21 @@ nnoremap <Leader>bd :Bdelete<CR>
 nnoremap <Leader>ba :bufdo :Bdelete<CR>
 endif
 
+if isdirectory(expand('~/.vim/bundle/vim-javascript'))
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_conceal_function       = "ƒ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_undefined      = "¿"
+let g:javascript_conceal_NaN            = "ℕ"
+let g:javascript_conceal_prototype      = "¶"
+let g:javascript_conceal_static         = "•"
+let g:javascript_conceal_super          = "Ω"
+let g:javascript_conceal_arrow_function = "⇒"
+set conceallevel=1
+augroup javascript_folding
+  au!
+  au FileType javascript setlocal foldmethod=syntax
+augroup END
+endif
