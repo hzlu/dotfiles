@@ -48,7 +48,7 @@ Plugin 'pangloss/vim-javascript'
 " Plugin 'othree/html5.vim'
 Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'plasticboy/vim-markdown'
-Plugin 'ternjs/tern_for_vim'
+" Plugin 'ternjs/tern_for_vim'
 call vundle#end()
 
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
@@ -161,8 +161,6 @@ nnoremap <space>p "+p
 " 快捷方式：复制到剪切板
 vnoremap <space>y "+y
 " buffer 切换
-nnoremap H :bp<CR>
-nnoremap L :bn<CR>
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 nnoremap K :bn<CR>
@@ -271,7 +269,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 1 " 自动跳转到错误处
 let g:syntastic_mode_map = {
-  \ 'mode': 'passive',
+  \ 'mode': 'active',
   \ 'active_filetypes': ['ruby', 'js', 'css', 'sass', 'scss'],
   \ 'passive_filetypes': ['html'] }
 endif
@@ -297,8 +295,8 @@ endif
 if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
   " source $VIM_CONFIG_PATH/gitgutter.vimrc
 set updatetime=250
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap h] <Plug>GitGutterNextHunk
+nmap h[ <Plug>GitGutterPrevHunk
 nmap <Leader>hs <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterUndoHunk
 nmap <Leader>hv <Plug>GitGutterPreviewHunk
@@ -502,6 +500,19 @@ endif
 
 if isdirectory(expand('~/.vim/bundle/YouCompleteMe.vim'))
   " source $VIM_CONFIG_PATH/youcompleteme.vimrc
+  " 快速安
+  " cd ~/.vim/bundle/YouCompleteMe
+  " ./install.py
+  " 不再依赖 Tern 引擎，而使用TSServer
+  " TSServer 包含在 TypeScript SDK中
+  " npm install -g typescript
+  " 在项目根目录下建立 jsconfig.json 文件
+  " {
+  "   "compilerOptions": {
+  "     "checkJs": true
+  "   }
+  " }
+
 " 自动补全配置
 let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<s-tab>', '<Up>']
