@@ -55,6 +55,7 @@ filetype plugin indent on                       " 根据侦测到不同类型加
 syntax enable                                   " 开启语法高亮
 colorscheme dracula                             " 外观配置
 set guifont=Roboto\ Mono\ Medium\ for\ Powerline:h15 " 设置macvim字体
+set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h15
 set guioptions=     " 隐藏滚动条
 set t_Co=256                                    " terminal color 开启 256 色支持
 set background=dark
@@ -526,7 +527,7 @@ let g:javascript_conceal_prototype      = "¶"
 let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
-set conceallevel=1
+set conceallevel=0
 augroup javascript_folding
   au!
   au FileType javascript setlocal foldmethod=syntax
