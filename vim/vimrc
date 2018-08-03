@@ -206,6 +206,7 @@ augroup vimrcEx
   autocmd BufNewFile,BufRead *.wxml set filetype=html
   autocmd BufNewFile,BufRead *.pug set filetype=html
   autocmd BufNewFile,BufRead *.wxss set filetype=css
+  autocmd BufNewFile,BufRead *.wxs set filetype=javascript
   autocmd FileType vue syntax sync fromstart
   " autocmd BufEnter * colorscheme dracula
   " autocmd BufEnter *.rb colorscheme railscasts
@@ -248,13 +249,13 @@ call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515'
 call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
 call NERDTreeHighlightFile('vue'    , 'Red'     , 'none' , '#ffa500' , '#151515')
 call NERDTreeHighlightFile('rb'     , 'Magenta' , 'none' , '#ff00ff' , '#151515')
-let NERDTreeWinSize=32         " 设置 NERDTree 子窗口宽度
+let NERDTreeWinSize=50        " 设置 NERDTree 子窗口宽度
 let NERDTreeChDirMode=2        " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
 let NERDTreeMinimalUI=1        " 不显示帮助信息
 let NERDTreeShowHidden=1       " 显示隐藏文件
 let NERDTreeShowBookmarks=0    " 不显示书签
 let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
-let NERDTreeWinPos='left'      " 子窗口位置
+let NERDTreeWinPos='right'      " 子窗口位置
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
@@ -295,8 +296,8 @@ endif
 if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
   " source $VIM_CONFIG_PATH/gitgutter.vimrc
 set updatetime=250
-nmap h] <Plug>GitGutterNextHunk
-nmap h[ <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 nmap <Leader>hs <Plug>GitGutterStageHunk
 nmap <Leader>hu <Plug>GitGutterUndoHunk
 nmap <Leader>hv <Plug>GitGutterPreviewHunk
@@ -305,7 +306,7 @@ endif
 if isdirectory(expand('~/.vim/bundle/tagbar'))
   " source $VIM_CONFIG_PATH/tagbar.vimrc
 let g:tagbar_compact=1         " 不显示帮助提示
-let g:tagbar_left=0            " 右侧打开
+let g:tagbar_left=1            " 右侧打开
 let g:tagbar_vertical=0
 let g:tagbar_show_visibility=1
 let g:tagbar_width=50
