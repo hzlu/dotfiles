@@ -80,6 +80,7 @@ alias showssh="cat ~/.ssh/config"
 alias weather="curl http://wttr.in/广州"
 # 计时器
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+eval $(thefuck --alias)
 
 source $ZSH/oh-my-zsh.sh
 
