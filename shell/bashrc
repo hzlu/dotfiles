@@ -28,9 +28,9 @@ if [[ -d "$HOME/.rvm/bin" ]]; then
     PATH=$HOME/.rvm/bin:$PATH
 fi
 
-if [[ -d "/usr/local/bin" ]]; then
-    echo "ADD PATH /usr/local/bin"
-    PATH=/usr/local/bin:$PATH
+if [[ -d "/usr/local/sbin" ]]; then
+    echo "ADD PATH /usr/local/sbin"
+    PATH=/usr/local/sbin:$PATH
 fi
 
 if [[ -d "$HOME/bin" ]]; then
