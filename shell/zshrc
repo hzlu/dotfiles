@@ -84,3 +84,4 @@ eval $(thefuck --alias)
 
 source $ZSH/oh-my-zsh.sh
 
+# 字体建议 sauce code powerline

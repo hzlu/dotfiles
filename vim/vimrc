@@ -42,13 +42,13 @@ Plugin 'pangloss/vim-javascript'
 " Plugin 'tpope/vim-rails'
 " Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-bundler'
-" Plugin 'cakebaker/scss-syntax.vim'
-" Plugin 'hail2u/vim-css3-syntax'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'ap/vim-css-color'
 " Plugin 'slim-template/vim-slim'
 " Plugin 'othree/html5.vim'
-Plugin 'posva/vim-vue'                          " 前置安装 npm i -g eslint eslint-plugin-vue
+Plugin 'posva/vim-vue' " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'plasticboy/vim-markdown'
-" Plugin 'ternjs/tern_for_vim'
 call vundle#end()
 
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
@@ -206,7 +206,8 @@ augroup vimrcEx
   " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
   " autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
   " autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
-  " autocmd FileType css,scss,slim,html,eruby,coffee,javascript set iskeyword+=-
+  autocmd FileType css,scss,html,javascript set iskeyword+=-
+  autocmd BufRead,BufNewFile *.scss set filetype=scss.css
   " autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
   " autocmd BufRead,BufWritePre *.html :normal gg=G
   autocmd BufNewFile,BufRead *.wxml set filetype=html
