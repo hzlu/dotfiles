@@ -44,3 +44,5 @@ path () {
   echo $PATH | awk -F: '{for(i=1;i<=NF;i++){print $i}}'
 }
 
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
