@@ -287,7 +287,7 @@ if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
   " source $VIM_CONFIG_PATH/ctrlp.vimrc
 " C-f C-b 模式切换 C-r 正则匹配模式
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+" let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_max_height=15
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
