@@ -27,7 +27,7 @@ Plugin 'mattn/emmet-vim'
 " Plugin 'tpope/vim-repeat'
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-endwise'                      " 补 end
+" Plugin 'tpope/vim-endwise'                      " 补 end
 Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
 Plugin 'terryma/vim-expand-region'
 Plugin 'rking/ag.vim'
@@ -43,21 +43,19 @@ Plugin 'pangloss/vim-javascript'
 " Plugin 'vim-ruby/vim-ruby'
 " Plugin 'tpope/vim-bundler'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
+" Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ap/vim-css-color'
 " Plugin 'slim-template/vim-slim'
 " Plugin 'othree/html5.vim'
 Plugin 'posva/vim-vue' " 前置安装 npm i -g eslint eslint-plugin-vue
 Plugin 'plasticboy/vim-markdown'
-Plugin 'suan/vim-instant-markdown' " 需要安装 npm i -g instant-markdown-d
+" Plugin 'suan/vim-instant-markdown' " 需要安装 npm i -g instant-markdown-d
 call vundle#end()
 
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
 syntax enable                                   " 开启语法高亮
 colorscheme dracula                             " 外观配置
-set guifont=Roboto\ Mono\ Medium\ for\ Powerline:h15 " 设置macvim字体
-set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h15
-set guioptions=     " 隐藏滚动条
+set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
 set t_Co=256                                    " terminal color 开启 256 色支持
 set background=dark
 " 光标形状
@@ -115,8 +113,8 @@ set smartcase                                   " 智能大小写搜索
 " 缩进折叠
 set autoindent
 set foldmethod=indent
-set foldlevel=1
-set nofoldenable                                " 启动 vim 时关闭折叠代码
+set foldlevel=99 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
+set nofoldenable                              " 启动 vim 时关闭折叠代码
 " miscellaneous
 set matchpairs+=<:>,《:》,“:”,‘:’               " 匹配符号之间跳转，使用 % 跳转
 set wildmenu                                    " 在命令模式下使用 <Tab> 自动补全使用一个漂亮的单行菜单显示
@@ -146,8 +144,10 @@ augroup END
 
 " 折叠代码
 nnoremap <space><space> za
-nnoremap <space>o zR
-nnoremap <space>c zM
+" 递减foldlevel变量
+nnoremap <space>o zr
+" 递增foldlevel变量
+nnoremap <space>c zm
 " 快捷方式：窗口跳转
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -180,8 +180,6 @@ inoremap jk <Esc>
 inoremap JK <Esc>
 " 快捷方式：编辑配置文件
 nnoremap <Leader>ev :e $MYVIMRC<CR>
-" 快捷方式：使配置生效
-nnoremap <Leader>sv :source $MYVIMRC<CR>
 " 快捷方式切换当前工作路径到打开 buffer 的目录下
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 
@@ -191,13 +189,18 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh | AirlineToggle | AirlineToggle
+augroup END " }
+
 augroup vimrcEx
   autocmd!
   autocmd BufReadPost *
   \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC " 让配置更改立即生效
+  " autocmd BufWritePost $MYVIMRC source $MYVIMRC " 让配置更改立即生效
   " autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
   " autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
   " autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
@@ -215,6 +218,7 @@ augroup vimrcEx
   autocmd BufNewFile,BufRead *.pug set filetype=html
   autocmd BufNewFile,BufRead *.wxss set filetype=css
   autocmd BufNewFile,BufRead *.wxs set filetype=javascript
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
   autocmd FileType vue syntax sync fromstart
   " autocmd BufEnter * colorscheme dracula
   " autocmd BufEnter *.rb colorscheme railscasts
@@ -287,7 +291,7 @@ if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
   " source $VIM_CONFIG_PATH/ctrlp.vimrc
 " C-f C-b 模式切换 C-r 正则匹配模式
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+" let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_max_height=15
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1

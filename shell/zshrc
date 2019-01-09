@@ -43,8 +43,9 @@ DEFAULT_USER="luhaozhao"
 # 随机主题
 ZSH_THEME="random"
 ZSH_THEME_RANDOM_CANDIDATES=(
-  "ys"
+  # "ys"
   "agnoster"
+  "refined"
 )
 # 插件列表
 plugins=(
