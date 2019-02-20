@@ -287,7 +287,7 @@ let g:syntastic_mode_map = {
   \ 'mode': 'active',
   \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
   \ 'passive_filetypes': ['html'] }
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 endif
 
 if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
