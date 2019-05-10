@@ -39,6 +39,13 @@ export LDFLAGS="-L/usr/local/opt/qt/lib"
 export CPPFLAGS="-I/usr/local/opt/qt/include"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 DEFAULT_USER="luhaozhao"
 ZSH_THEME_RANDOM_CANDIDATES=(
   "ys"
