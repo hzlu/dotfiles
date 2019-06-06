@@ -40,6 +40,7 @@ Plugin 'junegunn/gv.vim'
 " 语言相关
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'flowtype/vim-flow'
 " Plugin 'tpope/vim-rails'
 " Plugin 'vim-ruby/vim-ruby'
@@ -52,6 +53,8 @@ Plugin 'othree/html5.vim'
 Plugin 'posva/vim-vue' " 前置安装 npm i -g eslint eslint-plugin-vue
 " Plugin 'plasticboy/vim-markdown'
 " Plugin 'suan/vim-instant-markdown' " 需要安装 npm i -g instant-markdown-d
+"
+Plugin 'dart-lang/dart-vim-plugin'
 call vundle#end()
 
 filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
@@ -432,7 +435,7 @@ if isdirectory(expand('~/.vim/bundle/emmet-vim'))
   let g:use_emmet_complete_tag=1
   let g:html_indent_tags='li\|p' " Treat <li> and <p> tags like the block tags they are
   let g:user_emmet_install_global = 0
-  autocmd FileType html,css,erb,sass,scss,slim,vue EmmetInstall
+  autocmd FileType html,css,erb,sass,scss,slim,vue,js EmmetInstall
 endif
 
 if isdirectory(expand('~/.vim/bundle/supertab'))
@@ -559,3 +562,5 @@ augroup javascript_folding
 augroup END
 endif
 
+let dart_style_guide = 2
+let dart_format_on_save = 1
