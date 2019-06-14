@@ -12,69 +12,41 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'                     " 用法提示：ds cs ysiw yss
+Plugin 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
-Plugin 'godlygeek/tabular'                      " 格式化
+Plugin 'godlygeek/tabular' " 格式化
 Plugin 'mattn/emmet-vim'
-" Plugin 'tpope/vim-repeat'
 Plugin 'ervandew/supertab'
 Plugin 'Lokaltog/vim-easymotion'
-" Plugin 'tpope/vim-endwise'                      " 补 end
-Plugin 'terryma/vim-multiple-cursors'           " 多处编辑
+Plugin 'terryma/vim-multiple-cursors' " 多处编辑
 Plugin 'terryma/vim-expand-region'
 Plugin 'rking/ag.vim'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'Raimondi/delimitMate'                   " 补全括号
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/neocomplete.vim'
+Plugin 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
+Plugin 'Raimondi/delimitMate' " 补全括号
+Plugin 'neoclide/coc.nvim'
 Plugin 'moll/vim-bbye'
 Plugin 'junegunn/gv.vim'
-" 语言相关
 Plugin 'Yggdroot/indentLine'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'flowtype/vim-flow'
-" Plugin 'tpope/vim-rails'
-" Plugin 'vim-ruby/vim-ruby'
-" Plugin 'tpope/vim-bundler'
-" Plugin 'slim-template/vim-slim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'sheerun/vim-polyglot' " 语法高亮
 Plugin 'ap/vim-css-color' " 显示颜色
-Plugin 'othree/html5.vim'
-Plugin 'posva/vim-vue' " 前置安装 npm i -g eslint eslint-plugin-vue
-" Plugin 'plasticboy/vim-markdown'
-" Plugin 'suan/vim-instant-markdown' " 需要安装 npm i -g instant-markdown-d
-"
-Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
-filetype plugin indent on                       " 根据侦测到不同类型加载对应插件
-syntax enable                                   " 开启语法高亮
-colorscheme dracula                             " 外观配置
+filetype plugin indent on " 根据侦测到不同类型加载对应插件
+syntax enable " 开启语法高亮
+colorscheme dracula " 外观配置
+let mapleader=','                               " 定义 <Leader>
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
 set guioptions=
-set t_Co=256                                    " terminal color 开启 256 色支持
+set t_Co=256 " terminal color 开启 256 色支持
 set background=dark
-" 光标形状
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-let mapleader=','                               " 定义 <Leader>
 set timeoutlen=1000                             " <Leader> 键响应时间
 set history=500                                 " history 选项必须在 nocompatible 选项后；history 文件记录行数
 set shell=/bin/zsh
@@ -86,8 +58,10 @@ set autoread                                    " 文件在vim外修改过，自
 set confirm                                     " 处理未保存或只读文件时弹出确认
 set cursorline
 hi cursorline term=bold cterm=bold
+" hi Pmenu ctermbg=gray ctermfg=Black
+hi PmenuSel ctermbg=Blue ctermfg=White
 set cursorcolumn
-set textwidth=100                               " 每行最大字符数
+" set textwidth=100                               " 每行最大字符数
 let &colorcolumn="80,".join(range(100,999),",")
 set showtabline=1                               " 显示标签页
 set number numberwidth=4                        " 显示行号，行号宽度
@@ -131,6 +105,20 @@ set omnifunc=syntaxcomplete#Complete            " Omni 补全
 set list listchars=tab:~~,trail:·
 highlight ExtraWhitespace ctermbg=black
 
+let g:coc_node_path = $HOME."/.nvm/versions/node/v10.15.3/bin/node"
+let g:gutentags_cache_dir = '~/.ctags_cache'
+
+" 光标形状
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
 function! TrimWhiteSpace()
   let save_cursor = getpos(".")
   let old_query = getreg('/')
@@ -144,7 +132,7 @@ augroup extraSpace
   autocmd BufWinEnter * :match ExtraWhitespace /\s\+$/
   autocmd InsertEnter * :match ExtraWhitespace /\s\+\%#\@<!$/
   autocmd InsertLeave * :match ExtraWhitespace /\s\+$/
-  autocmd BufWritePre * :call  TrimWhiteSpace()
+  " autocmd BufWritePre * :call  TrimWhiteSpace()
   autocmd BufWinLeave * :call  clearmatches()
 augroup END
 
@@ -207,225 +195,127 @@ augroup vimrcEx
   \   exe "normal g`\"" |
   \ endif
   " autocmd BufWritePost $MYVIMRC source $MYVIMRC " 让配置更改立即生效
-  " autocmd FileType ruby,eruby              set omnifunc=rubycomplete#Complete
-  " autocmd FileType javascript,coffee       set omnifunc=javascriptcomplete#CompleteJS
-  " autocmd FileType css,sass,scss           set omnifunc=csscomplete#CompleteCSS
-  " autocmd FileType html                    set omnifunc=htmlcomplete#CompleteTags
-  " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-  " autocmd FileType ruby,eruby let g:rubycomplete_include_object = 1
-  " autocmd FileType ruby,eruby let g:rubycomplete_include_objectspace = 1
   autocmd FileType css,scss,html,javascript set iskeyword+=-
   autocmd BufRead,BufNewFile *.scss set filetype=scss.css
-  " autocmd FileType ruby map <F9> :w<CR>:!ruby -c %<CR>
-  " autocmd BufRead,BufWritePre *.html :normal gg=G
   autocmd BufNewFile,BufRead *.wxml set filetype=html
   autocmd BufNewFile,BufRead *.pug set filetype=html
   autocmd BufNewFile,BufRead *.wxss set filetype=css
   autocmd BufNewFile,BufRead *.wxs set filetype=javascript
   autocmd BufNewFile,BufRead *.ts set filetype=typescript
-  autocmd BufNewFile,BufRead *.json set conceallevel=0
-  autocmd FileType vue syntax sync fromstart
-  " autocmd BufEnter * colorscheme dracula
-  " autocmd BufEnter *.rb colorscheme railscasts
 augroup END
 
-
-" source $VIM_CONFIG_PATH/general.vimrc
-" source $VIM_CONFIG_PATH/keysmap.vimrc
-" source $VIM_CONFIG_PATH/ftypes.vimrc
-
-
 if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
-" source $VIM_CONFIG_PATH/fugitive.vimrc
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gl :Glog<CR>
-nnoremap <leader>gb :Gblame<CR>
-nnoremap <leader>gc :Gcommit<CR>
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gl :Glog<CR>
+  nnoremap <leader>gb :Gblame<CR>
+  nnoremap <leader>gc :Gcommit<CR>
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdtree"))
-  " source $VIM_CONFIG_PATH/nerdtree.vimrc
-nnoremap nt :NERDTreeToggle<CR>
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-call NERDTreeHighlightFile('jade'   , 'green'   , 'none' , 'green'   , '#151515')
-call NERDTreeHighlightFile('md'     , 'blue'    , 'none' , '#3366FF' , '#151515')
-call NERDTreeHighlightFile('yml'    , 'magenta' , 'none' , 'yellow'  , '#E70350')
-call NERDTreeHighlightFile('config' , 'yellow'  , 'none' , 'yellow'  , '#151515')
-call NERDTreeHighlightFile('conf'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-call NERDTreeHighlightFile('json'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-call NERDTreeHighlightFile('html'   , 'green'   , 'none' , 'green'   , '#04E703')
-call NERDTreeHighlightFile('styl'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-call NERDTreeHighlightFile('css'    , 'cyan'    , 'none' , 'cyan'    , '#151515')
-call NERDTreeHighlightFile('sass'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-call NERDTreeHighlightFile('scss'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515')
-call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
-call NERDTreeHighlightFile('vue'    , 'Red'     , 'none' , '#ffa500' , '#151515')
-call NERDTreeHighlightFile('rb'     , 'Magenta' , 'none' , '#ff00ff' , '#151515')
-let NERDTreeWinSize=50        " 设置 NERDTree 子窗口宽度
-let NERDTreeChDirMode=2        " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
-let NERDTreeMinimalUI=1        " 不显示帮助信息
-let NERDTreeShowHidden=1       " 显示隐藏文件
-let NERDTreeShowBookmarks=0    " 不显示书签
-let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
-let NERDTreeWinPos='right'      " 子窗口位置
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
+  nnoremap nt :NERDTreeToggle<CR>
+  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+    exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  endfunction
+  call NERDTreeHighlightFile('jade'   , 'green'   , 'none' , 'green'   , '#151515')
+  call NERDTreeHighlightFile('md'     , 'blue'    , 'none' , '#3366FF' , '#151515')
+  call NERDTreeHighlightFile('yml'    , 'magenta' , 'none' , 'yellow'  , '#E70350')
+  call NERDTreeHighlightFile('config' , 'yellow'  , 'none' , 'yellow'  , '#151515')
+  call NERDTreeHighlightFile('conf'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
+  call NERDTreeHighlightFile('json'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
+  call NERDTreeHighlightFile('html'   , 'green'   , 'none' , 'green'   , '#04E703')
+  call NERDTreeHighlightFile('styl'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
+  call NERDTreeHighlightFile('css'    , 'cyan'    , 'none' , 'cyan'    , '#151515')
+  call NERDTreeHighlightFile('sass'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
+  call NERDTreeHighlightFile('scss'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
+  call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515')
+  call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
+  call NERDTreeHighlightFile('vue'    , 'Red'     , 'none' , '#ffa500' , '#151515')
+  call NERDTreeHighlightFile('rb'     , 'Magenta' , 'none' , '#ff00ff' , '#151515')
+  let NERDTreeWinSize=50        " 设置 NERDTree 子窗口宽度
+  let NERDTreeChDirMode=2        " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
+  let NERDTreeMinimalUI=1        " 不显示帮助信息
+  let NERDTreeShowHidden=1       " 显示隐藏文件
+  let NERDTreeShowBookmarks=0    " 不显示书签
+  let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
+  let NERDTreeWinPos='right'      " 子窗口位置
+  let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
 if isdirectory(expand('~/.vim/bundle/syntastic'))
-  " source $VIM_CONFIG_PATH/syntastic.vimrc
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 1 " 自动跳转到错误处
-let g:syntastic_mode_map = {
-  \ 'mode': 'active',
-  \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
-  \ 'passive_filetypes': ['html'] }
-" let g:syntastic_javascript_checkers = ['eslint']
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  set statusline+=%{gutentags#statusline()}
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_auto_jump = 1 " 自动跳转到错误处
+  let g:syntastic_mode_map = {
+    \ 'mode': 'active',
+    \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
+    \ 'passive_filetypes': ['html'] }
+  " let g:syntastic_javascript_checkers = ['eslint']
 endif
 
 if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
-  " source $VIM_CONFIG_PATH/ctrlp.vimrc
-" C-f C-b 模式切换 C-r 正则匹配模式
-let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_max_height=15
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-      \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-      \ }
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
+  " C-f C-b 模式切换 C-r 正则匹配模式
+  let g:ctrlp_map = '<c-p>'
+  " let g:ctrlp_cmd = 'CtrlPMRU'
+  let g:ctrlp_max_height=15
+  let g:ctrlp_mruf_max=500
+  let g:ctrlp_follow_symlinks=1
+  let g:ctrlp_match_window_bottom=1
+  let g:ctrlp_working_path_mode = 'r'
+  let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
+  let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+        \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+        \ }
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
 endif
 
 if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
-  " source $VIM_CONFIG_PATH/gitgutter.vimrc
-set updatetime=250
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-nmap <Leader>hs <Plug>GitGutterStageHunk
-nmap <Leader>hu <Plug>GitGutterUndoHunk
-nmap <Leader>hv <Plug>GitGutterPreviewHunk
-endif
-
-if isdirectory(expand('~/.vim/bundle/tagbar'))
-  " source $VIM_CONFIG_PATH/tagbar.vimrc
-let g:tagbar_compact=1         " 不显示帮助提示
-let g:tagbar_left=1            " 右侧打开
-let g:tagbar_vertical=0
-let g:tagbar_show_visibility=1
-let g:tagbar_width=50
-let g:tagbar_zoomwidth=0
-let g:tagbar_autofocus=1       " 打开聚焦
-let g:tagbar_sort=0            " 不排序
-" let g:tagbar_autopreview=1   " 显示预览
-
-" Requirements Universal Ctags
-" brew tap universal-ctags/universal-ctags
-" brew install --HEAD universal-ctags
-set tags+=~/.tags/ruby_tags
-function! CreateRubyTags()
-  execute '!ctags -f ~/.tags/ruby_tags
-  \ -R
-  \ --languages=ruby
-  \ --exclude=.git --exclude=tmp --exclude=public --exclude=app/assets
-  \ $(pwd) $(bundle list --paths)'
-endfunction
-let g:tagbar_type_ruby = {
-  \ 'kinds': [
-    \ 'm:modules',
-    \ 'c:classes',
-    \ 'd:describes',
-    \ 'C:contexts',
-    \ 'f:methods',
-    \ 'F:singleton methods'
-  \ ]
-\ }
-
-" Requirements Universal Ctags
-let g:tagbar_type_css = {
-\ 'ctagstype': 'Css',
-  \ 'kinds': [
-      \ 'c:classes',
-      \ 's:selectors',
-      \ 'i:identities'
-  \ ]
-\ }
-
-" Install tern_for_vim
-" Navigate to the tern folder and execute in the shell, the following command: npm install
-" Install ramitos/jsctags
-" npm install -g git+https://github.com/ramitos/jsctags.git
-" find . -type f -iregex '.*\.js$' -not -path './node_modules/*' -exec jsctags {} -f \; | sed '/^$/d' | sort > js_tags
-set tags+=~/.tags/js_tags
-function! CreateJSTags()
-  execute '!find . -type f -iregex ".*\.js$"
-  \ -not -path "./node_modules/*"
-  \ -exec jsctags {} -f \; | sed "/^$/d" | sort > ~/.tags/js_tags '
-endfunction
-
-let g:tagbar_type_coffee = {
-  \ 'ctagstype': 'coffee',
-  \ 'kinds': [
-    \ 'c:classes',
-    \ 'm:methods',
-    \ 'f:functions',
-    \ 'v:variables',
-    \ 'f:fields',
-  \ ]
-\ }
-
-nnoremap <leader>tb :TagbarToggle<CR>
+  set updatetime=250
+  nmap ]h <Plug>GitGutterNextHunk
+  nmap [h <Plug>GitGutterPrevHunk
+  nmap <Leader>hs <Plug>GitGutterStageHunk
+  nmap <Leader>hu <Plug>GitGutterUndoHunk
+  nmap <Leader>hv <Plug>GitGutterPreviewHunk
 endif
 
 if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
-  " source $VIM_CONFIG_PATH/nerdcommenter.vimrc
-" 用法：[注释行数]<Leader> cc: comment out the current line
-" c<space>: toggle comment
-" 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
-" c$: EOL comment
-" cA: append comment
-" cu: uncomment
-let g:NERDSpaceDelims = 1 " 在注释符默认添加空格
-let g:NERDCompactSexyComs = 1 " 使用紧凑语法美化多行注释
-let g:NERDDefaultAlign = 'left' " 将行注释符左对齐而不是下面的代码缩进
-let g:NERDAltDelims_java = 1   " 设置语言默认使用备用定界符
-let g:NERDCommentEmptyLines = 1 " 允许注释和转换空行（注释区域时有用）
-let g:NERDTrimTrailingWhitespace = 1 " 启用时修整尾随空格注释
-let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
+  " 用法：[注释行数]<Leader> cc: comment out the current line
+  " c<space>: toggle comment
+  " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
+  " c$: EOL comment
+  " cA: append comment
+  " cu: uncomment
+  let g:NERDSpaceDelims = 1 " 在注释符默认添加空格
+  let g:NERDCompactSexyComs = 1 " 使用紧凑语法美化多行注释
+  let g:NERDDefaultAlign = 'left' " 将行注释符左对齐而不是下面的代码缩进
+  let g:NERDAltDelims_java = 1   " 设置语言默认使用备用定界符
+  let g:NERDCommentEmptyLines = 1 " 允许注释和转换空行（注释区域时有用）
+  let g:NERDTrimTrailingWhitespace = 1 " 启用时修整尾随空格注释
+  let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-airline'))
-  " source $VIM_CONFIG_PATH/airline.vimrc
-  set laststatus=2                                          " Always display the status line
+  set laststatus=2 " Always display the status line
   let g:airline_powerline_fonts=1
-  let g:airline#extensions#tabline#enabled=1                " enable tabline
+  let g:airline#extensions#tabline#enabled=1 " enable tabline
   let g:airline_theme='raven'
 endif
 
 if isdirectory(expand("~/.vim/bundle/tabular"))
-  " source $VIM_CONFIG_PATH/tabular.vimrc
-" Running :Tab /= 或 :Tab /=\zs
-" Running :Tab /: 或 :Tab /:\zs
-nmap <Leader>a=     :Tabularize /=<CR>
-vmap <Leader>a=     :Tabularize /=<CR>
-nmap <Leader>a:     :Tabularize /:\zs<CR>
-vmap <Leader>a:     :Tabularize /:\zs<CR>
+  " Running :Tab /= 或 :Tab /=\zs
+  " Running :Tab /: 或 :Tab /:\zs
+  nmap <Leader>a=     :Tabularize /=<CR>
+  vmap <Leader>a=     :Tabularize /=<CR>
+  nmap <Leader>a:     :Tabularize /:\zs<CR>
+  vmap <Leader>a:     :Tabularize /:\zs<CR>
 endif
 
 if isdirectory(expand('~/.vim/bundle/emmet-vim'))
@@ -439,12 +329,10 @@ if isdirectory(expand('~/.vim/bundle/emmet-vim'))
 endif
 
 if isdirectory(expand('~/.vim/bundle/supertab'))
-  " source $VIM_CONFIG_PATH/supertab.vimrc
-" Tab 补全
-let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:UltiSnipsExpandTrigger = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+  let g:SuperTabDefaultCompletionType = "<c-n>"
+  let g:UltiSnipsExpandTrigger = "<c-j>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
@@ -472,95 +360,51 @@ if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
 endif
 
 if executable('ag')
-  " source $VIM_CONFIG_PATH/ag.vimrc
-" Requires the_silver_searcher
-" RUNING :Ag [options] {pattern} [{directory}]
-" e    to open file and close the quickfix window
-" o    to open (same as enter)
-" go   to preview file (open but maintain focus on ag.vim results)
-" t    to open in new tab
-" T    to open in new tab silently
-" h    to open in horizontal split
-" H    to open in horizontal split silently
-" v    to open in vertical split
-" gv   to open in vertical split silently
-" q    to close the quickfix window
-let g:ag_highlight=1
-let g:ag_working_path_mode='r'
-let g:ag_prg='ag --vimgrep --smart-case --silent --stats
-  \ --ignore .git
-  \ --ignore .svn
-  \ --ignore .hg
-  \ --ignore .DS_Store
-  \ --ignore .log
-  \ --ignore .min.js
-  \ --ignore node_modules/
-  \ --ignore tmp/
-  \ --ignore log/
-  \ --ignore vendor/
-  \ --ignore public/
-  \ --ignore dist/'
-let g:ctrlp_user_command = 'ag %s -i --hidden
-  \ --ignore .git
-  \ --ignore .svn
-  \ --ignore .hg
-  \ --ignore .DS_Store
-  \ --ignore .log
-  \ --ignore .min.js
-  \ --ignore public/
-  \ --ignore dist/
-  \ -g ""'
-let g:ctrlp_use_caching = 0
-nnoremap AG :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap ag :Ag!<SPACE>
-endif
-
-if isdirectory(expand('~/.vim/bundle/neocomplete.vim'))
-  source $VIM_CONFIG_PATH/neocomplete.vimrc
-endif
-
-if isdirectory(expand('~/.vim/bundle/YouCompleteMe.vim'))
-  " source $VIM_CONFIG_PATH/youcompleteme.vimrc
-  " 快速安
-  " cd ~/.vim/bundle/YouCompleteMe
-  " ./install.py
-  " 不再依赖 Tern 引擎，而使用TSServer
-  " TSServer 包含在 TypeScript SDK中
-  " npm install -g typescript
-  " 在项目根目录下建立 jsconfig.json 文件
-  " {
-  "   "compilerOptions": {
-  "     "checkJs": true
-  "   }
-  " }
-
-" 自动补全配置
-let g:ycm_key_list_select_completion = ['<tab>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<s-tab>', '<Up>']
-let g:ycm_min_num_of_chars_for_completion=2
+  " Requires the_silver_searcher
+  " RUNING :Ag [options] {pattern} [{directory}]
+  " e    to open file and close the quickfix window
+  " o    to open (same as enter)
+  " go   to preview file (open but maintain focus on ag.vim results)
+  " t    to open in new tab
+  " T    to open in new tab silently
+  " h    to open in horizontal split
+  " H    to open in horizontal split silently
+  " v    to open in vertical split
+  " gv   to open in vertical split silently
+  " q    to close the quickfix window
+  let g:ag_highlight=1
+  let g:ag_working_path_mode='r'
+  let g:ag_prg='ag --vimgrep --smart-case --silent --stats
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore .log
+    \ --ignore .min.js
+    \ --ignore node_modules/
+    \ --ignore tmp/
+    \ --ignore log/
+    \ --ignore vendor/
+    \ --ignore public/
+    \ --ignore dist/'
+  let g:ctrlp_user_command = 'ag %s -i --hidden
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore .log
+    \ --ignore .min.js
+    \ --ignore public/
+    \ --ignore dist/
+    \ -g ""'
+  let g:ctrlp_use_caching = 0
+  nnoremap AG :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  nnoremap ag :Ag!<SPACE>
 endif
 
 if isdirectory(expand('~/.vim/bundle/vim-bbye'))
-  " source $VIM_CONFIG_PATH/bbye.vimrc
-set runtimepath^=~/.vim/bundle/bbye
-nnoremap <Leader>bd :Bdelete<CR>
-nnoremap <Leader>ba :bufdo :Bdelete<CR>
+  set runtimepath^=~/.vim/bundle/bbye
+  nnoremap <Leader>bd :Bdelete<CR>
+  nnoremap <Leader>ba :bufdo :Bdelete<CR>
 endif
 
-if isdirectory(expand('~/.vim/bundle/indentLine'))
-  " let g:indentLine_setConceal = 0
-endif
-
-if isdirectory(expand('~/.vim/bundle/vim-javascript'))
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_enable_domhtmlcss = 1
-set conceallevel=0
-map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
-augroup javascript_folding
-  au!
-  au FileType javascript setlocal foldmethod=syntax
-augroup END
-endif
-
-let dart_style_guide = 2
-let dart_format_on_save = 1
