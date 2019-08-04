@@ -93,7 +93,7 @@ set smartcase                                   " 智能大小写搜索
 " 缩进折叠
 set autoindent
 set foldmethod=indent
-set foldlevel=99 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
+set foldlevel=2 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
 set nofoldenable                              " 启动 vim 时关闭折叠代码
 " miscellaneous
 " set matchpairs+=<:>,《:》,“:”,‘:’               " 匹配符号之间跳转，使用 % 跳转
@@ -132,7 +132,7 @@ augroup extraSpace
   autocmd BufWinEnter * :match ExtraWhitespace /\s\+$/
   autocmd InsertEnter * :match ExtraWhitespace /\s\+\%#\@<!$/
   autocmd InsertLeave * :match ExtraWhitespace /\s\+$/
-  " autocmd BufWritePre * :call  TrimWhiteSpace()
+  autocmd BufWritePre * :call  TrimWhiteSpace()
   autocmd BufWinLeave * :call  clearmatches()
 augroup END
 
@@ -256,7 +256,7 @@ if isdirectory(expand('~/.vim/bundle/syntastic'))
   let g:syntastic_mode_map = {
     \ 'mode': 'active',
     \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
-    \ 'passive_filetypes': ['html'] }
+    \ 'passive_filetypes': ['html', 'java'] }
   " let g:syntastic_javascript_checkers = ['eslint']
 endif
 
