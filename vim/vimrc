@@ -231,6 +231,7 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
   call NERDTreeHighlightFile('scss'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
   call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515')
   call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
+  call NERDTreeHighlightFile('ts'     , 'yellow'  , 'none' , 'yellow'  , '#151515')
   call NERDTreeHighlightFile('vue'    , 'Red'     , 'none' , '#ffa500' , '#151515')
   call NERDTreeHighlightFile('rb'     , 'Magenta' , 'none' , '#ff00ff' , '#151515')
   let NERDTreeWinSize=50        " 设置 NERDTree 子窗口宽度
