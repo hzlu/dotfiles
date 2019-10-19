@@ -1,48 +1,51 @@
-" VIMRC FILE BY HZLU
-" Usage:
-" Run: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" Run: vim +PluginInstall +qall
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'dracula/vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
-Plugin 'scrooloose/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'honza/vim-snippets'
-Plugin 'SirVer/ultisnips'
-Plugin 'godlygeek/tabular' " 格式化
-Plugin 'mattn/emmet-vim'
-Plugin 'ervandew/supertab'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors' " 多处编辑
-Plugin 'terryma/vim-expand-region'
-Plugin 'rking/ag.vim'
-Plugin 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
-Plugin 'Raimondi/delimitMate' " 补全括号
-Plugin 'neoclide/coc.nvim'
-Plugin 'moll/vim-bbye'
-Plugin 'junegunn/gv.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'sheerun/vim-polyglot' " 语法高亮
-Plugin 'ap/vim-css-color' " 显示颜色
-Plugin 'editorconfig/editorconfig-vim'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'flazz/vim-colorschemes'
+Plug 'dracula/vim'
+Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
+" Plug 'scrooloose/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'godlygeek/tabular' " 格式化
+Plug 'mattn/emmet-vim'
+Plug 'ervandew/supertab'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors' " 多处编辑
+Plug 'terryma/vim-expand-region'
+Plug 'rking/ag.vim'
+Plug 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
+Plug 'Raimondi/delimitMate' " 补全括号
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'moll/vim-bbye'
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'sheerun/vim-polyglot' " 语法高亮
+Plug 'ap/vim-css-color' " 显示颜色
+Plug 'editorconfig/editorconfig-vim'
+call plug#end()
 
 filetype plugin indent on " 根据侦测到不同类型加载对应插件
 syntax enable " 开启语法高亮
 colorscheme dracula " 外观配置
 let mapleader=','                               " 定义 <Leader>
+set encoding=utf-8
+set termencoding=utf-8
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
 set guioptions=
 set t_Co=256 " terminal color 开启 256 色支持
@@ -79,8 +82,6 @@ set splitright                                  " 新分割窗口在右边
 " 语言编码相关
 set langmenu=zh_cn
 set helplang=cn
-set encoding=utf-8
-set termencoding=utf-8
 " set fileencodings=utf-8,gb18030,gbk,big5,gb2312
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set backspace=indent,eol,start
@@ -105,7 +106,7 @@ set omnifunc=syntaxcomplete#Complete            " Omni 补全
 set list listchars=tab:~~,trail:·
 highlight ExtraWhitespace ctermbg=black
 
-let g:coc_node_path = $HOME."/.nvm/versions/node/v10.15.3/bin/node"
+let g:coc_node_path = $HOME."/.nvm/versions/node/v10.16.0/bin/node"
 let g:gutentags_cache_dir = '~/.ctags_cache'
 
 " 光标形状
@@ -204,7 +205,7 @@ augroup vimrcEx
   autocmd BufNewFile,BufRead *.ts set filetype=typescript
 augroup END
 
-if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
+if isdirectory(expand("~/.vim/plugged/vim-fugitive"))
   nnoremap <leader>gs :Gstatus<CR>
   nnoremap <leader>gd :Gdiff<CR>
   nnoremap <leader>gl :Glog<CR>
@@ -212,7 +213,7 @@ if isdirectory(expand("~/.vim/bundle/vim-fugitive"))
   nnoremap <leader>gc :Gcommit<CR>
 endif
 
-if isdirectory(expand("~/.vim/bundle/nerdtree"))
+if isdirectory(expand("~/.vim/plugged/nerdtree"))
   nnoremap nt :NERDTreeToggle<CR>
   function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -244,24 +245,24 @@ if isdirectory(expand("~/.vim/bundle/nerdtree"))
   let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
-if isdirectory(expand('~/.vim/bundle/syntastic'))
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-  set statusline+=%{gutentags#statusline()}
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_auto_jump = 1 " 自动跳转到错误处
-  let g:syntastic_mode_map = {
-    \ 'mode': 'active',
-    \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
-    \ 'passive_filetypes': ['html', 'java'] }
+if isdirectory(expand('~/.vim/plugged/syntastic'))
+  " set statusline+=%#warningmsg#
+  " set statusline+=%{SyntasticStatuslineFlag()}
+  " set statusline+=%*
+  " set statusline+=%{gutentags#statusline()}
+  " let g:syntastic_always_populate_loc_list = 1
+  " let g:syntastic_auto_loc_list = 1
+  " let g:syntastic_check_on_open = 1
+  " let g:syntastic_check_on_wq = 0
+  " let g:syntastic_auto_jump = 1 " 自动跳转到错误处
+  " let g:syntastic_mode_map = {
+  "   \ 'mode': 'active',
+  "   \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
+  "   \ 'passive_filetypes': ['html', 'java'] }
   " let g:syntastic_javascript_checkers = ['eslint']
 endif
 
-if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
+if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
   " C-f C-b 模式切换 C-r 正则匹配模式
   let g:ctrlp_map = '<c-p>'
   " let g:ctrlp_cmd = 'CtrlPMRU'
@@ -278,16 +279,16 @@ if isdirectory(expand("~/.vim/bundle/ctrlp.vim"))
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
 endif
 
-if isdirectory(expand("~/.vim/bundle/vim-gitgutter"))
+if isdirectory(expand("~/.vim/plugged/vim-gitgutter"))
   set updatetime=250
-  nmap ]h <Plug>GitGutterNextHunk
-  nmap [h <Plug>GitGutterPrevHunk
-  nmap <Leader>hs <Plug>GitGutterStageHunk
-  nmap <Leader>hu <Plug>GitGutterUndoHunk
-  nmap <Leader>hv <Plug>GitGutterPreviewHunk
+  nmap ]h <Plug>(GitGutterNextHunk)
+  nmap [h <Plug>(GitGutterPrevHunk)
+  nmap <Leader>hs <Plug>(GitGutterStageHunk)
+  nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+  nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
 endif
 
-if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
+if isdirectory(expand("~/.vim/plugged/nerdcommenter"))
   " 用法：[注释行数]<Leader> cc: comment out the current line
   " c<space>: toggle comment
   " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
@@ -303,14 +304,18 @@ if isdirectory(expand("~/.vim/bundle/nerdcommenter"))
   let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-airline'))
+if isdirectory(expand('~/.vim/plugged/vim-airline'))
   set laststatus=2 " Always display the status line
-  let g:airline_powerline_fonts=1
-  let g:airline#extensions#tabline#enabled=1 " enable tabline
-  let g:airline_theme='raven'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#formatter = 'unique_tail'
+  let g:airline_theme='fruit_punch'
+  let g:airline#extensions#coc#enabled = 1
+  let g:airline#extensions#bufferline#overwrite_variables = 0
+  let g:bufferline_echo = 0 " buffer 列表不显示在命令行中
 endif
 
-if isdirectory(expand("~/.vim/bundle/tabular"))
+if isdirectory(expand("~/.vim/plugged/tabular"))
   " Running :Tab /= 或 :Tab /=\zs
   " Running :Tab /: 或 :Tab /:\zs
   nmap <Leader>a=     :Tabularize /=<CR>
@@ -319,7 +324,7 @@ if isdirectory(expand("~/.vim/bundle/tabular"))
   vmap <Leader>a:     :Tabularize /:\zs<CR>
 endif
 
-if isdirectory(expand('~/.vim/bundle/emmet-vim'))
+if isdirectory(expand('~/.vim/plugged/emmet-vim'))
   " source $VIM_CONFIG_PATH/emmet.vimrc
   " trigger key C-y ,
   let g:user_emmet_mode='a'
@@ -329,14 +334,14 @@ if isdirectory(expand('~/.vim/bundle/emmet-vim'))
   autocmd FileType html,css,erb,sass,scss,slim,vue,js EmmetInstall
 endif
 
-if isdirectory(expand('~/.vim/bundle/supertab'))
+if isdirectory(expand('~/.vim/plugged/supertab'))
   let g:SuperTabDefaultCompletionType = "<c-n>"
   let g:UltiSnipsExpandTrigger = "<c-j>"
   let g:UltiSnipsJumpForwardTrigger = "<tab>"
   let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-multiple-cursors'))
+if isdirectory(expand('~/.vim/plugged/vim-multiple-cursors'))
   " source $VIM_CONFIG_PATH/multiple-cursors.vimrc
   function! Multiple_cursors_before()
     if exists(':NeoCompleteLock')==2
@@ -403,9 +408,23 @@ if executable('ag')
   nnoremap ag :Ag!<SPACE>
 endif
 
-if isdirectory(expand('~/.vim/bundle/vim-bbye'))
-  set runtimepath^=~/.vim/bundle/bbye
+if isdirectory(expand('~/.vim/plugged/vim-bbye'))
+  set runtimepath^=~/.vim/plugged/bbye
   nnoremap <Leader>bd :Bdelete<CR>
   nnoremap <Leader>ba :bufdo :Bdelete<CR>
 endif
 
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_default_coefficient = 0.7
+let g:limelight_priority = -1
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
