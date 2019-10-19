@@ -11,7 +11,6 @@ Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
-" Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
@@ -245,23 +244,6 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
   let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
-if isdirectory(expand('~/.vim/plugged/syntastic'))
-  " set statusline+=%#warningmsg#
-  " set statusline+=%{SyntasticStatuslineFlag()}
-  " set statusline+=%*
-  " set statusline+=%{gutentags#statusline()}
-  " let g:syntastic_always_populate_loc_list = 1
-  " let g:syntastic_auto_loc_list = 1
-  " let g:syntastic_check_on_open = 1
-  " let g:syntastic_check_on_wq = 0
-  " let g:syntastic_auto_jump = 1 " 自动跳转到错误处
-  " let g:syntastic_mode_map = {
-  "   \ 'mode': 'active',
-  "   \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
-  "   \ 'passive_filetypes': ['html', 'java'] }
-  " let g:syntastic_javascript_checkers = ['eslint']
-endif
-
 if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
   " C-f C-b 模式切换 C-r 正则匹配模式
   let g:ctrlp_map = '<c-p>'
@@ -301,7 +283,9 @@ if isdirectory(expand("~/.vim/plugged/nerdcommenter"))
   let g:NERDAltDelims_java = 1   " 设置语言默认使用备用定界符
   let g:NERDCommentEmptyLines = 1 " 允许注释和转换空行（注释区域时有用）
   let g:NERDTrimTrailingWhitespace = 1 " 启用时修整尾随空格注释
-  let g:NERDCustomDelimiters = { 'js': { 'left': '/**','right': '*/' } } " 添加自定义格式或覆盖默认值。
+  let g:NERDCustomDelimiters = {
+    \ 'javascript': { 'left': '/**','right': '*/' },
+    \ } " 添加自定义格式或覆盖默认值。
 endif
 
 if isdirectory(expand('~/.vim/plugged/vim-airline'))
