@@ -10,23 +10,21 @@ Plug 'dracula/vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular' " 格式化
-Plug 'mattn/emmet-vim'
 Plug 'ervandew/supertab'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors' " 多处编辑
 Plug 'terryma/vim-expand-region'
 Plug 'rking/ag.vim'
-Plug 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
 Plug 'Raimondi/delimitMate' " 补全括号
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'moll/vim-bbye'
@@ -35,8 +33,9 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot' " 语法高亮
-Plug 'ap/vim-css-color' " 显示颜色
 Plug 'editorconfig/editorconfig-vim'
+" Plug 'mattn/emmet-vim'
+" Plug 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
 call plug#end()
 
 filetype plugin indent on " 根据侦测到不同类型加载对应插件
@@ -47,6 +46,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
 set guioptions=
+set termguicolors
 set t_Co=256 " terminal color 开启 256 色支持
 set background=dark
 set timeoutlen=1000                             " <Leader> 键响应时间
@@ -60,8 +60,6 @@ set autoread                                    " 文件在vim外修改过，自
 set confirm                                     " 处理未保存或只读文件时弹出确认
 set cursorline
 hi cursorline term=bold cterm=bold
-" hi Pmenu ctermbg=gray ctermfg=Black
-hi PmenuSel ctermbg=Blue ctermfg=White
 set cursorcolumn
 " set textwidth=100                               " 每行最大字符数
 let &colorcolumn="80,".join(range(100,999),",")
@@ -88,7 +86,7 @@ set backspace=indent,eol,start
 set incsearch                                   " 开启实时搜索功能
 set wrapscan                                    " 循环搜索开头
 set hlsearch                                    " 高亮显示搜索的内容
-hi Search cterm=NONE ctermfg=white ctermbg=red guifg=white guibg=red
+" hi Search cterm=NONE ctermfg=white ctermbg=red guifg=white guibg=red
 set smartcase                                   " 智能大小写搜索
 " 缩进折叠
 set autoindent
@@ -412,3 +410,4 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
