@@ -10,24 +10,21 @@ Plug 'dracula/vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
-" Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular' " 格式化
-Plug 'mattn/emmet-vim'
 Plug 'ervandew/supertab'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors' " 多处编辑
 Plug 'terryma/vim-expand-region'
 Plug 'rking/ag.vim'
-Plug 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
 Plug 'Raimondi/delimitMate' " 补全括号
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'moll/vim-bbye'
@@ -36,8 +33,9 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot' " 语法高亮
-" Plug 'ap/vim-css-color' " 显示颜色
 Plug 'editorconfig/editorconfig-vim'
+" Plug 'mattn/emmet-vim'
+" Plug 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
 call plug#end()
 
 filetype plugin indent on " 根据侦测到不同类型加载对应插件
@@ -48,6 +46,7 @@ set encoding=utf-8
 set termencoding=utf-8
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
 set guioptions=
+set termguicolors
 set t_Co=256 " terminal color 开启 256 色支持
 set background=dark
 set timeoutlen=1000                             " <Leader> 键响应时间
@@ -61,8 +60,6 @@ set autoread                                    " 文件在vim外修改过，自
 set confirm                                     " 处理未保存或只读文件时弹出确认
 set cursorline
 hi cursorline term=bold cterm=bold
-" hi Pmenu ctermbg=gray ctermfg=Black
-hi PmenuSel ctermbg=Blue ctermfg=White
 set cursorcolumn
 " set textwidth=100                               " 每行最大字符数
 let &colorcolumn="80,".join(range(100,999),",")
@@ -245,23 +242,6 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
   let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
-if isdirectory(expand('~/.vim/plugged/syntastic'))
-  " set statusline+=%#warningmsg#
-  " set statusline+=%{SyntasticStatuslineFlag()}
-  " set statusline+=%*
-  " set statusline+=%{gutentags#statusline()}
-  " let g:syntastic_always_populate_loc_list = 1
-  " let g:syntastic_auto_loc_list = 1
-  " let g:syntastic_check_on_open = 1
-  " let g:syntastic_check_on_wq = 0
-  " let g:syntastic_auto_jump = 1 " 自动跳转到错误处
-  " let g:syntastic_mode_map = {
-  "   \ 'mode': 'active',
-  "   \ 'active_filetypes': ['ruby', 'javascript', 'css', 'sass', 'scss'],
-  "   \ 'passive_filetypes': ['html', 'java'] }
-  " let g:syntastic_javascript_checkers = ['eslint']
-endif
-
 if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
   " C-f C-b 模式切换 C-r 正则匹配模式
   let g:ctrlp_map = '<c-p>'
@@ -428,3 +408,4 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
