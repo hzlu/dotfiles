@@ -36,7 +36,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot' " 语法高亮
-Plug 'ap/vim-css-color' " 显示颜色
+" Plug 'ap/vim-css-color' " 显示颜色
 Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
@@ -89,7 +89,7 @@ set backspace=indent,eol,start
 set incsearch                                   " 开启实时搜索功能
 set wrapscan                                    " 循环搜索开头
 set hlsearch                                    " 高亮显示搜索的内容
-hi Search cterm=NONE ctermfg=white ctermbg=red guifg=white guibg=red
+" hi Search cterm=NONE ctermfg=white ctermbg=red guifg=white guibg=red
 set smartcase                                   " 智能大小写搜索
 " 缩进折叠
 set autoindent
