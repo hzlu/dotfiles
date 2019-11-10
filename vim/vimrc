@@ -281,9 +281,6 @@ if isdirectory(expand("~/.vim/plugged/nerdcommenter"))
   let g:NERDAltDelims_java = 1   " 设置语言默认使用备用定界符
   let g:NERDCommentEmptyLines = 1 " 允许注释和转换空行（注释区域时有用）
   let g:NERDTrimTrailingWhitespace = 1 " 启用时修整尾随空格注释
-  let g:NERDCustomDelimiters = {
-    \ 'javascript': { 'left': '/**','right': '*/' },
-    \ } " 添加自定义格式或覆盖默认值。
 endif
 
 if isdirectory(expand('~/.vim/plugged/vim-airline'))
@@ -384,6 +381,7 @@ if executable('ag')
     \ --ignore .min.js
     \ --ignore public/
     \ --ignore dist/
+    \ --ignore distribution/
     \ -g ""'
   let g:ctrlp_use_caching = 0
   nnoremap AG :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
