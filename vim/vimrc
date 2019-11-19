@@ -61,8 +61,7 @@ set confirm                                     " 处理未保存或只读文件
 set cursorline
 hi cursorline term=bold cterm=bold
 set cursorcolumn
-" set textwidth=100                               " 每行最大字符数
-let &colorcolumn="80,".join(range(100,999),",")
+set textwidth=100                               " 每行最大字符数
 set showtabline=1                               " 显示标签页
 set number numberwidth=4                        " 显示行号，行号宽度
 set linespace=0
@@ -222,7 +221,7 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
   call NERDTreeHighlightFile('config' , 'yellow'  , 'none' , 'yellow'  , '#151515')
   call NERDTreeHighlightFile('conf'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
   call NERDTreeHighlightFile('json'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('html'   , 'green'   , 'none' , 'green'   , '#04E703')
+  call NERDTreeHighlightFile('html'   , 'green'   , 'none' , 'green'   , '#151515')
   call NERDTreeHighlightFile('styl'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
   call NERDTreeHighlightFile('css'    , 'cyan'    , 'none' , 'cyan'    , '#151515')
   call NERDTreeHighlightFile('sass'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
