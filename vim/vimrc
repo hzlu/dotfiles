@@ -6,104 +6,145 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'flazz/vim-colorschemes'
-Plug 'dracula/vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'bling/vim-bufferline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
 Plug 'godlygeek/tabular' " 格式化
 Plug 'ervandew/supertab'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'terryma/vim-multiple-cursors' " 多处编辑
+Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'rking/ag.vim'
 Plug 'Raimondi/delimitMate' " 补全括号
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'moll/vim-bbye'
-Plug 'junegunn/gv.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot' " 语法高亮
-Plug 'editorconfig/editorconfig-vim'
-" Plug 'mattn/emmet-vim'
-" Plug 'ludovicchabant/vim-gutentags' " Requirements Universal Ctags
 call plug#end()
 
+" ------------------------
+" 选项设置
+" ------------------------
 filetype plugin indent on " 根据侦测到不同类型加载对应插件
 syntax enable " 开启语法高亮
-colorscheme dracula " 外观配置
-let mapleader=','                               " 定义 <Leader>
-set encoding=utf-8
-set termencoding=utf-8
-set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
-set guioptions=
-set termguicolors
-set t_Co=256 " terminal color 开启 256 色支持
+
+colorscheme Atelier_EstuaryDark
 set background=dark
-set timeoutlen=1000                             " <Leader> 键响应时间
-set history=500                                 " history 选项必须在 nocompatible 选项后；history 文件记录行数
-set shell=/bin/zsh
-set nobackup                                    " 不要备份文件
+set t_Co=256 " terminal color 开启 256 色支持
+
+set autowrite " 执行命令前自动保存
+set autoread " 文件在vim外修改过，自动重新读入
+
+set backspace=indent,eol,start " 解决退格键无法使用
+
+set flash
+set nobackup " 不要备份文件
 set nowritebackup
-set noswapfile                                  " 不要生成 swap 文件
-set autowrite                                   " 执行命令前自动保存
-set autoread                                    " 文件在vim外修改过，自动重新读入
-set confirm                                     " 处理未保存或只读文件时弹出确认
+set noswapfile " 不要生成 swap 文件
+set nocompatible
+set history=200
+set shell=/bin/zsh
+
 set cursorline
-hi cursorline term=bold cterm=bold
 set cursorcolumn
-set textwidth=100                               " 每行最大字符数
-set showtabline=1                               " 显示标签页
-set number numberwidth=4                        " 显示行号，行号宽度
-set linespace=0
-set scrolloff=10                                " 光标编辑行距离顶部或底部的保留行数
-set ruler                                       " 在屏幕下方显示标尺
-set showcmd                                     " 屏幕右下角显示未完成的指令输入
-set tabstop=2                                   " 两空格代替 Tab
-set softtabstop=2
-set expandtab                                   " 插入空格代替 Tab
-set shiftwidth=2
-set shiftround                                  " 按住 shift 再连按两次 > 或 < 可以整行缩进
-set splitbelow                                  " 新分割窗口在下边
-set splitright                                  " 新分割窗口在右边
-" 语言编码相关
-set langmenu=zh_cn
+set confirm
+
+set encoding=utf-8
 set helplang=cn
-" set fileencodings=utf-8,gb18030,gbk,big5,gb2312
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set backspace=indent,eol,start
-" 搜索相关
-set incsearch                                   " 开启实时搜索功能
-set wrapscan                                    " 循环搜索开头
-set hlsearch                                    " 高亮显示搜索的内容
-" hi Search cterm=NONE ctermfg=white ctermbg=red guifg=white guibg=red
-set smartcase                                   " 智能大小写搜索
-" 缩进折叠
-set autoindent
+set langmenu=zh_cn
+set termencoding=utf-8
+
 set foldmethod=indent
 set foldlevel=2 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
-set nofoldenable                              " 启动 vim 时关闭折叠代码
-" miscellaneous
-" set matchpairs+=<:>,《:》,“:”,‘:’               " 匹配符号之间跳转，使用 % 跳转
-set wildmenu                                    " 在命令模式下使用 <Tab> 自动补全使用一个漂亮的单行菜单显示
-set wildmode=list:longest,list:full
-set completeopt=longest,menu
-set omnifunc=syntaxcomplete#Complete            " Omni 补全
-" 处理行末空白字符
-set list listchars=tab:~~,trail:·
-highlight ExtraWhitespace ctermbg=black
+set foldenable " 启动 vim 时关闭折叠代码
 
+set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
+
+set wrapscan " 循环搜索开头
+set smartcase " 智能大小写搜索
+set hlsearch " 高亮显示搜索的内容
+set incsearch " 开启实时搜索功能
+
+set list
+set listchars=tab:~~,trail:·
+
+set number
+set numberwidth=4
+
+set ruler
+
+set scrolloff=10 " 光标编辑行距离顶部或底部的保留行数
+set showcmd
+set showmatch
+set showmode
+
+set expandtab " 插入空格代替 Tab
+set shiftround " 按住 shift 再连按两次 > 或 < 可以整行缩进
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+
+set smartindent
+set cindent
+
+set splitbelow " 新分割窗口在下边
+set splitright " 新分割窗口在右边
+
+set timeoutlen=1000 " <Leader> 键响应时间
+set textwidth=80 " 每行最大字符数
+set nowrap
+
+set completeopt=menu,preview
+set omnifunc=syntaxcomplete#Complete " Omni 补全
+
+set wildmenu " 命令行增强模式
+set wildmode=list:longest,full
+
+highlight ExtraWhitespace ctermbg=Black
+
+
+" ------------------------
+" 变量设置
+" ------------------------
+let g:mapleader = ',' " 定义 <Leader>
+
+" coc配置
 let g:coc_node_path = $HOME."/.nvm/versions/node/v10.16.0/bin/node"
-let g:gutentags_cache_dir = '~/.ctags_cache'
+
+" coc 插件列表
+" cos-emmet
+" cos-eslint
+" cos-highlight
+" cos-snippets
+" cos-vimlsp
+" cos-css
+" cos-html
+" cos-json
+" cos-tsserver
+" cos-vetur
+
+" 专注模式 :Goyo :Goyo!
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_default_coefficient = 0.7
+let g:limelight_priority = -1
+
+let g:polyglot_disabled = ['markdown']
+
+let g:LanguageClient_serverCommands = {
+  \ 'vue': ['vls']
+  \ }
 
 " 光标形状
 if exists('$TMUX')
@@ -133,57 +174,10 @@ augroup extraSpace
   autocmd BufWinLeave * :call  clearmatches()
 augroup END
 
-" 折叠代码
-nnoremap <space><space> za
-" 递减foldlevel变量
-nnoremap <space>o zr
-" 递增foldlevel变量
-nnoremap <space>c zm
-" 快捷方式：窗口跳转
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-" ctrl W = 重置窗口大小
-" ctrl W +/- 调整窗口高
-" ctrl W >/< 调整窗口宽
-" ctrl W _ 设置窗口高
-" ctrl W | 设置窗口宽
-
-" buffer 保存关闭
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
-" 快捷方式：从剪切板粘贴
-nnoremap <space>p "+p
-" 快捷方式：复制到剪切板
-vnoremap <space>y "+y
-" buffer 切换
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
-nnoremap K :bn<CR>
-nnoremap <Leader><Leader> <C-^>
-" 关闭匹配高亮
-nnoremap -hl :nohlsearch<cr>
-" 打开匹配高亮
-nnoremap +hl :set hlsearch<cr>
-inoremap jk <Esc>
-inoremap JK <Esc>
-" 快捷方式：编辑配置文件
-nnoremap <Leader>ev :e $MYVIMRC<CR>
-" 快捷方式切换当前工作路径到打开 buffer 的目录下
-nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Tab 操作
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh | AirlineToggle | AirlineToggle
-augroup END " }
+augroup reload_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh | AirlineToggle | AirlineToggle
+augroup END
 
 augroup vimrcEx
   autocmd!
@@ -191,16 +185,66 @@ augroup vimrcEx
   \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
-  " autocmd BufWritePost $MYVIMRC source $MYVIMRC " 让配置更改立即生效
-  autocmd FileType css,scss,html,javascript set iskeyword+=-
-  autocmd BufRead,BufNewFile *.scss set filetype=scss.css
-  autocmd BufNewFile,BufRead *.wxml set filetype=html
-  autocmd BufNewFile,BufRead *.pug set filetype=html
-  autocmd BufNewFile,BufRead *.wxss set filetype=css
-  autocmd BufNewFile,BufRead *.wxs set filetype=javascript
-  autocmd BufNewFile,BufRead *.ts set filetype=typescript
 augroup END
 
+
+" ------------------------
+" 快捷键
+" ------------------------
+inoremap jk <Esc>
+
+" 折叠代码
+nnoremap <space><space> za
+nnoremap <space>o zr
+nnoremap <space>c zm
+
+" 快捷方式：窗口跳转
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" buffer 保存关闭
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
+
+" 系统剪切板
+nnoremap <space>p "+p
+vnoremap <space>y "+y
+
+" buffer 切换
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" 匹配高亮
+nnoremap -hl :nohlsearch<cr>
+nnoremap +hl :set hlsearch<cr>
+
+" 快捷方式：编辑配置文件
+nnoremap <Leader>ev :e $MYVIMRC<CR>
+
+" 快捷方式切换当前工作路径到打开 buffer 的目录下
+nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Tab 操作
+nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>to :tabonly<cr>
+nnoremap <leader>tc :tabclose<cr>
+nnoremap <leader>tm :tabmove
+
+" coc 插件映射
+nmap [g <Plug>(coc-diagnostic-prev)
+nmap ]g <Plug>(coc-diagnostic-next)
+nmap gd <Plug>(coc-definition)
+nmap gy <Plug>(coc-type-definition)
+nmap gi <Plug>(coc-implementation)
+nmap gr <Plug>(coc-references)
+imap <C-j> <Plug>(coc-snippets-expand)
+
+" ------------------------
+" 插件配置
+" ------------------------
 if isdirectory(expand("~/.vim/plugged/vim-fugitive"))
   nnoremap <leader>gs :Gstatus<CR>
   nnoremap <leader>gd :Gdiff<CR>
@@ -215,65 +259,52 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
     exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
     exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
   endfunction
-  call NERDTreeHighlightFile('jade'   , 'green'   , 'none' , 'green'   , '#151515')
-  call NERDTreeHighlightFile('md'     , 'blue'    , 'none' , '#3366FF' , '#151515')
-  call NERDTreeHighlightFile('yml'    , 'magenta' , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('config' , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('conf'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('json'   , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('html'   , 'green'   , 'none' , 'green'   , '#151515')
-  call NERDTreeHighlightFile('styl'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('css'    , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('sass'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('scss'   , 'cyan'    , 'none' , 'cyan'    , '#151515')
-  call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515')
-  call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
-  call NERDTreeHighlightFile('ts'     , 'yellow'  , 'none' , 'yellow'  , '#151515')
-  call NERDTreeHighlightFile('vue'    , 'Red'     , 'none' , '#ffa500' , '#151515')
-  call NERDTreeHighlightFile('rb'     , 'Magenta' , 'none' , '#ff00ff' , '#151515')
-  let NERDTreeWinSize=50        " 设置 NERDTree 子窗口宽度
-  let NERDTreeChDirMode=2        " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
-  let NERDTreeMinimalUI=1        " 不显示帮助信息
-  let NERDTreeShowHidden=1       " 显示隐藏文件
-  let NERDTreeShowBookmarks=0    " 不显示书签
-  let NERDTreeAutoDeleteBuffer=1 " 删除文件时自动删除文件对应的buffer
-  let NERDTreeWinPos='right'      " 子窗口位置
+  call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+  call NERDTreeHighlightFile('ts', 'yellow', 'none', 'yellow', '#151515')
+  call NERDTreeHighlightFile('vue', 'Red', 'none', '#ffa500', '#151515')
+  let NERDTreeWinSize = 50 " 设置 NERDTree 子窗口宽度
+  let NERDTreeChDirMode = 2 " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
+  let NERDTreeMinimalUI = 1 " 不显示帮助信息
+  let NERDTreeShowHidden = 1 " 显示隐藏文件
+  let NERDTreeShowBookmarks = 0 " 不显示书签
+  let NERDTreeAutoDeleteBuffer = 1 " 删除文件时自动删除文件对应的buffer
+  let NERDTreeWinPos = 'right' " 子窗口位置
   let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
 if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
   " C-f C-b 模式切换 C-r 正则匹配模式
-  let g:ctrlp_map = '<c-p>'
+  let g:ctrlp_map = '<C-p>'
   " let g:ctrlp_cmd = 'CtrlPMRU'
-  let g:ctrlp_max_height=15
-  let g:ctrlp_mruf_max=500
-  let g:ctrlp_follow_symlinks=1
-  let g:ctrlp_match_window_bottom=1
+  let g:ctrlp_max_height = 15
+  let g:ctrlp_mruf_max = 500
+  let g:ctrlp_follow_symlinks = 1
+  let g:ctrlp_match_window_bottom = 1
   let g:ctrlp_working_path_mode = 'r'
-  let g:ctrlp_match_window_reversed=0 " Sort the list top to bottom
+  let g:ctrlp_match_window_reversed = 0 " Sort the list top to bottom
   let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-        \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-        \ }
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    \ }
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
 endif
 
 if isdirectory(expand("~/.vim/plugged/vim-gitgutter"))
   set updatetime=250
-  nmap ]h <Plug>(GitGutterNextHunk)
-  nmap [h <Plug>(GitGutterPrevHunk)
-  nmap <Leader>hs <Plug>(GitGutterStageHunk)
-  nmap <Leader>hu <Plug>(GitGutterUndoHunk)
-  nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
+  nnoremap ]h <Plug>(GitGutterNextHunk)
+  nnoremap [h <Plug>(GitGutterPrevHunk)
+  nnoremap <Leader>hs <Plug>(GitGutterStageHunk)
+  nnoremap <Leader>hu <Plug>(GitGutterUndoHunk)
+  nnoremap <Leader>hv <Plug>(GitGutterPreviewHunk)
 endif
 
+" 用法：[注释行数]<Leader> cc: comment out the current line
+" c<space>: toggle comment
+" 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
+" c$: EOL comment
+" cA: append comment
+" cu: uncomment
 if isdirectory(expand("~/.vim/plugged/nerdcommenter"))
-  " 用法：[注释行数]<Leader> cc: comment out the current line
-  " c<space>: toggle comment
-  " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
-  " c$: EOL comment
-  " cA: append comment
-  " cu: uncomment
   let g:NERDSpaceDelims = 1 " 在注释符默认添加空格
   let g:NERDCompactSexyComs = 1 " 使用紧凑语法美化多行注释
   let g:NERDDefaultAlign = 'left' " 将行注释符左对齐而不是下面的代码缩进
@@ -287,29 +318,19 @@ if isdirectory(expand('~/.vim/plugged/vim-airline'))
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#formatter = 'unique_tail'
-  let g:airline_theme='fruit_punch'
+  let g:airline_theme = 'fruit_punch'
   let g:airline#extensions#coc#enabled = 1
-  let g:airline#extensions#bufferline#overwrite_variables = 0
+  " let g:airline#extensions#bufferline#overwrite_variables = 0
   let g:bufferline_echo = 0 " buffer 列表不显示在命令行中
 endif
 
+" Running :Tab /= 或 :Tab /=\zs
+" Running :Tab /: 或 :Tab /:\zs
 if isdirectory(expand("~/.vim/plugged/tabular"))
-  " Running :Tab /= 或 :Tab /=\zs
-  " Running :Tab /: 或 :Tab /:\zs
-  nmap <Leader>a=     :Tabularize /=<CR>
-  vmap <Leader>a=     :Tabularize /=<CR>
-  nmap <Leader>a:     :Tabularize /:\zs<CR>
-  vmap <Leader>a:     :Tabularize /:\zs<CR>
-endif
-
-if isdirectory(expand('~/.vim/plugged/emmet-vim'))
-  " source $VIM_CONFIG_PATH/emmet.vimrc
-  " trigger key C-y ,
-  let g:user_emmet_mode='a'
-  let g:use_emmet_complete_tag=1
-  let g:html_indent_tags='li\|p' " Treat <li> and <p> tags like the block tags they are
-  let g:user_emmet_install_global = 0
-  autocmd FileType html,css,erb,sass,scss,slim,vue,js EmmetInstall
+  nnoremap <Leader>a= :Tabularize /=<CR>
+  vnoremap <Leader>a= :Tabularize /=<CR>
+  nnoremap <Leader>a: :Tabularize /:\zs<CR>
+  vnoremap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
 if isdirectory(expand('~/.vim/plugged/supertab'))
@@ -320,19 +341,7 @@ if isdirectory(expand('~/.vim/plugged/supertab'))
 endif
 
 if isdirectory(expand('~/.vim/plugged/vim-multiple-cursors'))
-  " source $VIM_CONFIG_PATH/multiple-cursors.vimrc
-  function! Multiple_cursors_before()
-    if exists(':NeoCompleteLock')==2
-      exe 'NeoCompleteLock'
-    endif
-  endfunction
-
-  function! Multiple_cursors_after()
-    if exists(':NeoCompleteUnlock')==2
-      exe 'NeoCompleteUnlock'
-    endif
-  endfunction
-  let g:multi_cursor_use_default_mapping=1 " 默认映射
+  let g:multi_cursor_use_default_mapping = 1 " 默认映射
   let g:multi_cursor_start_word_key      = '<C-n>'
   let g:multi_cursor_select_all_word_key = '<C-m><C-n>'
   let g:multi_cursor_start_key           = 'g<C-n>'
@@ -343,19 +352,19 @@ if isdirectory(expand('~/.vim/plugged/vim-multiple-cursors'))
   let g:multi_cursor_quit_key            = '<Esc>'
 endif
 
+" Requires the_silver_searcher
+" RUNING :Ag [options] {pattern} [{directory}]
+" e    to open file and close the quickfix window
+" o    to open (same as enter)
+" go   to preview file (open but maintain focus on ag.vim results)
+" t    to open in new tab
+" T    to open in new tab silently
+" h    to open in horizontal split
+" H    to open in horizontal split silently
+" v    to open in vertical split
+" gv   to open in vertical split silently
+" q    to close the quickfix window
 if executable('ag')
-  " Requires the_silver_searcher
-  " RUNING :Ag [options] {pattern} [{directory}]
-  " e    to open file and close the quickfix window
-  " o    to open (same as enter)
-  " go   to preview file (open but maintain focus on ag.vim results)
-  " t    to open in new tab
-  " T    to open in new tab silently
-  " h    to open in horizontal split
-  " H    to open in horizontal split silently
-  " v    to open in vertical split
-  " gv   to open in vertical split silently
-  " q    to close the quickfix window
   let g:ag_highlight=1
   let g:ag_working_path_mode='r'
   let g:ag_prg='ag --vimgrep --smart-case --silent --stats
@@ -392,21 +401,4 @@ if isdirectory(expand('~/.vim/plugged/vim-bbye'))
   nnoremap <Leader>bd :Bdelete<CR>
   nnoremap <Leader>ba :bufdo :Bdelete<CR>
 endif
-
-let g:limelight_conceal_ctermfg = 'gray'
-let g:limelight_conceal_ctermfg = 240
-let g:limelight_default_coefficient = 0.7
-let g:limelight_priority = -1
-
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-let g:polyglot_disabled = ['markdown']
 
