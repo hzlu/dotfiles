@@ -23,7 +23,6 @@ Plug 'terryma/vim-expand-region'
 Plug 'rking/ag.vim'
 Plug 'Raimondi/delimitMate' " 补全括号
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'moll/vim-bbye'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
@@ -63,7 +62,7 @@ set langmenu=zh_cn
 set termencoding=utf-8
 
 set foldmethod=indent
-set foldlevel=2 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
+set foldlevel=1 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
 set foldenable " 启动 vim 时关闭折叠代码
 
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
@@ -98,7 +97,7 @@ set cindent
 set splitbelow " 新分割窗口在下边
 set splitright " 新分割窗口在右边
 
-set timeoutlen=1000 " <Leader> 键响应时间
+set timeoutlen=1000 " <leader> 键响应时间
 set textwidth=80 " 每行最大字符数
 set nowrap
 
@@ -114,7 +113,7 @@ highlight ExtraWhitespace ctermbg=Black
 " ------------------------
 " 变量设置
 " ------------------------
-let g:mapleader = ',' " 定义 <Leader>
+let g:mapleader = ',' " 定义 <leader>
 
 " coc配置
 let g:coc_node_path = $HOME."/.nvm/versions/node/v10.16.0/bin/node"
@@ -199,36 +198,44 @@ nnoremap <space>o zr
 nnoremap <space>c zm
 
 " 快捷方式：窗口跳转
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " buffer 保存关闭
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
-nnoremap <Leader>W :w !sudo tee % > /dev/null<CR>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>W :w !sudo tee % > /dev/null<cr>
 
 " 系统剪切板
 nnoremap <space>p "+p
 vnoremap <space>y "+y
-
-" buffer 切换
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
 
 " 匹配高亮
 nnoremap -hl :nohlsearch<cr>
 nnoremap +hl :set hlsearch<cr>
 
 " 快捷方式：编辑配置文件
-nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 
 " 快捷方式切换当前工作路径到打开 buffer 的目录下
 nnoremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 
+" buffer 切换
+" 显示buffer列表 :ls :buffers
+" 切换buffer :b<number> | 之前的buffer :b#
+nnoremap <left> :bp<cr>
+nnoremap <right> :bn<cr>
+nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bd :bdelete<cr>
+nnoremap <leader>bc :bufdo :bdelete<cr>
+
 " Tab 操作
-nnoremap <leader>tn :tabnew<cr>
+nnoremap <leader>tt :tabnew<cr>
+nnoremap <leader>tp :tabprevious<cr>
+nnoremap <leader>tn :tabnext<cr>
 nnoremap <leader>to :tabonly<cr>
 nnoremap <leader>tc :tabclose<cr>
 nnoremap <leader>tm :tabmove
@@ -240,21 +247,39 @@ nmap gd <Plug>(coc-definition)
 nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
-imap <C-j> <Plug>(coc-snippets-expand)
+imap <c-j> <Plug>(coc-snippets-expand)
+
+
+" ------------------------
+" 使用标记m | 查看标记 :marks | 删除标记 :delmarks <m> | 删除所有标记 :delmarks!
+" ma 创建缓冲区标记 | 'a 跳转到标记行首 | `a 跳转到标记字符
+" mA 创建夸区标记   | 'A 跳转到标记
+
+" 跳转表 :jumps | 清空跳转表 :clearjumps
+" <c-o> 跳转到上一个位置 | <c-i> 跳转到下一个位置
+
+" 变更表 :changes
+" g; 跳转到上次变更位置 | g, 跳转到下一个变更位置
+
+" quickfix 窗口
+" :cw 打开窗口（当有错误信息时）| :copen 打开窗口
+" :cl 列出所有错误 | :cc 显示错误信息 | :cn 下一个错误 | :cp 上一个错误
+" ------------------------
+
 
 " ------------------------
 " 插件配置
 " ------------------------
 if isdirectory(expand("~/.vim/plugged/vim-fugitive"))
-  nnoremap <leader>gs :Gstatus<CR>
-  nnoremap <leader>gd :Gdiff<CR>
-  nnoremap <leader>gl :Glog<CR>
-  nnoremap <leader>gb :Gblame<CR>
-  nnoremap <leader>gc :Gcommit<CR>
+  nnoremap <leader>gs :Gstatus<cr>
+  nnoremap <leader>gd :Gdiff<cr>
+  nnoremap <leader>gl :Glog<cr>
+  nnoremap <leader>gb :Gblame<cr>
+  nnoremap <leader>gc :Gcommit<cr>
 endif
 
 if isdirectory(expand("~/.vim/plugged/nerdtree"))
-  nnoremap nt :NERDTreeToggle<CR>
+  nnoremap nt :NERDTreeToggle<cr>
   function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
     exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
@@ -273,11 +298,10 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
 endif
 
 if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
-  " C-f C-b 模式切换 C-r 正则匹配模式
-  let g:ctrlp_map = '<C-p>'
-  " let g:ctrlp_cmd = 'CtrlPMRU'
+  " c-f c-b 模式切换 c-r 正则匹配模式
+  let g:ctrlp_map = '<c-p>'
   let g:ctrlp_max_height = 15
-  let g:ctrlp_mruf_max = 500
+  let g:ctrlp_mruf_max = 100
   let g:ctrlp_follow_symlinks = 1
   let g:ctrlp_match_window_bottom = 1
   let g:ctrlp_working_path_mode = 'r'
@@ -291,14 +315,14 @@ endif
 
 if isdirectory(expand("~/.vim/plugged/vim-gitgutter"))
   set updatetime=250
-  nnoremap ]h <Plug>(GitGutterNextHunk)
-  nnoremap [h <Plug>(GitGutterPrevHunk)
-  nnoremap <Leader>hs <Plug>(GitGutterStageHunk)
-  nnoremap <Leader>hu <Plug>(GitGutterUndoHunk)
-  nnoremap <Leader>hv <Plug>(GitGutterPreviewHunk)
+  nmap ]h <Plug>(GitGutterNextHunk)
+  nmap [h <Plug>(GitGutterPrevHunk)
+  nmap <leader>hs <Plug>(GitGutterStageHunk)
+  nmap <leader>hu <Plug>(GitGutterUndoHunk)
+  nmap <leader>hv <Plug>(GitGutterPreviewHunk)
 endif
 
-" 用法：[注释行数]<Leader> cc: comment out the current line
+" 用法：[注释行数]<leader> cc: comment out the current line
 " c<space>: toggle comment
 " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
 " c$: EOL comment
@@ -327,47 +351,38 @@ endif
 " Running :Tab /= 或 :Tab /=\zs
 " Running :Tab /: 或 :Tab /:\zs
 if isdirectory(expand("~/.vim/plugged/tabular"))
-  nnoremap <Leader>a= :Tabularize /=<CR>
-  vnoremap <Leader>a= :Tabularize /=<CR>
-  nnoremap <Leader>a: :Tabularize /:\zs<CR>
-  vnoremap <Leader>a: :Tabularize /:\zs<CR>
+  nnoremap <leader>a= :Tabularize /=<cr>
+  vnoremap <leader>a= :Tabularize /=<cr>
+  nnoremap <leader>a: :Tabularize /:\zs<cr>
+  vnoremap <leader>a: :Tabularize /:\zs<cr>
 endif
 
 if isdirectory(expand('~/.vim/plugged/supertab'))
   let g:SuperTabDefaultCompletionType = "<c-n>"
-  let g:UltiSnipsExpandTrigger = "<c-j>"
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 endif
 
 if isdirectory(expand('~/.vim/plugged/vim-multiple-cursors'))
   let g:multi_cursor_use_default_mapping = 1 " 默认映射
-  let g:multi_cursor_start_word_key      = '<C-n>'
-  let g:multi_cursor_select_all_word_key = '<C-m><C-n>'
-  let g:multi_cursor_start_key           = 'g<C-n>'
-  let g:multi_cursor_select_all_key      = 'g<C-m><C-n>'
-  let g:multi_cursor_next_key            = '<C-n>'
-  let g:multi_cursor_prev_key            = '<C-p>'
-  let g:multi_cursor_skip_key            = '<C-x>'
-  let g:multi_cursor_quit_key            = '<Esc>'
+  let g:multi_cursor_start_word_key      = "<c-n>"
+  let g:multi_cursor_select_all_word_key = "<c-m><c-n>"
+  let g:multi_cursor_start_key           = "g<c-n>"
+  let g:multi_cursor_select_all_key      = "g<c-m><c-n>"
+  let g:multi_cursor_next_key            = "<c-n>"
+  let g:multi_cursor_prev_key            = "<c-p>"
+  let g:multi_cursor_skip_key            = "<c-x>"
+  let g:multi_cursor_quit_key            = "<Esc>"
 endif
 
-" Requires the_silver_searcher
+" Requires the_silver_searcher!
 " RUNING :Ag [options] {pattern} [{directory}]
-" e    to open file and close the quickfix window
-" o    to open (same as enter)
-" go   to preview file (open but maintain focus on ag.vim results)
-" t    to open in new tab
-" T    to open in new tab silently
-" h    to open in horizontal split
-" H    to open in horizontal split silently
-" v    to open in vertical split
-" gv   to open in vertical split silently
-" q    to close the quickfix window
+" e 打开文件并关闭窗口 | o 打开文件 | go 静默打开 | q 关闭窗口
+" t 在新tab打开 | T 在新tab静默打开
+" h 水平切分打开 | H 水平静默打开
+" v 垂直切分打开 | gv 静默打开
 if executable('ag')
-  let g:ag_highlight=1
-  let g:ag_working_path_mode='r'
-  let g:ag_prg='ag --vimgrep --smart-case --silent --stats
+  let g:ag_highlight = 1
+  let g:ag_working_path_mode = 'r'
+  let g:ag_prg = 'ag --vimgrep --smart-case --silent --stats
     \ --ignore .git
     \ --ignore .svn
     \ --ignore .hg
@@ -392,13 +407,6 @@ if executable('ag')
     \ --ignore distribution/
     \ -g ""'
   let g:ctrlp_use_caching = 0
-  nnoremap AG :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  nnoremap AG :Ag! "\b<c-R><c-W>\b"<cr>:cw<cr>
   nnoremap ag :Ag!<SPACE>
 endif
-
-if isdirectory(expand('~/.vim/plugged/vim-bbye'))
-  set runtimepath^=~/.vim/plugged/bbye
-  nnoremap <Leader>bd :Bdelete<CR>
-  nnoremap <Leader>ba :bufdo :Bdelete<CR>
-endif
-
