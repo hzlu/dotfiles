@@ -66,6 +66,9 @@ set foldlevel=1 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
 set foldenable " 启动 vim 时关闭折叠代码
 
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
+set guioptions-=r " 隐藏滚动条
+set guioptions-=L
+set guioptions-=b
 
 set wrapscan " 循环搜索开头
 set smartcase " 智能大小写搜索
@@ -79,6 +82,7 @@ set number
 set numberwidth=4
 
 set ruler
+set laststatus=2 " Always display the status line
 
 set scrolloff=10 " 光标编辑行距离顶部或底部的保留行数
 set showcmd
@@ -338,14 +342,19 @@ if isdirectory(expand("~/.vim/plugged/nerdcommenter"))
 endif
 
 if isdirectory(expand('~/.vim/plugged/vim-airline'))
-  set laststatus=2 " Always display the status line
+  " let g:airline_theme = 'fruit_punch'
   let g:airline_powerline_fonts = 1
+
   let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#formatter = 'unique_tail'
-  let g:airline_theme = 'fruit_punch'
+  let g:airline#extensions#tabline#tab_nr_type = 2
+  let g:airline#extensions#tabline#show_tab_nr = 0 " 不显示tab number
+  let g:airline#extensions#tabline#show_tab_type = 1 " 显示tab type
+  let g:airline#extensions#tabline#formatter = "unique_tail"
+  " let g:airline#extensions#tabline#formatter = 'short_path'
+  let g:airline#extensions#tabline#show_buffers = 1
+  let g:airline#extensions#tabline#buffer_nr_show = 1 " 显示buffer number
+
   let g:airline#extensions#coc#enabled = 1
-  " let g:airline#extensions#bufferline#overwrite_variables = 0
-  let g:bufferline_echo = 0 " buffer 列表不显示在命令行中
 endif
 
 " Running :Tab /= 或 :Tab /=\zs
