@@ -235,7 +235,7 @@ nnoremap <right> :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bd :bdelete<cr>
-nnoremap <leader>bc :bufdo :bdelete<cr>
+nnoremap <leader>ba :bufdo :bdelete<cr>
 
 " Tab 操作
 nnoremap <leader>tt :tabnew<cr>
