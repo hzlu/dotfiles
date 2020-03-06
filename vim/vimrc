@@ -35,7 +35,8 @@ call plug#end()
 filetype plugin indent on " 根据侦测到不同类型加载对应插件
 syntax enable " 开启语法高亮
 
-colorscheme Atelier_EstuaryDark
+" colorscheme Atelier_EstuaryDark
+colorscheme Monokai
 set background=dark
 set t_Co=256 " terminal color 开启 256 色支持
 
