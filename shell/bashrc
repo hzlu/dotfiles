@@ -44,5 +44,11 @@ path () {
   echo $PATH | awk -F: '{for(i=1;i<=NF;i++){print $i}}'
 }
 
+show_color () {
+  for i in {0..255} ; do
+    printf "\x1b[38;5;${i}mcolor${i}\n"
+  done
+}
+
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
