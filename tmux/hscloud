@@ -2,6 +2,9 @@ tmux has-session -t hscloud-dev
 if [ $? != 0 ]; then
   tmux new-session -s hscloud-dev -n console -d
   tmux new-window -t hscloud-dev -n git
+  tmux new-window -t hscloud-dev -n vim-hscloud
+  tmux new-window -t hscloud-dev -n vim-frontend
+  tmux new-window -t hscloud-dev -n vim-hsdata
   tmux split-window -h -t hscloud-dev:console
   tmux split-window -h -t hscloud-dev:console
   tmux split-window -h -t hscloud-dev:git
@@ -13,24 +16,18 @@ if [ $? != 0 ]; then
   tmux send-keys -t hscloud-dev:console.2 'nvm use && npm run watch' C-m
   tmux send-keys -t hscloud-dev:console.3 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
   tmux send-keys -t hscloud-dev:console.3 'nvm use && npm run start' C-m
+
   tmux send-keys -t hscloud-dev:git.1 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
   tmux send-keys -t hscloud-dev:git.1 'git pull' C-m
   tmux send-keys -t hscloud-dev:git.2 'cd /Users/luhaozhao/workstation/hscloud/hsdata' C-m
   tmux send-keys -t hscloud-dev:git.2 'git pull' C-m
   tmux send-keys -t hscloud-dev:git.3 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
   tmux send-keys -t hscloud-dev:git.3 'git pull' C-m
-fi
 
-tmux has-session -t hscloud-vim
-if [ $? != 0 ]; then
-  tmux new-session -s hscloud-vim -n hscloud -d
-  tmux new-window -t hscloud-vim -n frontend
-  tmux new-window -t hscloud-vim -n hsdata
-
-  tmux send-keys -t hscloud-vim:hscloud 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
-  tmux send-keys -t hscloud-vim:hscloud 'vim' C-m
-  tmux send-keys -t hscloud-vim:hsdata 'cd /Users/luhaozhao/workstation/hscloud/hsdata' C-m
-  tmux send-keys -t hscloud-vim:hsdata 'vim' C-m
-  tmux send-keys -t hscloud-vim:frontend 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
-  tmux send-keys -t hscloud-vim:frontend 'vim' C-m
+  tmux send-keys -t hscloud-dev:vim-hscloud 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
+  tmux send-keys -t hscloud-dev:vim-hscloud 'vim' C-m
+  tmux send-keys -t hscloud-dev:vim-hsdata 'cd /Users/luhaozhao/workstation/hscloud/hsdata' C-m
+  tmux send-keys -t hscloud-dev:vim-hsdata 'vim' C-m
+  tmux send-keys -t hscloud-dev:vim-frontend 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
+  tmux send-keys -t hscloud-dev:vim-frontend 'vim' C-m
 fi

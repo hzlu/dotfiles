@@ -2,6 +2,8 @@ tmux has-session -t youtiao-dev
 if [ $? != 0 ]; then
   tmux new-session -s youtiao-dev -n console -d
   tmux new-window -t youtiao-dev -n git
+  tmux new-window -t youtiao-dev -n vim-youtiao
+  tmux new-window -t youtiao-dev -n vim-frontend
   tmux split-window -h -t youtiao-dev:console
   tmux split-window -h -t youtiao-dev:git
 
@@ -13,15 +15,9 @@ if [ $? != 0 ]; then
   tmux send-keys -t youtiao-dev:git.1 'git pull' C-m
   tmux send-keys -t youtiao-dev:git.2 'cd /Users/luhaozhao/workstation/huasi-frontend' C-m
   tmux send-keys -t youtiao-dev:git.2 'git pull' C-m
-fi
 
-tmux has-session -t youtiao-vim
-if [ $? != 0 ]; then
-  tmux new-session -s youtiao-vim -n youtiao -d
-  tmux new-window -t youtiao-vim -n frontend
-
-  tmux send-keys -t youtiao-vim:youtiao 'cd /Users/luhaozhao/workstation/youtiao-docker' C-m
-  tmux send-keys -t youtiao-vim:youtiao 'vim' C-m
-  tmux send-keys -t youtiao-vim:frontend 'cd /Users/luhaozhao/workstation/huasi-frontend' C-m
-  tmux send-keys -t youtiao-vim:frontend 'vim' C-m
+  tmux send-keys -t youtiao-dev:vim-youtiao 'cd /Users/luhaozhao/workstation/youtiao-docker' C-m
+  tmux send-keys -t youtiao-dev:vim-youtiao 'vim' C-m
+  tmux send-keys -t youtiao-dev:vim-frontend 'cd /Users/luhaozhao/workstation/huasi-frontend' C-m
+  tmux send-keys -t youtiao-dev:vim-frontend 'vim' C-m
 fi
