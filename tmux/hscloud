@@ -13,11 +13,11 @@ if [ $? != 0 ]; then
   tmux send-keys -t hscloud-dev:console.2 'nvm use && npm run watch' C-m
   tmux send-keys -t hscloud-dev:console.3 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
   tmux send-keys -t hscloud-dev:console.3 'nvm use && npm run start' C-m
-  tmux send-keys -t hscloud-dev:git.1 'cd /Users/luhaozhao/workstation/hscloud/hshscloud' C-m
+  tmux send-keys -t hscloud-dev:git.1 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
   tmux send-keys -t hscloud-dev:git.1 'git pull' C-m
-  tmux send-keys -t hscloud-dev:git.2 'cd /Users/luhaozhao/workstation/hscloud/hshsdata' C-m
+  tmux send-keys -t hscloud-dev:git.2 'cd /Users/luhaozhao/workstation/hscloud/hsdata' C-m
   tmux send-keys -t hscloud-dev:git.2 'git pull' C-m
-  tmux send-keys -t hscloud-dev:git.3 'cd /Users/luhaozhao/workstation/hscloud/hshscloud-frontend' C-m
+  tmux send-keys -t hscloud-dev:git.3 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
   tmux send-keys -t hscloud-dev:git.3 'git pull' C-m
 fi
 
