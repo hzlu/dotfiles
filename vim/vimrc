@@ -298,7 +298,7 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
   let NERDTreeShowHidden = 1 " 显示隐藏文件
   let NERDTreeShowBookmarks = 0 " 不显示书签
   let NERDTreeAutoDeleteBuffer = 1 " 删除文件时自动删除文件对应的buffer
-  let NERDTreeWinPos = 'right' " 子窗口位置
+  let NERDTreeWinPos = 'left' " 子窗口位置
   let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$', '.keep', '.DS_Store', '\.git$', '.routes']
 endif
 
