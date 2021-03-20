@@ -1,4 +1,4 @@
-tmux has-session -t hscloud-dev
+tmux has-session -t hscloud-dev 2&>/dev/null
 if [ $? != 0 ]; then
   tmux new-session -s hscloud-dev -n console -d
   tmux new-window -t hscloud-dev -n git

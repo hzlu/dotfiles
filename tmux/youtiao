@@ -1,4 +1,4 @@
-tmux has-session -t youtiao-dev
+tmux has-session -t youtiao-dev 2&>/dev/null
 if [ $? != 0 ]; then
   tmux new-session -s youtiao-dev -n console -d
   tmux new-window -t youtiao-dev -n git
