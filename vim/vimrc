@@ -402,6 +402,7 @@ if executable('ag')
     \ --ignore .DS_Store
     \ --ignore .log
     \ --ignore .min.js
+    \ --ignore package-lock.json
     \ --ignore node_modules/
     \ --ignore tmp/
     \ --ignore log/
@@ -415,6 +416,7 @@ if executable('ag')
     \ --ignore .DS_Store
     \ --ignore .log
     \ --ignore .min.js
+    \ --ignore package-lock.json
     \ --ignore public/
     \ --ignore dist/
     \ --ignore distribution/
