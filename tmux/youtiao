@@ -7,17 +7,17 @@ if [ $? != 0 ]; then
   tmux split-window -h -t youtiao-dev:console
   tmux split-window -h -t youtiao-dev:git
 
-  tmux send-keys -t youtiao-dev:console.1 'cd /Users/luhaozhao/workstation/youtiao' C-m
+  tmux send-keys -t youtiao-dev:console.1 'cd /Users/luhaozhao/workstation/youtiao/youtiao' C-m
   tmux send-keys -t youtiao-dev:console.1 'nvm use && npm run watch' C-m
-  tmux send-keys -t youtiao-dev:console.2 'cd /Users/luhaozhao/workstation/huasi-frontend' C-m
+  tmux send-keys -t youtiao-dev:console.2 'cd /Users/luhaozhao/workstation/youtiao/huasi-frontend' C-m
   tmux send-keys -t youtiao-dev:console.2 'nvm use && npm run start' C-m
-  tmux send-keys -t youtiao-dev:git.1 'cd /Users/luhaozhao/workstation/youtiao' C-m
+  tmux send-keys -t youtiao-dev:git.1 'cd /Users/luhaozhao/workstation/youtiao/youtiao' C-m
   tmux send-keys -t youtiao-dev:git.1 'git pull' C-m
-  tmux send-keys -t youtiao-dev:git.2 'cd /Users/luhaozhao/workstation/huasi-frontend' C-m
+  tmux send-keys -t youtiao-dev:git.2 'cd /Users/luhaozhao/workstation/youtiao/huasi-frontend' C-m
   tmux send-keys -t youtiao-dev:git.2 'git pull' C-m
 
-  tmux send-keys -t youtiao-dev:vim-youtiao 'cd /Users/luhaozhao/workstation/youtiao' C-m
+  tmux send-keys -t youtiao-dev:vim-youtiao 'cd /Users/luhaozhao/workstation/youtiao/youtiao' C-m
   tmux send-keys -t youtiao-dev:vim-youtiao 'vim' C-m
-  tmux send-keys -t youtiao-dev:vim-frontend 'cd /Users/luhaozhao/workstation/huasi-frontend' C-m
+  tmux send-keys -t youtiao-dev:vim-frontend 'cd /Users/luhaozhao/workstation/youtiao/huasi-frontend' C-m
   tmux send-keys -t youtiao-dev:vim-frontend 'vim' C-m
 fi
