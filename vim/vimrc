@@ -124,7 +124,7 @@ highlight ExtraWhitespace ctermbg=Black
 let g:mapleader = ',' " 定义 <leader>
 
 " coc配置
-let g:coc_node_path = $HOME."/.nvm/versions/node/v10.16.0/bin/node"
+let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v12.14.0/bin/node"
 
 " coc 插件列表
 " cos-emmet
@@ -137,6 +137,21 @@ let g:coc_node_path = $HOME."/.nvm/versions/node/v10.16.0/bin/node"
 " cos-json
 " cos-tsserver
 " cos-vetur
+
+let g:coc_global_extensions = [
+  \'coc-markdownlint',
+  \'coc-git',
+  \'coc-emmet',
+  \'coc-eslint',
+  \'coc-highlight',
+  \'coc-html',
+  \'coc-json',
+  \'coc-snippets',
+  \'coc-tsserver',
+  \'coc-css',
+  \'coc-vetur',
+  \'coc-vimlsp',
+  \]
 
 " 专注模式 :Goyo :Goyo!
 autocmd! User GoyoEnter Limelight

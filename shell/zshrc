@@ -1,8 +1,18 @@
-# 依赖 zsh curl wget git
-# upgrade_oh_my_zsh 手动更新命令
-# uninstall_oh_my_zsh 卸载指令
+# 依赖 zsh curl wget git ccat
+# 字体建议 sauce code powerline
 
-[[ -r "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
+[[ -r ~/.bashrc ]] && . ~/.bashrc
+
+# 打印环境变量PATH
+show_path () {
+  echo $PATH | awk -F: '{for(i=1;i<=NF;i++){print $i}}'
+}
+
+show_color () {
+  for i in {0..255} ; do
+    printf "\x1b[38;5;${i}mcolor${i}\n"
+  done
+}
 
 if [[ -e "$HOME/.iterm2_shell_integration.zsh" ]]; then
   echo "iTerm2 Shell Integration"
@@ -29,37 +39,20 @@ if [[ -e "$HOME/.iterm2_shell_integration.zsh" ]]; then
   #   Sets the current unicode version
 fi
 
+DEFAULT_USER="luhaozhao"
 export EDITOR=vim
-export UPDATE_ZSH_DAYS=7
 export LANG="zh_CN.UTF-8"
 export LC_ALL="zh_CN.UTF-8"
 export VIM_CONFIG_PATH=$HOME/Dropbox/dotfiles/vim/config
+
+# omz update 手动更新命令
+# uninstall_oh_my_zsh 卸载指令
 export ZSH=$HOME/.oh-my-zsh
-export LDFLAGS="-L/usr/local/opt/qt/lib"
-export CPPFLAGS="-I/usr/local/opt/qt/include"
-export PATH="/usr/local/opt/qt/bin:$PATH"
-
-export ANDROID_SDK=$HOME/Library/Android/sdk
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export PATH=$PATH:$HOME/development/flutter/bin
-
-DEFAULT_USER="luhaozhao"
-ZSH_THEME_RANDOM_CANDIDATES=(
-  "ys"
-  "agnoster"
-)
-# 随机主题
-# ZSH_THEME="random"
-
+export UPDATE_ZSH_DAYS=7
+# 安装spaceship主题
 # git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 # ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 ZSH_THEME="spaceship"
-
 # 插件列表
 plugins=(
   common-aliases
@@ -67,11 +60,7 @@ plugins=(
   brew
   bundler
   dotenv
-  gem
   osx
-  rails
-  ruby
-  rvm
   zsh-autosuggestions
   transfer
   zsh_reload
@@ -85,6 +74,7 @@ plugins=(
   autojump
   iterm2
 )
+source $ZSH/oh-my-zsh.sh
 
 alias config="vim ~/.zshrc"
 # 更好看的 cat 支持代码高亮
@@ -97,12 +87,8 @@ alias showssh="cat ~/.ssh/config"
 alias weather="curl http://wttr.in/广州"
 # 计时器
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+# thefuck
 eval $(thefuck --alias)
 
-source $ZSH/oh-my-zsh.sh
-
-# 字体建议 sauce code powerline
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+echo "Loaded zshrc"

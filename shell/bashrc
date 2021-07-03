@@ -1,54 +1,27 @@
 # 非登录 shell 加载此文件
 
-export NVM_DIR="$HOME/.nvm"
-export GOPATH=$HOME/goworkspace
-
-if [[ -d "$GOPATH/bin" ]]; then
-    echo "ADD PATH: $GOPATH/bin"
-    PATH=$GOPATH/bin:$PATH
-fi
-
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-    echo "src $NVM_DIR/nvm.sh"
+# node version manager
+if [[ -d ~/.nvm ]]; then
+    export NVM_DIR="$HOME/.nvm"
+    source "$NVM_DIR/bash_completion"
     source "$NVM_DIR/nvm.sh"
 fi
 
-if [[ -d "/usr/local/opt/postgresql/bin" ]]; then
-    echo "ADD PATH: /usr/local/opt/postgresql/bin"
-    PATH=/usr/local/opt/postgresql/bin:$PATH
+# python version manager
+if [[ -d ~/.pyenv ]]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
 fi
 
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-    echo "src $HOME/.rvm/scripts/rvm"
-    source "$HOME/.rvm/scripts/rvm"
+# android studio sdk
+if [[ -d ~/Library/Android/sdk ]]; then
+    export ANDROID_SDK=$HOME/Library/Android/sdk
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+    export PATH=$PATH:$ANDROID_HOME/emulator
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/tools/bin
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
 fi
 
-if [[ -d "$HOME/.rvm/bin" ]]; then
-    echo "ADD PATH $HOME/.rvm/bin"
-    PATH=$HOME/.rvm/bin:$PATH
-fi
-
-if [[ -d "/usr/local/sbin" ]]; then
-    echo "ADD PATH /usr/local/sbin"
-    PATH=/usr/local/sbin:$PATH
-fi
-
-if [[ -d "$HOME/bin" ]]; then
-    echo "ADD PATH $HOME/bin"
-    PATH=$HOME/bin:$PATH
-fi
-
-export PATH
-
-path () {
-  echo $PATH | awk -F: '{for(i=1;i<=NF;i++){print $i}}'
-}
-
-show_color () {
-  for i in {0..255} ; do
-    printf "\x1b[38;5;${i}mcolor${i}\n"
-  done
-}
-
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+echo "Loaded bashrc"
