@@ -82,7 +82,7 @@ alias cat="ccat"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipinfo="curl ipinfo.io"
 alias localip="ipconfig getifaddr en0"
-alias showssh="cat ~/.ssh/config"
+alias show_ssh="cat ~/.ssh/config"
 # 命令行天气
 alias weather="curl http://wttr.in/广州"
 # 计时器
@@ -92,3 +92,19 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 eval $(thefuck --alias)
 
 echo "Loaded zshrc"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
