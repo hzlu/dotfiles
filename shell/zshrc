@@ -87,6 +87,10 @@ alias show_ssh="cat ~/.ssh/config"
 alias weather="curl http://wttr.in/广州"
 # 计时器
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+# 显示隐藏文件
+alias show='defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
+# 隐藏文件
+alias hide='defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
 
 # thefuck
 eval $(thefuck --alias)
@@ -107,4 +111,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
