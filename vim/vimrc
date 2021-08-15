@@ -28,6 +28,9 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot' " 语法高亮
+Plug 'preservim/tagbar'
+" Plug 'liuchengxu/vista.vim'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " ------------------------
@@ -151,6 +154,7 @@ let g:coc_global_extensions = [
   \'coc-css',
   \'coc-vetur',
   \'coc-vimlsp',
+  \'coc-lists',
   \]
 
 " 专注模式 :Goyo :Goyo!
@@ -437,4 +441,49 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
   nnoremap AG :Ag! "\b<c-R><c-W>\b"<cr>:cw<cr>
   nnoremap ag :Ag!<SPACE>
+endif
+
+if isdirectory(expand('~/.vim/plugged/tagbar'))
+  nmap tb :TagbarToggle<CR>
+  let g:tagbar_sort = 0
+  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+  let g:tagbar_type_typescript = {
+    \ 'ctagstype': 'typescript',
+    \ 'kinds': [
+      \ 'c:class',
+      \ 'n:namespace',
+      \ 'f:function',
+      \ 'G:generator',
+      \ 'v:variable',
+      \ 'm:method',
+      \ 'p:property',
+      \ 'i:interface',
+      \ 'g:enum',
+      \ 't:type',
+      \ 'a:alias',
+    \ ],
+    \'sro': '.',
+      \ 'kind2scope' : {
+      \ 'c' : 'class',
+      \ 'n' : 'namespace',
+      \ 'i' : 'interface',
+      \ 'f' : 'function',
+      \ 'G' : 'generator',
+      \ 'm' : 'method',
+      \ 'p' : 'property',
+      \},
+  \ }
+endif
+
+if isdirectory(expand('~/.vim/plugged/vim-gutentags'))
+  let g:gutentags_project_root = ['.git', '.svn']
+  let g:gutentags_ctags_tagfile = '.tags'
+  let g:gutentags_modules = ['ctags']
+  let s:vim_tags = expand('~/.cache/tags')
+  let g:gutentags_cache_dir = s:vim_tags
+  if !isdirectory(s:vim_tags)
+    silent! call mkdir(s:vim_tags, 'p')
+  endif
+  set tags=~/.cache/tags/*.tags;.tags
 endif
