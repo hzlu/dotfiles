@@ -324,6 +324,11 @@ endif
 
 if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
   " c-f c-b 模式切换 c-r 正则匹配模式
+  " c-d 切换路径搜索或文件名搜索
+  " c-n c-p 选择之前输入的搜索历史
+  " c-z 标记/取消标记文件，c-o 打开标记
+  " c-v 垂直切分打开 c-x 水平切分打开
+  " c-x 标记/取消标记文件，c-o 打开标记
   let g:ctrlp_map = '<c-p>'
   let g:ctrlp_max_height = 15
   let g:ctrlp_mruf_max = 100
