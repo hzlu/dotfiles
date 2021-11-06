@@ -60,10 +60,9 @@ plugins=(
   brew
   bundler
   dotenv
-  osx
+  macos
   zsh-autosuggestions
   transfer
-  zsh_reload
   colored-man-pages
   copyfile
   thefuck
