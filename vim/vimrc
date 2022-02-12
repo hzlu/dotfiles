@@ -1,3 +1,4 @@
+let g:polyglot_disabled = ['markdown']
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -86,7 +87,7 @@ set list
 set listchars=tab:~~,trail:·
 
 set number
-set numberwidth=4
+set numberwidth=6
 
 set ruler
 set laststatus=2 " Always display the status line
@@ -110,7 +111,11 @@ set splitright " 新分割窗口在右边
 
 set timeoutlen=1000 " <leader> 键响应时间
 set textwidth=80 " 每行最大字符数
-set nowrap
+set formatoptions+=t
+" set columns=100
+set colorcolumn=80
+set linebreak
+" set showbreak=>>>
 
 set completeopt=menu,preview
 set omnifunc=syntaxcomplete#Complete " Omni 补全
@@ -142,7 +147,6 @@ let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v12.14.0/bin/node"
 " cos-vetur
 
 let g:coc_global_extensions = [
-  \'coc-markdownlint',
   \'coc-git',
   \'coc-emmet',
   \'coc-eslint',
@@ -375,10 +379,11 @@ if isdirectory(expand('~/.vim/plugged/vim-airline'))
   let g:airline#extensions#tabline#tab_nr_type = 2
   let g:airline#extensions#tabline#show_tab_nr = 0 " 不显示tab number
   let g:airline#extensions#tabline#show_tab_type = 1 " 显示tab type
-  let g:airline#extensions#tabline#formatter = "unique_tail"
+  let g:airline#extensions#tabline#formatter = "unique_tail_improved"
   " let g:airline#extensions#tabline#formatter = 'short_path'
   let g:airline#extensions#tabline#show_buffers = 1
   let g:airline#extensions#tabline#buffer_nr_show = 1 " 显示buffer number
+  let g:airline_section_c = '%f'
 
   let g:airline#extensions#coc#enabled = 1
 endif

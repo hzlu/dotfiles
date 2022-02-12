@@ -72,6 +72,7 @@ plugins=(
   vi-mode
   autojump
   iterm2
+  kubectl
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -90,6 +91,8 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias show='defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder'
 # 隐藏文件
 alias hide='defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
+alias k=kubectl
+compdef __start_kubectl k
 
 # thefuck
 eval $(thefuck --alias)
