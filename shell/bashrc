@@ -25,3 +25,4 @@ if [[ -d ~/Library/Android/sdk ]]; then
 fi
 
 echo "Loaded bashrc"
+. "$HOME/.cargo/env"
