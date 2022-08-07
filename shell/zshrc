@@ -44,6 +44,10 @@ export EDITOR=vim
 export LANG="zh_CN.UTF-8"
 export LC_ALL="zh_CN.UTF-8"
 export VIM_CONFIG_PATH=$HOME/Dropbox/dotfiles/vim/config
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # omz update 手动更新命令
 # uninstall_oh_my_zsh 卸载指令
