@@ -132,7 +132,7 @@ highlight ExtraWhitespace ctermbg=Black
 let g:mapleader = ',' " 定义 <leader>
 
 " coc配置
-let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v12.14.0/bin/node"
+let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v16.15.1/bin/node"
 
 " coc 插件列表
 " cos-emmet
@@ -145,6 +145,7 @@ let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v12.14.0/bin/node"
 " cos-json
 " cos-tsserver
 " cos-vetur
+" 配置文件路径 ~/.vim/coc-settings.json
 
 let g:coc_global_extensions = [
   \'coc-git',
@@ -317,7 +318,7 @@ if isdirectory(expand("~/.vim/plugged/nerdtree"))
   call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
   call NERDTreeHighlightFile('ts', 'yellow', 'none', 'yellow', '#151515')
   call NERDTreeHighlightFile('vue', 'Red', 'none', '#ffa500', '#151515')
-  let NERDTreeWinSize = 30 " 设置 NERDTree 子窗口宽度
+  let NERDTreeWinSize = 50 " 设置 NERDTree 子窗口宽度
   let NERDTreeChDirMode = 2 " 是否改变 CWD { 0: 不改变, 1: change when NERD tree is first loaded, 2: always change }
   let NERDTreeMinimalUI = 1 " 不显示帮助信息
   let NERDTreeShowHidden = 1 " 显示隐藏文件

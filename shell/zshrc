@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias config="vim ~/.zshrc"
 # 更好看的 cat 支持代码高亮
-alias cat="ccat"
+# alias cat="ccat"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipinfo="curl ipinfo.io"
 alias localip="ipconfig getifaddr en0"
@@ -117,3 +117,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
