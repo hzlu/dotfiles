@@ -7,15 +7,21 @@ if [ $? != 0 ]; then
   tmux new-window -t hscloud-dev -n vim-hsdata
   tmux split-window -h -t hscloud-dev:console
   tmux split-window -h -t hscloud-dev:console
+  tmux split-window -h -t hscloud-dev:console
+  tmux select-layout tiled -t hscloud-dev:console
   tmux split-window -h -t hscloud-dev:git
   tmux split-window -h -t hscloud-dev:git
+  tmux split-window -h -t hscloud-dev:git
+  tmux select-layout tiled -t hscloud-dev:git
 
   tmux send-keys -t hscloud-dev:console.1 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
-  tmux send-keys -t hscloud-dev:console.1 'nvm use && npm run watch' C-m
+  tmux send-keys -t hscloud-dev:console.1 'nvm use && npm run serve' C-m
   tmux send-keys -t hscloud-dev:console.2 'cd /Users/luhaozhao/workstation/hscloud/hsdata' C-m
-  tmux send-keys -t hscloud-dev:console.2 'nvm use && npm run watch' C-m
+  tmux send-keys -t hscloud-dev:console.2 'nvm use && npm run serve' C-m
   tmux send-keys -t hscloud-dev:console.3 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
   tmux send-keys -t hscloud-dev:console.3 'nvm use && npm run dev' C-m
+  tmux send-keys -t hscloud-dev:console.4 'cd /Users/luhaozhao/workstation/hscloud/hscloud-dashboard' C-m
+  tmux send-keys -t hscloud-dev:console.4 'nvm use && npm run dev' C-m
 
   tmux send-keys -t hscloud-dev:git.1 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
   tmux send-keys -t hscloud-dev:git.1 'git pull' C-m
@@ -23,6 +29,8 @@ if [ $? != 0 ]; then
   tmux send-keys -t hscloud-dev:git.2 'git pull' C-m
   tmux send-keys -t hscloud-dev:git.3 'cd /Users/luhaozhao/workstation/hscloud/hscloud-frontend' C-m
   tmux send-keys -t hscloud-dev:git.3 'git pull' C-m
+  tmux send-keys -t hscloud-dev:git.4 'cd /Users/luhaozhao/workstation/hscloud/hscloud-dashboard' C-m
+  tmux send-keys -t hscloud-dev:git.4 'git pull' C-m
 
   tmux send-keys -t hscloud-dev:vim-hscloud 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
   tmux send-keys -t hscloud-dev:vim-hscloud 'vim' C-m
