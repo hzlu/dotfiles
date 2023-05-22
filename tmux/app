@@ -1,0 +1,17 @@
+tmux has-session -t app-dev 2&>/dev/null
+if [ $? != 0 ]; then
+  tmux new-session -s app-dev -n rdm -d
+  tmux split-window -h -t app-dev:rdm
+  tmux new-window -t app-dev -n hscloud
+  tmux split-window -h -t app-dev:hscloud
+
+  tmux send-keys -t app-dev:rdm.1 'cd /Users/luhaozhao/workstation/huasi-app/HSInclinoMeter' C-m
+  tmux send-keys -t app-dev:rdm.1 'nvm use' C-m
+  tmux send-keys -t app-dev:rdm.2 'cd /Users/luhaozhao/workstation/huasi-app/HSInclinoMeter' C-m
+  tmux send-keys -t app-dev:rdm.2 'nvm use' C-m
+
+  tmux send-keys -t app-dev:hscloud.1 'cd /Users/luhaozhao/workstation/huasi-app/hscloud-app' C-m
+  tmux send-keys -t app-dev:hscloud.1 'nvm use' C-m
+  tmux send-keys -t app-dev:hscloud.2 'cd /Users/luhaozhao/workstation/huasi-app/hscloud-app' C-m
+  tmux send-keys -t app-dev:hscloud.2 'nvm use' C-m
+fi
