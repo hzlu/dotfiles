@@ -8,11 +8,11 @@ if [ $? != 0 ]; then
   tmux split-window -h -t hscloud-dev:console
   tmux split-window -h -t hscloud-dev:console
   tmux split-window -h -t hscloud-dev:console
-  tmux select-layout tiled -t hscloud-dev:console
+  tmux select-layout -t hscloud-dev:console tiled
   tmux split-window -h -t hscloud-dev:git
   tmux split-window -h -t hscloud-dev:git
   tmux split-window -h -t hscloud-dev:git
-  tmux select-layout tiled -t hscloud-dev:git
+  tmux select-layout -t hscloud-dev:git tiled
 
   tmux send-keys -t hscloud-dev:console.1 'cd /Users/luhaozhao/workstation/hscloud/hscloud' C-m
   tmux send-keys -t hscloud-dev:console.1 'nvm use && npm run serve' C-m
