@@ -44,10 +44,10 @@ export EDITOR=vim
 export LANG="zh_CN.UTF-8"
 export LC_ALL="zh_CN.UTF-8"
 export VIM_CONFIG_PATH=$HOME/Dropbox/dotfiles/vim/config
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=0
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_INSTALL_CLEANUP=0
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+# export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=0
+# export HOMEBREW_NO_AUTO_UPDATE=1
+# export HOMEBREW_NO_INSTALL_CLEANUP=0
 
 # omz update 手动更新命令
 # uninstall_oh_my_zsh 卸载指令
@@ -96,6 +96,10 @@ alias show='defaults write com.apple.finder AppleShowAllFiles -boolean true ; ki
 # 隐藏文件
 alias hide='defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder'
 alias k=kubectl
+# 启动代理
+alias start_proxy='export http_proxy=http://127.0.0.1:1089;export https_proxy=http://127.0.0.1:1089;export ALL_PROXY=socks://127.0.0.1:1088'
+# 停止代理
+alias stop_proxy='unset http_proxy https_proxy ALL_PROXY'
 compdef __start_kubectl k
 
 # thefuck
