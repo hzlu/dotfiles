@@ -100,6 +100,12 @@ alias k=kubectl
 alias start_proxy='export http_proxy=http://127.0.0.1:1089;export https_proxy=http://127.0.0.1:1089;export ALL_PROXY=socks://127.0.0.1:1088'
 # 停止代理
 alias stop_proxy='unset http_proxy https_proxy ALL_PROXY'
+# 开启WIFI socks代理
+alias proxy_on='networksetup -setsocksfirewallproxystate Wi-Fi on'
+# 关闭WIFI socks代理
+alias proxy_off='networksetup -setsocksfirewallproxystate Wi-Fi off'
+# 显示WIFI socks代理状态
+alias proxy_show='networksetup -getsocksfirewallproxy Wi-Fi'
 compdef __start_kubectl k
 
 # thefuck
@@ -109,14 +115,14 @@ echo "Loaded zshrc"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/luhaozhao/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/opt/anaconda3/bin:$PATH"
+        export PATH="/Users/luhaozhao/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

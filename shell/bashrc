@@ -24,5 +24,11 @@ if [[ -d ~/Library/Android/sdk ]]; then
     export PATH=$PATH:$ANDROID_HOME/platform-tools
 fi
 
+if [[ -d /Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home ]]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home
+    export CLASSPATH=$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
+    export PATH=$JAVA_HOME/bin:$PATH
+fi
+
 echo "Loaded bashrc"
 # . "$HOME/.cargo/env"
