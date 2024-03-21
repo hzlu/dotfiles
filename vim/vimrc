@@ -1,4 +1,4 @@
-let g:polyglot_disabled = ['markdown']
+let g:polyglot_disabled = ['markdown', 'vue']
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -6,7 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
@@ -14,7 +14,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround' " 用法提示：ds cs ysiw yss
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'honza/vim-snippets'
 Plug 'godlygeek/tabular' " 格式化
@@ -29,8 +28,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot' " 语法高亮
-Plug 'preservim/tagbar'
-" Plug 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
@@ -39,6 +37,7 @@ call plug#end()
 " ------------------------
 filetype plugin indent on " 根据侦测到不同类型加载对应插件
 syntax enable " 开启语法高亮
+set synmaxcol=300
 
 let g:dracula_italic=0
 let g:dracula_colorterm=0
@@ -46,6 +45,7 @@ colorscheme dracula
 highlight Normal cterm=NONE term=NONE
 set background=dark
 set t_Co=256 " terminal color 开启 256 色支持
+let html_no_rendering=1 " 修复vue文件高亮问题
 
 set autowrite " 执行命令前自动保存
 set autoread " 文件在vim外修改过，自动重新读入
@@ -70,7 +70,7 @@ set langmenu=zh_cn
 set termencoding=utf-8
 
 set foldmethod=indent
-set foldlevel=1 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
+set foldlevel=2 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
 set foldenable " 启动 vim 时关闭折叠代码
 
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
@@ -170,10 +170,6 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_default_coefficient = 0.7
 let g:limelight_priority = -1
-
-let g:LanguageClient_serverCommands = {
-  \ 'vue': ['vls']
-  \ }
 
 " 光标形状
 let &t_SI.="\e[5 q" " SI = INSERT mode
@@ -279,7 +275,17 @@ nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
 imap <c-j> <Plug>(coc-snippets-expand)
-
+" navigate chunks of current buffer
+nmap ]h <Plug>(coc-git-nextchunk)
+nmap [h <Plug>(coc-git-prevchunk)
+" navigate conflicts of current buffer
+nmap ]c <Plug>(coc-git-nextconflict)
+nmap [c <Plug>(coc-git-prevconflict)
+" show chunk diff at current position
+nnoremap <leader>hv <Plug>(coc-git-chunkinfo)
+nnoremap <leader>hu :CocCommand git.chunkUndo<cr>
+nnoremap <leader>hs :CocCommand git.chunkStage<cr>
+nnoremap <leader>hS :CocCommand git.chunkUnstage<cr>
 
 " ------------------------
 " 使用标记m | 查看标记 :marks | 删除标记 :delmarks <m> | 删除所有标记 :delmarks!
@@ -302,11 +308,11 @@ imap <c-j> <Plug>(coc-snippets-expand)
 " 插件配置
 " ------------------------
 if isdirectory(expand("~/.vim/plugged/vim-fugitive"))
-  nnoremap <leader>gs :Gstatus<cr>
-  nnoremap <leader>gd :Gdiff<cr>
-  nnoremap <leader>gl :Glog<cr>
-  nnoremap <leader>gb :Gblame<cr>
-  nnoremap <leader>gc :Gcommit<cr>
+  nnoremap <leader>gs :Git status<cr>
+  nnoremap <leader>gd :Git diff<cr>
+  nnoremap <leader>gl :Git log<cr>
+  nnoremap <leader>gb :Git blame<cr>
+  nnoremap <leader>gc :Git commit<cr>
 endif
 
 if isdirectory(expand("~/.vim/plugged/nerdtree"))
@@ -349,15 +355,6 @@ if isdirectory(expand("~/.vim/plugged/ctrlp.vim"))
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip " vim 自带 exclude files
 endif
 
-if isdirectory(expand("~/.vim/plugged/vim-gitgutter"))
-  set updatetime=250
-  nmap ]h <Plug>(GitGutterNextHunk)
-  nmap [h <Plug>(GitGutterPrevHunk)
-  nmap <leader>hs <Plug>(GitGutterStageHunk)
-  nmap <leader>hu <Plug>(GitGutterUndoHunk)
-  nmap <leader>hv <Plug>(GitGutterPreviewHunk)
-endif
-
 " 用法：[注释行数]<leader> cc: comment out the current line
 " c<space>: toggle comment
 " 多行注释 cm: minimal comment, cs: sexy comment, cy: comment and yank
@@ -376,7 +373,6 @@ endif
 if isdirectory(expand('~/.vim/plugged/vim-airline'))
   " let g:airline_theme = 'fruit_punch'
   let g:airline_powerline_fonts = 1
-
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#tab_nr_type = 2
   let g:airline#extensions#tabline#show_tab_nr = 0 " 不显示tab number
@@ -455,37 +451,14 @@ if executable('ag')
   nnoremap ag :Ag!<SPACE>
 endif
 
-if isdirectory(expand('~/.vim/plugged/tagbar'))
-  nmap tb :TagbarToggle<CR>
-  let g:tagbar_sort = 0
-  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-
-  let g:tagbar_type_typescript = {
-    \ 'ctagstype': 'typescript',
-    \ 'kinds': [
-      \ 'c:class',
-      \ 'n:namespace',
-      \ 'f:function',
-      \ 'G:generator',
-      \ 'v:variable',
-      \ 'm:method',
-      \ 'p:property',
-      \ 'i:interface',
-      \ 'g:enum',
-      \ 't:type',
-      \ 'a:alias',
-    \ ],
-    \'sro': '.',
-      \ 'kind2scope' : {
-      \ 'c' : 'class',
-      \ 'n' : 'namespace',
-      \ 'i' : 'interface',
-      \ 'f' : 'function',
-      \ 'G' : 'generator',
-      \ 'm' : 'method',
-      \ 'p' : 'property',
-      \},
-  \ }
+if isdirectory(expand('~/.vim/plugged/vista.vim'))
+  nmap tb :Vista<CR>
+  let g:vista_default_executive = 'coc'
+  let g:vista_finder_alternative_executives = ['ctags']
+  let g:vista_blink = [0, 0]
+  let g:vista_sidebar_width = 50
+  let g:vista_stay_on_open = 0
+  let g:vista#renderer#enable_icon = 0
 endif
 
 if isdirectory(expand('~/.vim/plugged/vim-gutentags'))
