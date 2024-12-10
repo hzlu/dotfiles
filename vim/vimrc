@@ -70,8 +70,10 @@ set langmenu=zh_cn
 set termencoding=utf-8
 
 set foldmethod=indent
-set foldlevel=2 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
+set foldlevel=1 " zr 递减 foldlevel 变量 zm 递增 foldlevel 变量
 set foldenable " 启动 vim 时关闭折叠代码
+" shift-z,o opens all folds at the cursor
+" z,c closes a fold at the cursor
 
 set guifont=Meslo\ LG\ L\ DZ\ Regular\ for\ Powerline:h15
 set guioptions-=r " 隐藏滚动条
@@ -132,7 +134,7 @@ highlight ExtraWhitespace ctermbg=Black
 let g:mapleader = ',' " 定义 <leader>
 
 " coc配置
-let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v16.15.1/bin/node"
+let g:coc_node_path = "/Users/luhaozhao/.nvm/versions/node/v18.20.4/bin/node"
 
 " coc 插件列表
 " cos-emmet
@@ -433,6 +435,7 @@ if executable('ag')
     \ --ignore log/
     \ --ignore vendor/
     \ --ignore public/
+    \ --ignore static/
     \ --ignore dist/'
   let g:ctrlp_user_command = 'ag %s -i --hidden
     \ --ignore .git
@@ -445,6 +448,7 @@ if executable('ag')
     \ --ignore public/
     \ --ignore dist/
     \ --ignore distribution/
+    \ --ignore static/
     \ -g ""'
   let g:ctrlp_use_caching = 0
   nnoremap AG :Ag! "\b<c-R><c-W>\b"<cr>:cw<cr>

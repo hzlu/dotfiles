@@ -41,13 +41,13 @@ fi
 
 DEFAULT_USER="luhaozhao"
 export EDITOR=vim
-export LANG="zh_CN.UTF-8"
-export LC_ALL="zh_CN.UTF-8"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export VIM_CONFIG_PATH=$HOME/Dropbox/dotfiles/vim/config
 # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-# export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=0
-# export HOMEBREW_NO_AUTO_UPDATE=1
-# export HOMEBREW_NO_INSTALL_CLEANUP=0
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+# export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # omz update 手动更新命令
 # uninstall_oh_my_zsh 卸载指令
@@ -64,7 +64,7 @@ plugins=(
   brew
   bundler
   dotenv
-  macos
+  # macos
   zsh-autosuggestions
   transfer
   colored-man-pages
@@ -77,8 +77,11 @@ plugins=(
   autojump
   iterm2
   kubectl
+  spaceship-section
 )
 source $ZSH/oh-my-zsh.sh
+
+spaceship add proxy
 
 alias config="vim ~/.zshrc"
 # 更好看的 cat 支持代码高亮
@@ -101,9 +104,9 @@ alias start_proxy='export http_proxy=http://127.0.0.1:1089;export https_proxy=ht
 # 停止代理
 alias stop_proxy='unset http_proxy https_proxy ALL_PROXY'
 # 开启WIFI socks代理
-alias proxy_on='networksetup -setsocksfirewallproxystate Wi-Fi on'
+alias proxy_on='sudo networksetup -setsocksfirewallproxystate Wi-Fi on'
 # 关闭WIFI socks代理
-alias proxy_off='networksetup -setsocksfirewallproxystate Wi-Fi off'
+alias proxy_off='sudo networksetup -setsocksfirewallproxystate Wi-Fi off'
 # 显示WIFI socks代理状态
 alias proxy_show='networksetup -getsocksfirewallproxy Wi-Fi'
 compdef __start_kubectl k
@@ -115,17 +118,37 @@ echo "Loaded zshrc"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/luhaozhao/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+if [ -f "/opt/anaconda3/bin/conda" ]; then
+
+  __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh" ]; then
+          . "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/opt/anaconda3/bin:$PATH"
+      fi
+  fi
 else
-    if [ -f "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/luhaozhao/anaconda3/bin:$PATH"
-    fi
+  __conda_setup="$('/Users/luhaozhao/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh" ]; then
+          . "/Users/luhaozhao/anaconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/Users/luhaozhao/anaconda3/bin:$PATH"
+      fi
+  fi
 fi
+
 unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/Applications/Docker.app/Contents/Resources/bin:$PATH"
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
